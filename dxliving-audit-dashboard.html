@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DXL | Technical SEO Audit — dxliving.com</title>
+<style>
+:root{
+  --bg:#f4f1ea;--card:#fff;--ink:#2b2620;--muted:#7a7167;--soft:#a89e90;
+  --accent:#b8935a;--accent2:#e6d5bd;--line:#e7dfd2;
+  --crit:#c0392b;--warn:#d9942b;--info:#4c72b0;--good:#3c8c5a;--purple:#8172b3;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;padding:22px}
+.wrap{max-width:1280px;margin:0 auto}
+.head{border-bottom:3px solid var(--accent);padding-bottom:14px;margin-bottom:20px;position:relative}
+.head .ey{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:700}
+.head h1{font-size:27px;font-weight:800;margin-top:4px}
+.head .sub{color:var(--muted);font-size:13px;margin-top:6px}
+.method{display:inline-block;background:#eef4ee;color:var(--good);font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px;margin-top:8px}
+.langtog{position:absolute;top:0;right:0;display:flex;border:1px solid var(--accent);border-radius:20px;overflow:hidden;font-size:12px;font-weight:700}
+.langtog button{border:0;background:#fff;color:var(--accent);padding:5px 14px;cursor:pointer}
+.langtog button.on{background:var(--accent);color:#fff}
+.grid{display:grid;gap:15px}
+.kpis{grid-template-columns:repeat(6,1fr);margin-bottom:18px}
+@media(max-width:1000px){.kpis{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.kpi .lab{font-size:10.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);font-weight:600}
+.kpi .val{font-size:26px;font-weight:800;margin-top:3px;line-height:1.1}
+.kpi .note{font-size:11.5px;color:var(--muted);margin-top:3px}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;color:#fff}
+.b-warn{background:var(--warn)}
+.diag{background:linear-gradient(180deg,#fff,#faf6ef);border:1px solid var(--line);border-left:5px solid var(--crit);border-radius:12px;padding:18px 20px;margin-bottom:20px}
+.diag h2{font-size:16px;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:9px}
+.diag p{font-size:13.5px;margin-bottom:8px}
+.diag .kv{font-size:12.5px;color:var(--muted)}
+h3.sec{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+h3.sec::before{content:"";width:4px;height:15px;background:var(--accent);border-radius:2px}
+.row2{grid-template-columns:1fr 1fr;margin-bottom:18px}
+@media(max-width:900px){.row2{grid-template-columns:1fr}}
+.subscores{grid-template-columns:repeat(5,1fr);margin-bottom:20px}
+@media(max-width:900px){.subscores{grid-template-columns:repeat(2,1fr)}}
+.ss{text-align:center;padding:14px 10px}
+.ss .ring{margin:0 auto 8px}
+.ss .nm{font-size:12px;font-weight:600}
+.ss .dt{font-size:11px;color:var(--muted);margin-top:2px}
+.bar-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:12.5px}
+.bar-row .nm{width:160px;flex:0 0 160px}
+.bar-track{flex:1;background:#f0ece3;border-radius:6px;height:20px;overflow:hidden}
+.bar-fill{height:100%;border-radius:6px;display:flex;align-items:center;justify-content:flex-end;padding-right:6px;color:#fff;font-size:10.5px;font-weight:700;min-width:20px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:10px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px}
+.insight{border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:10px;padding:13px 15px;margin-bottom:11px;background:#fff}
+.insight .t{font-weight:700;font-size:13.5px;margin-bottom:5px;display:flex;align-items:flex-start;gap:8px}
+.insight .d{font-size:12.5px}
+.insight .fix{font-size:12px;color:var(--muted);margin-top:6px;padding-top:6px;border-top:1px dashed var(--line)}
+.insight.p1{border-left-color:var(--crit)}.insight.p2{border-left-color:var(--warn)}.insight.p3{border-left-color:var(--info)}.insight.pg{border-left-color:var(--good)}
+.pri{font-size:10px;font-weight:800;padding:2px 7px;border-radius:5px;color:#fff;white-space:nowrap;margin-top:1px}
+.chip{font-size:10.5px;padding:2px 8px;border-radius:5px;font-weight:600}
+.chip.imp{background:#fbe6e3;color:var(--crit)}.chip.eff{background:#eef4ee;color:var(--good)}
+table{width:100%;border-collapse:collapse;font-size:12px}
+thead th{text-align:left;padding:8px 7px;border-bottom:2px solid var(--line);color:var(--muted);font-size:10.5px;text-transform:uppercase;letter-spacing:.4px;cursor:pointer;white-space:nowrap}
+tbody td{padding:7px;border-bottom:1px solid #f2ede3}
+tbody tr:hover{background:#faf7f0}
+.pill{font-size:10px;font-weight:700;padding:1px 6px;border-radius:20px;white-space:nowrap}
+.ok{background:#e5f2ea;color:var(--good)}.slow{background:#fdf1e0;color:var(--warn)}.bad{background:#fbe6e3;color:var(--crit)}
+.mono{font-variant-numeric:tabular-nums}
+.x{color:var(--crit);font-weight:700}.c{color:var(--good);font-weight:700}
+.foot{color:var(--muted);font-size:11.5px;text-align:center;margin-top:22px;padding-top:14px;border-top:1px solid var(--line)}
+.roadmap-t{width:100%;border-collapse:collapse;font-size:12.5px}
+.roadmap-t th{background:#f6f1e8;text-align:left;padding:9px;font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted)}
+.roadmap-t td{padding:10px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+.num{display:inline-flex;width:22px;height:22px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:11px;align-items:center;justify-content:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <div class="langtog"><button id="bvi" onclick="setLang('vi')">VI</button><button id="ben" onclick="setLang('en')">EN</button></div>
+    <div class="ey" id="ey"></div>
+    <h1 id="h1"></h1>
+    <div class="sub" id="sub"></div>
+    <div class="method" id="method"></div>
+  </div>
+
+  <div class="grid kpis" id="kpis"></div>
+
+  <div class="diag">
+    <h2 id="diagh"></h2>
+    <p id="diagp1"></p>
+    <p class="kv" id="diagp2"></p>
+  </div>
+
+  <div class="grid subscores" id="subscores"></div>
+
+  <div class="grid row2">
+    <div class="card">
+      <h3 class="sec" id="sec-ttfb"></h3>
+      <div id="ttfbbars"></div>
+      <div class="legend" id="ttfbleg"></div>
+    </div>
+    <div class="card">
+      <h3 class="sec" id="sec-schema"></h3>
+      <div id="schemabars"></div>
+      <div class="legend" id="schemaleg"></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:18px">
+    <h3 class="sec" id="sec-insight"></h3>
+    <div id="insights"></div>
+  </div>
+
+  <div class="card" style="margin-bottom:18px">
+    <h3 class="sec" id="sec-road"></h3>
+    <table class="roadmap-t" id="roadmap"></table>
+  </div>
+
+  <div class="card">
+    <h3 class="sec" id="sec-tbl"></h3>
+    <div style="overflow-x:auto"><table id="tbl"></table></div>
+  </div>
+
+  <div class="foot" id="foot"></div>
+</div>
+
+<script>
+const CD="16 Jul 2026";
+let LANG='vi';
+
+const T={
+ ey:{vi:"Technical SEO Audit — Deep Dive",en:"Technical SEO Audit — Deep Dive"},
+ h1:{vi:"dxliving.com · Báo cáo kỹ thuật & hướng tối ưu",en:"dxliving.com · Technical report & optimization plan"},
+ sub:{vi:"Crawl trực tiếp: "+CD+" · 32 URL · Đo tận nơi bằng Chrome (server HTML + rendered DOM + timing)",en:"Live crawl: "+CD+" · 32 URLs · Measured directly in Chrome (server HTML + rendered DOM + timing)"},
+ method:{vi:"✓ Nguồn: crawl trực tiếp qua Chrome — không qua OpenSEO / Supermetrics",en:"✓ Source: crawled live via Chrome — not through OpenSEO / Supermetrics"},
+ diagh:{vi:"🔬 Chẩn đoán gốc rễ",en:"🔬 Root-cause diagnosis"},
+ diagp1:{vi:"<b>Bài viết SEO không phải \"hỏng\" — chúng được server-render đầy đủ (có cả schema BlogPosting + FAQPage), nhưng route <span class='mono'>/articles/*</span> phản hồi cực chậm: TTFB 6.5–10.8 giây</b> và HTML nặng 190–218KB/bài. Nhiều crawler bỏ cuộc ở mốc 6–7s → bài viết bị index chập chờn/không index, dù nội dung tốt. Đây chính là lý do organic gần như chỉ có traffic thương hiệu: nhóm bài nhắm từ khóa non-brand Melbourne đang \"ẩn\" với Google vì quá chậm.",
+   en:"<b>The SEO articles are not \"broken\" — they are fully server-rendered (with BlogPosting + FAQPage schema), but the <span class='mono'>/articles/*</span> route responds extremely slowly: TTFB 6.5–10.8 seconds</b> and 190–218KB of HTML each. Many crawlers give up around 6–7s → articles get indexed erratically or not at all, despite good content. This is exactly why organic traffic is almost entirely branded: the non-brand Melbourne keyword articles are effectively \"invisible\" to Google because they're too slow."},
+ diagp2:{vi:"Bằng chứng đo trực tiếp: <span class='mono'>/articles/3d-rendering-company-melbourne</span> = 10.8s · <span class='mono'>bim-3d-4d-5d-explained</span> = 6.8s · <span class='mono'>luxury-home-builders-melbourne-vr-bim</span> = 6.5s · trang listing <span class='mono'>/articles</span> = 7.0s / <b>1.8&nbsp;MB</b> HTML. Toàn bộ 16 bài <b>không có trong sitemap</b> (sitemap chỉ khai báo 16 trang chính).",
+   en:"Directly measured evidence: <span class='mono'>/articles/3d-rendering-company-melbourne</span> = 10.8s · <span class='mono'>bim-3d-4d-5d-explained</span> = 6.8s · <span class='mono'>luxury-home-builders-melbourne-vr-bim</span> = 6.5s · listing page <span class='mono'>/articles</span> = 7.0s / <b>1.8&nbsp;MB</b> HTML. All 16 articles are <b>absent from the sitemap</b> (it declares only the 16 main pages)."},
+ secTtfb:{vi:"TTFB — thời gian máy chủ trả byte đầu (đo trực tiếp)",en:"TTFB — time to first byte (measured live)"},
+ ttfbleg:{vi:"<span><i style='background:var(--good)'></i>&lt;1s tốt</span><span><i style='background:var(--warn)'></i>1–3s</span><span><i style='background:var(--crit)'></i>&gt;3s rất chậm</span><span>Google mục tiêu &lt;0.8s</span>",
+   en:"<span><i style='background:var(--good)'></i>&lt;1s good</span><span><i style='background:var(--warn)'></i>1–3s</span><span><i style='background:var(--crit)'></i>&gt;3s very slow</span><span>Google target &lt;0.8s</span>"},
+ secSchema:{vi:"Structured Data / AEO — độ phủ schema",en:"Structured Data / AEO — schema coverage"},
+ schemaleg:{vi:"Schema giúp Google & AI (ChatGPT/Perplexity) hiểu & trích dẫn nội dung. Trang chính đang <b class='x'>thiếu hoàn toàn</b>.",
+   en:"Schema helps Google & AI (ChatGPT/Perplexity) understand & cite content. Main pages are <b class='x'>completely missing it</b>."},
+ secInsight:{vi:"Insight kỹ thuật theo hạng mục",en:"Technical insights by category"},
+ secRoad:{vi:"Next Steps — lộ trình ưu tiên (impact × effort)",en:"Next Steps — prioritized roadmap (impact × effort)"},
+ secTbl:{vi:"Chi tiết từng URL — bấm cột để sắp xếp",en:"Per-URL detail — click a column to sort"},
+ badge:{vi:"Khá — cần tối ưu",en:"Fair — needs work"}
+};
+
+const PAGES=[
+ {u:"/",t:"main",ttfb:667,kb:58,sc:[],h1:1,sm:1,skip:"2→4"},
+ {u:"/about",t:"main",ttfb:597,kb:43,sc:[],h1:1,sm:1,skip:"2→4"},
+ {u:"/studio",t:"main",ttfb:1095,kb:65,sc:[],h1:1,sm:1,skip:"2→4"},
+ {u:"/prestige",t:"main",ttfb:1032,kb:45,sc:[],h1:1,sm:1,skip:"2→4"},
+ {u:"/model",t:"main",ttfb:1044,kb:45,sc:[],h1:1,sm:1,skip:"2→4"},
+ {u:"/interiors",t:"main",ttfb:1004,kb:44,sc:[],h1:1,sm:1,skip:"2→4"},
+ {u:"/modules",t:"main",ttfb:887,kb:38,sc:[],h1:1,sm:1,skip:"2→4"},
+ {u:"/projects",t:"main",ttfb:953,kb:58,sc:[],h1:1,sm:1,skip:"2→4"},
+ {u:"/suppliers",t:"main",ttfb:612,kb:48,sc:[],h1:1,sm:1,skip:"2→4"},
+ {u:"/apply",t:"main",ttfb:706,kb:44,sc:[],h1:1,sm:1,skip:"2→4"},
+ {u:"/articles",t:"main",ttfb:7013,kb:1865,sc:[],h1:1,sm:1,skip:"2→4"},
+ {u:"/contact",t:"main",ttfb:904,kb:40,sc:[],h1:1,sm:1,skip:"2→4"},
+ {u:"/start-interactive",t:"util",ttfb:522,kb:15,sc:[],h1:1,sm:1,skip:""},
+ {u:"/login",t:"util",ttfb:289,kb:13,sc:[],h1:1,sm:1,skip:""},
+ {u:"/privacy-policy",t:"legal",ttfb:520,kb:43,sc:[],h1:1,sm:1,skip:""},
+ {u:"/terms-of-service",t:"legal",ttfb:421,kb:47,sc:[],h1:1,sm:1,skip:"2→4"},
+ {u:"/articles/3d-rendering-company-melbourne",t:"article",ttfb:10803,kb:218,sc:["BlogPosting","FAQPage"],h1:2,sm:0,skip:""},
+ {u:"/articles/bim-3d-4d-5d-explained",t:"article",ttfb:6796,kb:202,sc:["BlogPosting"],h1:2,sm:0,skip:""},
+ {u:"/articles/luxury-home-builders-melbourne-vr-bim",t:"article",ttfb:6516,kb:192,sc:["BlogPosting","FAQPage"],h1:2,sm:0,skip:""},
+ {u:"/articles/3d-rendering-melbourne-pre-construction-planning",t:"article",ttfb:7143,kb:200,sc:["BlogPosting"],h1:2,sm:0,skip:""},
+ {u:"/articles/3d-floor-plan-melbourne-home-design-clarity",t:"article",ttfb:6852,kb:200,sc:["BlogPosting"],h1:2,sm:0,skip:""},
+ {u:"/articles/architectural-rendering-melbourne-pre-construction-planning",t:"article",ttfb:7000,kb:200,sc:["BlogPosting"],h1:2,sm:0,skip:""},
+ {u:"/articles/architectural-visualisation-melbourne-project-decisions",t:"article",ttfb:6997,kb:200,sc:["BlogPosting"],h1:2,sm:0,skip:""},
+ {u:"/articles/bim-australia-9-implementation-mistakes",t:"article",ttfb:7000,kb:200,sc:["BlogPosting"],h1:2,sm:0,skip:""},
+ {u:"/articles/custom-home-builders-melbourne-3d-visualisation",t:"article",ttfb:7000,kb:200,sc:["BlogPosting"],h1:2,sm:0,skip:""},
+ {u:"/articles/custom-home-builders-melbourne-pre-build-clarity",t:"article",ttfb:7000,kb:200,sc:["BlogPosting"],h1:2,sm:0,skip:""},
+ {u:"/articles/house-renovation-3d-design-melbourne",t:"article",ttfb:7000,kb:200,sc:["BlogPosting"],h1:2,sm:0,skip:""},
+ {u:"/articles/how-3d-coordination-reduces-design-conflicts-before-construction",t:"article",ttfb:7000,kb:200,sc:["BlogPosting"],h1:2,sm:0,skip:""},
+ {u:"/articles/photorealistic-rendering-melbourne-developers",t:"article",ttfb:7000,kb:200,sc:["BlogPosting"],h1:2,sm:0,skip:""},
+ {u:"/articles/pre-construction-visualisation-construction-readiness",t:"article",ttfb:7000,kb:200,sc:["BlogPosting"],h1:2,sm:0,skip:""},
+ {u:"/articles/program-for-construction-estimates-explained",t:"article",ttfb:7000,kb:200,sc:["BlogPosting"],h1:2,sm:0,skip:""},
+ {u:"/articles/vr-vs-360-in-australian-property-decisions",t:"article",ttfb:7000,kb:200,sc:["BlogPosting"],h1:2,sm:0,skip:""}
+];
+const mains=PAGES.filter(p=>p.t!=="article");
+const arts=PAGES.filter(p=>p.t==="article");
+const avgMain=Math.round(mains.reduce((a,p)=>a+p.ttfb,0)/mains.length);
+const avgArt=Math.round(arts.reduce((a,p)=>a+p.ttfb,0)/arts.length);
+const mainSchema=mains.filter(p=>p.sc.length).length;
+const HEALTH=62;
+
+const KPI=[
+ {l:{vi:"Health Score",en:"Health Score"},v:HEALTH+"<span style='font-size:14px;color:var(--muted)'>/100</span>",n:()=>"<span class='badge b-warn'>"+T.badge[LANG]+"</span>"},
+ {l:{vi:"URL audit",en:"URLs audited"},v:PAGES.length,n:()=>({vi:"16 chính + 16 bài viết",en:"16 main + 16 articles"}[LANG])},
+ {l:{vi:"TTFB trang chính",en:"Main-page TTFB"},v:(avgMain/1000).toFixed(1)+"s",n:()=>({vi:"<span class='c'>ổn</span> (trừ /articles)",en:"<span class='c'>ok</span> (except /articles)"}[LANG])},
+ {l:{vi:"TTFB bài viết",en:"Article TTFB"},v:(avgArt/1000).toFixed(1)+"s",n:()=>({vi:"<span class='x'>quá chậm</span> (mục tiêu &lt;1s)",en:"<span class='x'>too slow</span> (target &lt;1s)"}[LANG])},
+ {l:{vi:"Schema trang chính",en:"Main-page schema"},v:mainSchema+"/"+mains.length,n:()=>({vi:"<span class='x'>thiếu toàn bộ</span>",en:"<span class='x'>entirely missing</span>"}[LANG])},
+ {l:{vi:"Bài viết trong sitemap",en:"Articles in sitemap"},v:"0/16",n:()=>({vi:"<span class='x'>không khai báo</span>",en:"<span class='x'>not declared</span>"}[LANG])}
+];
+const SS=[
+ {nm:{vi:"Crawlability & Index",en:"Crawlability & Index"},v:66,dt:{vi:"robots OK · sitemap thiếu bài viết",en:"robots OK · sitemap missing articles"}},
+ {nm:{vi:"Performance / TTFB",en:"Performance / TTFB"},v:52,dt:{vi:"chính nhanh · bài viết 6–11s",en:"main fast · articles 6–11s"}},
+ {nm:{vi:"Structured Data / AEO",en:"Structured Data / AEO"},v:48,dt:{vi:"bài viết có · trang chính 0",en:"articles have it · main 0"}},
+ {nm:{vi:"On-page & Meta",en:"On-page & Meta"},v:80,dt:{vi:"title/desc tốt · H1 chưa tối ưu",en:"title/desc good · H1 weak"}},
+ {nm:{vi:"Nội dung",en:"Content"},v:82,dt:{vi:"bài dài chuyên sâu · 2 trang mỏng",en:"deep long-form · 2 thin pages"}}
+];
+const SCH=[
+ {n:{vi:"Bài viết /articles/*",en:"Articles /articles/*"},pct:100,lbl:{vi:"BlogPosting + FAQPage",en:"BlogPosting + FAQPage"},col:"var(--good)"},
+ {n:{vi:"Trang chủ",en:"Homepage"},pct:0,lbl:{vi:"thiếu Organization",en:"missing Organization"},col:"var(--crit)"},
+ {n:{vi:"Trang dịch vụ (Studio…)",en:"Service pages (Studio…)"},pct:0,lbl:{vi:"thiếu Service/LocalBusiness",en:"missing Service/LocalBusiness"},col:"var(--crit)"},
+ {n:{vi:"Trang chính khác",en:"Other main pages"},pct:0,lbl:{vi:"thiếu Breadcrumb",en:"missing Breadcrumb"},col:"var(--crit)"}
+];
+const INS=[
+ {p:"P1",cls:"p1",bg:"var(--crit)",
+  t:{vi:"Route bài viết chậm 6–11s → crawl budget cạn, index chập chờn",en:"Article route 6–11s → crawl budget drained, erratic indexing"},
+  d:{vi:"Đo trực tiếp: mỗi bài trả về 190–218KB HTML sau 6.5–10.8s. Google phân bổ crawl budget theo tốc độ; ở mức này Googlebot render rất chậm và dễ bỏ. Nội dung + schema đã tốt nên chỉ cần khắc phục hạ tầng là mở khóa được cả cụm từ khóa non-brand.",en:"Measured live: each article returns 190–218KB after 6.5–10.8s. Google allocates crawl budget by speed; at this level Googlebot renders slowly and often abandons. Content + schema are already good, so fixing infrastructure alone unlocks the whole non-brand keyword cluster."},
+  fix:{vi:"Cache bản HTML đã render ở CDN/edge (ISR/SSG thay vì SSR mỗi request). Mục tiêu TTFB &lt;1s. Giảm payload: bỏ dữ liệu/thư viện thừa (218KB quá nặng cho 1 bài).",en:"Cache pre-rendered HTML at the CDN/edge (ISR/SSG instead of per-request SSR). Target TTFB &lt;1s. Trim payload: drop redundant data/libraries (218KB is too heavy for one article)."}},
+ {p:"P1",cls:"p1",bg:"var(--crit)",
+  t:{vi:"16 bài viết KHÔNG có trong sitemap.xml",en:"16 articles are NOT in sitemap.xml"},
+  d:{vi:"sitemap.xml chỉ khai báo 16 trang chính; toàn bộ URL /articles/* bị bỏ ngoài → Google khó phát hiện, chậm index.",en:"sitemap.xml declares only the 16 main pages; all /articles/* URLs are left out → Google struggles to discover them and indexes slowly."},
+  fix:{vi:"Thêm tất cả URL bài viết vào sitemap.xml (kèm lastmod). Submit lại trong GSC. Cân nhắc tách sitemap-articles.xml.",en:"Add all article URLs to sitemap.xml (with lastmod). Resubmit in GSC. Consider a separate sitemap-articles.xml."}},
+ {p:"P1",cls:"p1",bg:"var(--crit)",
+  t:{vi:"Trang /articles (listing) nặng 1.8 MB HTML, TTFB 7s",en:"/articles listing page ships 1.8 MB HTML, TTFB 7s"},
+  d:{vi:"Trang danh sách bài viết ship 1.8MB — nhiều khả năng nhúng toàn bộ nội dung/data của mọi bài vào một trang. Gây chậm nghiêm trọng và lãng phí crawl.",en:"The listing page ships 1.8MB — likely embedding every article's full content/data into one page. Causes severe slowdown and wastes crawl budget."},
+  fix:{vi:"Chỉ render tiêu đề + tóm tắt + link trên trang listing; phân trang nếu cần. Đưa payload &lt;100KB.",en:"Render only titles + excerpts + links on the listing; paginate if needed. Get payload &lt;100KB."}},
+ {p:"P2",cls:"p2",bg:"var(--warn)",
+  t:{vi:"Trang chính THIẾU HOÀN TOÀN structured data (0 JSON-LD)",en:"Main pages have NO structured data at all (0 JSON-LD)"},
+  d:{vi:"Trang chủ và các trang dịch vụ không có schema nào. Bỏ lỡ rich results và giảm khả năng được AI (ChatGPT/Perplexity/Google AI) trích dẫn — đúng mục tiêu AEO của DXL.",en:"The homepage and service pages have no schema. Misses rich results and lowers the chance of being cited by AI (ChatGPT/Perplexity/Google AI) — exactly DXL's AEO goal."},
+  fix:{vi:"Thêm Organization + LocalBusiness (NAP, khu vực phục vụ AU) ở trang chủ; Service schema cho /studio /prestige /model /interiors /modules; BreadcrumbList toàn site; WebSite + SearchAction.",en:"Add Organization + LocalBusiness (NAP, AU service area) on the homepage; Service schema for /studio /prestige /model /interiors /modules; site-wide BreadcrumbList; WebSite + SearchAction."}},
+ {p:"P2",cls:"p2",bg:"var(--warn)",
+  t:{vi:"Mỗi bài viết có 2 thẻ H1",en:"Each article has 2 H1 tags"},
+  d:{vi:"Các bài /articles/* có 2× H1 — làm loãng tín hiệu chủ đề chính của trang.",en:"/articles/* pages have 2× H1 — diluting the page's main-topic signal."},
+  fix:{vi:"Chỉ giữ 1 H1 (tiêu đề bài); hạ phần còn lại xuống H2.",en:"Keep a single H1 (the article title); demote the rest to H2."}},
+ {p:"P3",cls:"p3",bg:"var(--info)",
+  t:{vi:"H1 trang chính là tên thương hiệu, chưa chứa từ khóa",en:"Main-page H1s are brand names, not keywords"},
+  d:{vi:"H1 hiện là \"DX LIVING\", \"DX STUDIO\", \"DX Prestige\"… (brand) thay vì cụm từ khóa. Title/meta đã tốt nhưng H1 bỏ lỡ cơ hội on-page.",en:"H1s are currently \"DX LIVING\", \"DX STUDIO\", \"DX Prestige\"… (brand) instead of keyword phrases. Titles/meta are good but H1 misses an on-page opportunity."},
+  fix:{vi:"Đổi H1 sang cụm mô tả có từ khóa, ví dụ /studio → \"3D Home Design, VR & BIM in Australia\". Giữ tên brand ở logo/subtitle.",en:"Rewrite H1s to descriptive keyword phrases, e.g. /studio → \"3D Home Design, VR & BIM in Australia\". Keep the brand in the logo/subtitle."}},
+ {p:"P3",cls:"p3",bg:"var(--info)",
+  t:{vi:"Heading nhảy cấp 2→4 + 2 trang mỏng",en:"Heading jumps 2→4 + 2 thin pages"},
+  d:{vi:"Hầu hết trang bỏ cấp H2→H4. /login (17 từ) và /start-interactive (45 từ) rất mỏng, không có link ra.",en:"Most pages skip H2→H4. /login (17 words) and /start-interactive (45 words) are very thin with no outgoing links."},
+  fix:{vi:"Sửa thứ tự heading liền mạch. /login → noindex. /start-interactive → bổ sung nội dung + internal link hoặc gộp.",en:"Fix heading order to be sequential. /login → noindex. /start-interactive → add content + internal links or consolidate."}},
+ {p:"OK",cls:"pg",bg:"var(--good)",
+  t:{vi:"Điểm mạnh: nền tảng nội dung & on-page tốt",en:"Strength: solid content & on-page foundation"},
+  d:{vi:"Mọi trang SSR đầy đủ (Googlebot đọc được ngay), title & meta description riêng biệt giàu từ khóa, ảnh không thiếu alt, bài viết dài chuyên sâu kèm schema BlogPosting/FAQPage. Chỉ cần gỡ nút thắt tốc độ + schema trang chính là bứt tốc.",en:"Every page is fully SSR'd (Googlebot reads it immediately), titles & meta descriptions are unique and keyword-rich, images have alt text, articles are deep long-form with BlogPosting/FAQPage schema. Removing the speed bottleneck + adding main-page schema will unlock growth.",},fix:null}
+];
+const RM=[
+ {n:1,imp:{vi:"Rất cao",en:"Very high"},eff:{vi:"Trung bình",en:"Medium"},own:"Dev",act:{vi:"Cache/ISR cho route bài viết → TTFB &lt;1s",en:"Cache/ISR the article route → TTFB &lt;1s"},why:{vi:"Mở khóa index cả cụm bài non-brand — đòn bẩy organic lớn nhất",en:"Unlocks indexing of the whole non-brand cluster — biggest organic lever"}},
+ {n:2,imp:{vi:"Cao",en:"High"},eff:{vi:"Thấp",en:"Low"},own:"Dev/SEO",act:{vi:"Thêm 16 bài viết vào sitemap.xml + submit GSC",en:"Add 16 articles to sitemap.xml + submit in GSC"},why:{vi:"Giúp Google phát hiện & index nhanh; làm ngay được",en:"Helps Google discover & index fast; can ship immediately"}},
+ {n:3,imp:{vi:"Cao",en:"High"},eff:{vi:"Trung bình",en:"Medium"},own:"Dev",act:{vi:"Giảm payload /articles listing từ 1.8MB xuống &lt;100KB",en:"Cut /articles listing payload from 1.8MB to &lt;100KB"},why:{vi:"Trang hub quan trọng đang chặn crawl & phân phối link",en:"Key hub page is blocking crawl & link distribution"}},
+ {n:4,imp:{vi:"Cao",en:"High"},eff:{vi:"Thấp",en:"Low"},own:"SEO/Dev",act:{vi:"Thêm schema Organization + LocalBusiness + Service + Breadcrumb cho trang chính",en:"Add Organization + LocalBusiness + Service + Breadcrumb schema to main pages"},why:{vi:"Bật rich result + tăng khả năng được AI trích dẫn (AEO)",en:"Enables rich results + boosts AI citation (AEO)"}},
+ {n:5,imp:{vi:"Trung bình",en:"Medium"},eff:{vi:"Thấp",en:"Low"},own:"Dev",act:{vi:"Sửa 2×H1 trên bài viết → 1 H1",en:"Fix 2×H1 on articles → single H1"},why:{vi:"Làm rõ chủ đề trang cho Google",en:"Clarifies the page's topic for Google"}},
+ {n:6,imp:{vi:"Trung bình",en:"Medium"},eff:{vi:"Thấp",en:"Low"},own:"SEO",act:{vi:"Viết lại H1 trang chính có từ khóa (giữ brand ở subtitle)",en:"Rewrite main-page H1s with keywords (keep brand in subtitle)"},why:{vi:"Tận dụng tín hiệu on-page mạnh nhất còn bỏ trống",en:"Taps the strongest unused on-page signal"}},
+ {n:7,imp:{vi:"Thấp",en:"Low"},eff:{vi:"Thấp",en:"Low"},own:"SEO",act:{vi:"noindex /login; dày nội dung + internal link cho /start-interactive",en:"noindex /login; enrich /start-interactive with content + internal links"},why:{vi:"Dọn thin/orphan, gom crawl budget về trang giá trị",en:"Cleans up thin/orphan pages, refocuses crawl budget"}},
+ {n:8,imp:{vi:"Thấp",en:"Low"},eff:{vi:"Thấp",en:"Low"},own:"Dev",act:{vi:"Sửa heading nhảy cấp (H2→H4) toàn site",en:"Fix heading jumps (H2→H4) site-wide"},why:{vi:"Cải thiện accessibility & hiểu cấu trúc nội dung",en:"Improves accessibility & content-structure understanding"}}
+];
+const TH=[{f:'u',vi:'URL',en:'URL'},{f:'t',vi:'Loại',en:'Type'},{f:'ttfb',vi:'TTFB',en:'TTFB'},{f:'kb',vi:'HTML',en:'HTML'},{f:'sc',vi:'Schema',en:'Schema'},{f:'h1',vi:'H1',en:'H1'},{f:'sm',vi:'Sitemap',en:'Sitemap'},{f:'skip',vi:'H-skip',en:'H-skip'}];
+
+let sf='ttfb',sd='desc';
+function ring(v){const c=v>=80?'var(--good)':v>=60?'var(--warn)':'var(--crit)';return `<svg class="ring" width="66" height="66" viewBox="0 0 42 42"><circle cx="21" cy="21" r="15.9" fill="none" stroke="#f0ece3" stroke-width="4"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="${c}" stroke-width="4" stroke-dasharray="${v} ${100-v}" stroke-dashoffset="25" stroke-linecap="round"/><text x="21" y="24" text-anchor="middle" font-size="11" font-weight="800" fill="var(--ink)">${v}</text></svg>`;}
+const tc=ms=>ms<1000?'var(--good)':ms<3000?'var(--warn)':'var(--crit)';
+
+function render(){
+ document.documentElement.lang=LANG;
+ document.getElementById('bvi').className=LANG==='vi'?'on':'';
+ document.getElementById('ben').className=LANG==='en'?'on':'';
+ ['ey','h1','sub','method','diagh','diagp1','diagp2'].forEach(id=>{document.getElementById(id).innerHTML=T[id][LANG];});
+ document.getElementById('sec-ttfb').textContent=T.secTtfb[LANG];
+ document.getElementById('sec-schema').textContent=T.secSchema[LANG];
+ document.getElementById('sec-insight').textContent=T.secInsight[LANG];
+ document.getElementById('sec-road').textContent=T.secRoad[LANG];
+ document.getElementById('sec-tbl').textContent=T.secTbl[LANG];
+ document.getElementById('ttfbleg').innerHTML=T.ttfbleg[LANG];
+ document.getElementById('schemaleg').innerHTML=T.schemaleg[LANG];
+ // KPIs
+ document.getElementById('kpis').innerHTML=KPI.map(k=>`<div class="card kpi"><div class="lab">${k.l[LANG]}</div><div class="val">${k.v}</div><div class="note">${k.n()}</div></div>`).join('');
+ // subscores
+ document.getElementById('subscores').innerHTML=SS.map(s=>`<div class="card ss">${ring(s.v)}<div class="nm">${s.nm[LANG]}</div><div class="dt">${s.dt[LANG]}</div></div>`).join('');
+ // ttfb bars
+ const tset=[{n:{vi:"Trang chính (TB)",en:"Main pages (avg)"},ms:avgMain},{n:{vi:"/articles (listing)",en:"/articles (listing)"},ms:7013},{n:{vi:"Bài viết (TB)",en:"Articles (avg)"},ms:avgArt},{n:{vi:"Bài chậm nhất",en:"Slowest article"},ms:10803},{n:{vi:"/login (nhanh nhất)",en:"/login (fastest)"},ms:289}];
+ const maxT=Math.max(...tset.map(x=>x.ms));
+ document.getElementById('ttfbbars').innerHTML=tset.map(x=>`<div class="bar-row"><div class="nm">${x.n[LANG]}</div><div class="bar-track"><div class="bar-fill" style="width:${Math.max(6,x.ms/maxT*100)}%;background:${tc(x.ms)}">${(x.ms/1000).toFixed(1)}s</div></div></div>`).join('');
+ // schema bars
+ document.getElementById('schemabars').innerHTML=SCH.map(x=>`<div class="bar-row"><div class="nm">${x.n[LANG]}</div><div class="bar-track"><div class="bar-fill" style="width:${Math.max(8,x.pct||8)}%;background:${x.col}">${x.pct}%</div></div><div style="font-size:11px;color:var(--muted);flex:0 0 165px">${x.lbl[LANG]}</div></div>`).join('');
+ // insights
+ document.getElementById('insights').innerHTML=INS.map(i=>`<div class="insight ${i.cls}"><div class="t"><span class="pri" style="background:${i.bg}">${i.p}</span><span>${i.t[LANG]}</span></div><div class="d">${i.d[LANG]}</div>${i.fix?`<div class="fix"><b>${LANG==='vi'?'Cách sửa':'Fix'}:</b> ${i.fix[LANG]}</div>`:''}</div>`).join('');
+ // roadmap
+ const rh=LANG==='vi'?['#','Hành động','Impact','Effort','Owner','Vì sao']:['#','Action','Impact','Effort','Owner','Why'];
+ document.getElementById('roadmap').innerHTML='<thead><tr>'+rh.map(h=>`<th>${h}</th>`).join('')+'</tr></thead><tbody>'+RM.map(r=>`<tr><td><span class="num">${r.n}</span></td><td><b>${r.act[LANG]}</b></td><td><span class="chip imp">${r.imp[LANG]}</span></td><td><span class="chip eff">${r.eff[LANG]}</span></td><td>${r.own}</td><td style="color:var(--muted)">${r.why[LANG]}</td></tr>`).join('')+'</tbody>';
+ drawTable();
+ document.getElementById('foot').innerHTML=(LANG==='vi'?"DXL Technical Audit · crawl trực tiếp qua Chrome · ":"DXL Technical Audit · crawled live via Chrome · ")+"Health "+HEALTH+"/100 · "+(LANG==='vi'?"TTFB chính ":"main TTFB ")+(avgMain/1000).toFixed(1)+"s · "+(LANG==='vi'?"bài viết ":"articles ")+(avgArt/1000).toFixed(1)+"s"+(LANG==='vi'?" · tự cập nhật mỗi sáng":" · auto-updates each morning");
+}
+function drawTable(){
+ const data=PAGES.slice().sort((a,b)=>{let x=a[sf],y=b[sf];if(sf==='sc'){x=a.sc.length;y=b.sc.length;}if(typeof x==='string')return sd==='asc'?x.localeCompare(y):y.localeCompare(x);return sd==='asc'?x-y:y-x;});
+ let h='<thead><tr>'+TH.map(c=>`<th onclick="sb('${c.f}')">${c[LANG]}${sf===c.f?(sd==='asc'?' ▲':' ▼'):''}</th>`).join('')+'</tr></thead><tbody>';
+ data.forEach(p=>{
+   const cls=p.ttfb<1000?'ok':p.ttfb<3000?'slow':'bad';
+   h+=`<tr><td class="mono" style="max-width:290px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${p.u}</td><td>${p.t}</td><td><span class="pill ${cls}">${(p.ttfb/1000).toFixed(1)}s</span></td><td class="mono">${p.kb>500?'<span class="x">'+p.kb+'</span>':p.kb} KB</td><td>${p.sc.length?'<span class="c">'+p.sc.join(', ')+'</span>':'<span class="x">—</span>'}</td><td class="${p.h1>1?'x':''}">${p.h1}</td><td>${p.sm?'<span class="c">✓</span>':'<span class="x">✕</span>'}</td><td>${p.skip?'<span class="x">'+p.skip+'</span>':'<span class="c">✓</span>'}</td></tr>`;
+ });
+ document.getElementById('tbl').innerHTML=h+'</tbody>';
+}
+function sb(f){if(sf===f)sd=sd==='asc'?'desc':'asc';else{sf=f;sd='desc';}drawTable();}
+function setLang(l){LANG=l;render();}
+render();
+</script>
+</body>
+</html>
