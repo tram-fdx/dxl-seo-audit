@@ -117,7 +117,7 @@
         <button id="btnEN" onclick="setLang('en')">EN</button>
       </div>
       <div class="crawl-meta">
-        <span class="t" data-vi="Ngày crawl: <b>24/07/2026</b> · <b>audit hằng ngày</b>" data-en="Crawl date: <b>24 Jul 2026</b> · <b>daily audit</b>"></span><br>
+        <span class="t" data-vi="Ngày crawl: <b>27/07/2026</b> · <b>audit hằng ngày</b>" data-en="Crawl date: <b>27 Jul 2026</b> · <b>daily audit</b>"></span><br>
         <span class="t" data-vi="Đo trực tiếp: <b>27 trang</b> · Sitemap: <b>67 URL</b>" data-en="Directly measured: <b>27 pages</b> · Sitemap: <b>67 URLs</b>"></span><br>
         Method: Chrome fetch · AbortController 9–18s
       </div>
@@ -135,25 +135,25 @@
         <div class="val" style="color:var(--amber)">69<span style="font-size:15px;color:var(--muted)">/100</span></div>
       </div>
       <div class="note"><span class="tag amber t" data-vi="Khá — đang cải thiện" data-en="Fair — improving"></span></div>
-      <div class="delta up t" data-vi="▲ tăng 18 điểm (51 → 69 · /articles đã 200 + site nhanh)" data-en="▲ up 18 pts (51 → 69 · /articles now 200 + site fast)"></div>
+      <div class="delta flat t" data-vi="= giữ nguyên 69 (so 24/07) · chưa phát hiện deploy mới" data-en="= flat at 69 (vs 24 Jul) · no new deploy detected"></div>
     </div>
     <div class="kpi">
       <div class="lbl t" data-vi="Sitemap URL" data-en="Sitemap URLs"></div>
       <div class="val" style="color:var(--green)">67</div>
       <div class="note t" data-vi="16 gốc + 45 bài + 6 dự án" data-en="16 core + 45 articles + 6 projects"></div>
-      <div class="delta up t" data-vi="▲ đã thêm 45 bài /articles + 6 trang dự án vào sitemap" data-en="▲ 45 /articles + 6 project pages now in sitemap"></div>
+      <div class="delta flat t" data-vi="= không đổi · robots.txt sạch, trỏ đúng sitemap" data-en="= unchanged · robots.txt clean, points to sitemap"></div>
     </div>
     <div class="kpi">
       <div class="lbl t" data-vi="TTFB TB — trang gốc" data-en="Avg TTFB — core"></div>
-      <div class="val" style="color:var(--green)">1,2<span style="font-size:15px">s</span></div>
-      <div class="note t" data-vi="15/16 trang gốc &lt;1,2s (bỏ hub /articles)" data-en="15/16 core pages &lt;1.2s (excl. /articles hub)"></div>
-      <div class="delta up t" data-vi="▲ nhanh vượt bậc (6,04s → 1,2s)" data-en="▲ dramatically faster (6.04s → 1.2s)"></div>
+      <div class="val" style="color:var(--green)">1,0<span style="font-size:15px">s</span></div>
+      <div class="note t" data-vi="15/16 trang gốc &lt;2,3s (bỏ hub /articles)" data-en="15/16 core pages &lt;2.3s (excl. /articles hub)"></div>
+      <div class="delta up t" data-vi="▲ nhanh hơn nhẹ (1,2s → 1,0s)" data-en="▲ marginally faster (1.2s → 1.0s)"></div>
     </div>
     <div class="kpi">
       <div class="lbl t" data-vi="TTFB TB — bài viết" data-en="Avg TTFB — articles"></div>
-      <div class="val" style="color:var(--red)">7,3<span style="font-size:15px">s</span></div>
-      <div class="note t" data-vi="11 bài mẫu · 6,3–8,3s · vẫn quá chậm" data-en="11 samples · 6.3–8.3s · still too slow"></div>
-      <div class="delta up t" data-vi="▲ giờ trả 200 (trước timeout 15s) nhưng cần nhanh hơn" data-en="▲ now returns 200 (was 15s timeout) but needs to be faster"></div>
+      <div class="val" style="color:var(--red)">7,5<span style="font-size:15px">s</span></div>
+      <div class="note t" data-vi="11 bài mẫu · 6,5–8,2s · vẫn quá chậm" data-en="11 samples · 6.5–8.2s · still too slow"></div>
+      <div class="delta down t" data-vi="▼ chậm hơn chút (7,3s → 7,5s) · chưa cache" data-en="▼ slightly slower (7.3s → 7.5s) · still uncached"></div>
     </div>
     <div class="kpi">
       <div class="lbl t" data-vi="Schema (JSON-LD)" data-en="Schema (JSON-LD)"></div>
@@ -173,7 +173,7 @@
       <div class="bar-row"><span class="name t" data-vi="Structured Data / AEO" data-en="Structured Data / AEO"></span><div class="bar-track"><div class="bar-fill" style="width:56%;background:var(--amber)">56</div></div></div>
       <div class="bar-row"><span class="name t" data-vi="On-page / Meta" data-en="On-page / Meta"></span><div class="bar-track"><div class="bar-fill" style="width:72%;background:var(--blue)">72</div></div></div>
       <div class="bar-row"><span class="name t" data-vi="Content" data-en="Content"></span><div class="bar-track"><div class="bar-fill" style="width:76%;background:var(--blue)">76</div></div></div>
-      <div class="foot t" data-vi="Health tổng <b>69/100</b> (▲ từ 51). Kéo điểm lên: <b>Crawlability 85</b> — mọi trang trả 200, sitemap đầy đủ 67 URL. Kéo điểm xuống: <b>Performance 58</b> (bài viết ~7,3s) và <b>Structured Data 56</b> (trang gốc 0 schema). Trọng số: Crawl 25% · Perf 25% · Schema 20% · On-page 15% · Content 15%." data-en="Overall health <b>69/100</b> (▲ from 51). Lifting the score: <b>Crawlability 85</b> — every page returns 200, sitemap complete at 67 URLs. Dragging it down: <b>Performance 58</b> (articles ~7.3s) and <b>Structured Data 56</b> (core pages have 0 schema). Weights: Crawl 25% · Perf 25% · Schema 20% · On-page 15% · Content 15%."></div>
+      <div class="foot t" data-vi="Health tổng <b>69/100</b> (giữ nguyên so 24/07 — chưa có deploy sửa). Kéo điểm lên: <b>Crawlability 85</b> — mọi trang trả 200, sitemap đầy đủ 67 URL. Kéo điểm xuống: <b>Performance 58</b> (bài viết ~7,5s) và <b>Structured Data 56</b> (trang gốc 0 schema). Trọng số: Crawl 25% · Perf 25% · Schema 20% · On-page 15% · Content 15%." data-en="Overall health <b>69/100</b> (flat vs 24 Jul — no fix deployed yet). Lifting the score: <b>Crawlability 85</b> — every page returns 200, sitemap complete at 67 URLs. Dragging it down: <b>Performance 58</b> (articles ~7.5s) and <b>Structured Data 56</b> (core pages have 0 schema). Weights: Crawl 25% · Perf 25% · Schema 20% · On-page 15% · Content 15%."></div>
     </div>
     <div class="card">
       <h3 class="t" data-vi="Phân bố tốc độ (27 trang đo trực tiếp)" data-en="Speed distribution (27 pages measured)"></h3>
@@ -181,19 +181,19 @@
         <svg width="150" height="150" viewBox="0 0 42 42">
           <circle cx="21" cy="21" r="15.9155" fill="none" stroke="var(--cream2)" stroke-width="6"></circle>
           <circle cx="21" cy="21" r="15.9155" fill="none" stroke="var(--green)" stroke-width="6"
-            stroke-dasharray="40.7 59.3" stroke-dashoffset="25"></circle>
+            stroke-dasharray="37 63" stroke-dashoffset="25"></circle>
           <circle cx="21" cy="21" r="15.9155" fill="none" stroke="var(--amber)" stroke-width="6"
-            stroke-dasharray="14.8 85.2" stroke-dashoffset="-15.7"></circle>
+            stroke-dasharray="18.5 81.5" stroke-dashoffset="-12"></circle>
           <circle cx="21" cy="21" r="15.9155" fill="none" stroke="var(--red)" stroke-width="6"
-            stroke-dasharray="44.5 55.5" stroke-dashoffset="-30.5"></circle>
+            stroke-dasharray="44.4 55.6" stroke-dashoffset="-30.5"></circle>
           <text x="21" y="20" text-anchor="middle" font-size="7" font-weight="700" fill="#2c2620">27</text>
           <text x="21" y="26.5" text-anchor="middle" font-size="3.2" fill="#6f665a" class="tsvg" data-vi="trang" data-en="pages">trang</text>
         </svg>
         <div class="legend">
-          <div><span class="dot" style="background:var(--green)"></span> <span class="t" data-vi="Nhanh &lt;1s: <b>11</b> · 40,7%" data-en="Fast &lt;1s: <b>11</b> · 40.7%"></span></div>
-          <div><span class="dot" style="background:var(--amber)"></span> <span class="t" data-vi="1–2s: <b>4</b> · 14,8%" data-en="1–2s: <b>4</b> · 14.8%"></span></div>
-          <div><span class="dot" style="background:var(--red)"></span> <span class="t" data-vi="Chậm &gt;6s: <b>12</b> · 44,5%" data-en="Slow &gt;6s: <b>12</b> · 44.5%"></span></div>
-          <div class="foot t" style="margin-top:10px" data-vi="Không còn trang nào timeout (status 0). Nhóm chậm &gt;6s = 11 bài /articles + hub /articles (1,86MB). Nhóm nhanh &lt;1s là các trang gốc dịch vụ + pháp lý." data-en="No page times out anymore (status 0). The &gt;6s slow group = 11 /articles posts + the /articles hub (1.86MB). The &lt;1s fast group is core service + legal pages."></div>
+          <div><span class="dot" style="background:var(--green)"></span> <span class="t" data-vi="Nhanh &lt;1s: <b>10</b> · 37,0%" data-en="Fast &lt;1s: <b>10</b> · 37.0%"></span></div>
+          <div><span class="dot" style="background:var(--amber)"></span> <span class="t" data-vi="1–3s: <b>5</b> · 18,5%" data-en="1–3s: <b>5</b> · 18.5%"></span></div>
+          <div><span class="dot" style="background:var(--red)"></span> <span class="t" data-vi="Chậm &gt;6s: <b>12</b> · 44,4%" data-en="Slow &gt;6s: <b>12</b> · 44.4%"></span></div>
+          <div class="foot t" style="margin-top:10px" data-vi="Không còn trang nào timeout (status 0). Nhóm chậm &gt;6s = 11 bài /articles + hub /articles (1,86MB). Nhóm nhanh &lt;1s là các trang gốc dịch vụ + pháp lý. Chậm nhất trong trang gốc: /model 2,3s &amp; /studio 1,8s." data-en="No page times out anymore (status 0). The &gt;6s slow group = 11 /articles posts + the /articles hub (1.86MB). The &lt;1s fast group is core service + legal pages. Slowest core pages: /model 2.3s &amp; /studio 1.8s."></div>
         </div>
       </div>
     </div>
@@ -203,44 +203,44 @@
   <h2 class="sec t" data-vi="Hướng đi &amp; Insight ưu tiên" data-en="Direction &amp; Priority insights"></h2>
 
   <div class="ins win">
-    <div class="prio t" data-vi="✓ TIẾN BỘ LỚN — so với 23/07" data-en="✓ MAJOR PROGRESS — vs 23 Jul"></div>
-    <h4 class="t" data-vi="Toàn bộ /articles giờ trả 200 với SSR đầy đủ + schema; sitemap đã có 45 bài" data-en="All /articles now return 200 with full SSR + schema; sitemap now lists 45 posts"></h4>
-    <p class="t" data-vi="Đây là thay đổi lớn nhất kể từ đầu chuỗi audit. 11 bài <code>/articles/*</code> lấy mẫu <b>đều trả status 200</b> (trước đây timeout 15s, <code>isIndexable=false</code>), có <b>BlogPosting + FAQPage schema</b>, nội dung SSR 1.500–2.240 từ, 55 internal link/bài. Sitemap nay khai báo <b>67 URL</b> gồm <b>45 bài viết + 6 trang dự án</b> — mảng nội dung non-brand cuối cùng đã crawl và index được. robots.txt sạch, trỏ đúng sitemap." data-en="This is the biggest change since the audit series began. All 11 sampled <code>/articles/*</code> posts <b>return status 200</b> (previously 15s timeout, <code>isIndexable=false</code>), carry <b>BlogPosting + FAQPage schema</b>, and hold 1,500–2,240 words of SSR content with ~55 internal links each. The sitemap now declares <b>67 URLs</b> including <b>45 articles + 6 project pages</b> — the non-brand content section is finally crawlable and indexable. robots.txt is clean and points to the sitemap."></p>
-    <p class="fix t" data-vi="<b>Việc tiếp theo:</b> Submit lại sitemap trong GSC và Request Indexing hàng loạt cho 45 bài + 6 dự án. Theo dõi Coverage/Pages trong GSC để xác nhận Google chuyển các URL này sang 'Indexed'." data-en="<b>Next:</b> Resubmit the sitemap in GSC and bulk Request-Indexing for the 45 articles + 6 projects. Watch GSC Coverage/Pages to confirm Google moves these URLs to 'Indexed'."></p>
+    <div class="prio t" data-vi="✓ ỔN ĐỊNH — so với 24/07" data-en="✓ STABLE — vs 24 Jul"></div>
+    <h4 class="t" data-vi="Nền tảng crawl vẫn khỏe: 27/27 trang trả 200, sitemap 67 URL, bài viết đủ schema" data-en="Crawl foundation holds: 27/27 pages return 200, sitemap 67 URLs, articles fully schema'd"></h4>
+    <p class="t" data-vi="Crawl hôm nay xác nhận các thắng lợi trước đó <b>vẫn được giữ</b>: toàn bộ 16 trang gốc + 11 bài <code>/articles/*</code> mẫu <b>đều trả 200</b>, không trang nào timeout. 11/11 bài mang <b>BlogPosting + FAQPage schema</b> (đo thật 1–2 script JSON-LD/bài), nội dung SSR 1.455–3.042 từ, ~51 internal link/bài. Sitemap ổn định <b>67 URL</b> (45 bài + 6 dự án + 16 gốc), <code>robots.txt</code> sạch trỏ đúng sitemap. Không phát hiện regression nào." data-en="Today's crawl confirms the earlier wins <b>still hold</b>: all 16 core pages + 11 sampled <code>/articles/*</code> posts <b>return 200</b>, none time out. 11/11 posts carry <b>BlogPosting + FAQPage schema</b> (measured 1–2 JSON-LD scripts each), 1,455–3,042 words of SSR content, ~51 internal links each. Sitemap steady at <b>67 URLs</b> (45 articles + 6 projects + 16 core), <code>robots.txt</code> clean and pointing to the sitemap. No regressions detected."></p>
+    <p class="fix t" data-vi="<b>Việc tiếp theo:</b> Vào GSC kiểm tra Coverage/Pages để xác nhận 45 bài + 6 dự án đã chuyển sang 'Indexed'. Nếu chưa, Request Indexing thủ công phần còn lại." data-en="<b>Next:</b> Check GSC Coverage/Pages to confirm the 45 articles + 6 projects have moved to 'Indexed'. If not, manually Request-Index the remainder."></p>
   </div>
 
   <div class="ins p1">
     <div class="prio t" data-vi="P1 · Nghiêm trọng · CÒN LẠI" data-en="P1 · Critical · REMAINING"></div>
-    <h4 class="t" data-vi="Bài viết crawl được nhưng vẫn quá chậm: TTFB TB 7,3s (6,3–8,3s)" data-en="Articles are crawlable but still too slow: avg TTFB 7.3s (6.3–8.3s)"></h4>
-    <p class="t" data-vi="11 bài mẫu có TTFB <b>6,3–8,3s</b> (TB 7,3s) — vượt xa ngưỡng tốt &lt;2s. Nhờ AbortController 18s nên lần này lấy được nội dung, nhưng ở ngưỡng 9s nhiều bài vẫn abort. Googlebot có thể vẫn crawl (timeout của Google cao hơn) nhưng tốc độ này bào mòn crawl budget và Core Web Vitals. Trang hub <code>/articles</code> nặng <b>1,86MB / 8,5s</b> — điểm nghẽn riêng. Ngược lại, trang gốc đã chứng minh &lt;1s là khả thi." data-en="The 11 sampled posts have TTFB <b>6.3–8.3s</b> (avg 7.3s) — far past the good &lt;2s bar. The 18s AbortController let us capture content this run, but at a 9s budget many posts still abort. Googlebot may still crawl (its timeout is higher) but this speed burns crawl budget and wrecks Core Web Vitals. The <code>/articles</code> hub is <b>1.86MB / 8.5s</b> — its own bottleneck. Meanwhile core pages have proven &lt;1s is achievable."></p>
-    <p class="fix t" data-vi="<b>Cách sửa:</b> Chuyển <code>/articles/[slug]</code> sang SSG/ISR với cache CDN edge (đã làm được cho trang gốc — nhân rộng cấu hình đó). Với hub <code>/articles</code>: phân trang hoặc lazy-load danh sách, nén ảnh, cắt payload từ 1,86MB xuống &lt;500KB. Mục tiêu TTFB bài viết &lt;2s ổn định." data-en="<b>Fix:</b> Move <code>/articles/[slug]</code> to SSG/ISR with edge CDN caching (already done for core pages — replicate that config). For the <code>/articles</code> hub: paginate or lazy-load the list, compress images, cut the payload from 1.86MB to &lt;500KB. Target stable article TTFB &lt;2s."></p>
+    <h4 class="t" data-vi="Bài viết vẫn quá chậm: TTFB TB 7,5s (6,5–8,2s) — chưa có cache/SSG" data-en="Articles still too slow: avg TTFB 7.5s (6.5–8.2s) — no cache/SSG yet"></h4>
+    <p class="t" data-vi="11 bài mẫu có TTFB <b>6,5–8,2s</b> (TB 7,5s, nhích nhẹ từ 7,3s hôm 24/07) — vượt xa ngưỡng tốt &lt;2s. 2 bài vẫn abort ở ngưỡng 9s, phải nới lên 16s mới lấy được. Đây là dấu hiệu <b>chưa có deploy cache/SSG</b> nào cho <code>/articles/[slug]</code> kể từ lần audit trước. Trang hub <code>/articles</code> nặng <b>1,86MB / 6,8s</b> — điểm nghẽn riêng. Ngược lại trang gốc chứng minh &lt;1s hoàn toàn khả thi trên cùng hạ tầng." data-en="The 11 sampled posts have TTFB <b>6.5–8.2s</b> (avg 7.5s, up slightly from 7.3s on 24 Jul) — far past the good &lt;2s bar. 2 posts still abort at a 9s budget and needed 16s to capture. This signals <b>no cache/SSG deploy</b> has landed for <code>/articles/[slug]</code> since the last audit. The <code>/articles</code> hub is <b>1.86MB / 6.8s</b> — its own bottleneck. Meanwhile core pages prove &lt;1s is entirely achievable on the same infra."></p>
+    <p class="fix t" data-vi="<b>Cách sửa:</b> Chuyển <code>/articles/[slug]</code> sang SSG/ISR + cache CDN edge (nhân rộng cấu hình đã dùng cho trang gốc). Với hub <code>/articles</code>: phân trang/lazy-load danh sách, nén ảnh, cắt payload 1,86MB → &lt;500KB. Mục tiêu TTFB bài viết &lt;2s ổn định. File <code>DXL-DevHandoff-Articles-SSG-ISR-EdgeCache-EN.md</code> đã sẵn sàng." data-en="<b>Fix:</b> Move <code>/articles/[slug]</code> to SSG/ISR + edge CDN caching (replicate the core-page config). For the <code>/articles</code> hub: paginate/lazy-load the list, compress images, cut the payload from 1.86MB to &lt;500KB. Target stable article TTFB &lt;2s. The <code>DXL-DevHandoff-Articles-SSG-ISR-EdgeCache-EN.md</code> file is ready."></p>
   </div>
 
   <div class="ins p2">
     <div class="prio t" data-vi="P2 · Cảnh báo · cơ hội AEO" data-en="P2 · Warning · AEO opportunity"></div>
     <h4 class="t" data-vi="16 trang gốc có 0 JSON-LD — thiếu Organization / LocalBusiness / Service / Breadcrumb" data-en="16 core pages have 0 JSON-LD — missing Organization / LocalBusiness / Service / Breadcrumb"></h4>
-    <p class="t" data-vi="Toàn bộ 16 trang gốc (trang chủ, <code>/studio</code>, <code>/prestige</code>, <code>/model</code>, <code>/interiors</code>, <code>/modules</code>…) <b>không có script JSON-LD nào</b>. Bài viết đã làm tốt schema (BlogPosting+FAQPage) — nhưng các trang thương mại ý định cao lại trống. Bỏ lỡ rich result và giảm khả năng được trích dẫn trong AI/AEO." data-en="All 16 core pages (homepage, <code>/studio</code>, <code>/prestige</code>, <code>/model</code>, <code>/interiors</code>, <code>/modules</code>…) have <b>no JSON-LD script at all</b>. Articles nail schema (BlogPosting+FAQPage) — but the high-intent commercial pages are bare. This forfeits rich results and lowers the odds of being cited in AI/AEO answers."></p>
-    <p class="fix t" data-vi="<b>Cách sửa:</b> Thêm <code>Organization</code> + <code>LocalBusiness</code> (địa chỉ AU, khu vực phục vụ) trên trang chủ; <code>Service</code> cho từng trang dịch vụ; <code>BreadcrumbList</code> toàn site. Đã có sẵn file <code>dxliving-jsonld-schema.md</code> để triển khai." data-en="<b>Fix:</b> Add <code>Organization</code> + <code>LocalBusiness</code> (AU address, service areas) on the homepage; <code>Service</code> on each service page; <code>BreadcrumbList</code> site-wide. The <code>dxliving-jsonld-schema.md</code> file is ready to implement."></p>
+    <p class="t" data-vi="Đo lại hôm nay: toàn bộ 16 trang gốc (trang chủ, <code>/studio</code>, <code>/prestige</code>, <code>/model</code>, <code>/interiors</code>, <code>/modules</code>…) <b>vẫn 0 script JSON-LD</b>. Bài viết làm tốt schema (BlogPosting+FAQPage) — nhưng các trang thương mại ý định cao lại trống. Bỏ lỡ rich result và giảm khả năng được trích dẫn trong AI/AEO." data-en="Re-measured today: all 16 core pages (homepage, <code>/studio</code>, <code>/prestige</code>, <code>/model</code>, <code>/interiors</code>, <code>/modules</code>…) <b>still have 0 JSON-LD scripts</b>. Articles nail schema (BlogPosting+FAQPage) — but the high-intent commercial pages are bare. This forfeits rich results and lowers the odds of being cited in AI/AEO answers."></p>
+    <p class="fix t" data-vi="<b>Cách sửa:</b> Thêm <code>Organization</code> + <code>LocalBusiness</code> (địa chỉ AU, khu vực phục vụ) trên trang chủ; <code>Service</code> cho từng trang dịch vụ; <code>BreadcrumbList</code> toàn site. File <code>dxliving-jsonld-schema.md</code> đã có sẵn để triển khai." data-en="<b>Fix:</b> Add <code>Organization</code> + <code>LocalBusiness</code> (AU address, service areas) on the homepage; <code>Service</code> on each service page; <code>BreadcrumbList</code> site-wide. The <code>dxliving-jsonld-schema.md</code> file is ready to implement."></p>
   </div>
 
   <div class="ins p3">
     <div class="prio t" data-vi="P3 · Thông tin · không đổi" data-en="P3 · Info · unchanged"></div>
     <h4 class="t" data-vi="H1 trang chủ là brand; bài viết có 2×H1; heading nhảy bậc 2→4" data-en="Homepage H1 is the brand; articles have 2×H1; heading skips 2→4"></h4>
-    <p class="t" data-vi="Trang chủ H1 = <code>DX LIVING</code> (tên brand, không chứa từ khóa dịch vụ). Mỗi bài viết có <b>2 thẻ H1</b> (<code>ARTICLES</code> + tiêu đề bài) — nên còn 1. Chuỗi heading nhiều trang nhảy từ H2 sang H4 (bỏ H3), gồm cả trang chủ và bài viết. Ảnh đều có alt (0 ảnh thiếu alt trên mẫu kiểm)." data-en="Homepage H1 = <code>DX LIVING</code> (brand name, no service keyword). Each article has <b>2 H1 tags</b> (<code>ARTICLES</code> + the post title) — should be 1. Heading sequences on several pages jump H2→H4 (skipping H3), including the homepage and articles. Images all have alt (0 missing-alt on sampled pages)."></p>
-    <p class="fix t" data-vi="<b>Cách sửa:</b> Đổi H1 trang chủ sang mô tả có từ khóa (vd 'Luxury Home Design & 3D Visualisation Australia'); hạ <code>ARTICLES</code> trong bài xuống H2/eyebrow để mỗi bài chỉ 1 H1; chuẩn hóa H1→H2→H3 tuần tự. Việc nhẹ, gộp vào deploy kế tiếp." data-en="<b>Fix:</b> Change the homepage H1 to a keyword-rich description (e.g. 'Luxury Home Design & 3D Visualisation Australia'); demote the in-article <code>ARTICLES</code> to H2/eyebrow so each post has one H1; normalise headings to sequential H1→H2→H3. Light work, bundle into the next deploy."></p>
+    <p class="t" data-vi="Rendered-DOM hôm nay: trang chủ H1 = <code>DX LIVING</code>, <code>/studio</code> H1 = <code>DX STUDIO</code> (tên brand, không chứa từ khóa dịch vụ). Mỗi bài viết vẫn <b>2 thẻ H1</b> (<code>ARTICLES</code> + tiêu đề bài). Chuỗi heading nhiều trang nhảy bậc (bỏ cấp), gồm cả trang chủ và bài viết. Ảnh đều có alt (<b>0 ảnh thiếu alt</b> trên 3 trang render kiểm)." data-en="Today's rendered-DOM: homepage H1 = <code>DX LIVING</code>, <code>/studio</code> H1 = <code>DX STUDIO</code> (brand names, no service keyword). Each article still has <b>2 H1 tags</b> (<code>ARTICLES</code> + the post title). Heading sequences on several pages skip levels, including the homepage and articles. Images all have alt (<b>0 missing-alt</b> across the 3 rendered samples)."></p>
+    <p class="fix t" data-vi="<b>Cách sửa:</b> Đổi H1 trang chủ sang mô tả có từ khóa (vd 'Luxury Home Design &amp; 3D Visualisation Australia'); hạ <code>ARTICLES</code> trong bài xuống H2/eyebrow để mỗi bài chỉ 1 H1; chuẩn hóa H1→H2→H3 tuần tự. Việc nhẹ, gộp vào deploy kế tiếp." data-en="<b>Fix:</b> Change the homepage H1 to a keyword-rich description (e.g. 'Luxury Home Design &amp; 3D Visualisation Australia'); demote the in-article <code>ARTICLES</code> to H2/eyebrow so each post has one H1; normalise headings to sequential H1→H2→H3. Light work, bundle into the next deploy."></p>
   </div>
 
   <div class="ins p3">
     <div class="prio t" data-vi="P3 · Cảnh báo nhẹ · không đổi" data-en="P3 · Minor · unchanged"></div>
     <h4 class="t" data-vi="2 trang mỏng: /start-interactive (62 từ) &amp; /login (31 từ), 0 internal link" data-en="2 thin pages: /start-interactive (62 words) &amp; /login (31 words), 0 internal links"></h4>
-    <p class="t" data-vi="<code>/start-interactive</code> chỉ 62 từ và <code>/login</code> 31 từ, cả hai <b>không có internal link</b> (nội dung chính do JS render). <code>/start-interactive</code> vẫn nằm trong sitemap dù rất mỏng; <code>/login</code> đã đúng nằm ngoài sitemap. Cả hai load nhanh (0,3–0,5s)." data-en="<code>/start-interactive</code> has only 62 words and <code>/login</code> 31 words; both have <b>no internal links</b> (main content is JS-rendered). <code>/start-interactive</code> is still in the sitemap despite being thin; <code>/login</code> is correctly outside it. Both load fast (0.3–0.5s)."></p>
+    <p class="t" data-vi="<code>/start-interactive</code> chỉ 62 từ (15,4KB) và <code>/login</code> 31 từ (13KB), cả hai <b>không có internal link</b> (nội dung chính do JS render). <code>/start-interactive</code> vẫn nằm trong sitemap dù rất mỏng; <code>/login</code> đã đúng nằm ngoài sitemap. Cả hai load nhanh (0,4–0,6s)." data-en="<code>/start-interactive</code> has only 62 words (15.4KB) and <code>/login</code> 31 words (13KB); both have <b>no internal links</b> (main content is JS-rendered). <code>/start-interactive</code> is still in the sitemap despite being thin; <code>/login</code> is correctly outside it. Both load fast (0.4–0.6s)."></p>
     <p class="fix t" data-vi="<b>Cách sửa:</b> Đặt <b>noindex</b> cho 2 trang tiện ích và gỡ <code>/start-interactive</code> khỏi sitemap; hoặc bổ sung nội dung server-render + link về trang chủ/dịch vụ." data-en="<b>Fix:</b> <b>noindex</b> both utility pages and drop <code>/start-interactive</code> from the sitemap; or add server-rendered content + links back to the homepage/services."></p>
   </div>
 
   <div class="ins p2">
     <div class="prio t" data-vi="Roadmap · Next steps ưu tiên" data-en="Roadmap · Prioritised next steps"></div>
-    <h4 class="t" data-vi="Thứ tự việc cần làm sau crawl 24/07" data-en="Action order after the 24 Jul crawl"></h4>
-    <p class="t" data-vi="<b>1.</b> Submit lại sitemap + Request Indexing 45 bài & 6 dự án trong GSC (mảng /articles đã 200). <b>2.</b> Cache/SSG cho <code>/articles/[slug]</code> để hạ TTFB từ 7,3s → &lt;2s + nén hub /articles (1,86MB). <b>3.</b> Thêm schema Organization/LocalBusiness/Service/Breadcrumb cho 16 trang gốc. <b>4.</b> Sửa H1 trang chủ + gộp 2×H1 bài viết + heading tuần tự. <b>5.</b> noindex /login & /start-interactive." data-en="<b>1.</b> Resubmit sitemap + Request-Indexing the 45 articles & 6 projects in GSC (now /articles is 200). <b>2.</b> Cache/SSG <code>/articles/[slug]</code> to cut TTFB from 7.3s → &lt;2s + compress the /articles hub (1.86MB). <b>3.</b> Add Organization/LocalBusiness/Service/Breadcrumb schema to the 16 core pages. <b>4.</b> Fix homepage H1 + collapse article 2×H1 + sequential headings. <b>5.</b> noindex /login & /start-interactive."></p>
+    <h4 class="t" data-vi="Thứ tự việc cần làm sau crawl 27/07" data-en="Action order after the 27 Jul crawl"></h4>
+    <p class="t" data-vi="<b>1.</b> <b>Ưu tiên #1:</b> Deploy cache/SSG cho <code>/articles/[slug]</code> để hạ TTFB 7,5s → &lt;2s + nén hub /articles (1,86MB) — đây là hạng mục duy nhất chưa nhúc nhích 2 ngày liền. <b>2.</b> Thêm schema Organization/LocalBusiness/Service/Breadcrumb cho 16 trang gốc (0 schema). <b>3.</b> Kiểm tra GSC Coverage xác nhận 45 bài + 6 dự án đã 'Indexed'. <b>4.</b> Sửa H1 trang chủ + gộp 2×H1 bài viết + heading tuần tự. <b>5.</b> noindex /login &amp; /start-interactive." data-en="<b>1.</b> <b>Top priority:</b> Deploy cache/SSG for <code>/articles/[slug]</code> to cut TTFB 7.5s → &lt;2s + compress the /articles hub (1.86MB) — the one item that hasn't moved for two days running. <b>2.</b> Add Organization/LocalBusiness/Service/Breadcrumb schema to the 16 core pages (0 schema). <b>3.</b> Check GSC Coverage to confirm the 45 articles + 6 projects are 'Indexed'. <b>4.</b> Fix homepage H1 + collapse article 2×H1 + sequential headings. <b>5.</b> noindex /login &amp; /start-interactive."></p>
   </div>
 
   <!-- Response time chart -->
@@ -268,39 +268,39 @@
       <tbody></tbody>
     </table>
   </div>
-  <div class="foot t" data-vi="Crawl trực tiếp qua Chrome (fetch same-origin) lúc 24/07/2026. <b>Số đo thật:</b> TTFB, KB, status, số H1, schema (script JSON-LD), title/meta. Bài viết mẫu: 11/45 URL <code>/articles</code>, tất cả trả 200 + BlogPosting+FAQPage + 2×H1; một vài word-count bài là ước lượng từ mẫu SSR (đo thật: 1.540–2.241 từ). Cột Sitemap: chỉ <code>/login</code> nằm ngoài sitemap." data-en="Live Chrome crawl (same-origin fetch) on 24 Jul 2026. <b>Real measurements:</b> TTFB, KB, status, H1 count, schema (JSON-LD scripts), title/meta. Article sample: 11/45 <code>/articles</code> URLs, all returning 200 + BlogPosting+FAQPage + 2×H1; a few article word-counts are estimated from the SSR sample (measured: 1,540–2,241 words). Sitemap column: only <code>/login</code> is outside the sitemap."></div>
+  <div class="foot t" data-vi="Crawl trực tiếp qua Chrome (fetch same-origin) lúc 27/07/2026. <b>Số đo thật:</b> TTFB, KB, status, số H1, schema (script JSON-LD), title/meta, số từ. Bài viết mẫu: 11/45 URL <code>/articles</code>, tất cả trả 200 + BlogPosting+FAQPage + 2×H1 (đo thật 1.455–3.042 từ; internal links ~51/bài từ rendered-DOM). Cột Sitemap: chỉ <code>/login</code> nằm ngoài sitemap." data-en="Live Chrome crawl (same-origin fetch) on 27 Jul 2026. <b>Real measurements:</b> TTFB, KB, status, H1 count, schema (JSON-LD scripts), title/meta, word count. Article sample: 11/45 <code>/articles</code> URLs, all returning 200 + BlogPosting+FAQPage + 2×H1 (measured 1,455–3,042 words; ~51 internal links each from rendered-DOM). Sitemap column: only <code>/login</code> is outside the sitemap."></div>
 
 </div>
 
 <script>
 const PAGES = [
-  {url:"/",status:200,rt:656,words:855,idx:1,links:22,sm:1,grp:"core"},
-  {url:"/about",status:200,rt:389,words:447,idx:1,links:22,sm:1,grp:"core"},
-  {url:"/studio",status:200,rt:1196,words:658,idx:1,links:22,sm:1,grp:"core"},
-  {url:"/prestige",status:200,rt:1014,words:400,idx:1,links:22,sm:1,grp:"core"},
-  {url:"/model",status:200,rt:1034,words:370,idx:1,links:22,sm:1,grp:"core"},
-  {url:"/interiors",status:200,rt:1008,words:365,idx:1,links:23,sm:1,grp:"core"},
-  {url:"/modules",status:200,rt:892,words:249,idx:1,links:22,sm:1,grp:"core"},
-  {url:"/projects",status:200,rt:637,words:258,idx:1,links:22,sm:1,grp:"core"},
-  {url:"/suppliers",status:200,rt:547,words:464,idx:1,links:22,sm:1,grp:"core"},
-  {url:"/apply",status:200,rt:536,words:527,idx:1,links:22,sm:1,grp:"core"},
-  {url:"/articles",status:200,rt:8531,words:644,idx:1,links:22,sm:1,grp:"core"},
-  {url:"/contact",status:200,rt:824,words:252,idx:1,links:23,sm:1,grp:"core"},
-  {url:"/start-interactive",status:200,rt:328,words:62,idx:1,links:0,sm:1,grp:"core"},
-  {url:"/login",status:200,rt:484,words:31,idx:1,links:0,sm:0,grp:"core"},
-  {url:"/privacy-policy",status:200,rt:531,words:900,idx:1,links:22,sm:1,grp:"core"},
-  {url:"/terms-of-service",status:200,rt:675,words:900,idx:1,links:25,sm:1,grp:"core"},
-  {url:"/articles/3d-rendering-company-melbourne",status:200,rt:8033,words:2145,idx:1,links:55,sm:1,grp:"art"},
-  {url:"/articles/architectural-visualisation-melbourne-project-decisions",status:200,rt:6282,words:2078,idx:1,links:55,sm:1,grp:"art"},
-  {url:"/articles/luxury-home-builders-melbourne-vr-bim",status:200,rt:7709,words:1980,idx:1,links:55,sm:1,grp:"art"},
-  {url:"/articles/3d-floor-plan-melbourne-home-design-clarity",status:200,rt:6771,words:1900,idx:1,links:55,sm:1,grp:"art"},
-  {url:"/articles/what-is-bim-3d-modeling",status:200,rt:7838,words:1540,idx:1,links:55,sm:1,grp:"art"},
-  {url:"/articles/custom-home-builders-melbourne-3d-visualisation",status:200,rt:6734,words:1950,idx:1,links:55,sm:1,grp:"art"},
-  {url:"/articles/bim-3d-4d-5d-explained",status:200,rt:8302,words:2010,idx:1,links:55,sm:1,grp:"art"},
-  {url:"/articles/how-to-choose-custom-home-builders-in-south-australia",status:200,rt:6844,words:2000,idx:1,links:55,sm:1,grp:"art"},
-  {url:"/articles/duplex-house-design-in-australia",status:200,rt:7331,words:2241,idx:1,links:55,sm:1,grp:"art"},
-  {url:"/articles/the-best-home-builders-adelaide",status:200,rt:6844,words:1950,idx:1,links:55,sm:1,grp:"art"},
-  {url:"/articles/project-management-and-cost-control",status:200,rt:7404,words:2100,idx:1,links:55,sm:1,grp:"art"}
+  {url:"/",status:200,rt:871,words:855,idx:1,links:22,sm:1,grp:"core"},
+  {url:"/about",status:200,rt:799,words:447,idx:1,links:22,sm:1,grp:"core"},
+  {url:"/studio",status:200,rt:1807,words:658,idx:1,links:22,sm:1,grp:"core"},
+  {url:"/prestige",status:200,rt:1187,words:400,idx:1,links:22,sm:1,grp:"core"},
+  {url:"/model",status:200,rt:2287,words:370,idx:1,links:22,sm:1,grp:"core"},
+  {url:"/interiors",status:200,rt:1105,words:365,idx:1,links:23,sm:1,grp:"core"},
+  {url:"/modules",status:200,rt:948,words:249,idx:1,links:22,sm:1,grp:"core"},
+  {url:"/projects",status:200,rt:715,words:258,idx:1,links:22,sm:1,grp:"core"},
+  {url:"/suppliers",status:200,rt:786,words:464,idx:1,links:22,sm:1,grp:"core"},
+  {url:"/apply",status:200,rt:596,words:527,idx:1,links:22,sm:1,grp:"core"},
+  {url:"/articles",status:200,rt:6813,words:644,idx:1,links:22,sm:1,grp:"core"},
+  {url:"/contact",status:200,rt:1088,words:252,idx:1,links:23,sm:1,grp:"core"},
+  {url:"/start-interactive",status:200,rt:579,words:62,idx:1,links:0,sm:1,grp:"core"},
+  {url:"/login",status:200,rt:408,words:31,idx:1,links:0,sm:0,grp:"core"},
+  {url:"/privacy-policy",status:200,rt:907,words:900,idx:1,links:22,sm:1,grp:"core"},
+  {url:"/terms-of-service",status:200,rt:795,words:900,idx:1,links:25,sm:1,grp:"core"},
+  {url:"/articles/architectural-rendering-melbourne-pre-construction-planning",status:200,rt:7095,words:2101,idx:1,links:51,sm:1,grp:"art"},
+  {url:"/articles/3d-rendering-company-melbourne",status:200,rt:7989,words:2183,idx:1,links:51,sm:1,grp:"art"},
+  {url:"/articles/pre-construction-visualisation-construction-readiness",status:200,rt:8210,words:1998,idx:1,links:51,sm:1,grp:"art"},
+  {url:"/articles/how-quality-management-in-projects-improves-project-delivery",status:200,rt:8003,words:2496,idx:1,links:51,sm:1,grp:"art"},
+  {url:"/articles/choosing-the-best-home-builder",status:200,rt:6469,words:3042,idx:1,links:51,sm:1,grp:"art"},
+  {url:"/articles/how-to-identify-quality-home-builders",status:200,rt:7859,words:2313,idx:1,links:51,sm:1,grp:"art"},
+  {url:"/articles/custom-built-homes-melbourne-checklist",status:200,rt:6612,words:1796,idx:1,links:51,sm:1,grp:"art"},
+  {url:"/articles/program-for-construction-estimates-explained",status:200,rt:8037,words:2037,idx:1,links:51,sm:1,grp:"art"},
+  {url:"/articles/duplex-house-design-in-australia",status:200,rt:7089,words:2241,idx:1,links:51,sm:1,grp:"art"},
+  {url:"/articles/custom-home-visualisation-timeline",status:200,rt:7363,words:2612,idx:1,links:51,sm:1,grp:"art"},
+  {url:"/articles/virtual-reality-in-australia-home-design",status:200,rt:7795,words:1455,idx:1,links:51,sm:1,grp:"art"}
 ];
 
 let LANG = 'vi';
@@ -327,7 +327,7 @@ function setLang(l){
 
 function renderRt(){
   const loaded = [...PAGES].sort((a,b)=>b.rt-a.rt);
-  const max = 8531;
+  const max = 8210;
   const col = ms => ms<1000?'var(--green)':ms<3000?'var(--accent)':ms<6000?'var(--amber)':'var(--red)';
   const loc = LANG==='vi'?'vi-VN':'en-US';
   let h='';
