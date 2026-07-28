@@ -117,7 +117,7 @@
         <button id="btnEN" onclick="setLang('en')">EN</button>
       </div>
       <div class="crawl-meta">
-        <span class="t" data-vi="Ngày crawl: <b>27/07/2026</b> · <b>quét lại (re-scan)</b>" data-en="Crawl date: <b>27 Jul 2026</b> · <b>re-scan</b>"></span><br>
+        <span class="t" data-vi="Ngày crawl: <b>28/07/2026</b> · <b>audit hằng ngày</b>" data-en="Crawl date: <b>28 Jul 2026</b> · <b>daily audit</b>"></span><br>
         <span class="t" data-vi="Đo trực tiếp: <b>36 trang</b> · Sitemap: <b>67 URL</b>" data-en="Directly measured: <b>36 pages</b> · Sitemap: <b>67 URLs</b>"></span><br>
         Method: Chrome fetch · AbortController 9–12s
       </div>
@@ -135,7 +135,7 @@
         <div class="val" style="color:var(--green)">82<span style="font-size:15px;color:var(--muted)">/100</span></div>
       </div>
       <div class="note"><span class="tag green t" data-vi="Tốt — ổn định" data-en="Good — stable"></span></div>
-      <div class="delta flat t" data-vi="= giữ nguyên 82 · quét lại không thấy thay đổi mới" data-en="= flat at 82 · re-scan shows no new changes"></div>
+      <div class="delta flat t" data-vi="= giữ nguyên 82 so hôm qua (27/07) · chưa có deploy mới" data-en="= flat at 82 vs yesterday (27 Jul) · no new deploy"></div>
     </div>
     <div class="kpi">
       <div class="lbl t" data-vi="Sitemap URL" data-en="Sitemap URLs"></div>
@@ -145,15 +145,15 @@
     </div>
     <div class="kpi">
       <div class="lbl t" data-vi="TTFB TB — trang gốc" data-en="Avg TTFB — core"></div>
-      <div class="val" style="color:var(--green)">1,1<span style="font-size:15px">s</span></div>
-      <div class="note t" data-vi="15/16 trang gốc &lt;1,9s · /interiors 2,6s (biến động mạng)" data-en="15/16 core pages &lt;1.9s · /interiors 2.6s (network jitter)"></div>
-      <div class="delta flat t" data-vi="= ổn định · hub /articles vẫn 1,2s / 96KB" data-en="= stable · /articles hub still 1.2s / 96KB"></div>
+      <div class="val" style="color:var(--green)">0,9<span style="font-size:15px">s</span></div>
+      <div class="note t" data-vi="15/16 trang gốc &lt;1,3s · trang chủ 2,2s (biến động mạng)" data-en="15/16 core pages &lt;1.3s · homepage 2.2s (network jitter)"></div>
+      <div class="delta up t" data-vi="▲ nhanh hơn nhẹ · 25/36 trang &lt;1s (cache ấm)" data-en="▲ marginally faster · 25/36 pages &lt;1s (warm cache)"></div>
     </div>
     <div class="kpi">
       <div class="lbl t" data-vi="TTFB TB — bài viết" data-en="Avg TTFB — articles"></div>
       <div class="val" style="color:var(--green)">1,0<span style="font-size:15px">s</span></div>
-      <div class="note t" data-vi="20 bài mẫu · 0,77–1,33s · SSG/cache ổn định" data-en="20 samples · 0.77–1.33s · SSG/cache stable"></div>
-      <div class="delta flat t" data-vi="= giữ ~1,0s · không timeout, không rớt cache" data-en="= holding ~1.0s · no timeouts, cache stable"></div>
+      <div class="note t" data-vi="20 bài mẫu · 0,71–1,31s · SSG/cache ổn định" data-en="20 samples · 0.71–1.31s · SSG/cache stable"></div>
+      <div class="delta up t" data-vi="▲ ~0,9s · 34 schema + 1 H1 mỗi bài, không timeout" data-en="▲ ~0.9s · 34 schema + 1 H1 each, no timeouts"></div>
     </div>
     <div class="kpi">
       <div class="lbl t" data-vi="Schema (JSON-LD)" data-en="Schema (JSON-LD)"></div>
@@ -173,7 +173,7 @@
       <div class="bar-row"><span class="name t" data-vi="Structured Data / AEO" data-en="Structured Data / AEO"></span><div class="bar-track"><div class="bar-fill" style="width:72%;background:var(--blue)">72</div></div></div>
       <div class="bar-row"><span class="name t" data-vi="On-page / Meta" data-en="On-page / Meta"></span><div class="bar-track"><div class="bar-fill" style="width:78%;background:var(--blue)">78</div></div></div>
       <div class="bar-row"><span class="name t" data-vi="Content" data-en="Content"></span><div class="bar-track"><div class="bar-fill" style="width:78%;background:var(--blue)">78</div></div></div>
-      <div class="foot t" data-vi="Health tổng <b>82/100</b> (= giữ nguyên so lần crawl trước — quét lại không thấy thay đổi). 5 điểm thành phần đứng yên: Crawlability 88, Performance 88 (bài viết ~1,0s), Structured Data 72 (trang chủ 24 JSON-LD nhưng 12 trang dịch vụ vẫn 0), On-page 78, Content 78. Điểm sẽ chỉ nhích khi có deploy mới cho schema trang dịch vụ / alt ảnh. Trọng số: Crawl 25% · Perf 25% · Schema 20% · On-page 15% · Content 15%." data-en="Overall health <b>82/100</b> (= flat vs previous crawl — re-scan shows no change). All five sub-scores hold: Crawlability 88, Performance 88 (articles ~1.0s), Structured Data 72 (homepage 24 JSON-LD but 12 service pages still 0), On-page 78, Content 78. The score will only move once a new deploy lands for service-page schema / image alt. Weights: Crawl 25% · Perf 25% · Schema 20% · On-page 15% · Content 15%."></div>
+      <div class="foot t" data-vi="Health tổng <b>82/100</b> (= giữ nguyên so hôm qua 27/07). 5 điểm thành phần đứng yên: Crawlability 88, Performance 88 (bài viết ~0,9s, hôm nay còn nhanh hơn nhẹ), Structured Data 72 (trang chủ 24 JSON-LD nhưng 12 trang dịch vụ vẫn 0), On-page 78, Content 78. Điểm sẽ chỉ nhích khi có deploy mới cho schema trang dịch vụ / alt ảnh. Trọng số: Crawl 25% · Perf 25% · Schema 20% · On-page 15% · Content 15%." data-en="Overall health <b>82/100</b> (= flat vs yesterday 27 Jul). All five sub-scores hold: Crawlability 88, Performance 88 (articles ~0.9s, marginally faster today), Structured Data 72 (homepage 24 JSON-LD but 12 service pages still 0), On-page 78, Content 78. The score will only move once a new deploy lands for service-page schema / image alt. Weights: Crawl 25% · Perf 25% · Schema 20% · On-page 15% · Content 15%."></div>
     </div>
     <div class="card">
       <h3 class="t" data-vi="Phân bố tốc độ (36 trang đo trực tiếp)" data-en="Speed distribution (36 pages measured)"></h3>
@@ -181,17 +181,17 @@
         <svg width="150" height="150" viewBox="0 0 42 42">
           <circle cx="21" cy="21" r="15.9155" fill="none" stroke="var(--cream2)" stroke-width="6"></circle>
           <circle cx="21" cy="21" r="15.9155" fill="none" stroke="var(--green)" stroke-width="6"
-            stroke-dasharray="52.8 47.2" stroke-dashoffset="25"></circle>
+            stroke-dasharray="69.4 30.6" stroke-dashoffset="25"></circle>
           <circle cx="21" cy="21" r="15.9155" fill="none" stroke="var(--amber)" stroke-width="6"
-            stroke-dasharray="47.2 52.8" stroke-dashoffset="-27.8"></circle>
+            stroke-dasharray="30.6 69.4" stroke-dashoffset="-44.4"></circle>
           <text x="21" y="20" text-anchor="middle" font-size="7" font-weight="700" fill="#2c2620">36</text>
           <text x="21" y="26.5" text-anchor="middle" font-size="3.2" fill="#6f665a" class="tsvg" data-vi="trang" data-en="pages">trang</text>
         </svg>
         <div class="legend">
-          <div><span class="dot" style="background:var(--green)"></span> <span class="t" data-vi="Nhanh &lt;1s: <b>19</b> · 52,8%" data-en="Fast &lt;1s: <b>19</b> · 52.8%"></span></div>
-          <div><span class="dot" style="background:var(--amber)"></span> <span class="t" data-vi="1–3s: <b>17</b> · 47,2%" data-en="1–3s: <b>17</b> · 47.2%"></span></div>
+          <div><span class="dot" style="background:var(--green)"></span> <span class="t" data-vi="Nhanh &lt;1s: <b>25</b> · 69,4%" data-en="Fast &lt;1s: <b>25</b> · 69.4%"></span></div>
+          <div><span class="dot" style="background:var(--amber)"></span> <span class="t" data-vi="1–3s: <b>11</b> · 30,6%" data-en="1–3s: <b>11</b> · 30.6%"></span></div>
           <div><span class="dot" style="background:var(--red)"></span> <span class="t" data-vi="Chậm &gt;3s: <b>0</b> · 0%" data-en="Slow &gt;3s: <b>0</b> · 0%"></span></div>
-          <div class="foot t" style="margin-top:10px" data-vi="<b>Không trang nào &gt;3s</b> — giữ nguyên phân bố lần trước (19 nhanh / 17 trung bình / 0 chậm). Cả 20 bài /articles vẫn 0,77–1,33s. Chậm nhất lần quét này: <code>/interiors</code> 2,6s &amp; trang chủ 1,9s — là biến động mạng, không phải regression. Nhóm &lt;1s gồm trang pháp lý, tiện ích và nửa số bài viết." data-en="<b>No page exceeds 3s</b> — same distribution as last run (19 fast / 17 medium / 0 slow). All 20 /articles still 0.77–1.33s. Slowest this scan: <code>/interiors</code> 2.6s &amp; homepage 1.9s — network jitter, not a regression. The &lt;1s group covers legal, utility and half of the articles."></div>
+          <div class="foot t" style="margin-top:10px" data-vi="<b>Không trang nào &gt;3s.</b> Hôm nay tốc độ khá hơn: <b>25/36 trang &lt;1s</b> (hôm qua 19) khi cache CDN đã ấm. Cả 20 bài /articles ở 0,71–1,31s. Chậm nhất lần này: trang chủ 2,2s — biến động mạng, không phải regression. Nhóm &lt;1s gồm trang dịch vụ, pháp lý, tiện ích và phần lớn bài viết." data-en="<b>No page exceeds 3s.</b> Speeds are better today: <b>25/36 pages &lt;1s</b> (19 yesterday) as the CDN cache warms. All 20 /articles sit at 0.71–1.31s. Slowest this scan: homepage 2.2s — network jitter, not a regression. The &lt;1s group covers service, legal, utility pages and most articles."></div>
         </div>
       </div>
     </div>
@@ -201,10 +201,10 @@
   <h2 class="sec t" data-vi="Hướng đi &amp; Insight ưu tiên" data-en="Direction &amp; Priority insights"></h2>
 
   <div class="ins win">
-    <div class="prio t" data-vi="✓ QUÉT LẠI — ổn định, không đổi" data-en="✓ RE-SCAN — stable, no change"></div>
-    <h4 class="t" data-vi="Quét lại sau update: không phát hiện thay đổi mới trong tín hiệu crawl" data-en="Re-scan after the update: no new changes detected in the crawlable signals"></h4>
-    <p class="t" data-vi="Lần quét lại này <b>khớp gần như tuyệt đối</b> với lần crawl trước: 20 bài <code>/articles/*</code> vẫn TTFB <b>0,77–1,33s</b> (TB 1,0s), <b>32–34 JSON-LD</b>/bài, đúng <b>1 H1</b>; trang chủ vẫn <b>24 JSON-LD</b>, 12 trang dịch vụ vẫn 0 schema; trang chủ vẫn <b>7/11 ảnh thiếu alt</b>; sitemap vẫn 67 URL; 36/36 trang trả 200. Nói cách khác, <b>bản update bạn vừa làm chưa phản ánh vào các chỉ số kỹ thuật đo được</b> (TTFB, schema, H1, alt, sitemap)." data-en="This re-scan is a <b>near-exact match</b> to the previous crawl: the 20 <code>/articles/*</code> posts still show TTFB <b>0.77–1.33s</b> (avg 1.0s), <b>32–34 JSON-LD</b> each, a clean <b>single H1</b>; the homepage still has <b>24 JSON-LD</b>, the 12 service pages still 0 schema; the homepage still has <b>7/11 images missing alt</b>; sitemap still 67 URLs; 36/36 pages return 200. In short, <b>the update you just made isn't reflected in the measurable technical signals</b> (TTFB, schema, H1, alt, sitemap)."></p>
-    <p class="fix t" data-vi="<b>Lý do có thể:</b> (1) thay đổi thuộc nội dung/hình ảnh/CSS không đổi chỉ số kỹ thuật; (2) chưa deploy hoặc CDN chưa purge cache; (3) nằm ở trang không nằm trong mẫu. <b>Gợi ý:</b> nếu vừa sửa schema/alt cho trang dịch vụ, hãy purge cache rồi báo — mình quét lại để xác nhận." data-en="<b>Possible reasons:</b> (1) the change is content/image/CSS that doesn't move technical metrics; (2) not deployed yet or CDN cache not purged; (3) on a page outside the sample. <b>Suggestion:</b> if you just fixed schema/alt on service pages, purge the cache and let me know — I'll re-scan to confirm."></p>
+    <div class="prio t" data-vi="✓ AUDIT HÔM NAY (28/07) — ổn định" data-en="✓ TODAY'S AUDIT (28 Jul) — stable"></div>
+    <h4 class="t" data-vi="Giữ vững thành quả: Health 82, bài viết ~0,9s, hôm nay còn nhanh hơn nhẹ" data-en="Holding the gains: Health 82, articles ~0.9s, marginally faster today"></h4>
+    <p class="t" data-vi="Crawl hôm nay (28/07) <b>khớp với hôm qua</b> ở mọi tín hiệu cấu trúc và <b>nhanh hơn một chút</b>: 20 bài <code>/articles/*</code> có TTFB <b>0,71–1,31s</b> (TB 0,9s), <b>34 JSON-LD</b>/bài, đúng <b>1 H1</b>; <b>25/36 trang giờ &lt;1s</b> (hôm qua 19/36) — cache đang ấm. Trang chủ vẫn <b>24 JSON-LD</b> và H1 giàu từ khóa; sitemap 67 URL; 36/36 trang trả 200. Không phát hiện regression." data-en="Today's crawl (28 Jul) <b>matches yesterday</b> on every structural signal and is <b>a touch faster</b>: the 20 <code>/articles/*</code> posts show TTFB <b>0.71–1.31s</b> (avg 0.9s), <b>34 JSON-LD</b> each, a clean <b>single H1</b>; <b>25/36 pages are now &lt;1s</b> (19/36 yesterday) — the cache is warm. The homepage still carries <b>24 JSON-LD</b> and a keyword-rich H1; sitemap 67 URLs; 36/36 pages return 200. No regressions."></p>
+    <p class="fix t" data-vi="<b>Việc tiếp theo (không đổi):</b> điểm sẽ chỉ nhích tiếp khi deploy schema (Service/LocalBusiness/Breadcrumb) cho 12 trang dịch vụ và thêm alt cho 7 ảnh hero trang chủ. Sau khi deploy + purge cache, báo mình quét lại để xác nhận điểm tăng." data-en="<b>Next (unchanged):</b> the score will only rise further once schema (Service/LocalBusiness/Breadcrumb) is deployed to the 12 service pages and alt is added to the 7 homepage hero images. After deploy + cache purge, tell me and I'll re-scan to confirm the lift."></p>
   </div>
 
   <div class="ins p1">
@@ -266,48 +266,48 @@
       <tbody></tbody>
     </table>
   </div>
-  <div class="foot t" data-vi="Crawl trực tiếp qua Chrome (fetch same-origin) lúc 27/07/2026. <b>Số đo thật:</b> TTFB, KB, status, số H1, schema (script JSON-LD), title/meta, số từ. Bài viết mẫu: 20/45 URL <code>/articles</code>, tất cả trả 200 + Article/BreadcrumbList/BlogPosting/FAQPage + 1×H1 (đo thật 1.456–3.043 từ). Cột JSON-LD = số script schema trong HTML thô. Cột Sitemap: chỉ <code>/login</code> nằm ngoài sitemap." data-en="Live Chrome crawl (same-origin fetch) on 27 Jul 2026. <b>Real measurements:</b> TTFB, KB, status, H1 count, schema (JSON-LD scripts), title/meta, word count. Article sample: 20/45 <code>/articles</code> URLs, all returning 200 + Article/BreadcrumbList/BlogPosting/FAQPage + 1×H1 (measured 1,456–3,043 words). JSON-LD column = schema scripts in the raw HTML. Sitemap column: only <code>/login</code> is outside the sitemap."></div>
+  <div class="foot t" data-vi="Crawl trực tiếp qua Chrome (fetch same-origin) lúc 28/07/2026. <b>Số đo thật:</b> TTFB, KB, status, số H1, schema (script JSON-LD), title/meta, số từ. Bài viết mẫu: 20/45 URL <code>/articles</code>, tất cả trả 200 + Article/BreadcrumbList/BlogPosting/FAQPage + 1×H1 (đo thật 1.456–3.043 từ). Cột JSON-LD = số script schema trong HTML thô. Cột Sitemap: chỉ <code>/login</code> nằm ngoài sitemap." data-en="Live Chrome crawl (same-origin fetch) on 28 Jul 2026. <b>Real measurements:</b> TTFB, KB, status, H1 count, schema (JSON-LD scripts), title/meta, word count. Article sample: 20/45 <code>/articles</code> URLs, all returning 200 + Article/BreadcrumbList/BlogPosting/FAQPage + 1×H1 (measured 1,456–3,043 words). JSON-LD column = schema scripts in the raw HTML. Sitemap column: only <code>/login</code> is outside the sitemap."></div>
 
 </div>
 
 <script>
 const PAGES = [
-  {url:"/",status:200,rt:1872,words:1611,schema:24,links:60,sm:1,grp:"core"},
-  {url:"/about",status:200,rt:776,words:448,schema:0,links:30,sm:1,grp:"core"},
-  {url:"/studio",status:200,rt:1630,words:659,schema:0,links:30,sm:1,grp:"core"},
-  {url:"/prestige",status:200,rt:1259,words:401,schema:0,links:30,sm:1,grp:"core"},
-  {url:"/model",status:200,rt:1172,words:371,schema:0,links:30,sm:1,grp:"core"},
-  {url:"/interiors",status:200,rt:2625,words:366,schema:0,links:31,sm:1,grp:"core"},
-  {url:"/modules",status:200,rt:1038,words:250,schema:0,links:30,sm:1,grp:"core"},
-  {url:"/projects",status:200,rt:727,words:259,schema:0,links:30,sm:1,grp:"core"},
-  {url:"/suppliers",status:200,rt:637,words:465,schema:0,links:30,sm:1,grp:"core"},
-  {url:"/apply",status:200,rt:775,words:528,schema:0,links:30,sm:1,grp:"core"},
-  {url:"/articles",status:200,rt:1238,words:616,schema:0,links:62,sm:1,grp:"core"},
-  {url:"/contact",status:200,rt:1422,words:253,schema:0,links:37,sm:1,grp:"core"},
-  {url:"/start-interactive",status:200,rt:593,words:62,schema:0,links:3,sm:1,grp:"core"},
-  {url:"/login",status:200,rt:612,words:31,schema:0,links:3,sm:0,grp:"core"},
-  {url:"/privacy-policy",status:200,rt:826,words:901,schema:0,links:30,sm:1,grp:"core"},
-  {url:"/terms-of-service",status:200,rt:920,words:901,schema:0,links:33,sm:1,grp:"core"},
-  {url:"/articles/architectural-rendering-melbourne-pre-construction-planning",status:200,rt:1036,words:2102,schema:34,links:50,sm:1,grp:"art"},
-  {url:"/articles/photorealistic-rendering-melbourne-developers",status:200,rt:948,words:1810,schema:34,links:47,sm:1,grp:"art"},
-  {url:"/articles/3d-floor-plan-melbourne-home-design-clarity",status:200,rt:1067,words:1950,schema:34,links:50,sm:1,grp:"art"},
-  {url:"/articles/custom-home-builders-melbourne-3d-visualisation",status:200,rt:1332,words:2043,schema:34,links:50,sm:1,grp:"art"},
-  {url:"/articles/3d-rendering-company-melbourne",status:200,rt:1008,words:2184,schema:34,links:49,sm:1,grp:"art"},
-  {url:"/articles/3d-rendering-melbourne-pre-construction-planning",status:200,rt:818,words:1944,schema:34,links:50,sm:1,grp:"art"},
-  {url:"/articles/custom-home-builders-melbourne-pre-build-clarity",status:200,rt:793,words:1948,schema:34,links:49,sm:1,grp:"art"},
-  {url:"/articles/luxury-home-builders-melbourne-vr-bim",status:200,rt:772,words:2009,schema:34,links:48,sm:1,grp:"art"},
-  {url:"/articles/pre-construction-visualisation-construction-readiness",status:200,rt:777,words:1999,schema:34,links:45,sm:1,grp:"art"},
-  {url:"/articles/architectural-visualisation-melbourne-project-decisions",status:200,rt:778,words:2079,schema:34,links:50,sm:1,grp:"art"},
-  {url:"/articles/house-renovation-3d-design-melbourne",status:200,rt:1258,words:2360,schema:34,links:42,sm:1,grp:"art"},
-  {url:"/articles/how-3d-coordination-reduces-design-conflicts-before-construction",status:200,rt:867,words:2367,schema:32,links:42,sm:1,grp:"art"},
+  {url:"/",status:200,rt:2172,words:1611,schema:24,links:60,sm:1,grp:"core"},
+  {url:"/about",status:200,rt:790,words:448,schema:0,links:30,sm:1,grp:"core"},
+  {url:"/studio",status:200,rt:1255,words:659,schema:0,links:30,sm:1,grp:"core"},
+  {url:"/prestige",status:200,rt:1009,words:401,schema:0,links:30,sm:1,grp:"core"},
+  {url:"/model",status:200,rt:1009,words:371,schema:0,links:30,sm:1,grp:"core"},
+  {url:"/interiors",status:200,rt:1020,words:366,schema:0,links:31,sm:1,grp:"core"},
+  {url:"/modules",status:200,rt:892,words:250,schema:0,links:30,sm:1,grp:"core"},
+  {url:"/projects",status:200,rt:657,words:259,schema:0,links:30,sm:1,grp:"core"},
+  {url:"/suppliers",status:200,rt:704,words:465,schema:0,links:30,sm:1,grp:"core"},
+  {url:"/apply",status:200,rt:543,words:528,schema:0,links:30,sm:1,grp:"core"},
+  {url:"/articles",status:200,rt:1156,words:616,schema:0,links:62,sm:1,grp:"core"},
+  {url:"/contact",status:200,rt:856,words:253,schema:0,links:37,sm:1,grp:"core"},
+  {url:"/start-interactive",status:200,rt:504,words:62,schema:0,links:3,sm:1,grp:"core"},
+  {url:"/login",status:200,rt:475,words:31,schema:0,links:3,sm:0,grp:"core"},
+  {url:"/privacy-policy",status:200,rt:640,words:901,schema:0,links:30,sm:1,grp:"core"},
+  {url:"/terms-of-service",status:200,rt:746,words:901,schema:0,links:33,sm:1,grp:"core"},
+  {url:"/articles/architectural-rendering-melbourne-pre-construction-planning",status:200,rt:1069,words:2102,schema:34,links:50,sm:1,grp:"art"},
+  {url:"/articles/photorealistic-rendering-melbourne-developers",status:200,rt:726,words:1810,schema:34,links:47,sm:1,grp:"art"},
+  {url:"/articles/3d-floor-plan-melbourne-home-design-clarity",status:200,rt:867,words:1950,schema:34,links:50,sm:1,grp:"art"},
+  {url:"/articles/custom-home-builders-melbourne-3d-visualisation",status:200,rt:761,words:2043,schema:34,links:50,sm:1,grp:"art"},
+  {url:"/articles/3d-rendering-company-melbourne",status:200,rt:970,words:2184,schema:34,links:49,sm:1,grp:"art"},
+  {url:"/articles/3d-rendering-melbourne-pre-construction-planning",status:200,rt:1310,words:1944,schema:34,links:50,sm:1,grp:"art"},
+  {url:"/articles/custom-home-builders-melbourne-pre-build-clarity",status:200,rt:1197,words:1948,schema:34,links:49,sm:1,grp:"art"},
+  {url:"/articles/luxury-home-builders-melbourne-vr-bim",status:200,rt:716,words:2009,schema:34,links:48,sm:1,grp:"art"},
+  {url:"/articles/pre-construction-visualisation-construction-readiness",status:200,rt:728,words:1999,schema:34,links:45,sm:1,grp:"art"},
+  {url:"/articles/architectural-visualisation-melbourne-project-decisions",status:200,rt:743,words:2079,schema:34,links:50,sm:1,grp:"art"},
+  {url:"/articles/house-renovation-3d-design-melbourne",status:200,rt:946,words:2360,schema:34,links:42,sm:1,grp:"art"},
+  {url:"/articles/how-3d-coordination-reduces-design-conflicts-before-construction",status:200,rt:989,words:2367,schema:32,links:42,sm:1,grp:"art"},
   {url:"/articles/how-quality-management-in-projects-improves-project-delivery",status:200,rt:876,words:2497,schema:34,links:48,sm:1,grp:"art"},
-  {url:"/articles/how-a-construction-program-reduces-delays-and-design-conflicts",status:200,rt:1006,words:2592,schema:34,links:48,sm:1,grp:"art"},
-  {url:"/articles/project-management-construction-for-luxury-residential-projects",status:200,rt:949,words:2278,schema:34,links:47,sm:1,grp:"art"},
+  {url:"/articles/how-a-construction-program-reduces-delays-and-design-conflicts",status:200,rt:980,words:2592,schema:34,links:48,sm:1,grp:"art"},
+  {url:"/articles/project-management-construction-for-luxury-residential-projects",status:200,rt:714,words:2278,schema:34,links:47,sm:1,grp:"art"},
   {url:"/articles/bim-australia-9-implementation-mistakes",status:200,rt:825,words:2858,schema:34,links:47,sm:1,grp:"art"},
-  {url:"/articles/choosing-the-best-home-builder",status:200,rt:1114,words:3043,schema:34,links:48,sm:1,grp:"art"},
-  {url:"/articles/virtual-reality-home-walkthrough",status:200,rt:1289,words:1592,schema:34,links:48,sm:1,grp:"art"},
-  {url:"/articles/step-inside-6-home-design-trends-shaping-australia-in-2026",status:200,rt:1125,words:1566,schema:34,links:47,sm:1,grp:"art"},
-  {url:"/articles/virtual-reality-in-australia-home-design",status:200,rt:806,words:1456,schema:34,links:48,sm:1,grp:"art"}
+  {url:"/articles/choosing-the-best-home-builder",status:200,rt:773,words:3043,schema:34,links:48,sm:1,grp:"art"},
+  {url:"/articles/virtual-reality-home-walkthrough",status:200,rt:1005,words:1592,schema:34,links:48,sm:1,grp:"art"},
+  {url:"/articles/step-inside-6-home-design-trends-shaping-australia-in-2026",status:200,rt:1083,words:1566,schema:34,links:47,sm:1,grp:"art"},
+  {url:"/articles/virtual-reality-in-australia-home-design",status:200,rt:855,words:1456,schema:34,links:48,sm:1,grp:"art"}
 ];
 
 let LANG = 'vi';
@@ -334,7 +334,7 @@ function setLang(l){
 
 function renderRt(){
   const loaded = [...PAGES].sort((a,b)=>b.rt-a.rt);
-  const max = 2625;
+  const max = 2172;
   const col = ms => ms<1000?'var(--green)':ms<3000?'var(--accent)':ms<6000?'var(--amber)':'var(--red)';
   const loc = LANG==='vi'?'vi-VN':'en-US';
   let h='';
