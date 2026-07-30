@@ -117,9 +117,9 @@
         <button id="btnEN" onclick="setLang('en')">EN</button>
       </div>
       <div class="crawl-meta">
-        <span class="t" data-vi="Ngày crawl: <b>29/07/2026</b> · <b>audit hằng ngày</b>" data-en="Crawl date: <b>29 Jul 2026</b> · <b>daily audit</b>"></span><br>
+        <span class="t" data-vi="Ngày crawl: <b>30/07/2026</b> · <b>audit hằng ngày</b>" data-en="Crawl date: <b>30 Jul 2026</b> · <b>daily audit</b>"></span><br>
         <span class="t" data-vi="Đo trực tiếp: <b>61 trang</b> · Sitemap: <b>67 URL</b>" data-en="Directly measured: <b>61 pages</b> · Sitemap: <b>67 URLs</b>"></span><br>
-        Method: Chrome fetch · AbortController 9–16s
+        Method: Chrome fetch · AbortController 9–12s
       </div>
     </div>
   </div>
@@ -132,10 +132,10 @@
     <div class="kpi">
       <div class="lbl t" data-vi="Health Score" data-en="Health Score"></div>
       <div class="score-ring">
-        <div class="val" style="color:var(--green)">84<span style="font-size:15px;color:var(--muted)">/100</span></div>
+        <div class="val" style="color:var(--green)">87<span style="font-size:15px;color:var(--muted)">/100</span></div>
       </div>
-      <div class="note"><span class="tag green t" data-vi="Tốt — ổn định" data-en="Good — stable"></span></div>
-      <div class="delta flat t" data-vi="= không đổi so hôm qua (28/07: 84) · không regression" data-en="= unchanged vs yesterday (28 Jul: 84) · no regressions"></div>
+      <div class="note"><span class="tag green t" data-vi="Tốt — đang tăng" data-en="Good — improving"></span></div>
+      <div class="delta up t" data-vi="▲ +3 so hôm qua (29/07: 84) · schema deploy 12 trang gốc" data-en="▲ +3 vs yesterday (29 Jul: 84) · schema deployed to 12 core pages"></div>
     </div>
     <div class="kpi">
       <div class="lbl t" data-vi="Sitemap URL" data-en="Sitemap URLs"></div>
@@ -146,20 +146,20 @@
     <div class="kpi">
       <div class="lbl t" data-vi="TTFB TB — trang gốc" data-en="Avg TTFB — core"></div>
       <div class="val" style="color:var(--green)">0,8<span style="font-size:15px">s</span></div>
-      <div class="note t" data-vi="15/16 trang gốc &lt;1,1s · /prestige 1,5s · trang chủ 1,4s" data-en="15/16 core pages &lt;1.1s · /prestige 1.5s · homepage 1.4s"></div>
-      <div class="delta flat t" data-vi="= ổn định · 50/61 trang &lt;1s (cache ấm)" data-en="= stable · 50/61 pages &lt;1s (warm cache)"></div>
+      <div class="note t" data-vi="11/16 trang gốc &lt;1s · /articles 1,55s · trang chủ 1,26s" data-en="11/16 core pages &lt;1s · /articles 1.55s · homepage 1.26s"></div>
+      <div class="delta flat t" data-vi="= ổn định · 54/61 trang &lt;1s (cache ấm)" data-en="= stable · 54/61 pages &lt;1s (warm cache)"></div>
     </div>
     <div class="kpi">
       <div class="lbl t" data-vi="TTFB TB — bài viết" data-en="Avg TTFB — articles"></div>
       <div class="val" style="color:var(--green)">0,8<span style="font-size:15px">s</span></div>
-      <div class="note t" data-vi="Toàn bộ 45 bài · 0,61–2,25s · SSG/cache ổn định" data-en="All 45 articles · 0.61–2.25s · SSG/cache stable"></div>
-      <div class="delta flat t" data-vi="= ổn định · chậm nhất /choosing-the-best-home-builder 2,25s · 31–32 schema + 1 H1 mỗi bài" data-en="= stable · slowest /choosing-the-best-home-builder 2.25s · 31–32 schema + 1 H1 each"></div>
+      <div class="note t" data-vi="Toàn bộ 45 bài · 0,56–1,18s · SSG/cache ổn định" data-en="All 45 articles · 0.56–1.18s · SSG/cache stable"></div>
+      <div class="delta up t" data-vi="▲ nhanh hơn · chậm nhất /architectural-rendering 1,18s · 31–32 schema + 1 H1 mỗi bài" data-en="▲ faster · slowest /architectural-rendering 1.18s · 31–32 schema + 1 H1 each"></div>
     </div>
     <div class="kpi">
       <div class="lbl t" data-vi="Schema (JSON-LD)" data-en="Schema (JSON-LD)"></div>
-      <div class="val" style="color:var(--amber)">Home ✓</div>
-      <div class="note t" data-vi="Trang chủ 24 · Bài 31–32 · 15 trang gốc còn 0" data-en="Home 24 · Articles 31–32 · 15 core pages still 0"></div>
-      <div class="delta flat t" data-vi="= không đổi · trang chủ 24, 15 trang gốc vẫn trống" data-en="= unchanged · homepage 24, 15 core pages still bare"></div>
+      <div class="val" style="color:var(--green)">13/16 ✓</div>
+      <div class="note t" data-vi="Trang chủ 24 · 12 trang gốc mới 14–15 · Bài 31–32" data-en="Home 24 · 12 new core pages 14–15 · Articles 31–32"></div>
+      <div class="delta up t" data-vi="▲ ĐÃ SỬA · 12 trang gốc từ 0 → có Service+Breadcrumb · còn 3 trang 0" data-en="▲ FIXED · 12 core pages 0 → Service+Breadcrumb · 3 pages still 0"></div>
     </div>
   </div>
 
@@ -169,11 +169,11 @@
     <div class="card">
       <h3 class="t" data-vi="5 điểm thành phần (/100)" data-en="5 sub-scores (/100)"></h3>
       <div class="bar-row"><span class="name t" data-vi="Crawlability" data-en="Crawlability"></span><div class="bar-track"><div class="bar-fill" style="width:90%;background:var(--green)">90</div></div></div>
-      <div class="bar-row"><span class="name t" data-vi="Performance / TTFB" data-en="Performance / TTFB"></span><div class="bar-track"><div class="bar-fill" style="width:92%;background:var(--green)">92</div></div></div>
-      <div class="bar-row"><span class="name t" data-vi="Structured Data / AEO" data-en="Structured Data / AEO"></span><div class="bar-track"><div class="bar-fill" style="width:74%;background:var(--blue)">74</div></div></div>
-      <div class="bar-row"><span class="name t" data-vi="On-page / Meta" data-en="On-page / Meta"></span><div class="bar-track"><div class="bar-fill" style="width:78%;background:var(--blue)">78</div></div></div>
+      <div class="bar-row"><span class="name t" data-vi="Performance / TTFB" data-en="Performance / TTFB"></span><div class="bar-track"><div class="bar-fill" style="width:93%;background:var(--green)">93</div></div></div>
+      <div class="bar-row"><span class="name t" data-vi="Structured Data / AEO" data-en="Structured Data / AEO"></span><div class="bar-track"><div class="bar-fill" style="width:88%;background:var(--green)">88</div></div></div>
+      <div class="bar-row"><span class="name t" data-vi="On-page / Meta" data-en="On-page / Meta"></span><div class="bar-track"><div class="bar-fill" style="width:79%;background:var(--blue)">79</div></div></div>
       <div class="bar-row"><span class="name t" data-vi="Content" data-en="Content"></span><div class="bar-track"><div class="bar-fill" style="width:80%;background:var(--blue)">80</div></div></div>
-      <div class="foot t" data-vi="Health tổng <b>84/100</b> (= không đổi so hôm qua 28/07). Crawl hôm nay xác nhận trạng thái ổn định: cả 61 trang trả 200, TTFB nhanh (trang gốc TB 0,8s, bài viết TB 0,8s), không trang nào &gt;3s. Chi tiết: Crawlability 90 (61/61 trả 200, mọi bài trong sitemap, chỉ /login ngoài sitemap), Performance 92 (50/61 trang &lt;1s; chậm nhất chỉ 2,25s), Structured Data 74 (trang chủ 24 + 45 bài đều schema, nhưng 15 trang gốc vẫn 0), On-page 78 (trang chủ 7/11 ảnh thiếu alt, heading nhảy bậc 2→4), Content 80 (bài 1.136–3.043 từ). Trọng số: Crawl 25% · Perf 25% · Schema 20% · On-page 15% · Content 15%." data-en="Overall health <b>84/100</b> (= unchanged vs yesterday 28 Jul). Today's crawl confirms a stable state: all 61 pages return 200, fast TTFB (core avg 0.8s, articles avg 0.8s), no page over 3s. Detail: Crawlability 90 (61/61 return 200, every article in sitemap, only /login outside it), Performance 92 (50/61 pages &lt;1s; slowest just 2.25s), Structured Data 74 (homepage 24 + all 45 articles carry schema, but 15 core pages still 0), On-page 78 (homepage 7/11 images missing alt, heading skip 2→4), Content 80 (articles 1,136–3,043 words). Weights: Crawl 25% · Perf 25% · Schema 20% · On-page 15% · Content 15%."></div>
+      <div class="foot t" data-vi="Health tổng <b>87/100</b> (▲ +3 so hôm qua 29/07: 84). Bước nhảy đến từ <b>Structured Data 74 → 88</b>: 12 trang gốc trước đây 0 JSON-LD nay đã có <code>Service</code> + <code>BreadcrumbList</code> (14–15 schema/trang). Chi tiết hôm nay: Crawlability 90 (61/61 trả 200, mọi bài trong sitemap, chỉ /login ngoài sitemap), Performance 93 (54/61 trang &lt;1s; chậm nhất chỉ 1,55s), Structured Data 88 (trang chủ 24 + 12 trang gốc 14–15 + 45 bài 31–32; chỉ còn /articles, /start-interactive, /login = 0), On-page 79 (trang chủ 7/11 ảnh thiếu alt, heading nhảy bậc 2→4), Content 80 (bài 1.136–3.043 từ). Trọng số: Crawl 25% · Perf 25% · Schema 20% · On-page 15% · Content 15%." data-en="Overall health <b>87/100</b> (▲ +3 vs yesterday 29 Jul: 84). The jump comes from <b>Structured Data 74 → 88</b>: 12 core pages that carried 0 JSON-LD now ship <code>Service</code> + <code>BreadcrumbList</code> (14–15 schema each). Today's detail: Crawlability 90 (61/61 return 200, every article in sitemap, only /login outside it), Performance 93 (54/61 pages &lt;1s; slowest just 1.55s), Structured Data 88 (homepage 24 + 12 core pages 14–15 + all 45 articles 31–32; only /articles, /start-interactive, /login left at 0), On-page 79 (homepage 7/11 images missing alt, heading skip 2→4), Content 80 (articles 1,136–3,043 words). Weights: Crawl 25% · Perf 25% · Schema 20% · On-page 15% · Content 15%."></div>
     </div>
     <div class="card">
       <h3 class="t" data-vi="Phân bố tốc độ (61 trang đo trực tiếp)" data-en="Speed distribution (61 pages measured)"></h3>
@@ -181,17 +181,17 @@
         <svg width="150" height="150" viewBox="0 0 42 42">
           <circle cx="21" cy="21" r="15.9155" fill="none" stroke="var(--cream2)" stroke-width="6"></circle>
           <circle cx="21" cy="21" r="15.9155" fill="none" stroke="var(--green)" stroke-width="6"
-            stroke-dasharray="82 18" stroke-dashoffset="25"></circle>
+            stroke-dasharray="88.5 11.5" stroke-dashoffset="25"></circle>
           <circle cx="21" cy="21" r="15.9155" fill="none" stroke="var(--amber)" stroke-width="6"
-            stroke-dasharray="18 82" stroke-dashoffset="-57"></circle>
+            stroke-dasharray="11.5 88.5" stroke-dashoffset="-63.5"></circle>
           <text x="21" y="20" text-anchor="middle" font-size="7" font-weight="700" fill="#2c2620">61</text>
           <text x="21" y="26.5" text-anchor="middle" font-size="3.2" fill="#6f665a" class="tsvg" data-vi="trang" data-en="pages">trang</text>
         </svg>
         <div class="legend">
-          <div><span class="dot" style="background:var(--green)"></span> <span class="t" data-vi="Nhanh &lt;1s: <b>50</b> · 82,0%" data-en="Fast &lt;1s: <b>50</b> · 82.0%"></span></div>
-          <div><span class="dot" style="background:var(--amber)"></span> <span class="t" data-vi="1–3s: <b>11</b> · 18,0%" data-en="1–3s: <b>11</b> · 18.0%"></span></div>
+          <div><span class="dot" style="background:var(--green)"></span> <span class="t" data-vi="Nhanh &lt;1s: <b>54</b> · 88,5%" data-en="Fast &lt;1s: <b>54</b> · 88.5%"></span></div>
+          <div><span class="dot" style="background:var(--amber)"></span> <span class="t" data-vi="1–3s: <b>7</b> · 11,5%" data-en="1–3s: <b>7</b> · 11.5%"></span></div>
           <div><span class="dot" style="background:var(--red)"></span> <span class="t" data-vi="Chậm &gt;3s: <b>0</b> · 0%" data-en="Slow &gt;3s: <b>0</b> · 0%"></span></div>
-          <div class="foot t" style="margin-top:10px" data-vi="<b>Không trang nào &gt;3s.</b> Crawl toàn bộ 61 trang (16 gốc + 45 bài): <b>50/61 trang &lt;1s</b> (82,0%). Cả 45 bài /articles ở 0,61–2,25s — sự cố chậm 6,5–10,8s trước đây vẫn đã hết hẳn. Chậm nhất lần này: bài <code>/choosing-the-best-home-builder</code> 2,25s và trang <code>/prestige</code> 1,5s — nằm trong biến động mạng bình thường, không phải regression. 11 trang nhóm 1–3s gồm vài bài dài và vài trang dịch vụ." data-en="<b>No page exceeds 3s.</b> Crawl of all 61 pages (16 core + 45 articles): <b>50/61 pages &lt;1s</b> (82.0%). All 45 /articles sit at 0.61–2.25s — the old 6.5–10.8s slowdown remains fully gone. Slowest this scan: article <code>/choosing-the-best-home-builder</code> at 2.25s and <code>/prestige</code> at 1.5s — within normal network jitter, not a regression. The 11 pages in the 1–3s band are a few long articles and service pages."></div>
+          <div class="foot t" style="margin-top:10px" data-vi="<b>Không trang nào &gt;3s.</b> Crawl toàn bộ 61 trang (16 gốc + 45 bài): <b>54/61 trang &lt;1s</b> (88,5%, tăng từ 50 hôm qua). Cả 45 bài /articles ở 0,56–1,18s — sự cố chậm 6,5–10,8s trước đây vẫn đã hết hẳn. Chậm nhất lần này: trang listing <code>/articles</code> 1,55s và trang chủ 1,26s — nằm trong biến động mạng bình thường, không phải regression. 7 trang nhóm 1–3s gồm trang chủ, /articles, /studio, /interiors, /contact và 2 bài dài." data-en="<b>No page exceeds 3s.</b> Crawl of all 61 pages (16 core + 45 articles): <b>54/61 pages &lt;1s</b> (88.5%, up from 50 yesterday). All 45 /articles sit at 0.56–1.18s — the old 6.5–10.8s slowdown remains fully gone. Slowest this scan: the <code>/articles</code> listing at 1.55s and the homepage at 1.26s — within normal network jitter, not a regression. The 7 pages in the 1–3s band are the homepage, /articles, /studio, /interiors, /contact and 2 long articles."></div>
         </div>
       </div>
     </div>
@@ -201,44 +201,44 @@
   <h2 class="sec t" data-vi="Hướng đi &amp; Insight ưu tiên" data-en="Direction &amp; Priority insights"></h2>
 
   <div class="ins win">
-    <div class="prio t" data-vi="✓ AUDIT HÔM NAY (29/07) — ổn định, không regression" data-en="✓ TODAY'S AUDIT (29 Jul) — stable, no regressions"></div>
-    <h4 class="t" data-vi="Health 84 giữ nguyên: toàn bộ 45 bài vẫn nhanh (~0,8s) và schema/cấu trúc không đổi" data-en="Health 84 holds: all 45 articles still fast (~0.8s) and schema/structure unchanged"></h4>
-    <p class="t" data-vi="Crawl hôm nay (29/07) quét <b>toàn bộ 61 trang</b> và cho kết quả <b>ổn định</b> so hôm qua. Điểm sáng vẫn giữ: <b>cả 45 bài</b> <code>/articles/*</code> trả 200 với TTFB <b>0,61–2,25s</b> (TB 0,8s), <b>31–32 JSON-LD</b>/bài (Article + BreadcrumbList + BlogPosting; 32/45 bài có FAQPage), đúng <b>1 H1</b> giàu từ khóa. Trang chủ vẫn 24 JSON-LD + H1 'DX Living — Immersive Home Design Australia'; sitemap 67 URL; <b>61/61 trang trả 200</b>, 0 timeout. Không có regression về tốc độ, schema hay cấu trúc." data-en="Today's crawl (29 Jul) covered <b>all 61 pages</b> and came back <b>stable</b> vs yesterday. Highlights hold: <b>all 45</b> <code>/articles/*</code> return 200 with TTFB <b>0.61–2.25s</b> (avg 0.8s), <b>31–32 JSON-LD</b> each (Article + BreadcrumbList + BlogPosting; 32/45 carry FAQPage), a clean <b>single keyword-rich H1</b>. The homepage still carries 24 JSON-LD + H1 'DX Living — Immersive Home Design Australia'; sitemap 67 URLs; <b>61/61 pages return 200</b>, 0 timeouts. No speed, schema or structure regressions."></p>
-    <p class="fix t" data-vi="<b>Việc tiếp theo:</b> điểm sẽ nhích lên khi deploy schema (Service/LocalBusiness/Breadcrumb) cho 15 trang gốc còn trống và thêm alt cho 7 ảnh hero trang chủ — đây là hai đòn bẩy còn lại rõ nhất. Sau deploy + purge cache, quét lại để xác nhận điểm tăng." data-en="<b>Next:</b> the score will rise once schema (Service/LocalBusiness/Breadcrumb) is deployed to the 15 bare core pages and alt is added to the 7 homepage hero images — the two clearest remaining levers. After deploy + cache purge, re-scan to confirm the lift."></p>
+    <div class="prio t" data-vi="✓ AUDIT HÔM NAY (30/07) — cải thiện lớn, P1 đã xử lý" data-en="✓ TODAY'S AUDIT (30 Jul) — major improvement, P1 resolved"></div>
+    <h4 class="t" data-vi="Health 84 → 87: 12 trang gốc vừa được deploy schema Service + BreadcrumbList" data-en="Health 84 → 87: 12 core pages just received Service + BreadcrumbList schema"></h4>
+    <p class="t" data-vi="Crawl hôm nay (30/07) phát hiện <b>thay đổi tích cực rõ rệt</b>: 12 trang gốc trước đây hoàn toàn trống schema — <code>/about</code>, <code>/studio</code>, <code>/prestige</code>, <code>/model</code>, <code>/interiors</code>, <code>/modules</code>, <code>/projects</code>, <code>/suppliers</code>, <code>/apply</code>, <code>/contact</code>, <code>/privacy-policy</code>, <code>/terms-of-service</code> — <b>nay đã có 14–15 JSON-LD</b> (rendered-DOM /studio xác nhận: 14 khối <code>Service</code> + 14 <code>BreadcrumbList</code>). Đây đúng là đề xuất P1 của báo cáo hôm qua, nay đã triển khai. Điểm sáng cũ vẫn giữ: cả 45 bài <code>/articles/*</code> trả 200 với TTFB <b>0,56–1,18s</b>, 31–32 JSON-LD/bài (32/45 có FAQPage), 1 H1 giàu từ khóa; trang chủ 24 JSON-LD; sitemap 67 URL; 61/61 trang trả 200, 0 timeout." data-en="Today's crawl (30 Jul) detected a <b>clear positive change</b>: 12 core pages that were completely schema-bare — <code>/about</code>, <code>/studio</code>, <code>/prestige</code>, <code>/model</code>, <code>/interiors</code>, <code>/modules</code>, <code>/projects</code>, <code>/suppliers</code>, <code>/apply</code>, <code>/contact</code>, <code>/privacy-policy</code>, <code>/terms-of-service</code> — <b>now carry 14–15 JSON-LD</b> (rendered-DOM on /studio confirms: 14 <code>Service</code> + 14 <code>BreadcrumbList</code> blocks). This is exactly the P1 recommendation from yesterday's report, now shipped. Prior highlights hold: all 45 <code>/articles/*</code> return 200 with TTFB <b>0.56–1.18s</b>, 31–32 JSON-LD each (32/45 with FAQPage), a single keyword-rich H1; homepage 24 JSON-LD; sitemap 67 URLs; 61/61 pages return 200, 0 timeouts."></p>
+    <p class="fix t" data-vi="<b>Việc tiếp theo:</b> điểm còn nhích tiếp khi (1) thêm alt cho 7 ảnh hero trang chủ và (2) bổ sung <code>CollectionPage</code>/<code>ItemList</code> cho trang listing <code>/articles</code> (hiện vẫn 0 schema). Vào GSC xác nhận schema mới đã được Google 'Valid' và không lỗi." data-en="<b>Next:</b> the score rises further once (1) alt is added to the 7 homepage hero images and (2) <code>CollectionPage</code>/<code>ItemList</code> schema is added to the <code>/articles</code> listing (still 0 schema). In GSC, confirm the new schema is 'Valid' with no errors."></p>
   </div>
 
-  <div class="ins p1">
-    <div class="prio t" data-vi="P1 · Ưu tiên cao · CÒN LẠI" data-en="P1 · High priority · REMAINING"></div>
-    <h4 class="t" data-vi="15 trang gốc vẫn 0 JSON-LD — thiếu Service / LocalBusiness / Breadcrumb" data-en="15 core pages still 0 JSON-LD — missing Service / LocalBusiness / Breadcrumb"></h4>
-    <p class="t" data-vi="Trang chủ và toàn bộ bài viết giàu schema, nhưng <b>15 trang gốc còn lại vẫn trống hoàn toàn</b>: <code>/about</code>, <code>/studio</code>, <code>/prestige</code>, <code>/model</code>, <code>/interiors</code>, <code>/modules</code>, <code>/projects</code>, <code>/suppliers</code>, <code>/apply</code>, <code>/articles</code>, <code>/contact</code>, 2 trang tiện ích và 2 trang pháp lý — tất cả 0 script JSON-LD. Đây là các trang thương mại ý định cao, bỏ lỡ rich result và cơ hội được AI/AEO trích dẫn." data-en="The homepage and every article are schema-rich, but the <b>remaining 15 core pages are still completely bare</b>: <code>/about</code>, <code>/studio</code>, <code>/prestige</code>, <code>/model</code>, <code>/interiors</code>, <code>/modules</code>, <code>/projects</code>, <code>/suppliers</code>, <code>/apply</code>, <code>/articles</code>, <code>/contact</code>, 2 utility and 2 legal pages — all 0 JSON-LD scripts. These are high-intent commercial pages, forfeiting rich results and AI/AEO citation odds."></p>
-    <p class="fix t" data-vi="<b>Cách sửa:</b> Nhân rộng schema đã dùng cho trang chủ: thêm <code>Service</code> cho từng trang dịch vụ (<code>/studio</code>, <code>/prestige</code>, <code>/model</code>, <code>/interiors</code>, <code>/modules</code>), <code>BreadcrumbList</code> toàn site và <code>ContactPage</code>/<code>AboutPage</code> tương ứng. File <code>dxliving-jsonld-schema.md</code> đã có sẵn." data-en="<b>Fix:</b> Replicate the homepage schema pattern: add <code>Service</code> to each service page (<code>/studio</code>, <code>/prestige</code>, <code>/model</code>, <code>/interiors</code>, <code>/modules</code>), <code>BreadcrumbList</code> site-wide and matching <code>ContactPage</code>/<code>AboutPage</code>. The <code>dxliving-jsonld-schema.md</code> file is ready."></p>
+  <div class="ins win">
+    <div class="prio t" data-vi="✓ ĐÃ SỬA · P1 cũ · Schema trang gốc" data-en="✓ FIXED · former P1 · Core-page schema"></div>
+    <h4 class="t" data-vi="12/15 trang gốc trống schema đã được lấp — chỉ còn 3 trang ở mức 0" data-en="12 of the 15 bare core pages now covered — only 3 remain at 0"></h4>
+    <p class="t" data-vi="Vấn đề P1 kéo dài (15 trang gốc 0 JSON-LD) <b>đã xử lý phần lớn</b>. Sau deploy, 12 trang thương mại/ pháp lý đã có schema. <b>Còn lại đúng 3 trang ở mức 0</b>: <code>/articles</code> (listing — nên thêm CollectionPage/ItemList), <code>/start-interactive</code> và <code>/login</code> (2 trang tiện ích, ít cần schema). Độ phủ schema toàn site tăng từ ~46/61 → <b>58/61 trang</b> (95%)." data-en="The long-running P1 issue (15 core pages at 0 JSON-LD) is <b>largely resolved</b>. After the deploy, 12 commercial/legal pages now carry schema. <b>Exactly 3 pages remain at 0</b>: <code>/articles</code> (the listing — should add CollectionPage/ItemList), <code>/start-interactive</code> and <code>/login</code> (utility pages that need little schema). Site-wide schema coverage rose from ~46/61 → <b>58/61 pages</b> (95%)."></p>
+    <p class="fix t" data-vi="<b>Cách sửa còn lại:</b> chỉ cần thêm <code>CollectionPage</code>+<code>ItemList</code> cho <code>/articles</code>; 2 trang tiện ích có thể để noindex thay vì thêm schema." data-en="<b>Remaining fix:</b> just add <code>CollectionPage</code>+<code>ItemList</code> to <code>/articles</code>; the two utility pages can be noindexed rather than schema'd."></p>
   </div>
 
   <div class="ins p2">
     <div class="prio t" data-vi="P2 · Cảnh báo · còn tồn" data-en="P2 · Warning · persists"></div>
-    <h4 class="t" data-vi="Trang chủ vẫn 7/11 ảnh thiếu alt" data-en="Homepage still 7/11 images missing alt"></h4>
-    <p class="t" data-vi="Rendered-DOM hôm nay: trang chủ vẫn <b>7/11 ảnh thiếu thuộc tính alt</b> (chưa sửa) — ảnh hưởng SEO ảnh và a11y. Bài viết mẫu thiếu 2/9 ảnh alt. domInteractive trang chủ ~2,5s; các bài load nhanh (domInteractive ~1,5s). Đây là hạng mục dễ sửa nhất còn lại." data-en="Today's rendered-DOM: the homepage still has <b>7/11 images missing the alt attribute</b> (unfixed) — hurts image SEO and a11y. The sampled article misses 2/9 image alts. Homepage domInteractive ~2.5s; articles load fast (domInteractive ~1.5s). This is the easiest remaining fix."></p>
+    <h4 class="t" data-vi="Trang chủ vẫn 7/11 ảnh thiếu alt — nay là đòn bẩy on-page lớn nhất còn lại" data-en="Homepage still 7/11 images missing alt — now the biggest remaining on-page lever"></h4>
+    <p class="t" data-vi="Rendered-DOM hôm nay: trang chủ vẫn <b>7/11 ảnh thiếu thuộc tính alt</b> (chưa sửa) — ảnh hưởng SEO ảnh và a11y. Bài mẫu <code>/choosing-the-best-home-builder</code> thiếu 2/11 ảnh alt; <code>/studio</code> thiếu 2/6. domInteractive trang chủ ~2,6s; bài viết load nhanh (domInteractive ~1,0s). Sau khi schema trang gốc đã xong, đây là hạng mục dễ sửa và tác động nhất còn lại." data-en="Today's rendered-DOM: the homepage still has <b>7/11 images missing the alt attribute</b> (unfixed) — hurts image SEO and a11y. The sampled article <code>/choosing-the-best-home-builder</code> misses 2/11 image alts; <code>/studio</code> misses 2/6. Homepage domInteractive ~2.6s; articles load fast (domInteractive ~1.0s). With core-page schema now done, this is the easiest, highest-impact remaining fix."></p>
     <p class="fix t" data-vi="<b>Cách sửa:</b> Bổ sung <code>alt</code> mô tả cho 7 ảnh hero/gallery trang chủ (việc nhẹ, gộp vào deploy kế). Theo dõi loadEvent sau mỗi deploy để giữ hydration nhẹ." data-en="<b>Fix:</b> Add descriptive <code>alt</code> to the 7 homepage hero/gallery images (light work, bundle into the next deploy). Watch loadEvent after each deploy to keep hydration light."></p>
   </div>
 
   <div class="ins p3">
-    <div class="prio t" data-vi="P3 · Thông tin · một phần đã sửa" data-en="P3 · Info · partly fixed"></div>
-    <h4 class="t" data-vi="Bài viết đã 1×H1; nhưng heading vẫn nhảy bậc 2→4 và /studio H1 vẫn là brand" data-en="Articles now 1×H1; but headings still skip 2→4 and /studio H1 is still the brand"></h4>
-    <p class="t" data-vi="Tiến bộ giữ nguyên: mỗi bài chỉ <b>1 H1</b> giàu từ khóa và trang chủ H1 đã có từ khóa ('DX Living — Immersive Home Design Australia'). Còn tồn: chuỗi heading nhiều trang vẫn <b>nhảy bậc (2→4)</b>, gồm trang chủ và bài viết; một số bài còn có H2 xuất hiện trước H1 trong DOM. <code>/studio</code> H1 vẫn là tên brand, chưa chứa từ khóa dịch vụ." data-en="Progress holds: each article has a single <b>keyword-rich H1</b> and the homepage H1 now carries keywords ('DX Living — Immersive Home Design Australia'). Remaining: heading sequences on several pages still <b>skip levels (2→4)</b>, including the homepage and articles; some articles also render an H2 before the H1 in the DOM. <code>/studio</code> H1 is still the brand name, no service keyword."></p>
+    <div class="prio t" data-vi="P3 · Thông tin · không đổi" data-en="P3 · Info · unchanged"></div>
+    <h4 class="t" data-vi="Heading vẫn nhảy bậc 2→4; /studio H1 vẫn là 'DX STUDIO' (chưa có từ khóa dịch vụ)" data-en="Headings still skip 2→4; /studio H1 is still 'DX STUDIO' (no service keyword)"></h4>
+    <p class="t" data-vi="Mỗi trang vẫn đúng <b>1 H1</b> và trang chủ H1 có từ khóa ('DX Living — Immersive Home Design Australia'). Còn tồn: chuỗi heading nhiều trang vẫn <b>nhảy bậc (2→4)</b> — trang chủ, <code>/studio</code> và bài viết; một số bài còn có H2 xuất hiện trước H1 trong DOM (<code>/choosing-the-best-home-builder</code>: chuỗi bắt đầu 2,1,…). <code>/studio</code> H1 vẫn là 'DX STUDIO' — tên brand, chưa chứa từ khóa dịch vụ." data-en="Each page still has a single <b>H1</b> and the homepage H1 carries keywords ('DX Living — Immersive Home Design Australia'). Remaining: heading sequences on several pages still <b>skip levels (2→4)</b> — the homepage, <code>/studio</code> and articles; some articles also render an H2 before the H1 in the DOM (<code>/choosing-the-best-home-builder</code>: sequence starts 2,1,…). <code>/studio</code> H1 is still 'DX STUDIO' — a brand name, no service keyword."></p>
     <p class="fix t" data-vi="<b>Cách sửa:</b> Chuẩn hóa H1→H2→H3 tuần tự (không bỏ cấp, H1 đứng trước H2); đổi H1 các trang dịch vụ sang mô tả có từ khóa (vd '3D Home Design Studio Melbourne'). Ưu tiên thấp, gom vào lần dọn on-page." data-en="<b>Fix:</b> Normalise headings to sequential H1→H2→H3 (no skipped levels, H1 before H2); change service-page H1s to keyword-rich descriptions (e.g. '3D Home Design Studio Melbourne'). Low priority, bundle into an on-page cleanup."></p>
   </div>
 
   <div class="ins p3">
     <div class="prio t" data-vi="P3 · Cảnh báo nhẹ · không đổi" data-en="P3 · Minor · unchanged"></div>
     <h4 class="t" data-vi="2 trang mỏng: /start-interactive (62 từ) &amp; /login (31 từ)" data-en="2 thin pages: /start-interactive (62 words) &amp; /login (31 words)"></h4>
-    <p class="t" data-vi="<code>/start-interactive</code> chỉ 62 từ và <code>/login</code> 31 từ trong HTML thô (nội dung chính do JS render nên gần như không có link nội bộ trong HTML). <code>/start-interactive</code> vẫn nằm trong sitemap dù rất mỏng; <code>/login</code> đã đúng nằm ngoài sitemap. Cả hai load rất nhanh (0,35–0,37s)." data-en="<code>/start-interactive</code> has only 62 words and <code>/login</code> 31 words in the raw HTML (main content is JS-rendered, so almost no internal links in the HTML). <code>/start-interactive</code> is still in the sitemap despite being thin; <code>/login</code> is correctly outside it. Both load very fast (0.35–0.37s)."></p>
+    <p class="t" data-vi="<code>/start-interactive</code> chỉ 62 từ và <code>/login</code> 31 từ trong HTML thô (nội dung chính do JS render nên gần như không có link nội bộ trong HTML). <code>/start-interactive</code> vẫn nằm trong sitemap dù rất mỏng; <code>/login</code> đã đúng nằm ngoài sitemap. Cả hai load rất nhanh (0,33–0,34s)." data-en="<code>/start-interactive</code> has only 62 words and <code>/login</code> 31 words in the raw HTML (main content is JS-rendered, so almost no internal links in the HTML). <code>/start-interactive</code> is still in the sitemap despite being thin; <code>/login</code> is correctly outside it. Both load very fast (0.33–0.34s)."></p>
     <p class="fix t" data-vi="<b>Cách sửa:</b> Đặt <b>noindex</b> cho 2 trang tiện ích và gỡ <code>/start-interactive</code> khỏi sitemap; hoặc bổ sung nội dung server-render + link về trang chủ/dịch vụ." data-en="<b>Fix:</b> <b>noindex</b> both utility pages and drop <code>/start-interactive</code> from the sitemap; or add server-rendered content + links back to the homepage/services."></p>
   </div>
 
   <div class="ins p2">
     <div class="prio t" data-vi="Roadmap · Next steps ưu tiên" data-en="Roadmap · Prioritised next steps"></div>
-    <h4 class="t" data-vi="Thứ tự việc cần làm sau crawl 29/07" data-en="Action order after the 29 Jul crawl"></h4>
-    <p class="t" data-vi="<b>1.</b> <b>Ưu tiên #1:</b> Thêm schema <code>Service</code>/<code>LocalBusiness</code>/<code>BreadcrumbList</code> cho 15 trang gốc còn trống (nhân rộng mẫu trang chủ) — điểm nghẽn AEO lớn nhất còn lại. <b>2.</b> Bổ sung <code>alt</code> cho 7 ảnh hero/gallery trang chủ. <b>3.</b> Vào GSC xác nhận CWV + cả 45 bài đã 'Indexed'. <b>4.</b> Chuẩn hóa heading tuần tự + đổi H1 trang dịch vụ có từ khóa. <b>5.</b> noindex /login &amp; /start-interactive. <b>6.</b> Cân nhắc bổ sung FAQPage cho 13 bài chưa có để mở rộng AEO." data-en="<b>1.</b> <b>Top priority:</b> Add <code>Service</code>/<code>LocalBusiness</code>/<code>BreadcrumbList</code> schema to the 15 bare core pages (replicate the homepage pattern) — the biggest remaining AEO gap. <b>2.</b> Add <code>alt</code> to the 7 homepage hero/gallery images. <b>3.</b> In GSC confirm CWV + that all 45 articles are 'Indexed'. <b>4.</b> Normalise sequential headings + give service pages keyword-rich H1s. <b>5.</b> noindex /login &amp; /start-interactive. <b>6.</b> Consider adding FAQPage to the 13 articles without one to widen AEO coverage."></p>
+    <h4 class="t" data-vi="Thứ tự việc cần làm sau crawl 30/07" data-en="Action order after the 30 Jul crawl"></h4>
+    <p class="t" data-vi="<b>1.</b> <b>Ưu tiên #1 mới:</b> Bổ sung <code>alt</code> cho 7 ảnh hero/gallery trang chủ — đòn bẩy on-page lớn nhất còn lại. <b>2.</b> Thêm <code>CollectionPage</code>/<code>ItemList</code> cho trang listing <code>/articles</code> (trang gốc duy nhất còn 0 schema có ý nghĩa index). <b>3.</b> Vào GSC xác nhận 12 khối schema mới 'Valid' + CWV + cả 45 bài đã 'Indexed'. <b>4.</b> Chuẩn hóa heading tuần tự + đổi H1 trang dịch vụ có từ khóa (vd /studio). <b>5.</b> noindex /login &amp; /start-interactive. <b>6.</b> Bổ sung FAQPage cho 13 bài chưa có để mở rộng AEO." data-en="<b>1.</b> <b>New top priority:</b> Add <code>alt</code> to the 7 homepage hero/gallery images — the biggest remaining on-page lever. <b>2.</b> Add <code>CollectionPage</code>/<code>ItemList</code> to the <code>/articles</code> listing (the only index-worthy core page still at 0 schema). <b>3.</b> In GSC confirm the 12 new schema blocks are 'Valid' + CWV + that all 45 articles are 'Indexed'. <b>4.</b> Normalise sequential headings + give service pages keyword-rich H1s (e.g. /studio). <b>5.</b> noindex /login &amp; /start-interactive. <b>6.</b> Add FAQPage to the 13 articles without one to widen AEO coverage."></p>
   </div>
 
   <!-- Response time chart -->
@@ -266,76 +266,76 @@
       <tbody></tbody>
     </table>
   </div>
-  <div class="foot t" data-vi="Crawl trực tiếp qua Chrome (fetch same-origin) lúc 29/07/2026. <b>Số đo thật:</b> TTFB, KB, status, số H1, schema (script JSON-LD), title/meta, số từ. Lần này quét <b>toàn bộ 45/45 bài</b> <code>/articles</code> — tất cả trả 200 + Article/BreadcrumbList/BlogPosting (32/45 có FAQPage) + 1×H1 (1.136–3.043 từ). Cột JSON-LD = số script schema trong HTML thô. Cột Sitemap: chỉ <code>/login</code> nằm ngoài sitemap." data-en="Live Chrome crawl (same-origin fetch) on 29 Jul 2026. <b>Real measurements:</b> TTFB, KB, status, H1 count, schema (JSON-LD scripts), title/meta, word count. This run covered <b>all 45/45</b> <code>/articles</code> — all returning 200 + Article/BreadcrumbList/BlogPosting (32/45 with FAQPage) + 1×H1 (1,136–3,043 words). JSON-LD column = schema scripts in the raw HTML. Sitemap column: only <code>/login</code> is outside the sitemap."></div>
+  <div class="foot t" data-vi="Crawl trực tiếp qua Chrome (fetch same-origin) lúc 30/07/2026. <b>Số đo thật:</b> TTFB, KB, status, số H1, schema (script JSON-LD), title/meta, số từ. Lần này quét <b>toàn bộ 45/45 bài</b> <code>/articles</code> — tất cả trả 200 + Article/BreadcrumbList/BlogPosting (32/45 có FAQPage) + 1×H1 (1.136–3.043 từ). <b>Thay đổi lớn:</b> 12 trang gốc vừa có schema (Service+BreadcrumbList). Cột JSON-LD = số script schema trong HTML thô. Cột Sitemap: chỉ <code>/login</code> nằm ngoài sitemap." data-en="Live Chrome crawl (same-origin fetch) on 30 Jul 2026. <b>Real measurements:</b> TTFB, KB, status, H1 count, schema (JSON-LD scripts), title/meta, word count. This run covered <b>all 45/45</b> <code>/articles</code> — all returning 200 + Article/BreadcrumbList/BlogPosting (32/45 with FAQPage) + 1×H1 (1,136–3,043 words). <b>Big change:</b> 12 core pages just gained schema (Service+BreadcrumbList). JSON-LD column = schema scripts in the raw HTML. Sitemap column: only <code>/login</code> is outside the sitemap."></div>
 
 </div>
 
 <script>
 const AP = "/articles/";
 const ART = [
-["architectural-rendering-melbourne-pre-construction-planning",822,2102,32,42],
-["photorealistic-rendering-melbourne-developers",608,1810,32,39],
-["3d-floor-plan-melbourne-home-design-clarity",755,1950,32,42],
-["custom-home-builders-melbourne-3d-visualisation",613,2043,32,42],
-["3d-rendering-company-melbourne",644,2184,32,41],
-["3d-rendering-melbourne-pre-construction-planning",819,1944,32,42],
-["custom-home-builders-melbourne-pre-build-clarity",620,1948,32,41],
-["luxury-home-builders-melbourne-vr-bim",860,2009,32,40],
-["pre-construction-visualisation-construction-readiness",847,1999,32,37],
-["architectural-visualisation-melbourne-project-decisions",955,2079,32,42],
-["house-renovation-3d-design-melbourne",1132,2360,32,34],
-["how-3d-coordination-reduces-design-conflicts-before-construction",667,2367,31,34],
-["how-quality-management-in-projects-improves-project-delivery",698,2497,32,34],
-["how-a-construction-program-reduces-delays-and-design-conflicts",687,2592,32,38],
-["project-management-construction-for-luxury-residential-projects",776,2278,32,38],
-["bim-australia-9-implementation-mistakes",917,2858,32,37],
-["choosing-the-best-home-builder",2245,3043,32,35],
-["project-controls-for-luxury-residential-construction",1114,2550,32,40],
-["project-cost-management-using-bim-and-digital-twins",1227,2654,32,37],
-["custom-home-builders-vs-project-builders",1234,2850,32,35],
-["how-to-identify-quality-home-builders",641,2314,32,38],
-["the-best-home-builders-adelaide",631,2079,31,40],
-["brisbane-custom-home-builders-checklist-for-clients",689,2296,31,42],
-["bim-3d-4d-5d-explained",791,2374,31,42],
-["custom-built-homes-melbourne-checklist",638,1797,31,41],
-["how-to-choose-custom-home-builders-in-south-australia",659,2251,31,38],
-["best-practices-for-project-and-quality-management-in-2026",650,2298,31,38],
-["construction-program-management-software",714,2012,31,38],
-["program-for-construction-estimates-explained",886,2038,31,38],
-["what-is-bim-3d-modeling",673,1541,31,38],
-["project-management-and-cost-control",1559,2492,31,37],
-["bim-3d-from-design-to-site-in-2026",816,3017,31,38],
-["duplex-house-design-in-australia",955,2242,31,38],
-["3d-house-design-guide",803,2154,32,37],
-["modern-house-design-2026-10-trends-shaping-homes",785,1825,32,37],
-["contemporary-houses-a-practical-guide",674,1506,32,38],
-["how-3d-configurators-increase-buyer-commitment",758,1136,32,37],
-["the-risk-of-cheap-architectural-renders",787,1521,32,38],
-["custom-home-visualisation-timeline",615,2613,32,38],
-["vr-vs-360-in-australian-property-decisions",672,2187,32,38],
-["bim-for-architects-australia-in-custom-home-design",659,2300,32,37],
-["6-benefits-of-using-vr-technology",1060,2234,32,37],
-["virtual-reality-home-walkthrough",816,1592,32,37],
-["step-inside-6-home-design-trends-shaping-australia-in-2026",918,1566,32,37],
-["virtual-reality-in-australia-home-design",907,1456,32,38]
+["architectural-rendering-melbourne-pre-construction-planning",1181,2102,32,48],
+["photorealistic-rendering-melbourne-developers",908,1810,32,45],
+["3d-floor-plan-melbourne-home-design-clarity",887,1950,32,48],
+["custom-home-builders-melbourne-3d-visualisation",610,2043,32,48],
+["3d-rendering-company-melbourne",625,2184,32,47],
+["3d-rendering-melbourne-pre-construction-planning",748,1944,32,48],
+["custom-home-builders-melbourne-pre-build-clarity",612,1948,32,47],
+["luxury-home-builders-melbourne-vr-bim",587,2009,32,46],
+["pre-construction-visualisation-construction-readiness",606,1999,32,43],
+["architectural-visualisation-melbourne-project-decisions",610,2079,32,48],
+["house-renovation-3d-design-melbourne",814,2360,32,40],
+["how-3d-coordination-reduces-design-conflicts-before-construction",657,2367,31,40],
+["how-quality-management-in-projects-improves-project-delivery",665,2497,32,40],
+["how-a-construction-program-reduces-delays-and-design-conflicts",663,2592,32,43],
+["project-management-construction-for-luxury-residential-projects",731,2278,32,44],
+["bim-australia-9-implementation-mistakes",789,2858,32,43],
+["choosing-the-best-home-builder",752,3043,32,41],
+["project-controls-for-luxury-residential-construction",793,2550,32,45],
+["project-cost-management-using-bim-and-digital-twins",845,2654,32,43],
+["custom-home-builders-vs-project-builders",1143,2850,32,41],
+["how-to-identify-quality-home-builders",993,2314,32,43],
+["the-best-home-builders-adelaide",697,2079,31,45],
+["brisbane-custom-home-builders-checklist-for-clients",631,2296,31,47],
+["bim-3d-4d-5d-explained",633,2374,31,47],
+["custom-built-homes-melbourne-checklist",615,1797,31,46],
+["how-to-choose-custom-home-builders-in-south-australia",590,2251,31,43],
+["best-practices-for-project-and-quality-management-in-2026",758,2298,31,43],
+["construction-program-management-software",730,2012,31,43],
+["program-for-construction-estimates-explained",709,2038,31,43],
+["what-is-bim-3d-modeling",588,1541,31,43],
+["project-management-and-cost-control",915,2492,31,43],
+["bim-3d-from-design-to-site-in-2026",918,3017,31,43],
+["duplex-house-design-in-australia",726,2242,31,43],
+["3d-house-design-guide",871,2154,32,42],
+["modern-house-design-2026-10-trends-shaping-homes",838,1825,32,42],
+["contemporary-houses-a-practical-guide",627,1506,32,43],
+["how-3d-configurators-increase-buyer-commitment",564,1136,32,43],
+["the-risk-of-cheap-architectural-renders",577,1521,32,43],
+["custom-home-visualisation-timeline",606,2613,32,43],
+["vr-vs-360-in-australian-property-decisions",772,2187,32,43],
+["bim-for-architects-australia-in-custom-home-design",928,2300,32,43],
+["6-benefits-of-using-vr-technology",910,2234,32,43],
+["virtual-reality-home-walkthrough",920,1592,32,43],
+["step-inside-6-home-design-trends-shaping-australia-in-2026",842,1566,32,43],
+["virtual-reality-in-australia-home-design",712,1456,32,43]
 ];
 const PAGES = [
-  {url:"/",status:200,rt:1389,words:1611,schema:24,links:52,sm:1,grp:"core"},
-  {url:"/about",status:200,rt:724,words:448,schema:0,links:22,sm:1,grp:"core"},
-  {url:"/studio",status:200,rt:1479,words:659,schema:0,links:22,sm:1,grp:"core"},
-  {url:"/prestige",status:200,rt:1506,words:401,schema:0,links:22,sm:1,grp:"core"},
-  {url:"/model",status:200,rt:910,words:371,schema:0,links:22,sm:1,grp:"core"},
-  {url:"/interiors",status:200,rt:921,words:366,schema:0,links:23,sm:1,grp:"core"},
-  {url:"/modules",status:200,rt:776,words:250,schema:0,links:22,sm:1,grp:"core"},
-  {url:"/projects",status:200,rt:690,words:259,schema:0,links:22,sm:1,grp:"core"},
-  {url:"/suppliers",status:200,rt:421,words:465,schema:0,links:22,sm:1,grp:"core"},
-  {url:"/apply",status:200,rt:433,words:528,schema:0,links:22,sm:1,grp:"core"},
-  {url:"/articles",status:200,rt:1071,words:616,schema:0,links:54,sm:1,grp:"core"},
-  {url:"/contact",status:200,rt:775,words:253,schema:0,links:22,sm:1,grp:"core"},
-  {url:"/start-interactive",status:200,rt:372,words:62,schema:0,links:0,sm:1,grp:"core"},
-  {url:"/login",status:200,rt:347,words:31,schema:0,links:0,sm:0,grp:"core"},
-  {url:"/privacy-policy",status:200,rt:425,words:901,schema:0,links:22,sm:1,grp:"core"},
-  {url:"/terms-of-service",status:200,rt:418,words:901,schema:0,links:22,sm:1,grp:"core"}
+  {url:"/",status:200,rt:1261,words:1611,schema:24,links:58,sm:1,grp:"core"},
+  {url:"/about",status:200,rt:404,words:448,schema:14,links:28,sm:1,grp:"core"},
+  {url:"/studio",status:200,rt:1045,words:659,schema:14,links:28,sm:1,grp:"core"},
+  {url:"/prestige",status:200,rt:924,words:401,schema:14,links:28,sm:1,grp:"core"},
+  {url:"/model",status:200,rt:893,words:371,schema:14,links:28,sm:1,grp:"core"},
+  {url:"/interiors",status:200,rt:1022,words:366,schema:14,links:29,sm:1,grp:"core"},
+  {url:"/modules",status:200,rt:714,words:250,schema:14,links:28,sm:1,grp:"core"},
+  {url:"/projects",status:200,rt:509,words:259,schema:14,links:28,sm:1,grp:"core"},
+  {url:"/suppliers",status:200,rt:521,words:465,schema:14,links:28,sm:1,grp:"core"},
+  {url:"/apply",status:200,rt:662,words:528,schema:14,links:28,sm:1,grp:"core"},
+  {url:"/articles",status:200,rt:1547,words:616,schema:0,links:60,sm:1,grp:"core"},
+  {url:"/contact",status:200,rt:1068,words:253,schema:14,links:30,sm:1,grp:"core"},
+  {url:"/start-interactive",status:200,rt:328,words:62,schema:0,links:2,sm:1,grp:"core"},
+  {url:"/login",status:200,rt:339,words:31,schema:0,links:2,sm:0,grp:"core"},
+  {url:"/privacy-policy",status:200,rt:556,words:901,schema:15,links:28,sm:1,grp:"core"},
+  {url:"/terms-of-service",status:200,rt:423,words:901,schema:15,links:28,sm:1,grp:"core"}
 ];
 ART.forEach(a=>PAGES.push({url:AP+a[0],status:200,rt:a[1],words:a[2],schema:a[3],links:a[4],sm:1,grp:"art"}));
 
@@ -363,7 +363,7 @@ function setLang(l){
 
 function renderRt(){
   const loaded = [...PAGES].sort((a,b)=>b.rt-a.rt);
-  const max = 2245;
+  const max = 1547;
   const col = ms => ms<1000?'var(--green)':ms<3000?'var(--accent)':ms<6000?'var(--amber)':'var(--red)';
   const loc = LANG==='vi'?'vi-VN':'en-US';
   let h='';
