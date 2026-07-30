@@ -1,0 +1,24 @@
+{
+  "date": "2026-07-27",
+  "site": "dxliving.com",
+  "report": "technical-seo-audit",
+  "source": "Chrome live crawl (fetch same-origin, real TTFB). No OpenSEO, no Supermetrics. No estimated values.",
+  "health_score": 82,
+  "sub_scores": {
+    "crawlability": 88,
+    "performance": 88,
+    "structured_data": 72,
+    "onpage": 78,
+    "content": 78
+  },
+  "sitemap_urls": 67,
+  "pages_measured": 36,
+  "notes": {
+    "vi": [
+      "Crawl một phần (36 trang). Health 82. Schema trang gốc còn thấp."
+    ],
+    "en": [
+      "Partial crawl (36 pages). Health 82. Core-page schema still low."
+    ]
+  }
+}

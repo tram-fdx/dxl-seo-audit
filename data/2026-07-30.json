@@ -1,0 +1,24 @@
+{
+  "date": "2026-07-30",
+  "site": "dxliving.com",
+  "report": "technical-seo-audit",
+  "source": "Chrome live crawl (fetch same-origin, real TTFB). No OpenSEO, no Supermetrics. No estimated values.",
+  "health_score": 87,
+  "sub_scores": {
+    "crawlability": 90,
+    "performance": 93,
+    "structured_data": 88,
+    "onpage": 79,
+    "content": 80
+  },
+  "sitemap_urls": 67,
+  "pages_measured": 61,
+  "notes": {
+    "vi": [
+      "Health 84→87. 12 trang gốc vừa được deploy schema Service+BreadcrumbList; chỉ còn 3 trang 0 schema."
+    ],
+    "en": [
+      "Health 84→87. 12 core pages just gained Service+BreadcrumbList schema; only 3 pages left at 0."
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "site": "dxliving.com",
+  "report": "technical-seo-audit",
+  "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
+  "latest": "2026-07-30",
+  "snapshots": [
+    {
+      "date": "2026-07-27",
+      "data": "data/2026-07-27.json",
+      "report": "archive/2026-07-27.html",
+      "label_vi": "Health 82 · crawl một phần 36 trang",
+      "label_en": "Health 82 · partial 36-page crawl"
+    },
+    {
+      "date": "2026-07-28",
+      "data": "data/2026-07-28.json",
+      "report": "archive/2026-07-28.html",
+      "label_vi": "Health 84 · quét đủ 61 trang",
+      "label_en": "Health 84 · full 61-page crawl"
+    },
+    {
+      "date": "2026-07-29",
+      "data": "data/2026-07-29.json",
+      "report": "archive/2026-07-29.html",
+      "label_vi": "Health 84 · ổn định",
+      "label_en": "Health 84 · stable"
+    },
+    {
+      "date": "2026-07-30",
+      "data": "data/2026-07-30.json",
+      "report": "archive/2026-07-30.html",
+      "label_vi": "Health 84→87 · schema 12 trang gốc",
+      "label_en": "Health 84→87 · schema on 12 core pages"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "date": "2026-07-29",
+  "site": "dxliving.com",
+  "report": "technical-seo-audit",
+  "source": "Chrome live crawl (fetch same-origin, real TTFB). No OpenSEO, no Supermetrics. No estimated values.",
+  "health_score": 84,
+  "sub_scores": {
+    "crawlability": 90,
+    "performance": 92,
+    "structured_data": 74,
+    "onpage": 78,
+    "content": 80
+  },
+  "sitemap_urls": 67,
+  "pages_measured": 61,
+  "notes": {
+    "vi": [
+      "Ổn định so 28/07. Health 84. Bài viết nhanh (~0,8s), 15 trang gốc vẫn 0 schema."
+    ],
+    "en": [
+      "Stable vs 28 Jul. Health 84. Articles fast (~0.8s), 15 core pages still 0 schema."
+    ]
+  }
+}
