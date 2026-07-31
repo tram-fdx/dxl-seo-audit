@@ -1,0 +1,72 @@
+{
+  "date": "2026-07-31",
+  "site": "dxliving.com",
+  "report": "technical-seo-audit",
+  "source": "Chrome live crawl (fetch same-origin, real TTFB). No OpenSEO, no Supermetrics. No estimated values.",
+  "health_score": 84,
+  "sub_scores": {
+    "crawlability": 89,
+    "performance": 91,
+    "structured_data": 82,
+    "onpage": 76,
+    "content": 77
+  },
+  "sitemap_urls": 67,
+  "pages_measured": 68,
+  "pages_breakdown": { "core": 17, "articles": 45, "projects": 6 },
+  "http_200": 68,
+  "performance": {
+    "avg_ttfb_core_ms": 745,
+    "avg_ttfb_articles_ms": 784,
+    "avg_ttfb_projects_ms": 544,
+    "under_1s": 57,
+    "between_1s_3s": 11,
+    "over_3s": 0,
+    "slowest_ms": 1576,
+    "slowest_url": "/articles/step-inside-6-home-design-trends-shaping-australia-in-2026"
+  },
+  "structured_data": {
+    "pages_with_jsonld": 59,
+    "pages_without_jsonld": 9,
+    "coverage_pct": 86.8,
+    "zero_schema_urls": [
+      "/articles",
+      "/start-interactive",
+      "/login",
+      "/projects/251-station-st",
+      "/projects/20-head-street",
+      "/projects/85-commodore-drive-surfers-paradise",
+      "/projects/813-clarendon-street",
+      "/projects/31-mcilwain-drive",
+      "/projects/nagambie-project"
+    ],
+    "articles_with_faqpage": 32,
+    "articles_without_faqpage": 13
+  },
+  "content": {
+    "article_words_min": 1058,
+    "article_words_max": 2921,
+    "article_words_avg": 2047,
+    "thin_pages": ["/login", "/start-interactive", "/projects/* (~170 words each)"]
+  },
+  "onpage": {
+    "homepage_images_missing_alt": "7/11",
+    "project_page_images_missing_alt": "15/19",
+    "heading_skips": ["2→4 site-wide", "1→3 on project pages"],
+    "all_pages_have_title_desc_canonical": true
+  },
+  "notes": {
+    "vi": [
+      "Health 87→84. Điểm giảm không phải do site xấu đi mà do phạm vi index mở rộng: 6 trang /projects/* vừa vào sitemap, cả 6 đều 0 JSON-LD, ~170 từ, 15/19 ảnh thiếu alt.",
+      "Phát hiện mới: trang listing /articles chỉ lộ 16/45 link bài trong HTML thô.",
+      "Giữ vững: 45/45 bài trả 200 ở 0,57–1,58s, 31–32 JSON-LD, đúng 1 H1. /faq có FAQPage + 1.315 từ.",
+      "Nợ từ hôm qua chưa sửa: 7/11 ảnh trang chủ vẫn thiếu alt."
+    ],
+    "en": [
+      "Health 87→84. The drop is not a quality regression but a widening of indexable scope: 6 /projects/* pages just entered the sitemap, all with 0 JSON-LD, ~170 words and 15 of 19 images missing alt.",
+      "New finding: the /articles listing exposes only 16 of 45 article links in raw HTML.",
+      "Holding: 45/45 articles return 200 at 0.57–1.58s with 31–32 JSON-LD and exactly 1 H1. /faq carries FAQPage + 1,315 words.",
+      "Carried over unfixed: 7 of 11 homepage images still missing alt."
+    ]
+  }
+}
