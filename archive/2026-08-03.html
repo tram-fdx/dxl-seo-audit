@@ -102,36 +102,101 @@
   [data-lang-hidden]{display:none !important}
   @media(max-width:860px){.kpis{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.rt-row .name{width:150px}}
 
-  /* ---------- date picker (restored 03/08) ---------- */
-  .pk-card{margin-top:24px;background:var(--card);border:1px solid var(--line);border-radius:12px;
-    padding:16px 18px;box-shadow:0 1px 3px rgba(70,55,30,.05)}
-  .pk-head{font-size:14px;font-weight:700;color:var(--accent-dk);margin:0 0 4px;
-    display:flex;align-items:center;gap:8px}
-  .pk-head .bar{width:4px;height:15px;background:var(--accent);border-radius:2px;flex:0 0 auto}
-  .pk-sub{font-size:12.5px;color:var(--muted);margin:0 0 13px;line-height:1.5}
-  .pk-bar{display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+  /* ---------- date picker v2 (sample-matched) ---------- */
+  .pk-card{margin-top:24px;background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:18px 20px 16px;box-shadow:0 1px 3px rgba(70,55,30,.05)}
+  .pk-title{display:flex;align-items:center;gap:10px;font-size:12.5px;font-weight:800;
+    letter-spacing:.9px;text-transform:uppercase;color:var(--accent-dk);margin:0 0 8px}
+  .pk-title .bar{width:26px;height:3px;background:var(--accent);border-radius:2px;flex:0 0 auto}
+  .pk-sub{font-size:12.5px;color:var(--muted);margin:0 0 14px;line-height:1.6;max-width:900px}
+  .pk-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
   .dpwrap{position:relative}
   .dpbtn{display:inline-flex;align-items:center;gap:9px;background:var(--card);
-    border:1px solid #cfc6b3;border-radius:9px;padding:9px 14px;font-family:inherit;
-    font-size:13px;font-weight:700;line-height:1.2;color:var(--ink);cursor:pointer;transition:.15s}
+    border:1px solid #cfc6b3;border-radius:10px;padding:10px 15px;font-family:inherit;
+    font-size:13.5px;font-weight:700;line-height:1.2;color:var(--ink);cursor:pointer;transition:.15s}
   .dpbtn:hover{border-color:var(--accent)}
-  .dpbtn .cal{font-size:13px}
-  .dpbtn .car{color:var(--muted);font-size:9px}
-  .dppane{position:absolute;top:calc(100% + 7px);left:0;z-index:60;min-width:330px;
-    background:var(--card);border:1px solid var(--line);border-radius:11px;
-    box-shadow:0 8px 26px rgba(70,55,30,.16);padding:9px;display:none}
-  .dppane.open{display:block}
-  .dpitem{display:flex;align-items:flex-start;gap:11px;width:100%;text-align:left;
-    background:transparent;border:none;border-radius:8px;padding:9px 11px;cursor:pointer;
-    font-family:inherit;color:var(--ink);transition:.12s}
-  .dpitem:hover{background:var(--cream2)}
-  .dpitem.cur{background:var(--accent-soft,#efe4d2);cursor:default}
-  .dpitem .dt{font-size:13px;font-weight:700;white-space:nowrap;flex:0 0 auto;min-width:86px}
-  .dpitem .lb{font-size:11.5px;color:var(--muted);line-height:1.45}
-  .dpitem.cur .lb{color:#7a6b4d}
-  .dpnow{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.4px;
-    background:var(--accent);color:#2c2620;border-radius:9px;padding:1px 7px;margin-left:6px;vertical-align:1px}
-  .pk-note{font-size:11.5px;color:var(--muted);margin-top:11px;line-height:1.55}
+  .dpbtn .car{color:var(--muted);font-size:9px;margin-left:2px}
+  .pk-now{display:inline-block;background:var(--accent-soft,#f3e7d3);color:var(--accent-dk);
+    border:1px solid #e6d5b8;border-radius:20px;padding:7px 15px;font-size:12.5px;font-weight:700}
+
+  .dppane{position:absolute;top:calc(100% + 9px);left:0;z-index:80;display:none;
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 14px 40px rgba(70,55,30,.20);overflow:hidden}
+  .dppane.open{display:flex}
+  .dp-presets{width:196px;flex:0 0 auto;border-right:1px solid var(--line);
+    padding:12px 8px;background:#fdfbf6;max-height:430px;overflow:auto}
+  .dp-preset{display:flex;align-items:center;gap:9px;width:100%;text-align:left;background:transparent;
+    border:none;border-radius:8px;padding:8px 10px;cursor:pointer;font-family:inherit;
+    font-size:12.5px;color:var(--ink);transition:.12s}
+  .dp-preset:hover:not(:disabled){background:var(--cream2)}
+  .dp-preset:disabled{color:#bdb4a6;cursor:not-allowed}
+  .dp-preset .rd{width:13px;height:13px;border-radius:50%;border:1.5px solid #c3b9a6;flex:0 0 auto;position:relative}
+  .dp-preset.on .rd{border-color:var(--accent)}
+  .dp-preset.on .rd::after{content:"";position:absolute;inset:2.5px;border-radius:50%;background:var(--accent)}
+  .dp-preset .nm{flex:1}
+  .dp-preset .ct{font-size:11.5px;color:var(--faint,#9a9186);font-weight:700}
+
+  .dp-right{padding:14px 16px 12px;min-width:452px}
+  .dp-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+  .dp-nav button{background:transparent;border:none;color:var(--muted);font-size:16px;
+    cursor:pointer;padding:2px 9px;border-radius:6px;line-height:1}
+  .dp-nav button:hover:not(:disabled){background:var(--cream2);color:var(--ink)}
+  .dp-nav button:disabled{opacity:.3;cursor:not-allowed}
+  .dp-nav .mtitle{flex:1;display:flex;justify-content:space-around;font-size:13.5px;font-weight:700}
+  .dp-months{display:flex;gap:26px}
+  .dp-m{flex:1}
+  .dp-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:1px}
+  .dp-dow{font-size:10.5px;color:var(--muted);text-align:center;padding:5px 0 3px;font-weight:700}
+  .dp-d{position:relative;height:29px;border:none;background:transparent;border-radius:7px;
+    font-family:inherit;font-size:12.5px;color:#bdb4a6;cursor:pointer;padding:0;transition:.1s}
+  .dp-d.blank{cursor:default}
+  .dp-d.has{color:var(--ink);font-weight:700}
+  .dp-d:hover:not(.blank):not(.sel){background:var(--cream2)}
+  .dp-d.inrange{background:var(--accent-soft,#f3e7d3);border-radius:0}
+  .dp-d.sel{background:var(--accent);color:#2c2620;font-weight:800}
+  .dp-d.sel.edge-l{border-radius:7px 0 0 7px}
+  .dp-d.sel.edge-r{border-radius:0 7px 7px 0}
+  .dp-d .dot{position:absolute;bottom:3px;left:50%;transform:translateX(-50%);
+    width:3.5px;height:3.5px;border-radius:50%;background:var(--accent)}
+  .dp-d.sel .dot{background:#2c2620}
+
+  .dp-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;
+    margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+  .dp-selinfo .d1{font-size:13.5px;font-weight:700}
+  .dp-selinfo .d2{font-size:11.5px;color:var(--muted);margin-top:3px;line-height:1.5;max-width:300px}
+  .dp-actions{display:flex;gap:9px;flex:0 0 auto}
+  .dp-actions button{font-family:inherit;font-size:12.5px;font-weight:700;border-radius:9px;
+    padding:9px 18px;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--muted)}
+  .dp-actions .go{background:var(--accent);border-color:var(--accent);color:#2c2620}
+  .dp-actions .go:hover{background:var(--accent-dk);border-color:var(--accent-dk);color:#fff}
+  .dp-legend{font-size:11px;color:var(--muted);margin-top:10px;line-height:1.55}
+  .dp-legend .dotlg{display:inline-block;width:4px;height:4px;border-radius:50%;
+    background:var(--accent);vertical-align:middle;margin-right:4px}
+
+  .pk-quick{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:15px;
+    padding-top:14px;border-top:1px solid var(--line)}
+  .pk-quick-lbl{font-size:10.5px;font-weight:800;letter-spacing:.8px;color:var(--muted);
+    text-transform:uppercase;flex:0 0 auto;margin-right:2px}
+  .qchip{display:inline-flex;align-items:baseline;gap:8px;background:var(--card);
+    border:1px solid var(--line);border-radius:20px;padding:6px 14px;cursor:pointer;
+    font-family:inherit;font-size:12.5px;color:var(--ink);transition:.13s;text-align:left}
+  .qchip:hover{border-color:var(--accent);background:#fdfaf3}
+  .qchip .qd{font-weight:700;flex:0 0 auto}
+  .qchip .ql{font-size:11.5px;color:var(--muted)}
+  .qchip.cur{background:var(--accent);border-color:var(--accent);color:#2c2620;cursor:default}
+  .qchip.cur .ql{color:#5c4a24}
+
+  .pk-trend{display:none;margin-top:15px;padding-top:14px;border-top:1px solid var(--line)}
+  .pk-trend.on{display:block}
+  .pk-trend h4{margin:0 0 10px;font-size:13px;color:var(--accent-dk)}
+  .trd{display:grid;grid-template-columns:88px 1fr 46px 62px;gap:9px;align-items:center;
+    margin:6px 0;font-size:12.5px}
+  .trd .tdate{font-weight:700}
+  .trd .ttrack{background:var(--cream2);border-radius:6px;height:16px;overflow:hidden}
+  .trd .tfill{height:100%;background:var(--accent);border-radius:6px}
+  .trd .tval{font-weight:800;text-align:right}
+  .trd .tlink{font-size:11px;color:var(--accent-dk);text-decoration:underline;cursor:pointer;text-align:right}
+  @media(max-width:860px){.dppane.open{flex-direction:column}.dp-right{min-width:0}.dp-months{flex-direction:column;gap:14px}.dp-presets{width:auto;border-right:none;border-bottom:1px solid var(--line);max-height:none}}
 
 </style>
 </head>
@@ -162,20 +227,39 @@
 <div class="wrap">
 
 
-  <!-- date picker -->
+  <!-- date picker v2 -->
   <div class="pk-card">
-    <div class="pk-head"><span class="bar"></span><span class="t" data-vi="Chọn ngày audit" data-en="Choose an audit day"></span></div>
-    <p class="pk-sub t" data-vi="Mỗi ngày crawl được đóng băng thành một bản báo cáo riêng. Chọn một ngày để mở đúng bản đã lưu của ngày đó." data-en="Each crawl day is frozen as its own report. Pick a day to open that day's saved snapshot."></p>
+    <div class="pk-title"><span class="bar"></span><span class="t" data-vi="Chọn ngày để xem báo cáo" data-en="Choose a day to view its report"></span></div>
+    <p class="pk-sub t" data-vi="Chọn <b>một ngày</b> rồi bấm <b>Cập nhật</b> để mở đúng bản báo cáo đã lưu của ngày đó. Chọn <b>một khoảng ngày</b> để xem xu hướng trong khoảng. Ngày <b>có dấu chấm</b> là ngày đã quét và có báo cáo lưu; ngày làm mờ vẫn chọn được làm đầu/cuối khoảng, nhưng không có báo cáo riêng để mở." data-en="Pick <b>a single day</b> and press <b>Update</b> to open that day's saved report. Pick <b>a date range</b> to see the trend across it. Days <b>with a dot</b> were crawled and have a stored report; faded days can still anchor a range but have no report of their own."></p>
     <div class="pk-bar">
       <div class="dpwrap">
-        <button class="dpbtn" id="dpBtn" type="button" aria-haspopup="true" aria-expanded="false">
-          <span class="cal">&#128197;</span><span id="dpLabel">03/08/2026</span><span class="car">&#9660;</span>
+        <button class="dpbtn" id="dpBtn" type="button" aria-haspopup="dialog" aria-expanded="false">
+          <span>&#128197;</span><span id="dpLabel">Ngày 03/08/2026</span><span class="car">&#9660;</span>
         </button>
-        <div class="dppane" id="dpPane"></div>
+        <div class="dppane" id="dpPane" role="dialog">
+          <div class="dp-presets" id="dpPresets"></div>
+          <div class="dp-right">
+            <div class="dp-nav">
+              <button type="button" id="dpPrev" aria-label="prev">&#8249;</button>
+              <div class="mtitle"><span id="dpM1"></span><span id="dpM2"></span></div>
+              <button type="button" id="dpNext" aria-label="next">&#8250;</button>
+            </div>
+            <div class="dp-months"><div class="dp-m" id="dpG1"></div><div class="dp-m" id="dpG2"></div></div>
+            <div class="dp-foot">
+              <div class="dp-selinfo"><div class="d1" id="dpSelD"></div><div class="d2" id="dpSelInfo"></div></div>
+              <div class="dp-actions">
+                <button type="button" id="dpCancel" class="t" data-vi="Hủy" data-en="Cancel"></button>
+                <button type="button" id="dpApply" class="go t" data-vi="Cập nhật" data-en="Update"></button>
+              </div>
+            </div>
+            <div class="dp-legend"><span class="dotlg"></span><span class="t" data-vi="Dấu chấm = ngày đã có dữ liệu lưu. Ngày làm mờ = chưa quét: dùng được làm đầu/cuối khoảng, nhưng không mở được báo cáo riêng." data-en="Dot = a day with stored data. Faded day = not crawled: usable as a range endpoint, but it has no report of its own to open."></span></div>
+          </div>
+        </div>
       </div>
-      <span class="pk-note" style="margin:0" id="dpCount"></span>
+      <span class="pk-now" id="dpNow"></span>
     </div>
-    <div class="pk-note t" data-vi="Ghi chú: hai ngày 01/08 và 02/08 không có bản đóng băng trên GitHub (lần chạy hôm đó không đẩy archive), nên picker chỉ liệt kê các ngày thực sự đã lưu." data-en="Note: 01 and 02 Aug have no frozen snapshot on GitHub (those runs did not push an archive), so the picker only lists days that were actually saved."></div>
+    <div class="pk-quick" id="dpQuick"></div>
+    <div class="pk-trend" id="dpTrend"></div>
   </div>
 
   <!-- KPIs -->
@@ -255,28 +339,28 @@
     <div class="prio t" data-vi="P1 MỚI · PHÁT HIỆN HÔM NAY (03/08)" data-en="NEW P1 · FOUND TODAY (03 Aug)"></div>
     <h4 class="t" data-vi="Mỗi trang phát ra 14 khối JSON-LD y hệt nhau — schema bị nhân bản, không phải phong phú" data-en="Every page emits 14 byte-identical JSON-LD blocks — schema is duplicated, not rich"></h4>
     <p class="t" data-vi="Audit hôm nay lần đầu <b>so sánh nội dung</b> từng khối JSON-LD thay vì chỉ đếm số lượng. Kết quả: trên <code>/about</code> có <b>14 khối JSON-LD nhưng chỉ 1 khối duy nhất về nội dung</b> — 13 khối còn lại là bản sao byte-for-byte. Kiểm chứng bằng <code>new Set(blocks).size === 1</code>. Mô hình này lặp trên toàn bộ trang gốc (14–15 khối), trang chủ (24 khối) và bài viết (31–32 khối, tương ứng ~2–3 schema thật nhân 14). Nghĩa là các con số schema ấn tượng trong báo cáo trước <b>đã bị thổi phồng ~14 lần</b>: bài viết thực chất chỉ có <code>Article</code> + <code>BreadcrumbList</code> + <code>BlogPosting</code> + <code>FAQPage</code>, không phải 32 loại. Hệ quả: HTML phình vô ích, và Google có thể coi đây là tín hiệu cẩu thả khi parse structured data." data-en="Today's audit for the first time <b>compared the contents</b> of each JSON-LD block instead of merely counting them. Result: <code>/about</code> carries <b>14 JSON-LD blocks but only 1 distinct payload</b> — the other 13 are byte-for-byte copies, verified via <code>new Set(blocks).size === 1</code>. The pattern repeats across every core page (14–15 blocks), the homepage (24 blocks) and every article (31–32 blocks, i.e. roughly 2–3 real schemas multiplied by 14). This means the impressive schema counts in previous reports were <b>inflated by a factor of ~14</b>: an article genuinely carries <code>Article</code> + <code>BreadcrumbList</code> + <code>BlogPosting</code> + <code>FAQPage</code>, not 32 distinct types. Consequences: needless HTML bloat and a sloppiness signal to Google's structured-data parser."></p>
-    <p class="fix t" data-vi="<b>Cách sửa:</b> đây gần như chắc chắn là lỗi component schema được mount lại trong mỗi layout/route wrapper. Tìm component render <code>&lt;script type=&quot;application/ld+json&quot;&gt;</code> và đảm bảo nó chỉ chạy <b>một lần ở cấp document/head</b> (dùng key duy nhất, hoặc di chuyển lên root layout và bỏ khỏi các layout con). Sau khi sửa, mong đợi: trang gốc còn 1–2 khối, bài viết còn 3–4 khối, HTML giảm 15–25 KB/trang." data-en="<b>Fix:</b> this is almost certainly a schema component being remounted inside every layout/route wrapper. Locate the component rendering <code>&lt;script type=&quot;application/ld+json&quot;&gt;</code> and ensure it executes <b>once at document/head level</b> (dedupe by key, or hoist it to the root layout and remove it from nested layouts). After the fix expect 1–2 blocks on core pages, 3–4 on articles, and 15–25 KB less HTML per page."></p>
+    <p class="fix t" data-vi="<b>Cách sửa:</b> đây gần như chắc chắn là lỗi component schema được mount lại trong mỗi layout/route wrapper. Tìm component render <code>&lt;script type=\"application/ld+json\"&gt;</code> và đảm bảo nó chỉ chạy <b>một lần ở cấp document/head</b> (dùng key duy nhất, hoặc di chuyển lên root layout và bỏ khỏi các layout con). Sau khi sửa, mong đợi: trang gốc còn 1–2 khối, bài viết còn 3–4 khối, HTML giảm 15–25 KB/trang." data-en="<b>Fix:</b> this is almost certainly a schema component being remounted inside every layout/route wrapper. Locate the component rendering <code>&lt;script type=\"application/ld+json\"&gt;</code> and ensure it executes <b>once at document/head level</b> (dedupe by key, or hoist it to the root layout and remove it from nested layouts). After the fix expect 1–2 blocks on core pages, 3–4 on articles, and 15–25 KB less HTML per page."></p>
   </div>
 
   <div class="ins p1">
     <div class="prio t" data-vi="P1 · Còn tồn · sang ngày thứ 3 chưa sửa" data-en="P1 · Persisting · third day unfixed"></div>
     <h4 class="t" data-vi="6 trang /projects/* vẫn 0 schema, ~170 từ, 15/19 ảnh thiếu alt" data-en="6 /projects/* pages still have 0 schema, ~170 words, 15 of 19 images without alt"></h4>
     <p class="t" data-vi="Sáu trang dự án — <code>/251-station-st</code>, <code>/20-head-street</code>, <code>/85-commodore-drive-surfers-paradise</code>, <code>/813-clarendon-street</code>, <code>/31-mcilwain-drive</code>, <code>/nagambie-project</code> — vẫn nằm trong sitemap, vẫn trả 200 (0,51–2,23s), và <b>vẫn y nguyên tình trạng của 31/07</b>: <b>0 JSON-LD</b>, chỉ <b>161–178 từ</b> HTML thô. Rendered-DOM của <code>/251-station-st</code> hôm nay xác nhận <b>15/19 ảnh vẫn thiếu alt</b>, <b>0 ảnh lazy-load</b>, heading nhảy bậc cả <b>1→3</b> và <b>2→4</b>, loadEvent 5,71s (nặng nhất site). Đây là nhóm trang đang bị Google mời index ở trạng thái chưa hoàn thiện — mỗi ngày trôi qua là thêm rủi ro bị đánh giá thin content." data-en="The six project pages — <code>/251-station-st</code>, <code>/20-head-street</code>, <code>/85-commodore-drive-surfers-paradise</code>, <code>/813-clarendon-street</code>, <code>/31-mcilwain-drive</code>, <code>/nagambie-project</code> — remain in the sitemap, still return 200 (0.51–2.23s), and are <b>exactly as they were on 31 Jul</b>: <b>0 JSON-LD</b> and only <b>161–178 words</b> of raw HTML. Today's rendered DOM of <code>/251-station-st</code> confirms <b>15 of 19 images still lack alt</b>, <b>zero images lazy-load</b>, headings skip both <b>1→3</b> and <b>2→4</b>, and loadEvent is 5.71s — the heaviest on the site. Google is being invited to index these pages in an unfinished state, and every further day raises the thin-content risk."></p>
-    <p class="fix t" data-vi="<b>Cách sửa (không đổi):</b> thêm <code>CreativeWork</code>/<code>Place</code> + <code>BreadcrumbList</code> + <code>ImageObject</code>; server-render 250–400 từ mô tả (địa điểm, quy mô, vai trò DXL, kết quả); viết alt cho 15 ảnh gallery; bật <code>loading=&quot;lazy&quot;</code>. <b>Nếu tuần này chưa deploy được, hãy noindex 6 trang ngay</b> — để nguyên 3 ngày nữa sẽ tốn công recovery hơn." data-en="<b>Fix (unchanged):</b> add <code>CreativeWork</code>/<code>Place</code> + <code>BreadcrumbList</code> + <code>ImageObject</code>; server-render 250–400 words of narrative (location, scale, DXL's role, outcome); write alt text for the 15 gallery images; enable <code>loading=&quot;lazy&quot;</code>. <b>If this can't ship this week, noindex the six pages now</b> — leaving them another three days makes recovery more expensive."></p>
+    <p class="fix t" data-vi="<b>Cách sửa (không đổi):</b> thêm <code>CreativeWork</code>/<code>Place</code> + <code>BreadcrumbList</code> + <code>ImageObject</code>; server-render 250–400 từ mô tả (địa điểm, quy mô, vai trò DXL, kết quả); viết alt cho 15 ảnh gallery; bật <code>loading=\"lazy\"</code>. <b>Nếu tuần này chưa deploy được, hãy noindex 6 trang ngay</b> — để nguyên 3 ngày nữa sẽ tốn công recovery hơn." data-en="<b>Fix (unchanged):</b> add <code>CreativeWork</code>/<code>Place</code> + <code>BreadcrumbList</code> + <code>ImageObject</code>; server-render 250–400 words of narrative (location, scale, DXL's role, outcome); write alt text for the 15 gallery images; enable <code>loading=\"lazy\"</code>. <b>If this can't ship this week, noindex the six pages now</b> — leaving them another three days makes recovery more expensive."></p>
   </div>
 
   <div class="ins win">
     <div class="prio t" data-vi="✓ ĐIỂM SÁNG · giữ vững" data-en="✓ HOLDING STRONG"></div>
     <h4 class="t" data-vi="45 bài viết vẫn nhanh, đủ schema thật, đúng 1 H1 — và /faq vẫn là kho AEO mạnh nhất" data-en="45 articles stay fast with genuine schema and a single H1 — and /faq remains the strongest AEO asset"></h4>
-    <p class="t" data-vi="Cả <b>45/45 bài</b> trả 200, TTFB <b>0,56–2,96s</b> với 36 bài &lt;1s, <b>đúng 1 H1</b> giàu từ khóa (đã hết lỗi 2×H1 cũ), 1.033–2.896 từ (TB 2.023), và <b>32/45 bài có <code>FAQPage</code></b>. Sau khi trừ nhân bản 14×, mỗi bài vẫn có bộ schema đúng chuẩn: <code>Article</code> + <code>BlogPosting</code> + <code>BreadcrumbList</code> (+ <code>FAQPage</code> ở 32 bài) — đây là schema <b>thật</b> và vẫn hợp lệ. Sự cố chậm 6,5–10,8s của <code>/articles/*</code> hồi tháng 7 <b>vẫn hết hẳn</b> sang ngày thứ tư. <b>68/68 trang</b> đều có title, meta description và canonical; <code>html lang=&quot;en-AU&quot;</code> đúng cho thị trường Úc; <code>robots.txt</code> sạch (<code>Disallow:</code> rỗng) và trỏ đúng sitemap. <code>/faq</code>: 1.315 từ + <code>FAQPage</code>, TTFB 0,48s." data-en="All <b>45/45 articles</b> return 200 at <b>0.56–2.96s</b> TTFB with 36 under 1s, <b>exactly one</b> keyword-rich H1 (the old 2×H1 defect is gone), 1,033–2,896 words (avg 2,023), and <b>32 of 45 carry <code>FAQPage</code></b>. Once the 14× duplication is discounted, each article still holds a correct schema set: <code>Article</code> + <code>BlogPosting</code> + <code>BreadcrumbList</code> (+ <code>FAQPage</code> on 32) — that schema is <b>real</b> and remains valid. July's 6.5–10.8s <code>/articles/*</code> slowdown <b>stays fully resolved</b> for a fourth day. <b>68 of 68 pages</b> carry a title, meta description and canonical; <code>html lang=&quot;en-AU&quot;</code> is correct for the AU market; <code>robots.txt</code> is clean (empty <code>Disallow:</code>) and points at the right sitemap. <code>/faq</code>: 1,315 words + <code>FAQPage</code> at 0.48s TTFB."></p>
+    <p class="t" data-vi="Cả <b>45/45 bài</b> trả 200, TTFB <b>0,56–2,96s</b> với 36 bài &lt;1s, <b>đúng 1 H1</b> giàu từ khóa (đã hết lỗi 2×H1 cũ), 1.033–2.896 từ (TB 2.023), và <b>32/45 bài có <code>FAQPage</code></b>. Sau khi trừ nhân bản 14×, mỗi bài vẫn có bộ schema đúng chuẩn: <code>Article</code> + <code>BlogPosting</code> + <code>BreadcrumbList</code> (+ <code>FAQPage</code> ở 32 bài) — đây là schema <b>thật</b> và vẫn hợp lệ. Sự cố chậm 6,5–10,8s của <code>/articles/*</code> hồi tháng 7 <b>vẫn hết hẳn</b> sang ngày thứ tư. <b>68/68 trang</b> đều có title, meta description và canonical; <code>html lang=\"en-AU\"</code> đúng cho thị trường Úc; <code>robots.txt</code> sạch (<code>Disallow:</code> rỗng) và trỏ đúng sitemap. <code>/faq</code>: 1.315 từ + <code>FAQPage</code>, TTFB 0,48s." data-en="All <b>45/45 articles</b> return 200 at <b>0.56–2.96s</b> TTFB with 36 under 1s, <b>exactly one</b> keyword-rich H1 (the old 2×H1 defect is gone), 1,033–2,896 words (avg 2,023), and <b>32 of 45 carry <code>FAQPage</code></b>. Once the 14× duplication is discounted, each article still holds a correct schema set: <code>Article</code> + <code>BlogPosting</code> + <code>BreadcrumbList</code> (+ <code>FAQPage</code> on 32) — that schema is <b>real</b> and remains valid. July's 6.5–10.8s <code>/articles/*</code> slowdown <b>stays fully resolved</b> for a fourth day. <b>68 of 68 pages</b> carry a title, meta description and canonical; <code>html lang=\"en-AU\"</code> is correct for the AU market; <code>robots.txt</code> is clean (empty <code>Disallow:</code>) and points at the right sitemap. <code>/faq</code>: 1,315 words + <code>FAQPage</code> at 0.48s TTFB."></p>
     <p class="fix t" data-vi="<b>Giữ nguyên:</b> khi sửa lỗi nhân bản schema ở P1, <b>đừng gỡ nhầm schema thật</b> — mục tiêu là còn 3–4 khối/bài, không phải 0. Xác minh lại bằng Rich Results Test sau deploy." data-en="<b>Maintain:</b> when fixing the P1 duplication, <b>do not strip the genuine schema</b> — the target is 3–4 blocks per article, not zero. Re-verify with the Rich Results Test after deploying."></p>
   </div>
 
   <div class="ins p2">
     <div class="prio t" data-vi="P2 · Còn tồn · sang ngày thứ 4 chưa sửa" data-en="P2 · Persisting · fourth day unfixed"></div>
     <h4 class="t" data-vi="Trang chủ vẫn 7/11 ảnh thiếu alt và 0 ảnh lazy-load" data-en="Homepage still 7 of 11 images without alt and zero lazy-loading"></h4>
-    <p class="t" data-vi="Rendered-DOM hôm nay xác nhận trang chủ vẫn <b>7/11 ảnh thiếu <code>alt</code></b> — không đổi so với 31/07, 01/08 và 02/08. Đây là khuyến nghị P1 từ báo cáo 30/07 và <b>đã 4 ngày chưa deploy</b>. Kèm theo: <b>0/11 ảnh dùng <code>loading=&quot;lazy&quot;</code></b>, domContentLoaded 1,84s, loadEvent 2,78s. Bài mẫu <code>/bim-australia-9-implementation-mistakes</code> chỉ thiếu 2/10 alt — nên vấn đề tập trung rõ ở <b>trang chủ và 6 trang dự án</b>, không phải toàn site." data-en="Today's rendered DOM confirms the homepage still has <b>7 of 11 images without <code>alt</code></b> — unchanged since 31 Jul, 01 Aug and 02 Aug. This was the 30 Jul report's P1 and has now gone <b>four days without a deploy</b>. Alongside it: <b>0 of 11 images use <code>loading=&quot;lazy&quot;</code></b>, domContentLoaded is 1.84s and loadEvent 2.78s. The sampled article <code>/bim-australia-9-implementation-mistakes</code> misses only 2 of 10 alts — so the problem is clearly concentrated on the <b>homepage and the 6 project pages</b>, not site-wide."></p>
-    <p class="fix t" data-vi="<b>Cách sửa:</b> một deploy nhỏ gộp cả ba: 7 <code>alt</code> trang chủ + 15 <code>alt</code> trang dự án + <code>loading=&quot;lazy&quot;</code> cho ảnh dưới màn hình đầu. Ước tính ~30 phút, đưa On-page từ 76 lên ~85 và kéo Health lên ~86." data-en="<b>Fix:</b> one small deploy covering all three: 7 homepage <code>alt</code>s + 15 project-page <code>alt</code>s + <code>loading=&quot;lazy&quot;</code> below the fold. Roughly 30 minutes of work, lifting On-page from 76 to about 85 and Health to about 86."></p>
+    <p class="t" data-vi="Rendered-DOM hôm nay xác nhận trang chủ vẫn <b>7/11 ảnh thiếu <code>alt</code></b> — không đổi so với 31/07, 01/08 và 02/08. Đây là khuyến nghị P1 từ báo cáo 30/07 và <b>đã 4 ngày chưa deploy</b>. Kèm theo: <b>0/11 ảnh dùng <code>loading=\"lazy\"</code></b>, domContentLoaded 1,84s, loadEvent 2,78s. Bài mẫu <code>/bim-australia-9-implementation-mistakes</code> chỉ thiếu 2/10 alt — nên vấn đề tập trung rõ ở <b>trang chủ và 6 trang dự án</b>, không phải toàn site." data-en="Today's rendered DOM confirms the homepage still has <b>7 of 11 images without <code>alt</code></b> — unchanged since 31 Jul, 01 Aug and 02 Aug. This was the 30 Jul report's P1 and has now gone <b>four days without a deploy</b>. Alongside it: <b>0 of 11 images use <code>loading=\"lazy\"</code></b>, domContentLoaded is 1.84s and loadEvent 2.78s. The sampled article <code>/bim-australia-9-implementation-mistakes</code> misses only 2 of 10 alts — so the problem is clearly concentrated on the <b>homepage and the 6 project pages</b>, not site-wide."></p>
+    <p class="fix t" data-vi="<b>Cách sửa:</b> một deploy nhỏ gộp cả ba: 7 <code>alt</code> trang chủ + 15 <code>alt</code> trang dự án + <code>loading=\"lazy\"</code> cho ảnh dưới màn hình đầu. Ước tính ~30 phút, đưa On-page từ 76 lên ~85 và kéo Health lên ~86." data-en="<b>Fix:</b> one small deploy covering all three: 7 homepage <code>alt</code>s + 15 project-page <code>alt</code>s + <code>loading=\"lazy\"</code> below the fold. Roughly 30 minutes of work, lifting On-page from 76 to about 85 and Health to about 86."></p>
   </div>
 
   <div class="ins p2">
@@ -429,7 +513,7 @@ function setLang(l){
   document.getElementById('btnEN').classList.toggle('active', l==='en');
   applyLang();
   render();
-  if(typeof pkRender==='function') pkRender();
+  if(typeof pkRender==='function' && PK_SNAPS.length) pkRender();
 }
 
 function renderRt(){
@@ -488,49 +572,211 @@ document.querySelectorAll('.filter-btn').forEach(b=>{
   });
 });
 
-/* ---------- date picker (restored 03/08) ---------- */
-const PK_BASE = '../';
+/* ================= date picker v2 (sample-matched) ================= */
+const PK_BASE  = '../';
 const PK_TODAY = '2026-08-03';
-let PK_SNAPS = [];
-function pkFmt(iso){ const [y,m,d]=iso.split('-'); return LANG==='vi' ? `${d}/${m}/${y}` : `${d} ${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+m-1]} ${y}`; }
-function pkRender(){
-  const pane=document.getElementById('dpPane'); if(!pane) return;
-  document.getElementById('dpLabel').textContent = pkFmt(PK_TODAY);
-  document.getElementById('dpCount').textContent = LANG==='vi'
-    ? `${PK_SNAPS.length} ngày đã lưu` : `${PK_SNAPS.length} saved days`;
-  pane.innerHTML = PK_SNAPS.slice().reverse().map(s=>{
-    const cur = s.date===PK_TODAY;
-    const lb = LANG==='vi' ? (s.label_vi||'') : (s.label_en||'');
-    const now = cur ? `<span class="dpnow">${LANG==='vi'?'HÔM NAY':'TODAY'}</span>` : '';
-    return `<button type="button" class="dpitem${cur?' cur':''}" data-href="${PK_BASE}${s.report}">
-      <span class="dt">${pkFmt(s.date)}${now}</span><span class="lb">${lb}</span></button>`;
+let PK_SNAPS = [], PK_MAP = {}, PK_VIEW = null;
+let PK_SEL = {s:PK_TODAY, e:PK_TODAY}, PK_DRAFT = {s:PK_TODAY, e:PK_TODAY}, PK_PENDING = false, PK_PRESET = null;
+
+const PK_T = {
+  vi:{day:'Ngày',range:'Khoảng',now:d=>`Đang xem báo cáo ngày ${d} (mới nhất)`,
+      viewing:d=>`Đang xem báo cáo ngày ${d}`,
+      trend:(a,b)=>`Đang xem xu hướng ${a} → ${b}`,
+      quick:'Mở nhanh', today:'mới nhất',
+      months:['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'],
+      dow:['CN','T2','T3','T4','T5','T6','T7'],
+      saved:n=>`${n} ngày đã lưu trong khoảng này · ngày theo giờ Việt Nam (Asia/Ho_Chi_Minh), là giờ lúc quét`,
+      noRep:'Ngày này chưa quét — không có báo cáo riêng để mở.',
+      trendTitle:(a,b)=>`Xu hướng Health Score · ${a} → ${b}`,
+      open:'mở'},
+  en:{day:'Day',range:'Range',now:d=>`Viewing the report for ${d} (latest)`,
+      viewing:d=>`Viewing the report for ${d}`,
+      trend:(a,b)=>`Viewing the trend ${a} → ${b}`,
+      quick:'Quick open', today:'latest',
+      months:['January','February','March','April','May','June','July','August','September','October','November','December'],
+      dow:['Su','Mo','Tu','We','Th','Fr','Sa'],
+      saved:n=>`${n} stored day(s) in this range · dates in Vietnam time (Asia/Ho_Chi_Minh), the time of the crawl`,
+      noRep:'This day was not crawled — there is no separate report to open.',
+      trendTitle:(a,b)=>`Health Score trend · ${a} → ${b}`,
+      open:'open'}
+};
+const pkL = () => PK_T[LANG];
+
+function pkISO(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function pkD(iso){ const [y,m,d]=iso.split('-').map(Number); return new Date(y,m-1,d); }
+function pkFmt(iso){ const [y,m,d]=iso.split('-'); return LANG==='vi'?`${d}/${m}/${y}`:`${d} ${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+m-1]} ${y}`; }
+function pkAdd(iso,n){ const d=pkD(iso); d.setDate(d.getDate()+n); return pkISO(d); }
+function pkIn(iso,a,b){ return iso>=a && iso<=b; }
+function pkCount(a,b){ return PK_SNAPS.filter(s=>pkIn(s.date,a,b)).length; }
+
+function pkPresets(){
+  const T=PK_TODAY, d=pkD(T);
+  const monStart=(()=>{const x=pkD(T); const w=(x.getDay()+6)%7; x.setDate(x.getDate()-w); return pkISO(x);})();
+  const lastMonStart=pkAdd(monStart,-7), lastMonEnd=pkAdd(monStart,-1);
+  const mStart=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-01`;
+  const pm=new Date(d.getFullYear(),d.getMonth()-1,1);
+  const pmStart=pkISO(pm), pmEnd=pkISO(new Date(d.getFullYear(),d.getMonth(),0));
+  const first=PK_SNAPS.length?PK_SNAPS[0].date:T;
+  return [
+    {k:'y',   vi:'Hôm qua',   en:'Yesterday',   s:pkAdd(T,-1), e:pkAdd(T,-1)},
+    {k:'7',   vi:'7 ngày qua', en:'Last 7 days',  s:pkAdd(T,-6), e:T},
+    {k:'28',  vi:'28 ngày qua',en:'Last 28 days', s:pkAdd(T,-27),e:T},
+    {k:'90',  vi:'90 ngày qua',en:'Last 90 days', s:pkAdd(T,-89),e:T},
+    {k:'tw',  vi:'Tuần này',  en:'This week',   s:monStart, e:T},
+    {k:'tm',  vi:'Tháng này', en:'This month',  s:mStart, e:T},
+    {k:'ty',  vi:'Năm nay',   en:'This year',   s:`${d.getFullYear()}-01-01`, e:T},
+    {k:'lw',  vi:'Tuần trước',en:'Last week',   s:lastMonStart, e:lastMonEnd},
+    {k:'lm',  vi:'Tháng trước',en:'Last month', s:pmStart, e:pmEnd},
+    {k:'all', vi:'Toàn bộ dữ liệu đã lưu', en:'All stored data', s:first, e:T}
+  ];
+}
+
+function pkRenderPresets(){
+  const box=document.getElementById('dpPresets'); if(!box) return;
+  box.innerHTML = pkPresets().map(p=>{
+    const n=pkCount(p.s,p.e), off=n===0;
+    const on=PK_PRESET===p.k;
+    return `<button type="button" class="dp-preset${on?' on':''}" data-k="${p.k}" ${off?'disabled':''}>
+      <span class="rd"></span><span class="nm">${LANG==='vi'?p.vi:p.en}</span><span class="ct">${n}</span></button>`;
   }).join('');
-  pane.querySelectorAll('.dpitem').forEach(b=>{
-    b.addEventListener('click',()=>{
-      const h=b.dataset.href;
-      pane.classList.remove('open');
-      document.getElementById('dpBtn').setAttribute('aria-expanded','false');
-      if(!b.classList.contains('cur')) location.href = h;
+  box.querySelectorAll('.dp-preset').forEach(b=>b.addEventListener('click',()=>{
+    const p=pkPresets().find(x=>x.k===b.dataset.k);
+    PK_PRESET=p.k; PK_DRAFT={s:p.s,e:p.e}; PK_PENDING=false;
+    PK_VIEW=pkD(p.e); PK_VIEW.setDate(1); PK_VIEW.setMonth(PK_VIEW.getMonth()-1);
+    pkRenderCal(); pkRenderPresets();
+  }));
+}
+
+function pkMonth(base,off){
+  const d=new Date(base.getFullYear(), base.getMonth()+off, 1);
+  const y=d.getFullYear(), m=d.getMonth();
+  const start=new Date(y,m,1).getDay(); // 0=Sun
+  const days=new Date(y,m+1,0).getDate();
+  let cells=pkL().dow.map(x=>`<div class="dp-dow">${x}</div>`).join('');
+  for(let i=0;i<start;i++) cells+='<button class="dp-d blank" disabled></button>';
+  for(let dd=1;dd<=days;dd++){
+    const iso=`${y}-${String(m+1).padStart(2,'0')}-${String(dd).padStart(2,'0')}`;
+    const has=!!PK_MAP[iso];
+    const sel=iso===PK_DRAFT.s||iso===PK_DRAFT.e;
+    const inr=pkIn(iso,PK_DRAFT.s,PK_DRAFT.e)&&!sel;
+    const edge=iso===PK_DRAFT.s&&PK_DRAFT.s!==PK_DRAFT.e?' edge-l':(iso===PK_DRAFT.e&&PK_DRAFT.s!==PK_DRAFT.e?' edge-r':'');
+    cells+=`<button type="button" class="dp-d${has?' has':''}${inr?' inrange':''}${sel?' sel'+edge:''}" data-iso="${iso}">${dd}${has?'<span class="dot"></span>':''}</button>`;
+  }
+  return {title:`${pkL().months[m]} ${y}`, html:`<div class="dp-grid">${cells}</div>`};
+}
+
+function pkRenderCal(){
+  if(!PK_VIEW){ PK_VIEW=pkD(PK_SEL.e); PK_VIEW.setDate(1); PK_VIEW.setMonth(PK_VIEW.getMonth()-1); }
+  const a=pkMonth(PK_VIEW,0), b=pkMonth(PK_VIEW,1);
+  document.getElementById('dpM1').textContent=a.title;
+  document.getElementById('dpM2').textContent=b.title;
+  document.getElementById('dpG1').innerHTML=a.html;
+  document.getElementById('dpG2').innerHTML=b.html;
+  document.querySelectorAll('#dpG1 .dp-d,#dpG2 .dp-d').forEach(el=>{
+    if(el.classList.contains('blank')) return;
+    el.addEventListener('click',()=>{
+      const iso=el.dataset.iso;
+      if(!PK_PENDING){ PK_DRAFT={s:iso,e:iso}; PK_PENDING=true; }
+      else { PK_DRAFT = iso<PK_DRAFT.s ? {s:iso,e:PK_DRAFT.s} : {s:PK_DRAFT.s,e:iso}; PK_PENDING=false; }
+      PK_PRESET=null; pkRenderCal(); pkRenderPresets();
     });
   });
+  const single=PK_DRAFT.s===PK_DRAFT.e;
+  document.getElementById('dpSelD').textContent = single?pkFmt(PK_DRAFT.s):`${pkFmt(PK_DRAFT.s)} → ${pkFmt(PK_DRAFT.e)}`;
+  const n=pkCount(PK_DRAFT.s,PK_DRAFT.e);
+  document.getElementById('dpSelInfo').textContent = n===0 ? pkL().noRep : pkL().saved(n);
 }
+
+function pkRenderQuick(){
+  const box=document.getElementById('dpQuick'); if(!box) return;
+  const chips=PK_SNAPS.slice().reverse().map(s=>{
+    const cur=s.date===PK_SEL.s&&PK_SEL.s===PK_SEL.e;
+    const lb=LANG==='vi'?(s.label_vi||''):(s.label_en||'');
+    return `<button type="button" class="qchip${cur?' cur':''}" data-iso="${s.date}">
+      <span class="qd">${pkFmt(s.date)}</span><span class="ql">${lb}</span></button>`;
+  }).join('');
+  box.innerHTML=`<span class="pk-quick-lbl">${pkL().quick}</span>`+chips;
+  box.querySelectorAll('.qchip').forEach(b=>b.addEventListener('click',()=>{
+    if(b.classList.contains('cur')) return;
+    pkGo(b.dataset.iso,b.dataset.iso);
+  }));
+}
+
+function pkRenderNow(){
+  const el=document.getElementById('dpNow'); if(!el) return;
+  const single=PK_SEL.s===PK_SEL.e;
+  el.textContent = !single ? pkL().trend(pkFmt(PK_SEL.s),pkFmt(PK_SEL.e))
+    : (PK_SEL.s===PK_TODAY ? pkL().now(pkFmt(PK_SEL.s)) : pkL().viewing(pkFmt(PK_SEL.s)));
+  document.getElementById('dpLabel').textContent = single
+    ? `${pkL().day} ${pkFmt(PK_SEL.s)}` : `${pkL().range} ${pkFmt(PK_SEL.s)} → ${pkFmt(PK_SEL.e)}`;
+}
+
+function pkGo(s,e){
+  if(s===e){
+    const snap=PK_MAP[s];
+    if(snap && s!==PK_TODAY){ location.href=PK_BASE+snap.report; return; }
+    PK_SEL={s,e}; PK_DRAFT={s,e}; PK_PRESET=null;
+    document.getElementById('dpTrend').classList.remove('on');
+    pkRenderNow(); pkRenderQuick(); pkRenderCal();
+    return;
+  }
+  PK_SEL={s,e}; pkRenderNow(); pkRenderQuick(); pkTrend(s,e);
+}
+
+function pkTrend(s,e){
+  const box=document.getElementById('dpTrend');
+  const days=PK_SNAPS.filter(x=>pkIn(x.date,s,e));
+  if(!days.length){ box.classList.remove('on'); box.innerHTML=''; return; }
+  Promise.all(days.map(d=>fetch(PK_BASE+d.data,{cache:'no-store'}).then(r=>r.json()).catch(()=>null)))
+   .then(js=>{
+     const rows=js.map((j,i)=>({date:days[i].date, rep:days[i].report, hs:j&&j.health_score, pg:j&&j.pages_measured}))
+                  .filter(r=>r.hs!=null);
+     box.innerHTML=`<h4>${pkL().trendTitle(pkFmt(s),pkFmt(e))}</h4>`+rows.map(r=>`
+       <div class="trd"><span class="tdate">${pkFmt(r.date)}</span>
+         <span class="ttrack"><span class="tfill" style="width:${r.hs}%"></span></span>
+         <span class="tval">${r.hs}</span>
+         <span class="tlink" data-h="${r.rep}">${pkL().open} &#8594;</span></div>`).join('');
+     box.classList.add('on');
+     box.querySelectorAll('.tlink').forEach(a=>a.addEventListener('click',()=>{
+       const h=a.dataset.h; if(h && h!=='index.html') location.href=PK_BASE+h;
+     }));
+   });
+}
+
+function pkRender(){ pkRenderPresets(); pkRenderCal(); pkRenderQuick(); pkRenderNow(); }
+
 (function pkInit(){
   const btn=document.getElementById('dpBtn'), pane=document.getElementById('dpPane');
   if(!btn) return;
   btn.addEventListener('click',e=>{
     e.stopPropagation();
     const open=pane.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open?'true':'false');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    if(open){ PK_DRAFT={...PK_SEL}; PK_PENDING=false; pkRenderCal(); pkRenderPresets(); }
   });
   document.addEventListener('click',e=>{
-    if(!pane.contains(e.target) && e.target!==btn){ pane.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+    if(!pane.contains(e.target)&&e.target!==btn&&!btn.contains(e.target)){
+      pane.classList.remove('open'); btn.setAttribute('aria-expanded','false');
+    }
   });
   document.addEventListener('keydown',e=>{ if(e.key==='Escape') pane.classList.remove('open'); });
+  document.getElementById('dpPrev').addEventListener('click',()=>{ PK_VIEW.setMonth(PK_VIEW.getMonth()-1); pkRenderCal(); });
+  document.getElementById('dpNext').addEventListener('click',()=>{ PK_VIEW.setMonth(PK_VIEW.getMonth()+1); pkRenderCal(); });
+  document.getElementById('dpCancel').addEventListener('click',()=>{
+    PK_DRAFT={...PK_SEL}; PK_PENDING=false; PK_PRESET=null;
+    pane.classList.remove('open'); btn.setAttribute('aria-expanded','false'); pkRenderCal();
+  });
+  document.getElementById('dpApply').addEventListener('click',()=>{
+    pane.classList.remove('open'); btn.setAttribute('aria-expanded','false');
+    pkGo(PK_DRAFT.s,PK_DRAFT.e);
+  });
   fetch(PK_BASE+'data/index.json',{cache:'no-store'}).then(r=>r.json()).then(j=>{
-    PK_SNAPS = j.snapshots||[]; pkRender();
-  }).catch(()=>{
-    PK_SNAPS = [{date:PK_TODAY, report:'index.html', label_vi:'Bản hiện tại', label_en:'Current report'}];
+    PK_SNAPS=(j.snapshots||[]).slice().sort((a,b)=>a.date.localeCompare(b.date));
+    PK_SNAPS.forEach(s=>PK_MAP[s.date]=s);
     pkRender();
+  }).catch(()=>{
+    PK_SNAPS=[{date:PK_TODAY,report:'index.html',data:'data/'+PK_TODAY+'.json',label_vi:'Bản hiện tại',label_en:'Current report'}];
+    PK_SNAPS.forEach(s=>PK_MAP[s.date]=s); pkRender();
   });
 })();
 
