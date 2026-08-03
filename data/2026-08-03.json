@@ -1,0 +1,61 @@
+{
+  "content": {
+    "article_words_avg": 2023,
+    "article_words_max": 2896,
+    "article_words_min": 1033,
+    "thin_pages": ["/login", "/start-interactive", "/projects/* (~161-178 words each)"]
+  },
+  "date": "2026-08-03",
+  "health_score": 84,
+  "http_200": 68,
+  "notes": {
+    "en": [
+      "Health 85→84. Not a site regression: this audit compared the CONTENTS of each JSON-LD block for the first time and found every page emits 14 byte-identical copies of its schema (/about: 14 blocks, 1 unique payload). Previous schema counts were inflated roughly 14x.",
+      "Correction to the 02 Aug report: articles carry 31-32 JSON-LD script blocks, not 34.",
+      "Resolved and confirmed: every article linked on the /articles listing is present in the sitemap (0 orphans). July's '16 articles missing from sitemap' issue is closed.",
+      "Holding: 45/45 articles return 200 at 0.56-2.96s with exactly 1 H1; 32/45 carry FAQPage; no page exceeds 3s for a fourth day.",
+      "Carried over unfixed: 7 of 11 homepage images missing alt (day 4); 6 /projects/* pages still 0 schema, ~170 words, 15/19 images without alt (day 3)."
+    ],
+    "vi": [
+      "Health 85→84. Không phải site xấu đi: audit này lần đầu so sánh NỘI DUNG từng khối JSON-LD và phát hiện mỗi trang phát ra 14 bản sao y hệt của schema (/about: 14 khối, 1 nội dung duy nhất). Các con số schema trước đây bị thổi phồng khoảng 14 lần.",
+      "Đính chính báo cáo 02/08: bài viết có 31-32 khối script JSON-LD, không phải 34.",
+      "Đã xong và xác nhận: mọi bài xuất hiện trên listing /articles đều có trong sitemap (0 link mồ côi). Vấn đề '16 bài thiếu khỏi sitemap' hồi tháng 7 đã khép lại.",
+      "Giữ vững: 45/45 bài trả 200 ở 0,56-2,96s, đúng 1 H1; 32/45 bài có FAQPage; sang ngày thứ tư không trang nào vượt 3s.",
+      "Nợ chưa sửa: 7/11 ảnh trang chủ thiếu alt (ngày thứ 4); 6 trang /projects/* vẫn 0 schema, ~170 từ, 15/19 ảnh thiếu alt (ngày thứ 3)."
+    ]
+  },
+  "onpage": {
+    "all_pages_have_title_desc_canonical": true,
+    "heading_skips": ["2→4 site-wide", "1→3 on project pages"],
+    "homepage_images_missing_alt": "7/11",
+    "homepage_images_lazyloaded": "0/11",
+    "project_page_images_missing_alt": "15/19"
+  },
+  "pages_breakdown": { "articles": 45, "core": 17, "projects": 6 },
+  "pages_measured": 68,
+  "performance": {
+    "avg_ttfb_articles_ms": 866,
+    "avg_ttfb_core_ms": 813,
+    "avg_ttfb_projects_ms": 967,
+    "between_1s_3s": 15,
+    "over_3s": 0,
+    "slowest_ms": 2960,
+    "slowest_url": "/articles/custom-home-visualisation-timeline",
+    "under_1s": 53
+  },
+  "report": "technical-seo-audit",
+  "site": "dxliving.com",
+  "sitemap_urls": 67,
+  "source": "Chrome live crawl (fetch same-origin, real TTFB). No OpenSEO, no Supermetrics. No estimated values.",
+  "structured_data": {
+    "articles_with_faqpage": 32,
+    "articles_without_faqpage": 13,
+    "coverage_pct": 86.8,
+    "pages_with_jsonld": 59,
+    "pages_without_jsonld": 9,
+    "jsonld_duplication_factor": 14,
+    "jsonld_duplication_note": "Every JSON-LD block is repeated identically 14 times per page; true distinct schema count is ~1/14 of the raw block count.",
+    "zero_schema_urls": ["/articles","/start-interactive","/login","/projects/251-station-st","/projects/20-head-street","/projects/85-commodore-drive-surfers-paradise","/projects/813-clarendon-street","/projects/31-mcilwain-drive","/projects/nagambie-project"]
+  },
+  "sub_scores": { "content": 77, "crawlability": 89, "onpage": 76, "performance": 90, "structured_data": 80 }
+}
