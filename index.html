@@ -101,6 +101,38 @@
   .filter-btn.on{background:var(--accent);color:#2c2620;font-weight:700;border-color:var(--accent)}
   [data-lang-hidden]{display:none !important}
   @media(max-width:860px){.kpis{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.rt-row .name{width:150px}}
+
+  /* ---------- date picker (restored 03/08) ---------- */
+  .pk-card{margin-top:24px;background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:16px 18px;box-shadow:0 1px 3px rgba(70,55,30,.05)}
+  .pk-head{font-size:14px;font-weight:700;color:var(--accent-dk);margin:0 0 4px;
+    display:flex;align-items:center;gap:8px}
+  .pk-head .bar{width:4px;height:15px;background:var(--accent);border-radius:2px;flex:0 0 auto}
+  .pk-sub{font-size:12.5px;color:var(--muted);margin:0 0 13px;line-height:1.5}
+  .pk-bar{display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+  .dpwrap{position:relative}
+  .dpbtn{display:inline-flex;align-items:center;gap:9px;background:var(--card);
+    border:1px solid #cfc6b3;border-radius:9px;padding:9px 14px;font-family:inherit;
+    font-size:13px;font-weight:700;line-height:1.2;color:var(--ink);cursor:pointer;transition:.15s}
+  .dpbtn:hover{border-color:var(--accent)}
+  .dpbtn .cal{font-size:13px}
+  .dpbtn .car{color:var(--muted);font-size:9px}
+  .dppane{position:absolute;top:calc(100% + 7px);left:0;z-index:60;min-width:330px;
+    background:var(--card);border:1px solid var(--line);border-radius:11px;
+    box-shadow:0 8px 26px rgba(70,55,30,.16);padding:9px;display:none}
+  .dppane.open{display:block}
+  .dpitem{display:flex;align-items:flex-start;gap:11px;width:100%;text-align:left;
+    background:transparent;border:none;border-radius:8px;padding:9px 11px;cursor:pointer;
+    font-family:inherit;color:var(--ink);transition:.12s}
+  .dpitem:hover{background:var(--cream2)}
+  .dpitem.cur{background:var(--accent-soft,#efe4d2);cursor:default}
+  .dpitem .dt{font-size:13px;font-weight:700;white-space:nowrap;flex:0 0 auto;min-width:86px}
+  .dpitem .lb{font-size:11.5px;color:var(--muted);line-height:1.45}
+  .dpitem.cur .lb{color:#7a6b4d}
+  .dpnow{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.4px;
+    background:var(--accent);color:#2c2620;border-radius:9px;padding:1px 7px;margin-left:6px;vertical-align:1px}
+  .pk-note{font-size:11.5px;color:var(--muted);margin-top:11px;line-height:1.55}
+
 </style>
 </head>
 <body>
@@ -128,6 +160,23 @@
 </header>
 
 <div class="wrap">
+
+
+  <!-- date picker -->
+  <div class="pk-card">
+    <div class="pk-head"><span class="bar"></span><span class="t" data-vi="Chọn ngày audit" data-en="Choose an audit day"></span></div>
+    <p class="pk-sub t" data-vi="Mỗi ngày crawl được đóng băng thành một bản báo cáo riêng. Chọn một ngày để mở đúng bản đã lưu của ngày đó." data-en="Each crawl day is frozen as its own report. Pick a day to open that day's saved snapshot."></p>
+    <div class="pk-bar">
+      <div class="dpwrap">
+        <button class="dpbtn" id="dpBtn" type="button" aria-haspopup="true" aria-expanded="false">
+          <span class="cal">&#128197;</span><span id="dpLabel">03/08/2026</span><span class="car">&#9660;</span>
+        </button>
+        <div class="dppane" id="dpPane"></div>
+      </div>
+      <span class="pk-note" style="margin:0" id="dpCount"></span>
+    </div>
+    <div class="pk-note t" data-vi="Ghi chú: hai ngày 01/08 và 02/08 không có bản đóng băng trên GitHub (lần chạy hôm đó không đẩy archive), nên picker chỉ liệt kê các ngày thực sự đã lưu." data-en="Note: 01 and 02 Aug have no frozen snapshot on GitHub (those runs did not push an archive), so the picker only lists days that were actually saved."></div>
+  </div>
 
   <!-- KPIs -->
   <div class="kpis">
@@ -380,6 +429,7 @@ function setLang(l){
   document.getElementById('btnEN').classList.toggle('active', l==='en');
   applyLang();
   render();
+  if(typeof pkRender==='function') pkRender();
 }
 
 function renderRt(){
@@ -437,6 +487,53 @@ document.querySelectorAll('.filter-btn').forEach(b=>{
     b.classList.add('on');filt=b.dataset.f;render();
   });
 });
+
+/* ---------- date picker (restored 03/08) ---------- */
+const PK_BASE = '';
+const PK_TODAY = '2026-08-03';
+let PK_SNAPS = [];
+function pkFmt(iso){ const [y,m,d]=iso.split('-'); return LANG==='vi' ? `${d}/${m}/${y}` : `${d} ${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+m-1]} ${y}`; }
+function pkRender(){
+  const pane=document.getElementById('dpPane'); if(!pane) return;
+  document.getElementById('dpLabel').textContent = pkFmt(PK_TODAY);
+  document.getElementById('dpCount').textContent = LANG==='vi'
+    ? `${PK_SNAPS.length} ngày đã lưu` : `${PK_SNAPS.length} saved days`;
+  pane.innerHTML = PK_SNAPS.slice().reverse().map(s=>{
+    const cur = s.date===PK_TODAY;
+    const lb = LANG==='vi' ? (s.label_vi||'') : (s.label_en||'');
+    const now = cur ? `<span class="dpnow">${LANG==='vi'?'HÔM NAY':'TODAY'}</span>` : '';
+    return `<button type="button" class="dpitem${cur?' cur':''}" data-href="${PK_BASE}${s.report}">
+      <span class="dt">${pkFmt(s.date)}${now}</span><span class="lb">${lb}</span></button>`;
+  }).join('');
+  pane.querySelectorAll('.dpitem').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const h=b.dataset.href;
+      pane.classList.remove('open');
+      document.getElementById('dpBtn').setAttribute('aria-expanded','false');
+      if(!b.classList.contains('cur')) location.href = h;
+    });
+  });
+}
+(function pkInit(){
+  const btn=document.getElementById('dpBtn'), pane=document.getElementById('dpPane');
+  if(!btn) return;
+  btn.addEventListener('click',e=>{
+    e.stopPropagation();
+    const open=pane.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open?'true':'false');
+  });
+  document.addEventListener('click',e=>{
+    if(!pane.contains(e.target) && e.target!==btn){ pane.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+  });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') pane.classList.remove('open'); });
+  fetch(PK_BASE+'data/index.json',{cache:'no-store'}).then(r=>r.json()).then(j=>{
+    PK_SNAPS = j.snapshots||[]; pkRender();
+  }).catch(()=>{
+    PK_SNAPS = [{date:PK_TODAY, report:'index.html', label_vi:'Bản hiện tại', label_en:'Current report'}];
+    pkRender();
+  });
+})();
+
 setLang('vi');
 </script>
 </body>
