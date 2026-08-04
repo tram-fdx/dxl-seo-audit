@@ -1,6 +1,6 @@
 {
   "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
-  "latest": "2026-08-03",
+  "latest": "2026-08-04",
   "report": "technical-seo-audit",
   "site": "dxliving.com",
   "snapshots": [
@@ -9,6 +9,7 @@
     { "data": "data/2026-07-29.json", "date": "2026-07-29", "label_en": "Health 84 · stable", "label_vi": "Health 84 · ổn định", "report": "archive/2026-07-29.html" },
     { "data": "data/2026-07-30.json", "date": "2026-07-30", "label_en": "Health 84→87 · schema on 12 core pages", "label_vi": "Health 84→87 · schema 12 trang gốc", "report": "archive/2026-07-30.html" },
     { "data": "data/2026-07-31.json", "date": "2026-07-31", "label_en": "Health 87→84 · 6 /projects pages entered sitemap, 0 schema", "label_vi": "Health 87→84 · 6 trang /projects vào sitemap, 0 schema", "report": "archive/2026-07-31.html" },
-    { "data": "data/2026-08-03.json", "date": "2026-08-03", "label_en": "Health 85→84 · JSON-LD duplicated 14× per page", "label_vi": "Health 85→84 · JSON-LD bị lặp 14× mỗi trang", "report": "index.html" }
+    { "data": "data/2026-08-03.json", "date": "2026-08-03", "label_en": "Health 85→84 · JSON-LD duplicated 14× per page", "label_vi": "Health 85→84 · JSON-LD bị lặp 14× mỗi trang", "report": "archive/2026-08-03.html" },
+    { "data": "data/2026-08-04.json", "date": "2026-08-04", "label_en": "Health 84 · fastest scan yet, 61/68 pages under 1s", "label_vi": "Health 84 · lần quét nhanh nhất, 61/68 trang <1s", "report": "index.html" }
   ]
 }

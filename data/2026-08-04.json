@@ -1,0 +1,84 @@
+{
+  "content": {
+    "article_words_avg": 2023,
+    "article_words_max": 2896,
+    "article_words_min": 1033,
+    "thin_pages": ["/login", "/start-interactive", "/projects/* (~161-178 words each)"]
+  },
+  "date": "2026-08-04",
+  "health_score": 84,
+  "http_200": 68,
+  "notes": {
+    "en": [
+      "Health stays 84 (raw 83.7 -> 84.5). The only sub-score that moved is Performance 90 -> 93; nothing was deployed, so the other four are unchanged.",
+      "Fastest scan of the series: 61/68 pages under 1s (89.7%, up from 53/68 = 77.9%). Slowest page is now /articles/what-is-bim-3d-modeling at 1781 ms, down from a 2960 ms worst case yesterday.",
+      "Yesterday's prediction confirmed: /articles/custom-home-visualisation-timeline came back at 686 ms (2960 ms on 03 Aug) and /projects/85-commodore-drive-surfers-paradise at 574 ms (2230 ms). Both were network jitter, not regressions. Roadmap item 8 is closed.",
+      "Method change for accuracy: TTFB measured sequentially (concurrency 1) instead of in parallel batches. Parallel batches of 6 inflate TTFB roughly 3x through connection queueing. Sequential values match single-navigation timings (555-672 ms observed) and are comparable with previous days.",
+      "P1 UNFIXED (day 2): JSON-LD blocks are still duplicated. /about 14 blocks / 1 distinct payload, homepage 24 / 2, articles 31-32 / 3-4. Site-wide average duplication factor ~10x.",
+      "P1 UNFIXED (day 4): the 6 /projects/* pages still carry 0 schema, 161-178 words, and 15 of 19 images without alt on the rendered DOM. Their TTFB did improve markedly (avg 967 ms -> 495 ms), which confirms the issue is undeployed content, not infrastructure.",
+      "P2 UNFIXED (day 5): homepage still 7 of 11 images without alt and 0 lazy-loaded. The article template does this correctly (sampled article: 2 of 9 missing alt, 3 lazy-loaded), so the gap is isolated to the homepage and project pages.",
+      "P2 UNFIXED: /articles listing still exposes only 16 of 45 article links in raw HTML and still carries 0 JSON-LD.",
+      "P3 UNCHANGED: 2->4 heading skips site-wide (1->3 additionally on project pages); 13 of 45 articles still lack FAQPage; /start-interactive (45 words) and /login (17 words) remain thin.",
+      "Holding: 68/68 return 200 with 0 timeouts; every page has title, meta description and canonical; exactly 1 H1 everywhere; robots.txt clean and pointing at the sitemap; only /login sits outside the 67-URL sitemap, which is correct."
+    ],
+    "vi": [
+      "Health giu nguyen 84 (diem tho 83,7 -> 84,5). Chi Performance thay doi 90 -> 93; khong co deploy nao nen 4 hang muc con lai dung yen.",
+      "Lan quet nhanh nhat tu truoc toi gio: 61/68 trang <1s (89,7%, tang tu 53/68 = 77,9%). Trang cham nhat con /articles/what-is-bim-3d-modeling 1781 ms, so voi 2960 ms hom qua.",
+      "Du doan hom qua da dung: /articles/custom-home-visualisation-timeline ve 686 ms (2960 ms ngay 03/08) va /projects/85-commodore-drive-surfers-paradise ve 574 ms (2230 ms). Ca hai chi la nhieu mang. Muc 8 trong roadmap duoc dong lai.",
+      "Doi phuong phap do cho chinh xac: TTFB do tuan tu tung URL thay vi chay song song theo cum. Cum 6 URL song song lam TTFB phong len khoang 3 lan do hang doi ket noi. So do tuan tu khop voi navigation timing thuc te (555-672 ms) va so sanh duoc voi cac ngay truoc.",
+      "P1 CHUA SUA (ngay thu 2): cac khoi JSON-LD van bi nhan ban. /about 14 khoi / 1 payload, trang chu 24 / 2, bai viet 31-32 / 3-4. He so nhan ban trung binh toan site ~10x.",
+      "P1 CHUA SUA (ngay thu 4): 6 trang /projects/* van 0 schema, 161-178 tu, 15/19 anh thieu alt tren rendered DOM. TTFB nhom nay cai thien manh (TB 967 ms -> 495 ms), cho thay van de nam o noi dung chua deploy chu khong phai ha tang.",
+      "P2 CHUA SUA (ngay thu 5): trang chu van 7/11 anh thieu alt va 0 anh lazy-load. Template bai viet lam dung (bai mau: 2/9 thieu alt, 3 anh lazy-load), nen loi chi khu tru o trang chu va trang du an.",
+      "P2 CHUA SUA: listing /articles van chi lo 16/45 link bai trong HTML tho va van 0 JSON-LD.",
+      "P3 KHONG DOI: heading nhay bac 2->4 toan site (trang du an them 1->3); 13/45 bai chua co FAQPage; /start-interactive (45 tu) va /login (17 tu) van mong.",
+      "Giu vung: 68/68 tra 200, 0 timeout; moi trang co title, meta description va canonical; dung 1 H1 o moi trang; robots.txt sach va tro dung sitemap; chi /login nam ngoai sitemap 67 URL, dieu nay la dung."
+    ]
+  },
+  "onpage": {
+    "all_pages_have_title_desc_canonical": true,
+    "heading_skips": ["2→4 site-wide", "1→3 on project pages"],
+    "homepage_images_missing_alt": "7/11",
+    "homepage_images_lazyloaded": "0/11",
+    "project_page_images_missing_alt": "15/19",
+    "article_sample_images_missing_alt": "2/9",
+    "article_sample_images_lazyloaded": "3/9"
+  },
+  "pages_breakdown": {
+    "articles": 45,
+    "core": 17,
+    "projects": 6
+  },
+  "pages_measured": 68,
+  "performance": {
+    "avg_ttfb_articles_ms": 724,
+    "avg_ttfb_core_ms": 702,
+    "avg_ttfb_projects_ms": 495,
+    "between_1s_3s": 7,
+    "over_3s": 0,
+    "slowest_ms": 1781,
+    "slowest_url": "/articles/what-is-bim-3d-modeling",
+    "under_1s": 61,
+    "measurement_method": "sequential (concurrency 1) same-origin fetch, real TTFB"
+  },
+  "report": "technical-seo-audit",
+  "site": "dxliving.com",
+  "sitemap_urls": 67,
+  "source": "Chrome live crawl (fetch same-origin, real TTFB, measured sequentially). No OpenSEO, no Supermetrics. No estimated values.",
+  "structured_data": {
+    "articles_with_faqpage": 32,
+    "articles_without_faqpage": 13,
+    "coverage_pct": 86.8,
+    "pages_with_jsonld": 59,
+    "pages_without_jsonld": 9,
+    "jsonld_duplication_factor": 10,
+    "jsonld_duplication_note": "Still duplicated on day 2. Core pages 14 blocks / 1 distinct payload, homepage 24 / 2, articles 31-32 / 3-4. Site-wide average factor ~10x; true distinct schema count is roughly one tenth of the raw block count.",
+    "zero_schema_urls": ["/articles", "/start-interactive", "/login", "/projects/251-station-st", "/projects/20-head-street", "/projects/85-commodore-drive-surfers-paradise", "/projects/813-clarendon-street", "/projects/31-mcilwain-drive", "/projects/nagambie-project"]
+  },
+  "sub_scores": {
+    "content": 77,
+    "crawlability": 89,
+    "onpage": 76,
+    "performance": 93,
+    "structured_data": 80
+  }
+}
