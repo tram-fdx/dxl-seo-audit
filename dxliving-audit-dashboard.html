@@ -216,9 +216,9 @@
         <button id="btnEN" onclick="setLang('en')">EN</button>
       </div>
       <div class="crawl-meta">
-        <span class="t" data-vi="Ngày crawl: <b>03/08/2026</b> · <b>audit hằng ngày</b>" data-en="Crawl date: <b>03 Aug 2026</b> · <b>daily audit</b>"></span><br>
+        <span class="t" data-vi="Ngày crawl: <b>04/08/2026</b> · <b>audit hằng ngày</b>" data-en="Crawl date: <b>04 Aug 2026</b> · <b>daily audit</b>"></span><br>
         <span class="t" data-vi="Đo trực tiếp: <b>68 trang</b> · Sitemap: <b>67 URL</b>" data-en="Directly measured: <b>68 pages</b> · Sitemap: <b>67 URLs</b>"></span><br>
-        Method: Chrome fetch · AbortController 12–15s
+        Method: Chrome fetch tuần tự · AbortController 12–15s
       </div>
     </div>
   </div>
@@ -234,7 +234,7 @@
     <div class="pk-bar">
       <div class="dpwrap">
         <button class="dpbtn" id="dpBtn" type="button" aria-haspopup="dialog" aria-expanded="false">
-          <span>&#128197;</span><span id="dpLabel">Ngày 03/08/2026</span><span class="car">&#9660;</span>
+          <span>&#128197;</span><span id="dpLabel">Ngày 04/08/2026</span><span class="car">&#9660;</span>
         </button>
         <div class="dppane" id="dpPane" role="dialog">
           <div class="dp-presets" id="dpPresets"></div>
@@ -269,32 +269,32 @@
       <div class="score-ring">
         <div class="val" style="color:var(--accent-dk)">84<span style="font-size:15px;color:var(--muted)">/100</span></div>
       </div>
-      <div class="note"><span class="tag green t" data-vi="Tốt — site ổn định, phát hiện lỗi mới" data-en="Good — site stable, new defect found"></span></div>
-      <div class="delta down t" data-vi="▼ −1 so 02/08 (85) · nguyên nhân: phát hiện schema bị lặp 14 lần/trang, KHÔNG phải site xấu đi" data-en="▼ −1 vs 02 Aug (85) · cause: discovered schema duplicated 14× per page, NOT a site regression"></div>
+      <div class="note"><span class="tag green t" data-vi="Tốt — tốc độ cải thiện, lỗi cũ chưa sửa" data-en="Good — speed improved, known defects unfixed"></span></div>
+      <div class="delta flat t" data-vi="= 84 so 03/08 · điểm thô nhích 83,7 → 84,5 nhờ Performance 90 → 93; các lỗi cũ chưa sửa nên chưa lên 85" data-en="= 84 vs 03 Aug · raw score edges up 83.7 → 84.5 as Performance goes 90 → 93; the known defects remain unfixed, so it stops short of 85"></div>
     </div>
     <div class="kpi">
       <div class="lbl t" data-vi="Trang crawl được" data-en="Pages crawled"></div>
       <div class="val" style="color:var(--green)">68</div>
       <div class="note t" data-vi="17 gốc + 45 bài + 6 dự án · 68/68 trả 200" data-en="17 core + 45 articles + 6 projects · 68/68 return 200"></div>
-      <div class="delta flat t" data-vi="= không đổi (68) · 0 timeout, 0 lỗi 4xx/5xx" data-en="= unchanged (68) · 0 timeouts, 0 4xx/5xx errors"></div>
+      <div class="delta flat t" data-vi="= không đổi (68) · 0 timeout, 0 lỗi 4xx/5xx · sitemap vẫn 67 URL" data-en="= unchanged (68) · 0 timeouts, 0 4xx/5xx errors · sitemap still 67 URLs"></div>
     </div>
     <div class="kpi">
       <div class="lbl t" data-vi="TTFB TB — trang gốc" data-en="Avg TTFB — core"></div>
-      <div class="val" style="color:var(--green)">0,81<span style="font-size:15px">s</span></div>
-      <div class="note t" data-vi="12/17 trang gốc &lt;1s · trang chủ 1,32s · /model 1,63s" data-en="12/17 core pages &lt;1s · homepage 1.32s · /model 1.63s"></div>
-      <div class="delta down t" data-vi="▼ +0,09s so 02/08 (0,72s) · dao động mạng, vẫn trong ngưỡng tốt" data-en="▼ +0.09s vs 02 Aug (0.72s) · network jitter, still well within a healthy band"></div>
+      <div class="val" style="color:var(--green)">0,70<span style="font-size:15px">s</span></div>
+      <div class="note t" data-vi="14/17 trang gốc &lt;1s · trang chủ 1,20s · /articles 1,23s" data-en="14/17 core pages &lt;1s · homepage 1.20s · /articles 1.23s"></div>
+      <div class="delta up t" data-vi="▲ −0,11s so 03/08 (0,81s) · nhanh nhất từ đầu chuỗi audit" data-en="▲ −0.11s vs 03 Aug (0.81s) · the fastest reading of the audit series so far"></div>
     </div>
     <div class="kpi">
       <div class="lbl t" data-vi="TTFB TB — bài viết" data-en="Avg TTFB — articles"></div>
-      <div class="val" style="color:var(--green)">0,87<span style="font-size:15px">s</span></div>
-      <div class="note t" data-vi="Toàn bộ 45 bài · 0,56–2,96s · 36/45 bài &lt;1s" data-en="All 45 articles · 0.56–2.96s · 36/45 under 1s"></div>
-      <div class="delta down t" data-vi="▼ +0,09s so 02/08 (0,78s) · 1 bài lẻ 2,96s kéo trung bình lên" data-en="▼ +0.09s vs 02 Aug (0.78s) · a single 2.96s outlier lifts the mean"></div>
+      <div class="val" style="color:var(--green)">0,72<span style="font-size:15px">s</span></div>
+      <div class="note t" data-vi="Toàn bộ 45 bài · 0,52–1,78s · 41/45 bài &lt;1s" data-en="All 45 articles · 0.52–1.78s · 41/45 under 1s"></div>
+      <div class="delta up t" data-vi="▲ −0,15s so 03/08 (0,87s) · outlier 2,96s hôm qua đã biến mất đúng như dự đoán" data-en="▲ −0.15s vs 03 Aug (0.87s) · yesterday's 2.96s outlier has gone, exactly as predicted"></div>
     </div>
     <div class="kpi">
       <div class="lbl t" data-vi="Schema (JSON-LD)" data-en="Schema (JSON-LD)"></div>
       <div class="val" style="color:var(--accent-dk)">59/68</div>
-      <div class="note t" data-vi="Trang chủ 24 · 13 trang gốc 14–15 · Bài 31–32 · Dự án 0" data-en="Home 24 · 13 core pages 14–15 · Articles 31–32 · Projects 0"></div>
-      <div class="delta down t" data-vi="⚠ Đính chính: bài viết là 31–32 (không phải 34 như báo cáo 02/08). Toàn bộ bị lặp 14×" data-en="⚠ Correction: articles carry 31–32 (not 34 as reported 02 Aug). All are duplicated 14×"></div>
+      <div class="note t" data-vi="Trang chủ 24 (2 thật) · 13 trang gốc 14–15 (1 thật) · Bài 31–32 (3–4 thật) · Dự án 0" data-en="Home 24 (2 real) · 13 core pages 14–15 (1 real) · Articles 31–32 (3–4 real) · Projects 0"></div>
+      <div class="delta flat t" data-vi="= không đổi · lỗi nhân bản schema sang ngày thứ 2 chưa sửa (hệ số lặp trung bình ~10×)" data-en="= unchanged · the schema duplication defect enters a second day unfixed (average duplication factor ~10×)"></div>
     </div>
   </div>
 
@@ -304,11 +304,11 @@
     <div class="card">
       <h3 class="t" data-vi="5 điểm thành phần (/100)" data-en="5 sub-scores (/100)"></h3>
       <div class="bar-row"><span class="name t" data-vi="Crawlability" data-en="Crawlability"></span><div class="bar-track"><div class="bar-fill" style="width:89%;background:var(--green)">89</div></div></div>
-      <div class="bar-row"><span class="name t" data-vi="Performance / TTFB" data-en="Performance / TTFB"></span><div class="bar-track"><div class="bar-fill" style="width:90%;background:var(--green)">90</div></div></div>
+      <div class="bar-row"><span class="name t" data-vi="Performance / TTFB" data-en="Performance / TTFB"></span><div class="bar-track"><div class="bar-fill" style="width:93%;background:var(--green)">93</div></div></div>
       <div class="bar-row"><span class="name t" data-vi="Structured Data / AEO" data-en="Structured Data / AEO"></span><div class="bar-track"><div class="bar-fill" style="width:80%;background:var(--accent)">80</div></div></div>
       <div class="bar-row"><span class="name t" data-vi="On-page / Meta" data-en="On-page / Meta"></span><div class="bar-track"><div class="bar-fill" style="width:76%;background:var(--blue)">76</div></div></div>
       <div class="bar-row"><span class="name t" data-vi="Content" data-en="Content"></span><div class="bar-track"><div class="bar-fill" style="width:77%;background:var(--blue)">77</div></div></div>
-      <div class="foot t" data-vi="Health tổng <b>84/100</b> (▼ −1 so 02/08: 85). Điểm giảm <b>không</b> vì site xấu đi mà vì audit hôm nay lần đầu kiểm tra nội dung từng khối JSON-LD và phát hiện <b>toàn bộ schema bị lặp y hệt 14 lần trên mỗi trang</b> — lỗi này đã tồn tại từ trước nhưng chưa được đo. Chi tiết: Crawlability 89 (68/68 trả 200; sitemap 67 URL; listing <code>/articles</code> vẫn chỉ lộ 16/45 link bài trong HTML thô), Performance 90 (53/68 trang &lt;1s = 77,9%, chậm nhất 2,96s — vẫn không trang nào &gt;3s), Structured Data 80 (▼ từ 83; 59/68 trang có schema = 87% nhưng nội dung bị nhân bản 14×), On-page 76 (7/11 ảnh trang chủ thiếu alt sang ngày thứ tư; <code>/projects/*</code> 15/19 ảnh thiếu alt; 0 ảnh dùng lazy-load), Content 77 (bài 1.033–2.896 từ, TB 2.023; 6 trang dự án ~161–178 từ). Trọng số: Crawl 25% · Perf 25% · Schema 20% · On-page 15% · Content 15%." data-en="Overall health <b>84/100</b> (▼ −1 vs 02 Aug: 85). The drop is <b>not</b> a site regression — today's audit inspected the contents of each JSON-LD block for the first time and found that <b>every schema block is repeated identically 14 times on every page</b>. The defect pre-existed but had never been measured. Detail: Crawlability 89 (68/68 return 200; sitemap 67 URLs; the <code>/articles</code> listing still exposes only 16 of 45 article links in raw HTML), Performance 90 (53/68 pages &lt;1s = 77.9%, slowest 2.96s — still nothing above 3s), Structured Data 80 (▼ from 83; 59/68 pages carry schema = 87%, but the payload is duplicated 14×), On-page 76 (7 of 11 homepage images lack alt for a fourth day; <code>/projects/*</code> 15 of 19 images missing alt; zero images use lazy-loading), Content 77 (articles 1,033–2,896 words, avg 2,023; 6 project pages at 161–178 words). Weights: Crawl 25% · Perf 25% · Schema 20% · On-page 15% · Content 15%."></div>
+      <div class="foot t" data-vi="Health tổng <b>84/100</b> (= 84 so 03/08, điểm thô 83,7 → 84,5). Thay đổi duy nhất hôm nay là <b>Performance 90 → 93</b>: toàn bộ site nhanh lên rõ rệt và outlier 2,96s hôm qua đã biến mất, xác nhận đó chỉ là nhiễu mạng đúng như báo cáo 03/08 dự đoán. Bốn hạng mục còn lại <b>đứng yên vì chưa có deploy nào</b>. Chi tiết: Crawlability 89 (68/68 trả 200; sitemap 67 URL; listing <code>/articles</code> vẫn chỉ lộ 16/45 link bài trong HTML thô), Performance 93 (▲ từ 90; <b>61/68 trang &lt;1s = 89,7%</b>, chậm nhất 1,78s, không trang nào &gt;3s sang ngày thứ năm), Structured Data 80 (không đổi; 59/68 trang có schema nhưng nội dung vẫn bị nhân bản, hệ số trung bình ~10×), On-page 76 (không đổi; 7/11 ảnh trang chủ thiếu alt sang ngày thứ năm; <code>/projects/*</code> 15/19 ảnh thiếu alt; 0 ảnh lazy-load), Content 77 (không đổi; bài 1.033–2.896 từ, TB 2.023; 6 trang dự án ~161–178 từ). Trọng số: Crawl 25% · Perf 25% · Schema 20% · On-page 15% · Content 15%." data-en="Overall health <b>84/100</b> (= 84 vs 03 Aug; raw score 83.7 → 84.5). The only movement today is <b>Performance 90 → 93</b>: the whole site got measurably faster and yesterday's 2.96s outlier disappeared, confirming it was network jitter exactly as the 03 Aug report predicted. The other four categories <b>sit still because nothing has been deployed</b>. Detail: Crawlability 89 (68/68 return 200; sitemap 67 URLs; the <code>/articles</code> listing still exposes only 16 of 45 article links in raw HTML), Performance 93 (▲ from 90; <b>61 of 68 pages under 1s = 89.7%</b>, slowest 1.78s, nothing above 3s for a fifth day), Structured Data 80 (unchanged; 59 of 68 pages carry schema but the payload is still duplicated, averaging ~10×), On-page 76 (unchanged; 7 of 11 homepage images lack alt for a fifth day; <code>/projects/*</code> 15 of 19 images missing alt; zero lazy-loading), Content 77 (unchanged; articles 1,033–2,896 words, avg 2,023; 6 project pages at 161–178 words). Weights: Crawl 25% · Perf 25% · Schema 20% · On-page 15% · Content 15%."></div>
     </div>
     <div class="card">
       <h3 class="t" data-vi="Phân bố tốc độ (68 trang đo trực tiếp)" data-en="Speed distribution (68 pages measured)"></h3>
@@ -316,17 +316,17 @@
         <svg width="150" height="150" viewBox="0 0 42 42">
           <circle cx="21" cy="21" r="15.9155" fill="none" stroke="var(--cream2)" stroke-width="6"></circle>
           <circle cx="21" cy="21" r="15.9155" fill="none" stroke="var(--green)" stroke-width="6"
-            stroke-dasharray="77.9 22.1" stroke-dashoffset="25"></circle>
+            stroke-dasharray="89.7 10.3" stroke-dashoffset="25"></circle>
           <circle cx="21" cy="21" r="15.9155" fill="none" stroke="var(--amber)" stroke-width="6"
-            stroke-dasharray="22.1 77.9" stroke-dashoffset="-52.9"></circle>
+            stroke-dasharray="10.3 89.7" stroke-dashoffset="-64.7"></circle>
           <text x="21" y="20" text-anchor="middle" font-size="7" font-weight="700" fill="#2c2620">68</text>
           <text x="21" y="26.5" text-anchor="middle" font-size="3.2" fill="#6f665a" class="tsvg" data-vi="trang" data-en="pages">trang</text>
         </svg>
         <div class="legend">
-          <div><span class="dot" style="background:var(--green)"></span> <span class="t" data-vi="Nhanh &lt;1s: <b>53</b> · 77,9%" data-en="Fast &lt;1s: <b>53</b> · 77.9%"></span></div>
-          <div><span class="dot" style="background:var(--amber)"></span> <span class="t" data-vi="1–3s: <b>15</b> · 22,1%" data-en="1–3s: <b>15</b> · 22.1%"></span></div>
+          <div><span class="dot" style="background:var(--green)"></span> <span class="t" data-vi="Nhanh &lt;1s: <b>61</b> · 89,7%" data-en="Fast &lt;1s: <b>61</b> · 89.7%"></span></div>
+          <div><span class="dot" style="background:var(--amber)"></span> <span class="t" data-vi="1–3s: <b>7</b> · 10,3%" data-en="1–3s: <b>7</b> · 10.3%"></span></div>
           <div><span class="dot" style="background:var(--red)"></span> <span class="t" data-vi="Chậm &gt;3s: <b>0</b> · 0%" data-en="Slow &gt;3s: <b>0</b> · 0%"></span></div>
-          <div class="foot t" style="margin-top:10px" data-vi="<b>Không trang nào &gt;3s</b> — sang ngày thứ tư liên tiếp. 68 trang: <b>53/68 &lt;1s</b> (77,9%, giảm từ 83,8%). Chậm nhất lần này: bài <code>/custom-home-visualisation-timeline</code> 2,96s (hôm qua chỉ 0,59s), <code>/projects/85-commodore-drive…</code> 2,23s, <code>/program-for-construction-estimates-explained</code> 1,64s, <code>/model</code> 1,63s. Cả 4 trang này hôm qua đều &lt;1,1s nên đây gần như chắc chắn là <b>nhiễu mạng/cold cache tại thời điểm crawl</b>, không phải regression hạ tầng. Cần theo dõi 2–3 ngày: nếu <code>/custom-home-visualisation-timeline</code> lặp lại &gt;2s thì mới coi là vấn đề thật." data-en="<b>No page exceeds 3s</b> — a fourth consecutive day. Across 68 pages: <b>53/68 under 1s</b> (77.9%, down from 83.8%). Slowest this scan: <code>/custom-home-visualisation-timeline</code> at 2.96s (0.59s yesterday), <code>/projects/85-commodore-drive…</code> at 2.23s, <code>/program-for-construction-estimates-explained</code> at 1.64s and <code>/model</code> at 1.63s. All four were under 1.1s yesterday, so this is almost certainly <b>network jitter / cold cache at crawl time</b> rather than an infrastructure regression. Worth watching for 2–3 days: only treat it as real if <code>/custom-home-visualisation-timeline</code> stays above 2s."></div>
+          <div class="foot t" style="margin-top:10px" data-vi="<b>Không trang nào &gt;3s</b> — sang ngày thứ năm liên tiếp, và hôm nay là lần quét nhanh nhất từ trước tới giờ: <b>61/68 trang &lt;1s</b> (89,7%, tăng mạnh từ 77,9%). Chậm nhất chỉ còn <code>/what-is-bim-3d-modeling</code> 1,78s, rồi <code>/articles</code> 1,23s, trang chủ 1,20s, <code>/custom-home-builders-melbourne-3d-visualisation</code> 1,15s. <b>Dự đoán hôm qua đã đúng:</b> <code>/custom-home-visualisation-timeline</code> từ 2,96s về <b>0,69s</b> và <code>/projects/85-commodore-drive…</code> từ 2,23s về <b>0,57s</b> — cả hai chỉ là nhiễu mạng, không phải regression. Nhóm 6 trang dự án giảm mạnh nhất: TTFB trung bình 0,97s → <b>0,50s</b>. <b>Lưu ý phương pháp:</b> lần quét này đo <b>tuần tự từng URL</b> (không chạy song song), nên số đo phản ánh đúng TTFB thật của từng trang; một phần mức cải thiện cũng có thể đến từ điều kiện mạng lúc crawl, nên hãy coi đây là xu hướng chứ chưa phải bằng chứng tuyệt đối." data-en="<b>No page exceeds 3s</b> — a fifth consecutive day, and today is the fastest scan on record: <b>61 of 68 pages under 1s</b> (89.7%, sharply up from 77.9%). The slowest is now just <code>/what-is-bim-3d-modeling</code> at 1.78s, followed by <code>/articles</code> 1.23s, the homepage 1.20s and <code>/custom-home-builders-melbourne-3d-visualisation</code> 1.15s. <b>Yesterday's call was right:</b> <code>/custom-home-visualisation-timeline</code> fell from 2.96s to <b>0.69s</b> and <code>/projects/85-commodore-drive…</code> from 2.23s to <b>0.57s</b> — both were network jitter, not a regression. The six project pages improved most: average TTFB 0.97s → <b>0.50s</b>. <b>Method note:</b> this scan measured each URL <b>sequentially</b> rather than in parallel, so the figures reflect each page's true TTFB; part of the improvement may still come from network conditions at crawl time, so treat it as a direction rather than proof."></div>
         </div>
       </div>
     </div>
@@ -336,31 +336,31 @@
   <h2 class="sec t" data-vi="Hướng đi &amp; Insight ưu tiên" data-en="Direction &amp; Priority insights"></h2>
 
   <div class="ins p1">
-    <div class="prio t" data-vi="P1 MỚI · PHÁT HIỆN HÔM NAY (03/08)" data-en="NEW P1 · FOUND TODAY (03 Aug)"></div>
+    <div class="prio t" data-vi="P1 · Còn tồn · sang ngày thứ 2 chưa sửa" data-en="P1 · Persisting · second day unfixed"></div>
     <h4 class="t" data-vi="Mỗi trang phát ra 14 khối JSON-LD y hệt nhau — schema bị nhân bản, không phải phong phú" data-en="Every page emits 14 byte-identical JSON-LD blocks — schema is duplicated, not rich"></h4>
-    <p class="t" data-vi="Audit hôm nay lần đầu <b>so sánh nội dung</b> từng khối JSON-LD thay vì chỉ đếm số lượng. Kết quả: trên <code>/about</code> có <b>14 khối JSON-LD nhưng chỉ 1 khối duy nhất về nội dung</b> — 13 khối còn lại là bản sao byte-for-byte. Kiểm chứng bằng <code>new Set(blocks).size === 1</code>. Mô hình này lặp trên toàn bộ trang gốc (14–15 khối), trang chủ (24 khối) và bài viết (31–32 khối, tương ứng ~2–3 schema thật nhân 14). Nghĩa là các con số schema ấn tượng trong báo cáo trước <b>đã bị thổi phồng ~14 lần</b>: bài viết thực chất chỉ có <code>Article</code> + <code>BreadcrumbList</code> + <code>BlogPosting</code> + <code>FAQPage</code>, không phải 32 loại. Hệ quả: HTML phình vô ích, và Google có thể coi đây là tín hiệu cẩu thả khi parse structured data." data-en="Today's audit for the first time <b>compared the contents</b> of each JSON-LD block instead of merely counting them. Result: <code>/about</code> carries <b>14 JSON-LD blocks but only 1 distinct payload</b> — the other 13 are byte-for-byte copies, verified via <code>new Set(blocks).size === 1</code>. The pattern repeats across every core page (14–15 blocks), the homepage (24 blocks) and every article (31–32 blocks, i.e. roughly 2–3 real schemas multiplied by 14). This means the impressive schema counts in previous reports were <b>inflated by a factor of ~14</b>: an article genuinely carries <code>Article</code> + <code>BreadcrumbList</code> + <code>BlogPosting</code> + <code>FAQPage</code>, not 32 distinct types. Consequences: needless HTML bloat and a sloppiness signal to Google's structured-data parser."></p>
+    <p class="t" data-vi="Kiểm chứng lại hôm nay: tình trạng <b>y nguyên</b>. <code>/about</code> vẫn phát ra <b>14 khối JSON-LD nhưng chỉ 1 payload duy nhất</b> (<code>new Set(blocks).size === 1</code>); trang chủ 24 khối / 2 payload; bài viết 31–32 khối / 3–4 payload; <b>hệ số nhân bản trung bình toàn site ~10×</b>. Nghĩa là con số "59/68 trang có schema" nhìn thì đẹp nhưng lượng HTML dành cho structured data đang <b>gấp khoảng 10 lần mức cần thiết</b>. Schema thật của mỗi bài chỉ gồm <code>Article</code> + <code>BreadcrumbList</code> + <code>BlogPosting</code> (+ <code>FAQPage</code> ở 32 bài) — đúng chuẩn, chỉ bị in ra nhiều lần. Rủi ro: HTML phình vô ích và Google có thể coi đây là tín hiệu cẩu thả khi parse structured data." data-en="Re-verified today: <b>completely unchanged</b>. <code>/about</code> still emits <b>14 JSON-LD blocks with only 1 distinct payload</b> (<code>new Set(blocks).size === 1</code>); the homepage 24 blocks / 2 payloads; articles 31–32 blocks / 3–4 payloads; the <b>site-wide average duplication factor is ~10×</b>. So the flattering "59 of 68 pages carry schema" figure hides the fact that roughly <b>ten times more HTML than necessary</b> is being spent on structured data. Each article's genuine schema is just <code>Article</code> + <code>BreadcrumbList</code> + <code>BlogPosting</code> (+ <code>FAQPage</code> on 32) — correct, merely printed repeatedly. Risk: pointless HTML bloat and a sloppiness signal to Google's structured-data parser."></p>
     <p class="fix t" data-vi="<b>Cách sửa:</b> đây gần như chắc chắn là lỗi component schema được mount lại trong mỗi layout/route wrapper. Tìm component render <code>&lt;script type=\"application/ld+json\"&gt;</code> và đảm bảo nó chỉ chạy <b>một lần ở cấp document/head</b> (dùng key duy nhất, hoặc di chuyển lên root layout và bỏ khỏi các layout con). Sau khi sửa, mong đợi: trang gốc còn 1–2 khối, bài viết còn 3–4 khối, HTML giảm 15–25 KB/trang." data-en="<b>Fix:</b> this is almost certainly a schema component being remounted inside every layout/route wrapper. Locate the component rendering <code>&lt;script type=\"application/ld+json\"&gt;</code> and ensure it executes <b>once at document/head level</b> (dedupe by key, or hoist it to the root layout and remove it from nested layouts). After the fix expect 1–2 blocks on core pages, 3–4 on articles, and 15–25 KB less HTML per page."></p>
   </div>
 
   <div class="ins p1">
-    <div class="prio t" data-vi="P1 · Còn tồn · sang ngày thứ 3 chưa sửa" data-en="P1 · Persisting · third day unfixed"></div>
+    <div class="prio t" data-vi="P1 · Còn tồn · sang ngày thứ 4 chưa sửa" data-en="P1 · Persisting · fourth day unfixed"></div>
     <h4 class="t" data-vi="6 trang /projects/* vẫn 0 schema, ~170 từ, 15/19 ảnh thiếu alt" data-en="6 /projects/* pages still have 0 schema, ~170 words, 15 of 19 images without alt"></h4>
-    <p class="t" data-vi="Sáu trang dự án — <code>/251-station-st</code>, <code>/20-head-street</code>, <code>/85-commodore-drive-surfers-paradise</code>, <code>/813-clarendon-street</code>, <code>/31-mcilwain-drive</code>, <code>/nagambie-project</code> — vẫn nằm trong sitemap, vẫn trả 200 (0,51–2,23s), và <b>vẫn y nguyên tình trạng của 31/07</b>: <b>0 JSON-LD</b>, chỉ <b>161–178 từ</b> HTML thô. Rendered-DOM của <code>/251-station-st</code> hôm nay xác nhận <b>15/19 ảnh vẫn thiếu alt</b>, <b>0 ảnh lazy-load</b>, heading nhảy bậc cả <b>1→3</b> và <b>2→4</b>, loadEvent 5,71s (nặng nhất site). Đây là nhóm trang đang bị Google mời index ở trạng thái chưa hoàn thiện — mỗi ngày trôi qua là thêm rủi ro bị đánh giá thin content." data-en="The six project pages — <code>/251-station-st</code>, <code>/20-head-street</code>, <code>/85-commodore-drive-surfers-paradise</code>, <code>/813-clarendon-street</code>, <code>/31-mcilwain-drive</code>, <code>/nagambie-project</code> — remain in the sitemap, still return 200 (0.51–2.23s), and are <b>exactly as they were on 31 Jul</b>: <b>0 JSON-LD</b> and only <b>161–178 words</b> of raw HTML. Today's rendered DOM of <code>/251-station-st</code> confirms <b>15 of 19 images still lack alt</b>, <b>zero images lazy-load</b>, headings skip both <b>1→3</b> and <b>2→4</b>, and loadEvent is 5.71s — the heaviest on the site. Google is being invited to index these pages in an unfinished state, and every further day raises the thin-content risk."></p>
-    <p class="fix t" data-vi="<b>Cách sửa (không đổi):</b> thêm <code>CreativeWork</code>/<code>Place</code> + <code>BreadcrumbList</code> + <code>ImageObject</code>; server-render 250–400 từ mô tả (địa điểm, quy mô, vai trò DXL, kết quả); viết alt cho 15 ảnh gallery; bật <code>loading=\"lazy\"</code>. <b>Nếu tuần này chưa deploy được, hãy noindex 6 trang ngay</b> — để nguyên 3 ngày nữa sẽ tốn công recovery hơn." data-en="<b>Fix (unchanged):</b> add <code>CreativeWork</code>/<code>Place</code> + <code>BreadcrumbList</code> + <code>ImageObject</code>; server-render 250–400 words of narrative (location, scale, DXL's role, outcome); write alt text for the 15 gallery images; enable <code>loading=\"lazy\"</code>. <b>If this can't ship this week, noindex the six pages now</b> — leaving them another three days makes recovery more expensive."></p>
+    <p class="t" data-vi="Sáu trang dự án — <code>/251-station-st</code>, <code>/20-head-street</code>, <code>/85-commodore-drive-surfers-paradise</code>, <code>/813-clarendon-street</code>, <code>/31-mcilwain-drive</code>, <code>/nagambie-project</code> — vẫn nằm trong sitemap, vẫn trả 200, và <b>vẫn y nguyên tình trạng của 31/07</b>: <b>0 JSON-LD</b>, chỉ <b>161–178 từ</b> HTML thô. Rendered-DOM của <code>/251-station-st</code> hôm nay xác nhận <b>15/19 ảnh vẫn thiếu alt</b>, <b>0 ảnh lazy-load</b>, heading nhảy bậc cả <b>1→3</b> và <b>2→4</b>. <b>Điểm khác duy nhất hôm nay là tốc độ:</b> TTFB nhóm này về <b>0,46–0,57s</b> (TB 0,50s, hôm qua 0,97s) — tức hạ tầng phục vụ nhóm trang này hoàn toàn ổn, <b>vấn đề thuần túy là nội dung và schema chưa được deploy</b>. Đây là nhóm trang đang bị Google mời index ở trạng thái chưa hoàn thiện — mỗi ngày trôi qua là thêm rủi ro bị đánh giá thin content." data-en="The six project pages — <code>/251-station-st</code>, <code>/20-head-street</code>, <code>/85-commodore-drive-surfers-paradise</code>, <code>/813-clarendon-street</code>, <code>/31-mcilwain-drive</code>, <code>/nagambie-project</code> — remain in the sitemap, still return 200, and are <b>exactly as they were on 31 Jul</b>: <b>0 JSON-LD</b> and only <b>161–178 words</b> of raw HTML. Today's rendered DOM of <code>/251-station-st</code> confirms <b>15 of 19 images still lack alt</b>, <b>zero images lazy-load</b>, and headings skip both <b>1→3</b> and <b>2→4</b>. <b>The one thing that did change is speed:</b> this group now returns in <b>0.46–0.57s</b> (avg 0.50s, against 0.97s yesterday) — so the infrastructure serving them is perfectly healthy and the <b>problem is purely undeployed content and schema</b>. Google is still being invited to index these pages in an unfinished state, and every further day raises the thin-content risk."></p>
+    <p class="fix t" data-vi="<b>Cách sửa (không đổi):</b> thêm <code>CreativeWork</code>/<code>Place</code> + <code>BreadcrumbList</code> + <code>ImageObject</code>; server-render 250–400 từ mô tả (địa điểm, quy mô, vai trò DXL, kết quả); viết alt cho 15 ảnh gallery; bật <code>loading=\"lazy\"</code>. <b>Đã trễ 4 ngày — nếu tuần này vẫn chưa deploy được thì noindex 6 trang ngay hôm nay</b> thay vì để trôi tiếp." data-en="<b>Fix (unchanged):</b> add <code>CreativeWork</code>/<code>Place</code> + <code>BreadcrumbList</code> + <code>ImageObject</code>; server-render 250–400 words of narrative (location, scale, DXL's role, outcome); write alt text for the 15 gallery images; enable <code>loading=\"lazy\"</code>. <b>Four days late — if it still can't ship this week, noindex the six pages today</b> rather than letting them drift further."></p>
   </div>
 
   <div class="ins win">
     <div class="prio t" data-vi="✓ ĐIỂM SÁNG · giữ vững" data-en="✓ HOLDING STRONG"></div>
     <h4 class="t" data-vi="45 bài viết vẫn nhanh, đủ schema thật, đúng 1 H1 — và /faq vẫn là kho AEO mạnh nhất" data-en="45 articles stay fast with genuine schema and a single H1 — and /faq remains the strongest AEO asset"></h4>
-    <p class="t" data-vi="Cả <b>45/45 bài</b> trả 200, TTFB <b>0,56–2,96s</b> với 36 bài &lt;1s, <b>đúng 1 H1</b> giàu từ khóa (đã hết lỗi 2×H1 cũ), 1.033–2.896 từ (TB 2.023), và <b>32/45 bài có <code>FAQPage</code></b>. Sau khi trừ nhân bản 14×, mỗi bài vẫn có bộ schema đúng chuẩn: <code>Article</code> + <code>BlogPosting</code> + <code>BreadcrumbList</code> (+ <code>FAQPage</code> ở 32 bài) — đây là schema <b>thật</b> và vẫn hợp lệ. Sự cố chậm 6,5–10,8s của <code>/articles/*</code> hồi tháng 7 <b>vẫn hết hẳn</b> sang ngày thứ tư. <b>68/68 trang</b> đều có title, meta description và canonical; <code>html lang=\"en-AU\"</code> đúng cho thị trường Úc; <code>robots.txt</code> sạch (<code>Disallow:</code> rỗng) và trỏ đúng sitemap. <code>/faq</code>: 1.315 từ + <code>FAQPage</code>, TTFB 0,48s." data-en="All <b>45/45 articles</b> return 200 at <b>0.56–2.96s</b> TTFB with 36 under 1s, <b>exactly one</b> keyword-rich H1 (the old 2×H1 defect is gone), 1,033–2,896 words (avg 2,023), and <b>32 of 45 carry <code>FAQPage</code></b>. Once the 14× duplication is discounted, each article still holds a correct schema set: <code>Article</code> + <code>BlogPosting</code> + <code>BreadcrumbList</code> (+ <code>FAQPage</code> on 32) — that schema is <b>real</b> and remains valid. July's 6.5–10.8s <code>/articles/*</code> slowdown <b>stays fully resolved</b> for a fourth day. <b>68 of 68 pages</b> carry a title, meta description and canonical; <code>html lang=\"en-AU\"</code> is correct for the AU market; <code>robots.txt</code> is clean (empty <code>Disallow:</code>) and points at the right sitemap. <code>/faq</code>: 1,315 words + <code>FAQPage</code> at 0.48s TTFB."></p>
+    <p class="t" data-vi="Cả <b>45/45 bài</b> trả 200, TTFB <b>0,52–1,78s</b> với <b>41 bài &lt;1s</b> (hôm qua 36), <b>đúng 1 H1</b> giàu từ khóa (đã hết lỗi 2×H1 cũ), 1.033–2.896 từ (TB 2.023), và <b>32/45 bài có <code>FAQPage</code></b>. Sau khi trừ nhân bản, mỗi bài vẫn có bộ schema đúng chuẩn: <code>Article</code> + <code>BlogPosting</code> + <code>BreadcrumbList</code> (+ <code>FAQPage</code> ở 32 bài) — đây là schema <b>thật</b> và vẫn hợp lệ. Sự cố chậm 6,5–10,8s của <code>/articles/*</code> hồi tháng 7 <b>vẫn hết hẳn</b> sang ngày thứ năm. <b>68/68 trang</b> đều có title, meta description và canonical; <code>html lang='en-AU'</code> đúng cho thị trường Úc; <code>robots.txt</code> sạch (<code>Disallow:</code> rỗng) và trỏ đúng sitemap; sitemap 67 URL khớp với 68 trang crawl trừ đúng <code>/login</code>. <code>/faq</code>: 1.315 từ + <code>FAQPage</code>, TTFB 0,70s." data-en="All <b>45/45 articles</b> return 200 at <b>0.52–1.78s</b> TTFB with <b>41 under 1s</b> (36 yesterday), <b>exactly one</b> keyword-rich H1 (the old 2×H1 defect is gone), 1,033–2,896 words (avg 2,023), and <b>32 of 45 carry <code>FAQPage</code></b>. Once the duplication is discounted, each article still holds a correct schema set: <code>Article</code> + <code>BlogPosting</code> + <code>BreadcrumbList</code> (+ <code>FAQPage</code> on 32) — that schema is <b>real</b> and remains valid. July's 6.5–10.8s <code>/articles/*</code> slowdown <b>stays fully resolved</b> for a fifth day. <b>68 of 68 pages</b> carry a title, meta description and canonical; <code>html lang='en-AU'</code> is correct for the AU market; <code>robots.txt</code> is clean (empty <code>Disallow:</code>) and points at the right sitemap; the 67-URL sitemap matches the 68 crawled pages minus <code>/login</code> exactly. <code>/faq</code>: 1,315 words + <code>FAQPage</code> at 0.70s TTFB."></p>
     <p class="fix t" data-vi="<b>Giữ nguyên:</b> khi sửa lỗi nhân bản schema ở P1, <b>đừng gỡ nhầm schema thật</b> — mục tiêu là còn 3–4 khối/bài, không phải 0. Xác minh lại bằng Rich Results Test sau deploy." data-en="<b>Maintain:</b> when fixing the P1 duplication, <b>do not strip the genuine schema</b> — the target is 3–4 blocks per article, not zero. Re-verify with the Rich Results Test after deploying."></p>
   </div>
 
   <div class="ins p2">
-    <div class="prio t" data-vi="P2 · Còn tồn · sang ngày thứ 4 chưa sửa" data-en="P2 · Persisting · fourth day unfixed"></div>
+    <div class="prio t" data-vi="P2 · Còn tồn · sang ngày thứ 5 chưa sửa" data-en="P2 · Persisting · fifth day unfixed"></div>
     <h4 class="t" data-vi="Trang chủ vẫn 7/11 ảnh thiếu alt và 0 ảnh lazy-load" data-en="Homepage still 7 of 11 images without alt and zero lazy-loading"></h4>
-    <p class="t" data-vi="Rendered-DOM hôm nay xác nhận trang chủ vẫn <b>7/11 ảnh thiếu <code>alt</code></b> — không đổi so với 31/07, 01/08 và 02/08. Đây là khuyến nghị P1 từ báo cáo 30/07 và <b>đã 4 ngày chưa deploy</b>. Kèm theo: <b>0/11 ảnh dùng <code>loading=\"lazy\"</code></b>, domContentLoaded 1,84s, loadEvent 2,78s. Bài mẫu <code>/bim-australia-9-implementation-mistakes</code> chỉ thiếu 2/10 alt — nên vấn đề tập trung rõ ở <b>trang chủ và 6 trang dự án</b>, không phải toàn site." data-en="Today's rendered DOM confirms the homepage still has <b>7 of 11 images without <code>alt</code></b> — unchanged since 31 Jul, 01 Aug and 02 Aug. This was the 30 Jul report's P1 and has now gone <b>four days without a deploy</b>. Alongside it: <b>0 of 11 images use <code>loading=\"lazy\"</code></b>, domContentLoaded is 1.84s and loadEvent 2.78s. The sampled article <code>/bim-australia-9-implementation-mistakes</code> misses only 2 of 10 alts — so the problem is clearly concentrated on the <b>homepage and the 6 project pages</b>, not site-wide."></p>
-    <p class="fix t" data-vi="<b>Cách sửa:</b> một deploy nhỏ gộp cả ba: 7 <code>alt</code> trang chủ + 15 <code>alt</code> trang dự án + <code>loading=\"lazy\"</code> cho ảnh dưới màn hình đầu. Ước tính ~30 phút, đưa On-page từ 76 lên ~85 và kéo Health lên ~86." data-en="<b>Fix:</b> one small deploy covering all three: 7 homepage <code>alt</code>s + 15 project-page <code>alt</code>s + <code>loading=\"lazy\"</code> below the fold. Roughly 30 minutes of work, lifting On-page from 76 to about 85 and Health to about 86."></p>
+    <p class="t" data-vi="Rendered-DOM hôm nay xác nhận trang chủ vẫn <b>7/11 ảnh thiếu <code>alt</code></b> — không đổi so với 31/07, 01/08, 02/08 và 03/08. Đây là khuyến nghị P1 từ báo cáo 30/07 và <b>đã 5 ngày chưa deploy</b>. Kèm theo: <b>0/11 ảnh dùng <code>loading='lazy'</code></b>. Bài viết thì ngược lại — mẫu <code>/architectural-rendering-melbourne-pre-construction-planning</code> chỉ thiếu 2/9 alt và <b>có 3 ảnh lazy-load</b>, chứng tỏ template bài viết đã làm đúng. Vấn đề vì thế tập trung rõ ở <b>trang chủ và 6 trang dự án</b>, không phải toàn site — và đó cũng là lý do nó rẻ để sửa." data-en="Today's rendered DOM confirms the homepage still has <b>7 of 11 images without <code>alt</code></b> — unchanged since 31 Jul, 01, 02 and 03 Aug. This was the 30 Jul report's P1 and has now gone <b>five days without a deploy</b>. Alongside it: <b>0 of 11 images use <code>loading='lazy'</code></b>. Articles are the opposite — the sampled <code>/architectural-rendering-melbourne-pre-construction-planning</code> misses only 2 of 9 alts and <b>lazy-loads 3 images</b>, proving the article template already does this correctly. The problem is therefore concentrated on the <b>homepage and the 6 project pages</b>, not site-wide — which is also why it is cheap to fix."></p>
+    <p class="fix t" data-vi="<b>Cách sửa:</b> một deploy nhỏ gộp cả ba: 7 <code>alt</code> trang chủ + 15 <code>alt</code> trang dự án + <code>loading=\"lazy\"</code> cho ảnh dưới màn hình đầu — copy đúng cách template bài viết đang làm. Ước tính ~30 phút, đưa On-page từ 76 lên ~85 và kéo Health lên ~86,5." data-en="<b>Fix:</b> one small deploy covering all three: 7 homepage <code>alt</code>s + 15 project-page <code>alt</code>s + <code>loading=\"lazy\"</code> below the fold — copy what the article template already does. Roughly 30 minutes of work, lifting On-page from 76 to about 85 and Health to about 86.5."></p>
   </div>
 
   <div class="ins p2">
@@ -379,8 +379,8 @@
 
   <div class="ins p2">
     <div class="prio t" data-vi="Roadmap · Next steps ưu tiên" data-en="Roadmap · Prioritised next steps"></div>
-    <h4 class="t" data-vi="Thứ tự việc cần làm sau crawl 03/08" data-en="Action order after the 03 Aug crawl"></h4>
-    <p class="t" data-vi="<b>1. MỚI — ưu tiên cao nhất:</b> sửa lỗi nhân bản JSON-LD 14× (một fix ở component schema, tác động toàn bộ 59 trang, giảm 15–25 KB/trang). <b>2.</b> Hoàn thiện 6 trang <code>/projects/*</code> — schema + 250–400 từ + 15 alt; hoặc noindex ngay nếu tuần này chưa deploy được (đã trễ 3 ngày). <b>3.</b> Deploy 7 <code>alt</code> trang chủ + bật lazy-load (đã trễ 4 ngày, việc ~30 phút). <b>4.</b> Server-render đủ 45 link bài trên <code>/articles</code> + thêm <code>CollectionPage</code>/<code>ItemList</code>. <b>5.</b> Thêm <code>FAQPage</code> cho 13 bài còn thiếu. <b>6.</b> Chuẩn hóa heading tuần tự (bỏ nhảy 2→4 và 1→3). <b>7.</b> noindex <code>/login</code> &amp; <code>/start-interactive</code>, gỡ <code>/start-interactive</code> khỏi sitemap. <b>8.</b> Theo dõi 2–3 ngày xem <code>/custom-home-visualisation-timeline</code> (2,96s hôm nay) có thật sự chậm hay chỉ nhiễu mạng. <b>9.</b> GSC: xác nhận schema vẫn 'Valid' sau khi sửa lỗi nhân bản." data-en="<b>1. NEW — top priority:</b> fix the 14× JSON-LD duplication (a single schema-component fix affecting all 59 pages, saving 15–25 KB each). <b>2.</b> Finish the 6 <code>/projects/*</code> pages — schema + 250–400 words + 15 alts; or noindex them now if nothing ships this week (already three days late). <b>3.</b> Ship the 7 homepage <code>alt</code>s + enable lazy-loading (four days late, ~30 minutes of work). <b>4.</b> Server-render all 45 article links on <code>/articles</code> + add <code>CollectionPage</code>/<code>ItemList</code>. <b>5.</b> Add <code>FAQPage</code> to the 13 articles missing it. <b>6.</b> Normalise heading order (remove the 2→4 and 1→3 skips). <b>7.</b> noindex <code>/login</code> &amp; <code>/start-interactive</code>, drop <code>/start-interactive</code> from the sitemap. <b>8.</b> Watch <code>/custom-home-visualisation-timeline</code> (2.96s today) for 2–3 days to confirm whether it is genuinely slow or just network jitter. <b>9.</b> In GSC, confirm schema stays 'Valid' after the duplication fix."></p>
+    <h4 class="t" data-vi="Thứ tự việc cần làm sau crawl 04/08" data-en="Action order after the 04 Aug crawl"></h4>
+    <p class="t" data-vi="<b>Danh sách không đổi so với 03/08 vì chưa có deploy nào — chỉ mục 8 được đóng lại.</b> <b>1.</b> Sửa lỗi nhân bản JSON-LD (một fix ở component schema, tác động toàn bộ 59 trang, giảm ~10× lượng HTML dành cho structured data) — <b>ưu tiên cao nhất, đã sang ngày thứ 2</b>. <b>2.</b> Hoàn thiện 6 trang <code>/projects/*</code> — schema + 250–400 từ + 15 alt; hoặc noindex ngay nếu tuần này chưa deploy được (đã trễ 4 ngày). <b>3.</b> Deploy 7 <code>alt</code> trang chủ + bật lazy-load (đã trễ 5 ngày, việc ~30 phút, đây là cách rẻ nhất để kéo Health lên ~86,5). <b>4.</b> Server-render đủ 45 link bài trên <code>/articles</code> + thêm <code>CollectionPage</code>/<code>ItemList</code>. <b>5.</b> Thêm <code>FAQPage</code> cho 13 bài còn thiếu. <b>6.</b> Chuẩn hóa heading tuần tự (bỏ nhảy 2→4 và 1→3). <b>7.</b> noindex <code>/login</code> &amp; <code>/start-interactive</code>, gỡ <code>/start-interactive</code> khỏi sitemap. <b>8. ✓ ĐÓNG:</b> <code>/custom-home-visualisation-timeline</code> hôm nay 0,69s — đúng là nhiễu mạng, không phải vấn đề hạ tầng. <b>9.</b> GSC: xác nhận schema vẫn "Valid" sau khi sửa lỗi nhân bản." data-en="<b>The list is unchanged from 03 Aug because nothing was deployed — only item 8 closes.</b> <b>1.</b> Fix the JSON-LD duplication (a single schema-component fix affecting all 59 pages, cutting the structured-data HTML by roughly 10×) — <b>top priority, now on its second day</b>. <b>2.</b> Finish the 6 <code>/projects/*</code> pages — schema + 250–400 words + 15 alts; or noindex them now if nothing ships this week (four days late). <b>3.</b> Ship the 7 homepage <code>alt</code>s + enable lazy-loading (five days late, ~30 minutes of work, and the cheapest route to Health ~86.5). <b>4.</b> Server-render all 45 article links on <code>/articles</code> + add <code>CollectionPage</code>/<code>ItemList</code>. <b>5.</b> Add <code>FAQPage</code> to the 13 articles missing it. <b>6.</b> Normalise heading order (remove the 2→4 and 1→3 skips). <b>7.</b> noindex <code>/login</code> &amp; <code>/start-interactive</code>, drop <code>/start-interactive</code> from the sitemap. <b>8. ✓ CLOSED:</b> <code>/custom-home-visualisation-timeline</code> came back at 0.69s today — it was network jitter, not an infrastructure problem. <b>9.</b> In GSC, confirm schema stays "Valid" after the duplication fix."></p>
   </div>
 
   <!-- Response time chart -->
@@ -409,84 +409,84 @@
       <tbody></tbody>
     </table>
   </div>
-  <div class="foot t" data-vi="Crawl trực tiếp qua Chrome (fetch same-origin) lúc 03/08/2026. <b>Số đo thật:</b> TTFB, KB, status, số H1, schema (script JSON-LD), title/meta/canonical, số từ (đã loại script/style), internal link duy nhất. Quét <b>68 trang</b>: 17 trang gốc, toàn bộ 45 bài <code>/articles</code>, 6 trang <code>/projects/*</code>. Tất cả trả 200, 0 timeout. <b>Lưu ý cột JSON-LD:</b> đây là <i>số khối script</i> trong HTML thô — audit hôm nay xác định các khối này bị <b>lặp y hệt 14 lần</b>, nên số schema thật chỉ bằng khoảng 1/14 giá trị hiển thị (xem P1). Cột Sitemap: chỉ <code>/login</code> nằm ngoài sitemap (đúng)." data-en="Live Chrome crawl (same-origin fetch) on 03 Aug 2026. <b>Real measurements:</b> TTFB, KB, status, H1 count, schema (JSON-LD scripts), title/meta/canonical, word count (scripts and styles stripped), unique internal links. This run covered <b>68 pages</b>: 17 core pages, all 45 <code>/articles</code> and 6 <code>/projects/*</code> pages. All returned 200 with 0 timeouts. <b>Note on the JSON-LD column:</b> it counts <i>script blocks</i> in the raw HTML — today's audit established that these are <b>duplicated identically 14×</b>, so the true schema count is roughly 1/14 of the displayed value (see P1). Sitemap column: only <code>/login</code> sits outside the sitemap (correct)."></div>
+  <div class="foot t" data-vi="Crawl trực tiếp qua Chrome (fetch same-origin, <b>đo tuần tự từng URL</b>) lúc 04/08/2026. <b>Số đo thật:</b> TTFB, KB, status, số H1, schema (script JSON-LD), title/meta/canonical, số từ (đã loại script/style), internal link duy nhất. Quét <b>68 trang</b>: 17 trang gốc, toàn bộ 45 bài <code>/articles</code>, 6 trang <code>/projects/*</code>. Tất cả trả 200, 0 timeout. <b>Lưu ý cột JSON-LD:</b> đây là <i>số khối script</i> trong HTML thô — các khối này vẫn bị lặp (trang gốc 14 khối/1 payload, trang chủ 24/2, bài viết 31–32/3–4), nên số schema thật chỉ bằng khoảng 1/10 giá trị hiển thị (xem P1). Cột Sitemap: chỉ <code>/login</code> nằm ngoài sitemap (đúng)." data-en="Live Chrome crawl (same-origin fetch, <b>each URL measured sequentially</b>) on 04 Aug 2026. <b>Real measurements:</b> TTFB, KB, status, H1 count, schema (JSON-LD scripts), title/meta/canonical, word count (scripts and styles stripped), unique internal links. This run covered <b>68 pages</b>: 17 core pages, all 45 <code>/articles</code> and 6 <code>/projects/*</code> pages. All returned 200 with 0 timeouts. <b>Note on the JSON-LD column:</b> it counts <i>script blocks</i> in the raw HTML — those blocks are still duplicated (core pages 14 blocks / 1 payload, homepage 24 / 2, articles 31–32 / 3–4), so the true schema count is roughly one tenth of the displayed value (see P1). Sitemap column: only <code>/login</code> sits outside the sitemap (correct)."></div>
 
 </div>
 
 <script>
 const CORE = [
-["/",1317,1439,24,22,1],
-["/about",430,392,14,16,1],
-["/studio",904,523,14,16,1],
-["/prestige",1348,329,14,16,1],
-["/model",1629,301,14,16,1],
-["/interiors",1338,300,14,16,1],
-["/modules",885,192,14,16,1],
-["/projects",494,173,14,16,1],
-["/suppliers",411,382,14,16,1],
-["/apply",772,441,14,16,1],
-["/articles",1258,470,0,32,1],
-["/contact",766,187,14,16,1],
-["/faq",479,1315,15,16,1],
-["/start-interactive",495,45,0,0,1],
-["/login",336,17,0,0,0],
-["/privacy-policy",386,864,15,16,1],
-["/terms-of-service",571,861,15,16,1]
+["/",1204,1439,24,22,1],
+["/about",364,392,14,16,1],
+["/studio",850,523,14,16,1],
+["/prestige",996,329,14,16,1],
+["/model",942,301,14,16,1],
+["/interiors",835,300,14,16,1],
+["/modules",756,192,14,16,1],
+["/projects",470,173,14,16,1],
+["/suppliers",366,382,14,16,1],
+["/apply",491,441,14,16,1],
+["/articles",1229,470,0,32,1],
+["/contact",1023,187,14,17,1],
+["/faq",700,1315,15,16,1],
+["/start-interactive",381,45,0,0,1],
+["/login",485,17,0,0,0],
+["/privacy-policy",360,864,15,16,1],
+["/terms-of-service",489,861,15,18,1]
 ];
 const ART = [
-["architectural-rendering-melbourne-pre-construction-planning",807,1977,32,22],
-["photorealistic-rendering-melbourne-developers",565,1705,32,22],
-["3d-floor-plan-melbourne-home-design-clarity",557,1828,32,22],
-["custom-home-builders-melbourne-3d-visualisation",977,1920,32,23],
-["3d-rendering-company-melbourne",841,2041,32,21],
-["3d-rendering-melbourne-pre-construction-planning",1047,1816,32,23],
-["custom-home-builders-melbourne-pre-build-clarity",907,1825,32,22],
-["luxury-home-builders-melbourne-vr-bim",565,1889,32,21],
-["pre-construction-visualisation-construction-readiness",752,1869,32,21],
-["architectural-visualisation-melbourne-project-decisions",603,1948,32,23],
-["house-renovation-3d-design-melbourne",635,2241,32,19],
-["how-3d-coordination-reduces-design-conflicts-before-construction",647,2249,31,19],
-["how-quality-management-in-projects-improves-project-delivery",649,2360,32,19],
-["how-a-construction-program-reduces-delays-and-design-conflicts",748,2469,32,21],
-["project-management-construction-for-luxury-residential-projects",561,2165,32,21],
-["bim-australia-9-implementation-mistakes",733,2724,32,21],
-["choosing-the-best-home-builder",925,2896,32,19],
-["project-controls-for-luxury-residential-construction",1126,2432,32,21],
-["project-cost-management-using-bim-and-digital-twins",827,2510,32,21],
-["custom-home-builders-vs-project-builders",773,2692,32,19],
-["how-to-identify-quality-home-builders",737,2189,32,19],
-["the-best-home-builders-adelaide",572,1962,31,21],
-["brisbane-custom-home-builders-checklist-for-clients",625,2171,31,21],
-["bim-3d-4d-5d-explained",609,2214,31,21],
-["custom-built-homes-melbourne-checklist",892,1678,31,21],
-["how-to-choose-custom-home-builders-in-south-australia",861,2107,31,19],
-["best-practices-for-project-and-quality-management-in-2026",652,2187,31,21],
-["construction-program-management-software",1277,1887,31,21],
-["program-for-construction-estimates-explained",1635,1894,31,21],
-["what-is-bim-3d-modeling",1090,1322,31,21],
-["project-management-and-cost-control",898,2343,31,21],
-["bim-3d-from-design-to-site-in-2026",1022,2818,31,21],
-["duplex-house-design-in-australia",754,2088,31,21],
-["3d-house-design-guide",935,1979,32,21],
-["modern-house-design-2026-10-trends-shaping-homes",1032,1688,32,21],
-["contemporary-houses-a-practical-guide",763,1355,32,21],
-["how-3d-configurators-increase-buyer-commitment",1216,1033,32,21],
-["the-risk-of-cheap-architectural-renders",801,1406,32,21],
-["custom-home-visualisation-timeline",2960,2489,32,21],
-["vr-vs-360-in-australian-property-decisions",795,2080,32,21],
-["bim-for-architects-australia-in-custom-home-design",777,2182,32,21],
-["6-benefits-of-using-vr-technology",647,2128,32,21],
-["virtual-reality-home-walkthrough",682,1478,32,21],
-["step-inside-6-home-design-trends-shaping-australia-in-2026",766,1455,32,21],
-["virtual-reality-in-australia-home-design",746,1356,32,21]
+["architectural-rendering-melbourne-pre-construction-planning",719,1977,32,22],
+["photorealistic-rendering-melbourne-developers",753,1705,32,22],
+["3d-floor-plan-melbourne-home-design-clarity",783,1828,32,22],
+["custom-home-builders-melbourne-3d-visualisation",1148,1920,32,23],
+["3d-rendering-company-melbourne",915,2041,32,21],
+["3d-rendering-melbourne-pre-construction-planning",540,1816,32,23],
+["custom-home-builders-melbourne-pre-build-clarity",558,1825,32,22],
+["luxury-home-builders-melbourne-vr-bim",537,1889,32,21],
+["pre-construction-visualisation-construction-readiness",538,1869,32,21],
+["architectural-visualisation-melbourne-project-decisions",518,1948,32,23],
+["house-renovation-3d-design-melbourne",735,2241,32,19],
+["how-3d-coordination-reduces-design-conflicts-before-construction",592,2249,31,19],
+["how-quality-management-in-projects-improves-project-delivery",588,2360,32,19],
+["how-a-construction-program-reduces-delays-and-design-conflicts",564,2469,32,22],
+["project-management-construction-for-luxury-residential-projects",650,2165,32,21],
+["bim-australia-9-implementation-mistakes",682,2724,32,21],
+["choosing-the-best-home-builder",582,2896,32,19],
+["project-controls-for-luxury-residential-construction",553,2432,32,22],
+["project-cost-management-using-bim-and-digital-twins",607,2510,32,21],
+["custom-home-builders-vs-project-builders",838,2692,32,19],
+["how-to-identify-quality-home-builders",788,2189,32,20],
+["the-best-home-builders-adelaide",948,1962,31,22],
+["brisbane-custom-home-builders-checklist-for-clients",989,2171,31,22],
+["bim-3d-4d-5d-explained",751,2214,31,22],
+["custom-built-homes-melbourne-checklist",687,1678,31,22],
+["how-to-choose-custom-home-builders-in-south-australia",546,2107,31,20],
+["best-practices-for-project-and-quality-management-in-2026",879,2187,31,22],
+["construction-program-management-software",828,1887,31,22],
+["program-for-construction-estimates-explained",1063,1894,31,22],
+["what-is-bim-3d-modeling",1781,1322,31,22],
+["project-management-and-cost-control",1001,2343,31,21],
+["bim-3d-from-design-to-site-in-2026",717,2818,31,22],
+["duplex-house-design-in-australia",687,2088,31,22],
+["3d-house-design-guide",651,1979,32,22],
+["modern-house-design-2026-10-trends-shaping-homes",658,1688,32,22],
+["contemporary-houses-a-practical-guide",586,1355,32,22],
+["how-3d-configurators-increase-buyer-commitment",634,1033,32,21],
+["the-risk-of-cheap-architectural-renders",523,1406,32,22],
+["custom-home-visualisation-timeline",686,2489,32,22],
+["vr-vs-360-in-australian-property-decisions",658,2080,32,22],
+["bim-for-architects-australia-in-custom-home-design",559,2182,32,21],
+["6-benefits-of-using-vr-technology",541,2128,32,21],
+["virtual-reality-home-walkthrough",725,1478,32,21],
+["step-inside-6-home-design-trends-shaping-australia-in-2026",554,1455,32,21],
+["virtual-reality-in-australia-home-design",736,1356,32,22]
 ];
 const PROJ = [
-["/projects/251-station-st",807,163,0,16],
-["/projects/20-head-street",757,166,0,16],
-["/projects/85-commodore-drive-surfers-paradise",2230,174,0,16],
-["/projects/813-clarendon-street",789,170,0,16],
-["/projects/31-mcilwain-drive",705,161,0,16],
-["/projects/nagambie-project",512,178,0,16]
+["/projects/251-station-st",476,163,0,16],
+["/projects/20-head-street",461,166,0,16],
+["/projects/85-commodore-drive-surfers-paradise",574,174,0,16],
+["/projects/813-clarendon-street",466,170,0,16],
+["/projects/31-mcilwain-drive",507,161,0,16],
+["/projects/nagambie-project",483,178,0,16]
 ];
 const PAGES = [];
 CORE.forEach(c=>PAGES.push({url:c[0],status:200,rt:c[1],words:c[2],schema:c[3],links:c[4],sm:c[5],grp:"core"}));
@@ -518,7 +518,7 @@ function setLang(l){
 
 function renderRt(){
   const loaded = [...PAGES].sort((a,b)=>b.rt-a.rt);
-  const max = 2960;
+  const max = 1781;
   const col = ms => ms<1000?'var(--green)':ms<3000?'var(--accent)':ms<6000?'var(--amber)':'var(--red)';
   const loc = LANG==='vi'?'vi-VN':'en-US';
   let h='';
@@ -574,7 +574,7 @@ document.querySelectorAll('.filter-btn').forEach(b=>{
 
 /* ================= date picker v2 (sample-matched) ================= */
 const PK_BASE  = '';
-const PK_TODAY = '2026-08-03';
+const PK_TODAY = '2026-08-04';
 let PK_SNAPS = [], PK_MAP = {}, PK_VIEW = null;
 let PK_SEL = {s:PK_TODAY, e:PK_TODAY}, PK_DRAFT = {s:PK_TODAY, e:PK_TODAY}, PK_PENDING = false, PK_PRESET = null;
 
