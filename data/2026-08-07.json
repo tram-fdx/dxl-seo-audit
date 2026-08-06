@@ -1,0 +1,62 @@
+{
+"content": {
+"article_words_avg": 2061,
+"article_words_max": 2969,
+"article_words_min": 1037,
+"new_articles_published": [],
+"project_page_words_range": "161-178 raw HTML (~211 rendered); yesterday's 225-241 reflected shared chrome text that has since been trimmed",
+"shared_chrome_change": "Every page lost roughly 60-120 words of shared component text and 5 unique internal links versus 05 Aug (core 22 -> 17, articles 25-29 -> 20-24, projects 22 -> 17). /articles is the only page moving the other way (+528 words, +32 links) because it was deliberately rebuilt.",
+"thin_pages": ["/login (17)", "/start-interactive (45)", "/projects/* (161-178 each)", "/projects (173)", "/contact (187)", "/modules (192)"]
+},
+"date": "2026-08-07",
+"health_score": 88,
+"http_200": 76,
+"notes": "The biggest fix day of the audit series: two long-standing defects were cleared at once and Health rose 83 -> 88, the highest recorded. (1) The /articles listing now server-renders all 53 article links as real anchors instead of 16, so the 37 articles that existed only in the sitemap finally have internal links; the page's unique internal-link count went 38 -> 70, its raw-HTML word count 620 -> 1148, it gained 21 JSON-LD blocks after six days at zero, and its TTFB fell 2.16s -> 1.38s so it is no longer the slowest page. That alone took Crawlability 88 -> 96. (2) The six /projects/* pages went from 0 JSON-LD (unfixed since 31 Jul) to an @graph carrying Organization + WebSite + WebPage + CreativeWork + BreadcrumbList, lifting site-wide schema coverage 88.2% -> 97.4%; only /login and /start-interactive now lack schema. Performance rose 87 -> 92 as the under-1s share went 78.9% -> 90.8% and the slowest page fell 2.16s -> 1.53s. Unfixed: the JSON-LD duplication defect enters day five, and crucially the schema added today to the project pages and /articles arrived already duplicated (14 identical blocks, 21 identical blocks) - the clearest evidence yet that a shared component or layout is responsible. Also unfixed on day eight: 7/11 homepage images and 15/19 project-page images without alt, zero lazy-loading on both, even though the team edited these very pages today to add schema. Newly detected and needing confirmation: a shared component (likely footer or nav) lost about 5 internal links and 60-120 words on every page.",
+"onpage": {
+"all_pages_have_title_desc_canonical": true,
+"heading_skips": ["2->4 on 74 of 76 pages", "1->3 additionally on project pages"],
+"homepage_images_lazyloaded": "0/11",
+"homepage_images_missing_alt": "7/11",
+"pages_with_wrong_h1_count": 0,
+"project_page_images_lazyloaded": "0/19",
+"project_page_images_missing_alt": "15/19",
+"sitewide_images_lazyloaded": "211/593",
+"sitewide_images_missing_alt": "77/593"
+},
+"pages_breakdown": { "articles": 53, "core": 17, "projects": 6 },
+"pages_measured": 76,
+"performance": {
+"avg_ttfb_articles_ms": 775,
+"avg_ttfb_core_ms": 864,
+"avg_ttfb_projects_ms": 669,
+"between_1s_3s": 7,
+"measurement_method": "sequential (concurrency 1) same-origin fetch via Chrome; best of two sequential passes per URL to suppress network jitter, AbortController 15s",
+"over_3s": 0,
+"pages_over_1s": ["/interiors 1529", "/ 1475", "/articles 1378", "/modules 1164", "/studio 1035", "/articles/bim-3d-from-design-to-site-in-2026 1031", "/model 1002"],
+"slowest_ms": 1529,
+"slowest_url": "/interiors",
+"under_1s": 69
+},
+"report": "archive/2026-08-07.html",
+"site": "dxliving.com",
+"sitemap_urls": 75,
+"source": "Chrome live crawl (no third-party SEO tool)",
+"structured_data": {
+"articles_with_faqpage": 40,
+"articles_without_faqpage": 13,
+"coverage_pct": 97.4,
+"jsonld_duplication_factor": 10,
+"jsonld_duplication_note": "Day 5 unfixed. Core pages and project pages 14 blocks / 1 distinct payload, homepage 24 / 2, /articles 21 / 1, articles 31-32 / 4. The schema newly added today to the six project pages and to /articles was duplicated from the moment it shipped, confirming the defect lives in a shared component or layout rather than in individual pages. Site-wide average factor still ~10x; the true distinct schema count is roughly one tenth of the raw block count.",
+"pages_with_jsonld": 74,
+"pages_without_jsonld": 2,
+"project_page_schema_types": ["Organization", "WebSite", "WebPage", "CreativeWork", "BreadcrumbList"],
+"zero_schema_urls": ["/start-interactive", "/login"]
+},
+"sub_scores": {
+"content": 79,
+"crawlability": 96,
+"onpage": 76,
+"performance": 92,
+"structured_data": 87
+}
+}
