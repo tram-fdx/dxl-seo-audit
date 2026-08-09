@@ -1,0 +1,105 @@
+{
+ "content": {
+  "article_words_avg": 2070,
+  "article_words_max": 2971,
+  "article_words_min": 1039,
+  "new_article_detail": "2,427 words, full Article + BreadcrumbList + BlogPosting + FAQPage, 23 internal links, 0.56s TTFB, present in sitemap and already server-rendered into the /articles listing without manual intervention.",
+  "new_articles_published": [
+   "/articles/kitchen-renovation-cost-melbourne"
+  ],
+  "project_page_words_range": "161-178 raw HTML (~161 rendered)",
+  "shared_chrome_change": "The 07 Aug footer/nav trim has held steady for three days (core 17 links, projects 17, articles 20-24; per-page word counts within about +/-10 of 07 Aug). No second drop and no recovery, so it reads as a deliberate one-off change rather than a regression. /articles is at 71 links, up exactly one for the new article.",
+  "thin_pages": [
+   "/login (17)",
+   "/start-interactive (45)",
+   "/projects (173)",
+   "/contact (187)",
+   "/modules (192)",
+   "6 project pages (161-178)"
+  ]
+ },
+ "date": "2026-08-10",
+ "health_score": 88,
+ "http_200": 77,
+ "notes": "Health holds at 88 (raw 87.7 -> 88.3). Performance 92 -> 94 and Content 79 -> 80; Crawlability, Structured Data and On-page are unchanged because no fix was deployed since 07 Aug. Two open items: P1 JSON-LD duplication (day 8) and P2 homepage/project alt text plus lazy-loading (day 11). The 07 Aug /articles listing fix is holding and absorbed the new article automatically.",
+ "onpage": {
+  "all_pages_have_title_desc_canonical": true,
+  "heading_skips": [
+   "2->4 on 75 of 77 pages",
+   "1->3 additionally on the 6 project pages"
+  ],
+  "homepage_images_lazyloaded": "0/11",
+  "homepage_images_missing_alt": "7/11",
+  "note": "Identical to 07 Aug on every image metric. Eleven days since the 30 Jul recommendation; the team did deploy today (new article + speed change), so the gap is queueing rather than release capacity.",
+  "pages_with_wrong_h1_count": 0,
+  "project_page_images_lazyloaded": "0/19",
+  "project_page_images_missing_alt": "15/19",
+  "sitewide_images_lazyloaded": "213/600",
+  "sitewide_images_missing_alt": "78/600"
+ },
+ "pages_breakdown": {
+  "articles": 54,
+  "core": 17,
+  "projects": 6
+ },
+ "pages_measured": 77,
+ "performance": {
+  "avg_ttfb_articles_ms": 678,
+  "avg_ttfb_core_ms": 714,
+  "avg_ttfb_projects_ms": 573,
+  "between_1s_3s": 5,
+  "measurement_method": "sequential (concurrency 1) same-origin fetch via Chrome; best of two sequential passes per URL to suppress network jitter, AbortController 15s",
+  "note": "All three groups improved vs 07 Aug: core 864 -> 714 ms, articles 775 -> 678 ms, projects 669 -> 573 ms. /interiors fell 1529 -> 855 ms, /modules 1164 -> 881, /model 1002 -> 864; a synchronised move across image-heavy core pages suggests a serving-layer or cache change rather than jitter alone. /studio moved the other way, 1035 -> 1352.",
+  "over_3s": 0,
+  "pages_over_1s": [
+   "/articles 1425",
+   "/studio 1352",
+   "/articles/pre-construction-visualisation-construction-readiness 1158",
+   "/articles/3d-house-design-guide 1094",
+   "/ 1054"
+  ],
+  "slowest_ms": 1425,
+  "slowest_url": "/articles",
+  "under_1s": 72
+ },
+ "report": "archive/2026-08-10.html",
+ "site": "dxliving.com",
+ "sitemap_urls": 76,
+ "source": "Chrome live crawl (same-origin fetch), no third-party SEO tool",
+ "structured_data": {
+  "articles_with_faqpage": 41,
+  "articles_without_faqpage": 13,
+  "coverage_pct": 97.4,
+  "faqpage_missing_list": [
+   "how-3d-coordination-reduces-design-conflicts-before-construction",
+   "the-best-home-builders-adelaide",
+   "brisbane-custom-home-builders-checklist-for-clients",
+   "bim-3d-4d-5d-explained",
+   "custom-built-homes-melbourne-checklist",
+   "how-to-choose-custom-home-builders-in-south-australia",
+   "best-practices-for-project-and-quality-management-in-2026",
+   "construction-program-management-software",
+   "program-for-construction-estimates-explained",
+   "what-is-bim-3d-modeling",
+   "project-management-and-cost-control",
+   "bim-3d-from-design-to-site-in-2026",
+   "duplex-house-design-in-australia"
+  ],
+  "jsonld_blocks_total": 2030,
+  "jsonld_distinct_payloads_total": 225,
+  "jsonld_duplication_factor": 9.0,
+  "jsonld_duplication_note": "Day 8 unfixed. Core pages and project pages 14 blocks / 1 distinct payload, homepage 24 / 2, /articles 22 / 1, articles 32 / 4 (31 / 3 on the 13 without FAQPage). The article published today shipped already duplicated, confirming the fault sits in a shared component/layout rather than per page.",
+  "pages_with_schema": 75,
+  "pages_without_schema": [
+   "/login",
+   "/start-interactive"
+  ]
+ },
+ "sub_scores": {
+  "content": 80,
+  "crawlability": 96,
+  "onpage": 76,
+  "performance": 94,
+  "structured_data": 87
+ }
+}

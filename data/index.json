@@ -1,6 +1,6 @@
 {
  "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
- "latest": "2026-08-07",
+ "latest": "2026-08-10",
  "report": "technical-seo-audit",
  "site": "dxliving.com",
  "snapshots": [
@@ -65,7 +65,14 @@
    "date": "2026-08-07",
    "label_en": "Health 83→88 · /articles now renders all 53 links, project pages gained schema",
    "label_vi": "Health 83→88 · /articles render đủ 53 link, trang dự án đã có schema",
-   "report": "index.html"
+   "report": "archive/2026-08-07.html"
+  },
+  {
+   "data": "data/2026-08-10.json",
+   "date": "2026-08-10",
+   "label_en": "Health 88 · first new article (53→54), speed improved, P1 and P2 still unfixed",
+   "label_vi": "Health 88 · bài mới đầu tiên (53→54), tốc độ tốt lên, 2 lỗi P1/P2 chưa sửa",
+   "report": "archive/2026-08-10.html"
   }
  ]
 }
