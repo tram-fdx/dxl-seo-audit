@@ -1,0 +1,756 @@
+{
+  "date": "2026-08-11",
+  "site": "dxliving.com",
+  "report": "technical-seo-audit",
+  "source": "Live Chrome crawl (same-origin fetch via claude-in-chrome), no third-party SEO tool. No OpenSEO, no Supermetrics.",
+  "health_score": 89,
+  "sub_scores": {
+    "crawlability": 96,
+    "performance": 96,
+    "structured_data": 87,
+    "onpage": 76,
+    "content": 80
+  },
+  "pages_measured": 78,
+  "http_200": 78,
+  "sitemap_urls": 77,
+  "pages_breakdown": {
+    "core": 17,
+    "articles": 55,
+    "projects": 6
+  },
+  "performance": {
+    "measurement_method": "sequential (concurrency 1) same-origin fetch via Chrome; best of two sequential passes per URL to suppress network jitter, AbortController 15s",
+    "avg_ttfb_core_ms": 630,
+    "avg_ttfb_articles_ms": 590,
+    "avg_ttfb_projects_ms": 503,
+    "under_1s": 76,
+    "between_1s_3s": 2,
+    "over_3s": 0,
+    "slowest_ms": 1130,
+    "slowest_url": "/prestige",
+    "pages_over_1s": [
+      "/prestige 1130",
+      "/ 1034"
+    ],
+    "note": "Third consecutive day of gains. Core 714 -> 630 ms, articles 678 -> 590 ms, projects 573 -> 503 ms. Milestone: all 55 articles now under 1s (slowest interior-finishes 793 ms vs 1158 ms yesterday); previously 52 of 54. /articles reversed 1425 -> 889 ms and /studio 1352 -> 969 ms, the latter recovering the only regression seen on 10 Aug. A parallel-fetch pass on the same URLs reported 6-8x higher TTFB (approx 4.5 s average) purely from bandwidth contention; all reported figures are sequential.",
+    "parallel_pass_warning": "First pass used concurrency 8 and produced avg 4912/4540/3255 ms for core/articles/projects with a 8776 ms maximum. Discarded. Sequential measurement is mandatory for this report."
+  },
+  "structured_data": {
+    "coverage_pct": 97.4,
+    "pages_with_schema": 76,
+    "pages_without_schema": [
+      "/start-interactive",
+      "/login"
+    ],
+    "jsonld_blocks_total": 2062,
+    "jsonld_distinct_payloads_total": 229,
+    "jsonld_duplication_factor": 9.0,
+    "jsonld_duplication_note": "Day 9 unfixed, identical to 10 Aug to the decimal. Core pages and project pages 14 blocks / 1 distinct payload, homepage 24 / 2, /articles 22 / 1, articles 32 / 4 (31 / 3 on the 13 without FAQPage). The second consecutive new article also shipped with 32 blocks for 4 payloads, confirming the fault is a shared component or layout rather than any individual page.",
+    "genuine_types": {
+      "articles": [
+        "Article",
+        "BreadcrumbList",
+        "BlogPosting",
+        "FAQPage"
+      ],
+      "projects": [
+        "@graph: Organization",
+        "WebSite",
+        "WebPage",
+        "CreativeWork",
+        "BreadcrumbList"
+      ],
+      "homepage": [
+        "LocalBusiness",
+        "WebSite"
+      ]
+    },
+    "articles_with_faqpage": 42,
+    "articles_without_faqpage": 13,
+    "faqpage_missing_list": [
+      "how-3d-coordination-reduces-design-conflicts-before-construction",
+      "the-best-home-builders-adelaide",
+      "brisbane-custom-home-builders-checklist-for-clients",
+      "bim-3d-4d-5d-explained",
+      "custom-built-homes-melbourne-checklist",
+      "how-to-choose-custom-home-builders-in-south-australia",
+      "best-practices-for-project-and-quality-management-in-2026",
+      "construction-program-management-software",
+      "program-for-construction-estimates-explained",
+      "what-is-bim-3d-modeling",
+      "project-management-and-cost-control",
+      "bim-3d-from-design-to-site-in-2026",
+      "duplex-house-design-in-australia"
+    ]
+  },
+  "onpage": {
+    "all_pages_have_title_desc_canonical": true,
+    "pages_with_wrong_h1_count": 0,
+    "heading_skips": [
+      "2->4 on 66 of 78 pages",
+      "1->3 or 1->4 on 10 further pages incl. all 6 project pages, /projects, /modules, /faq, /start-interactive"
+    ],
+    "clean_heading_pages": [
+      "/login",
+      "/privacy-policy"
+    ],
+    "homepage_images_missing_alt": "7/11",
+    "homepage_images_lazyloaded": "0/11",
+    "project_page_images_missing_alt": "15/19",
+    "project_page_images_lazyloaded": "0/19",
+    "sitewide_images_missing_alt": "79/607",
+    "sitewide_images_lazyloaded": "215/607",
+    "note": "Identical to 10 Aug and 07 Aug on every rendered-DOM image metric. Twelve days since the 30 Jul recommendation. The team deployed on two consecutive days (two new articles plus a speed change), so the gap is queueing rather than release capacity.",
+    "new_finding_no_link_to_homepage": "No page on the site carries an href='/' . Verified in the rendered DOM of /about (16 unique internal links, 0 pointing at /; the header logo is not an anchor) and in raw HTML on /about, /faq and /projects/251-station-st (0 occurrences each). Article pages carry exactly one absolute https://dxliving.com/ link inside the breadcrumb, so articles do point home; the 17 core pages and 6 project pages do not. Flagged for confirmation with the development team; not scored, because no prior-day figure exists on the same counting basis so it cannot be established as new."
+  },
+  "content": {
+    "article_words_avg": 2096,
+    "article_words_min": 1042,
+    "article_words_max": 3353,
+    "new_articles_published": [
+      "/articles/bathroom-remodel-cost-australia"
+    ],
+    "new_article_detail": "3,353 words (longest article on the site), full Article + BreadcrumbList + BlogPosting + FAQPage, 22 internal links, 0.58s TTFB, present in the sitemap and already server-rendered into the /articles listing (55 of 55 links) without manual intervention. Second consecutive on-standard article, confirming the 07 Aug listing fix is settled.",
+    "articles_listing_links_in_raw_html": "55/55",
+    "pages_under_300_words": [
+      [
+        "/login",
+        17
+      ],
+      [
+        "/start-interactive",
+        45
+      ],
+      [
+        "/projects/31-mcilwain-drive",
+        161
+      ],
+      [
+        "/projects/251-station-st",
+        163
+      ],
+      [
+        "/projects/20-head-street",
+        166
+      ],
+      [
+        "/projects/813-clarendon-street",
+        170
+      ],
+      [
+        "/projects",
+        173
+      ],
+      [
+        "/projects/85-commodore-drive-surfers-paradise",
+        174
+      ],
+      [
+        "/projects/nagambie-project",
+        178
+      ],
+      [
+        "/contact",
+        187
+      ],
+      [
+        "/modules",
+        192
+      ]
+    ],
+    "note": "Word counts unchanged from 10 Aug on every existing page; the average rose only because of the new 3,353-word article."
+  },
+  "crawlability": {
+    "robots_txt": "clean, empty Disallow, Sitemap directive present",
+    "sitemap_urls": 77,
+    "sitemap_matches_crawl": "77 sitemap URLs = 78 crawled pages minus /login (correctly excluded)",
+    "timeouts": 0,
+    "errors_4xx_5xx": 0,
+    "consecutive_clean_days": 7
+  },
+  "internal_links": {
+    "counting_rule_changed_today": "From 2026-08-11 the internal-link count excludes asset hrefs (4 .svg icons and 2 /_next/* files), so figures run about 6 lower than the 10 Aug report. This is a methodology change, not lost links, and the two days are not directly comparable.",
+    "core_pages": 16,
+    "homepage": 22,
+    "articles_listing": 71,
+    "contact": 18,
+    "project_pages": 16,
+    "articles_min": 19,
+    "articles_max": 23,
+    "articles_avg": 21,
+    "login_and_start_interactive": 0
+  },
+  "notes": "Health 88 -> 89. Exactly one sub-score moved: Performance 94 -> 96. Crawlability 96, Structured Data 87, On-page 76 and Content 80 are unchanged for a fourth day. The point gain is the serving layer continuing to get faster, not a fix landing. P1 (JSON-LD duplication) is on day 9; P2 (alt text and lazy-loading) on day 12. A new observation was logged: no core or project page links back to the homepage.",
+  "pages": {
+    "CORE": [
+      [
+        "/",
+        1034,
+        1449,
+        24,
+        22,
+        1
+      ],
+      [
+        "/about",
+        378,
+        392,
+        14,
+        16,
+        1
+      ],
+      [
+        "/studio",
+        969,
+        523,
+        14,
+        16,
+        1
+      ],
+      [
+        "/prestige",
+        1130,
+        329,
+        14,
+        16,
+        1
+      ],
+      [
+        "/model",
+        843,
+        301,
+        14,
+        16,
+        1
+      ],
+      [
+        "/interiors",
+        856,
+        300,
+        14,
+        16,
+        1
+      ],
+      [
+        "/modules",
+        706,
+        192,
+        14,
+        16,
+        1
+      ],
+      [
+        "/projects",
+        479,
+        173,
+        14,
+        16,
+        1
+      ],
+      [
+        "/suppliers",
+        498,
+        382,
+        14,
+        16,
+        1
+      ],
+      [
+        "/apply",
+        371,
+        441,
+        14,
+        16,
+        1
+      ],
+      [
+        "/articles",
+        889,
+        1186,
+        22,
+        71,
+        1
+      ],
+      [
+        "/contact",
+        718,
+        187,
+        14,
+        18,
+        1
+      ],
+      [
+        "/faq",
+        418,
+        1315,
+        15,
+        16,
+        1
+      ],
+      [
+        "/start-interactive",
+        289,
+        45,
+        0,
+        0,
+        1
+      ],
+      [
+        "/login",
+        290,
+        17,
+        0,
+        0,
+        0
+      ],
+      [
+        "/privacy-policy",
+        476,
+        864,
+        15,
+        16,
+        1
+      ],
+      [
+        "/terms-of-service",
+        364,
+        861,
+        15,
+        16,
+        1
+      ]
+    ],
+    "ART": [
+      [
+        "bathroom-remodel-cost-australia",
+        577,
+        3353,
+        32,
+        22
+      ],
+      [
+        "kitchen-renovation-cost-melbourne",
+        525,
+        2426,
+        32,
+        21
+      ],
+      [
+        "interior-finishes",
+        793,
+        2812,
+        32,
+        22
+      ],
+      [
+        "project-251-visualisation-overview",
+        509,
+        1534,
+        32,
+        21
+      ],
+      [
+        "luxury-home-builders-sydney",
+        511,
+        1574,
+        32,
+        22
+      ],
+      [
+        "custom-home-builders-sydney",
+        514,
+        1601,
+        32,
+        22
+      ],
+      [
+        "3d-rendering-adelaide",
+        655,
+        2599,
+        32,
+        22
+      ],
+      [
+        "3d-rendering-perth",
+        556,
+        2974,
+        32,
+        21
+      ],
+      [
+        "3d-rendering-brisbane",
+        543,
+        2489,
+        32,
+        22
+      ],
+      [
+        "3d-rendering-sydney",
+        682,
+        2497,
+        32,
+        22
+      ],
+      [
+        "architectural-rendering-melbourne-pre-construction-planning",
+        531,
+        1982,
+        32,
+        23
+      ],
+      [
+        "photorealistic-rendering-melbourne-developers",
+        636,
+        1712,
+        32,
+        22
+      ],
+      [
+        "3d-floor-plan-melbourne-home-design-clarity",
+        519,
+        1837,
+        32,
+        22
+      ],
+      [
+        "custom-home-builders-melbourne-3d-visualisation",
+        521,
+        1929,
+        32,
+        23
+      ],
+      [
+        "3d-rendering-company-melbourne",
+        690,
+        2050,
+        32,
+        22
+      ],
+      [
+        "3d-rendering-melbourne-pre-construction-planning",
+        537,
+        1825,
+        32,
+        23
+      ],
+      [
+        "custom-home-builders-melbourne-pre-build-clarity",
+        518,
+        1834,
+        32,
+        22
+      ],
+      [
+        "luxury-home-builders-melbourne-vr-bim",
+        703,
+        1898,
+        32,
+        21
+      ],
+      [
+        "pre-construction-visualisation-construction-readiness",
+        554,
+        1878,
+        32,
+        21
+      ],
+      [
+        "architectural-visualisation-melbourne-project-decisions",
+        518,
+        1957,
+        32,
+        23
+      ],
+      [
+        "house-renovation-3d-design-melbourne",
+        604,
+        2250,
+        32,
+        19
+      ],
+      [
+        "how-3d-coordination-reduces-design-conflicts-before-construction",
+        588,
+        2258,
+        31,
+        19
+      ],
+      [
+        "how-quality-management-in-projects-improves-project-delivery",
+        574,
+        2369,
+        32,
+        19
+      ],
+      [
+        "how-a-construction-program-reduces-delays-and-design-conflicts",
+        572,
+        2478,
+        32,
+        21
+      ],
+      [
+        "project-management-construction-for-luxury-residential-projects",
+        540,
+        2174,
+        32,
+        21
+      ],
+      [
+        "bim-australia-9-implementation-mistakes",
+        552,
+        2733,
+        32,
+        21
+      ],
+      [
+        "choosing-the-best-home-builder",
+        557,
+        2905,
+        32,
+        19
+      ],
+      [
+        "project-controls-for-luxury-residential-construction",
+        555,
+        2441,
+        32,
+        21
+      ],
+      [
+        "project-cost-management-using-bim-and-digital-twins",
+        611,
+        2519,
+        32,
+        21
+      ],
+      [
+        "custom-home-builders-vs-project-builders",
+        566,
+        2701,
+        32,
+        19
+      ],
+      [
+        "how-to-identify-quality-home-builders",
+        558,
+        2198,
+        32,
+        19
+      ],
+      [
+        "the-best-home-builders-adelaide",
+        702,
+        1971,
+        31,
+        21
+      ],
+      [
+        "brisbane-custom-home-builders-checklist-for-clients",
+        580,
+        2180,
+        31,
+        21
+      ],
+      [
+        "bim-3d-4d-5d-explained",
+        553,
+        2223,
+        31,
+        21
+      ],
+      [
+        "custom-built-homes-melbourne-checklist",
+        540,
+        1687,
+        31,
+        21
+      ],
+      [
+        "how-to-choose-custom-home-builders-in-south-australia",
+        774,
+        2116,
+        31,
+        19
+      ],
+      [
+        "best-practices-for-project-and-quality-management-in-2026",
+        559,
+        2196,
+        31,
+        21
+      ],
+      [
+        "construction-program-management-software",
+        637,
+        1896,
+        31,
+        21
+      ],
+      [
+        "program-for-construction-estimates-explained",
+        622,
+        1903,
+        31,
+        21
+      ],
+      [
+        "what-is-bim-3d-modeling",
+        648,
+        1331,
+        31,
+        21
+      ],
+      [
+        "project-management-and-cost-control",
+        678,
+        2352,
+        31,
+        21
+      ],
+      [
+        "bim-3d-from-design-to-site-in-2026",
+        725,
+        2827,
+        31,
+        21
+      ],
+      [
+        "duplex-house-design-in-australia",
+        678,
+        2097,
+        31,
+        21
+      ],
+      [
+        "3d-house-design-guide",
+        652,
+        1988,
+        32,
+        21
+      ],
+      [
+        "modern-house-design-2026-10-trends-shaping-homes",
+        644,
+        1697,
+        32,
+        21
+      ],
+      [
+        "contemporary-houses-a-practical-guide",
+        681,
+        1364,
+        32,
+        21
+      ],
+      [
+        "how-3d-configurators-increase-buyer-commitment",
+        504,
+        1042,
+        32,
+        21
+      ],
+      [
+        "the-risk-of-cheap-architectural-renders",
+        523,
+        1415,
+        32,
+        21
+      ],
+      [
+        "custom-home-visualisation-timeline",
+        546,
+        2498,
+        32,
+        21
+      ],
+      [
+        "vr-vs-360-in-australian-property-decisions",
+        559,
+        2089,
+        32,
+        21
+      ],
+      [
+        "bim-for-architects-australia-in-custom-home-design",
+        559,
+        2191,
+        32,
+        21
+      ],
+      [
+        "6-benefits-of-using-vr-technology",
+        530,
+        2137,
+        32,
+        21
+      ],
+      [
+        "virtual-reality-home-walkthrough",
+        647,
+        1487,
+        32,
+        21
+      ],
+      [
+        "step-inside-6-home-design-trends-shaping-australia-in-2026",
+        540,
+        1464,
+        32,
+        21
+      ],
+      [
+        "virtual-reality-in-australia-home-design",
+        525,
+        1365,
+        32,
+        21
+      ]
+    ],
+    "PROJ": [
+      [
+        "/projects/251-station-st",
+        467,
+        163,
+        14,
+        16
+      ],
+      [
+        "/projects/20-head-street",
+        458,
+        166,
+        14,
+        16
+      ],
+      [
+        "/projects/85-commodore-drive-surfers-paradise",
+        452,
+        174,
+        14,
+        16
+      ],
+      [
+        "/projects/813-clarendon-street",
+        480,
+        170,
+        14,
+        16
+      ],
+      [
+        "/projects/31-mcilwain-drive",
+        584,
+        161,
+        14,
+        16
+      ],
+      [
+        "/projects/nagambie-project",
+        578,
+        178,
+        14,
+        16
+      ]
+    ]
+  }
+}
