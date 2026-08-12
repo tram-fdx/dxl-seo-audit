@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DX Living — Technical SEO Audit Dashboard</title>
+<style>
+  :root{
+    --cream:#f4f1ea; --cream2:#efe9dc; --card:#fffdf8; --ink:#2c2620;
+    --muted:#6f665a; --accent:#b8935a; --accent-dk:#96733f; --line:#e3dccd;
+    --green:#5a8f5a; --amber:#c99a3f; --red:#c05a4a; --blue:#5a7a9f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--cream);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5;padding:0 0 60px}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+  header.top{background:linear-gradient(135deg,#2c2620,#413a2e);color:#f6f1e7;padding:30px 0 26px;border-bottom:4px solid var(--accent)}
+  header.top .wrap{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  header.top h1{margin:0;font-size:23px;letter-spacing:.3px}
+  header.top .sub{color:#cfc3ad;font-size:13px;margin-top:6px}
+  .crawl-meta{text-align:right;font-size:13px;color:#e5dcc7}
+  .crawl-meta b{color:#fff}
+  .pill{display:inline-block;background:var(--accent);color:#2c2620;font-weight:700;
+    padding:3px 11px;border-radius:20px;font-size:12px;margin-top:6px}
+  .langtoggle{display:inline-flex;border:1px solid #6b6152;border-radius:20px;overflow:hidden;margin-bottom:10px}
+  .langtoggle button{background:transparent;color:#cfc3ad;border:none;padding:5px 15px;font-size:12px;font-weight:700;cursor:pointer;letter-spacing:.5px}
+  .langtoggle button.active{background:var(--accent);color:#2c2620}
+  h2.sec{font-size:16px;margin:34px 0 14px;color:var(--accent-dk);
+    border-left:4px solid var(--accent);padding-left:10px}
+
+  .kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:26px}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 15px;
+    box-shadow:0 1px 3px rgba(70,55,30,.05)}
+  .kpi .lbl{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+  .kpi .val{font-size:30px;font-weight:700;margin-top:6px;line-height:1}
+  .kpi .note{font-size:11.5px;color:var(--muted);margin-top:5px}
+  .kpi .delta{font-size:11px;font-weight:700;margin-top:4px}
+  .delta.up{color:var(--green)} .delta.down{color:var(--red)} .delta.flat{color:var(--muted)}
+  .score-ring{display:flex;align-items:center;gap:12px}
+  .score-ring .val{font-size:32px}
+  .tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;border-radius:12px}
+  .tag.red{background:#f6e2dd;color:var(--red)}
+  .tag.amber{background:#f6ecd6;color:#a9812c}
+  .tag.green{background:#e0efe0;color:var(--green)}
+
+  .grid2{display:grid;grid-template-columns:1.35fr 1fr;gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;
+    box-shadow:0 1px 3px rgba(70,55,30,.05)}
+  .card h3{margin:0 0 14px;font-size:14px;color:var(--ink)}
+
+  .bar-row{display:flex;align-items:center;gap:10px;margin:9px 0;font-size:13px}
+  .bar-row .name{width:180px;color:var(--muted);flex-shrink:0;font-size:12.5px}
+  .bar-track{flex:1;background:var(--cream2);border-radius:6px;height:20px;overflow:hidden}
+  .bar-fill{height:100%;border-radius:6px;display:flex;align-items:center;justify-content:flex-end;
+    padding-right:7px;color:#fff;font-size:11px;font-weight:700;min-width:22px}
+  .bar-row .cnt{width:26px;text-align:right;font-weight:700;color:var(--ink)}
+
+  .donut-wrap{display:flex;align-items:center;gap:20px}
+  .legend{font-size:13px}
+  .legend div{margin:7px 0;display:flex;align-items:center;gap:8px}
+  .legend .foot{display:block;line-height:1.55}
+  .legend{max-width:520px}
+  .dot{width:12px;height:12px;border-radius:3px;display:inline-block}
+
+  .ins{border-left:4px solid var(--line);padding:12px 16px;margin:12px 0;background:var(--cream2);border-radius:0 8px 8px 0}
+  .ins.p1{border-color:var(--red);background:#fbeeeb}
+  .ins.p2{border-color:var(--amber);background:#faf2e0}
+  .ins.p3{border-color:var(--blue);background:#eef3f8}
+  .ins.win{border-color:var(--green);background:#e6f0e6}
+  .ins .prio{font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase}
+  .ins.p1 .prio{color:var(--red)} .ins.p2 .prio{color:#a9812c} .ins.p3 .prio{color:var(--blue)} .ins.win .prio{color:var(--green)}
+  .ins h4{margin:4px 0 6px;font-size:14.5px}
+  .ins p{margin:5px 0;font-size:13px;color:#4a423a}
+  .ins .fix{font-size:12.5px;color:var(--muted)}
+  .ins .fix b{color:var(--accent-dk)}
+  code{background:#efe6d4;padding:1px 5px;border-radius:4px;font-size:12px}
+
+  .rt-row{display:flex;align-items:center;gap:10px;margin:6px 0;font-size:12.5px}
+  .rt-row .name{width:230px;flex-shrink:0;color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .rt-track{flex:1;background:var(--cream2);border-radius:5px;height:16px;overflow:hidden}
+  .rt-fill{height:100%;border-radius:5px}
+  .rt-row .ms{width:66px;text-align:right;font-weight:700}
+
+  table{width:100%;border-collapse:collapse;font-size:12.5px;background:var(--card)}
+  th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line)}
+  th{background:var(--cream2);cursor:pointer;user-select:none;font-size:11.5px;
+    text-transform:uppercase;letter-spacing:.3px;color:var(--muted);position:sticky;top:0}
+  th:hover{color:var(--accent-dk)}
+  td.num,th.num{text-align:right}
+  tr:hover td{background:#fbf7ee}
+  .badge{font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px}
+  .b200{background:#e0efe0;color:var(--green)}
+  .b0{background:#f6e2dd;color:var(--red)}
+  .yes{color:var(--green);font-weight:700}
+  .no{color:var(--red);font-weight:700}
+  .tbl-scroll{max-height:520px;overflow:auto;border:1px solid var(--line);border-radius:10px}
+  .foot{font-size:11.5px;color:var(--muted);margin-top:10px}
+  .filter-btn{font-size:11.5px;border:1px solid var(--line);background:var(--card);color:var(--muted);
+    padding:4px 11px;border-radius:14px;cursor:pointer;margin-right:6px}
+  .filter-btn.on{background:var(--accent);color:#2c2620;font-weight:700;border-color:var(--accent)}
+  [data-lang-hidden]{display:none !important}
+  @media(max-width:860px){.kpis{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.rt-row .name{width:150px}}
+
+  /* ---------- date picker v2 (sample-matched) ---------- */
+  .pk-card{margin-top:24px;background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:18px 20px 16px;box-shadow:0 1px 3px rgba(70,55,30,.05)}
+  .pk-title{display:flex;align-items:center;gap:10px;font-size:12.5px;font-weight:800;
+    letter-spacing:.9px;text-transform:uppercase;color:var(--accent-dk);margin:0 0 8px}
+  .pk-title .bar{width:26px;height:3px;background:var(--accent);border-radius:2px;flex:0 0 auto}
+  .pk-sub{font-size:12.5px;color:var(--muted);margin:0 0 14px;line-height:1.6;max-width:900px}
+  .pk-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .dpwrap{position:relative}
+  .dpbtn{display:inline-flex;align-items:center;gap:9px;background:var(--card);
+    border:1px solid #cfc6b3;border-radius:10px;padding:10px 15px;font-family:inherit;
+    font-size:13.5px;font-weight:700;line-height:1.2;color:var(--ink);cursor:pointer;transition:.15s}
+  .dpbtn:hover{border-color:var(--accent)}
+  .dpbtn .car{color:var(--muted);font-size:9px;margin-left:2px}
+  .pk-now{display:inline-block;background:var(--accent-soft,#f3e7d3);color:var(--accent-dk);
+    border:1px solid #e6d5b8;border-radius:20px;padding:7px 15px;font-size:12.5px;font-weight:700}
+
+  .dppane{position:absolute;top:calc(100% + 9px);left:0;z-index:80;display:none;
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 14px 40px rgba(70,55,30,.20);overflow:hidden}
+  .dppane.open{display:flex}
+  .dp-presets{width:196px;flex:0 0 auto;border-right:1px solid var(--line);
+    padding:12px 8px;background:#fdfbf6;max-height:430px;overflow:auto}
+  .dp-preset{display:flex;align-items:center;gap:9px;width:100%;text-align:left;background:transparent;
+    border:none;border-radius:8px;padding:8px 10px;cursor:pointer;font-family:inherit;
+    font-size:12.5px;color:var(--ink);transition:.12s}
+  .dp-preset:hover:not(:disabled){background:var(--cream2)}
+  .dp-preset:disabled{color:#bdb4a6;cursor:not-allowed}
+  .dp-preset .rd{width:13px;height:13px;border-radius:50%;border:1.5px solid #c3b9a6;flex:0 0 auto;position:relative}
+  .dp-preset.on .rd{border-color:var(--accent)}
+  .dp-preset.on .rd::after{content:"";position:absolute;inset:2.5px;border-radius:50%;background:var(--accent)}
+  .dp-preset .nm{flex:1}
+  .dp-preset .ct{font-size:11.5px;color:var(--faint,#9a9186);font-weight:700}
+
+  .dp-right{padding:14px 16px 12px;min-width:452px}
+  .dp-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+  .dp-nav button{background:transparent;border:none;color:var(--muted);font-size:16px;
+    cursor:pointer;padding:2px 9px;border-radius:6px;line-height:1}
+  .dp-nav button:hover:not(:disabled){background:var(--cream2);color:var(--ink)}
+  .dp-nav button:disabled{opacity:.3;cursor:not-allowed}
+  .dp-nav .mtitle{flex:1;display:flex;justify-content:space-around;font-size:13.5px;font-weight:700}
+  .dp-months{display:flex;gap:26px}
+  .dp-m{flex:1}
+  .dp-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:1px}
+  .dp-dow{font-size:10.5px;color:var(--muted);text-align:center;padding:5px 0 3px;font-weight:700}
+  .dp-d{position:relative;height:29px;border:none;background:transparent;border-radius:7px;
+    font-family:inherit;font-size:12.5px;color:#bdb4a6;cursor:pointer;padding:0;transition:.1s}
+  .dp-d.blank{cursor:default}
+  .dp-d.has{color:var(--ink);font-weight:700}
+  .dp-d:hover:not(.blank):not(.sel){background:var(--cream2)}
+  .dp-d.inrange{background:var(--accent-soft,#f3e7d3);border-radius:0}
+  .dp-d.sel{background:var(--accent);color:#2c2620;font-weight:800}
+  .dp-d.sel.edge-l{border-radius:7px 0 0 7px}
+  .dp-d.sel.edge-r{border-radius:0 7px 7px 0}
+  .dp-d .dot{position:absolute;bottom:3px;left:50%;transform:translateX(-50%);
+    width:3.5px;height:3.5px;border-radius:50%;background:var(--accent)}
+  .dp-d.sel .dot{background:#2c2620}
+
+  .dp-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;
+    margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+  .dp-selinfo .d1{font-size:13.5px;font-weight:700}
+  .dp-selinfo .d2{font-size:11.5px;color:var(--muted);margin-top:3px;line-height:1.5;max-width:300px}
+  .dp-actions{display:flex;gap:9px;flex:0 0 auto}
+  .dp-actions button{font-family:inherit;font-size:12.5px;font-weight:700;border-radius:9px;
+    padding:9px 18px;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--muted)}
+  .dp-actions .go{background:var(--accent);border-color:var(--accent);color:#2c2620}
+  .dp-actions .go:hover{background:var(--accent-dk);border-color:var(--accent-dk);color:#fff}
+  .dp-legend{font-size:11px;color:var(--muted);margin-top:10px;line-height:1.55}
+  .dp-legend .dotlg{display:inline-block;width:4px;height:4px;border-radius:50%;
+    background:var(--accent);vertical-align:middle;margin-right:4px}
+
+  .pk-quick{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:15px;
+    padding-top:14px;border-top:1px solid var(--line)}
+  .pk-quick-lbl{font-size:10.5px;font-weight:800;letter-spacing:.8px;color:var(--muted);
+    text-transform:uppercase;flex:0 0 auto;margin-right:2px}
+  .qchip{display:inline-flex;align-items:baseline;gap:8px;background:var(--card);
+    border:1px solid var(--line);border-radius:20px;padding:6px 14px;cursor:pointer;
+    font-family:inherit;font-size:12.5px;color:var(--ink);transition:.13s;text-align:left}
+  .qchip:hover{border-color:var(--accent);background:#fdfaf3}
+  .qchip .qd{font-weight:700;flex:0 0 auto}
+  .qchip .ql{font-size:11.5px;color:var(--muted)}
+  .qchip.cur{background:var(--accent);border-color:var(--accent);color:#2c2620;cursor:default}
+  .qchip.cur .ql{color:#5c4a24}
+
+  .pk-trend{display:none;margin-top:15px;padding-top:14px;border-top:1px solid var(--line)}
+  .pk-trend.on{display:block}
+  .pk-trend h4{margin:0 0 10px;font-size:13px;color:var(--accent-dk)}
+  .trd{display:grid;grid-template-columns:88px 1fr 46px 62px;gap:9px;align-items:center;
+    margin:6px 0;font-size:12.5px}
+  .trd .tdate{font-weight:700}
+  .trd .ttrack{background:var(--cream2);border-radius:6px;height:16px;overflow:hidden}
+  .trd .tfill{height:100%;background:var(--accent);border-radius:6px}
+  .trd .tval{font-weight:800;text-align:right}
+  .trd .tlink{font-size:11px;color:var(--accent-dk);text-decoration:underline;cursor:pointer;text-align:right}
+  @media(max-width:860px){.dppane.open{flex-direction:column}.dp-right{min-width:0}.dp-months{flex-direction:column;gap:14px}.dp-presets{width:auto;border-right:none;border-bottom:1px solid var(--line);max-height:none}}
+
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div>
+      <h1>DX Living — Technical SEO Audit</h1>
+      <div class="sub">
+        <span class="t" data-vi="dxliving.com · Crawl trực tiếp qua Chrome (fetch same-origin, đo TTFB thật)" data-en="dxliving.com · Live crawl via Chrome (same-origin fetch, real TTFB)"></span>
+      </div>
+      <span class="pill t" data-vi="Nguồn: Chrome live crawl · 17 trang gốc + 56 bài /articles + 6 trang dự án + sitemap" data-en="Source: Chrome live crawl · 17 core pages + 56 /articles + 6 project pages + sitemap"></span>
+    </div>
+    <div>
+      <div class="langtoggle">
+        <button id="btnVI" onclick="setLang('vi')">VI</button>
+        <button id="btnEN" onclick="setLang('en')">EN</button>
+      </div>
+      <div class="crawl-meta">
+        <span class="t" data-vi="Ngày crawl: <b>12/08/2026</b> · <b>audit hằng ngày</b>" data-en="Crawl date: <b>12 Aug 2026</b> · <b>daily audit</b>"></span><br>
+        <span class="t" data-vi="Đo trực tiếp: <b>79 trang</b> · Sitemap: <b>78 URL</b>" data-en="Directly measured: <b>79 pages</b> · Sitemap: <b>78 URLs</b>"></span><br>
+        Method: Chrome fetch tuần tự · AbortController 12–15s
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+
+  <!-- date picker v2 -->
+  <div class="pk-card">
+    <div class="pk-title"><span class="bar"></span><span class="t" data-vi="Chọn ngày để xem báo cáo" data-en="Choose a day to view its report"></span></div>
+    <p class="pk-sub t" data-vi="Chọn <b>một ngày</b> rồi bấm <b>Cập nhật</b> để mở đúng bản báo cáo đã lưu của ngày đó. Chọn <b>một khoảng ngày</b> để xem xu hướng trong khoảng. Ngày <b>có dấu chấm</b> là ngày đã quét và có báo cáo lưu; ngày làm mờ vẫn chọn được làm đầu/cuối khoảng, nhưng không có báo cáo riêng để mở." data-en="Pick <b>a single day</b> and press <b>Update</b> to open that day's saved report. Pick <b>a date range</b> to see the trend across it. Days <b>with a dot</b> were crawled and have a stored report; faded days can still anchor a range but have no report of their own."></p>
+    <div class="pk-bar">
+      <div class="dpwrap">
+        <button class="dpbtn" id="dpBtn" type="button" aria-haspopup="dialog" aria-expanded="false">
+          <span>&#128197;</span><span id="dpLabel">Ngày 12/08/2026</span><span class="car">&#9660;</span>
+        </button>
+        <div class="dppane" id="dpPane" role="dialog">
+          <div class="dp-presets" id="dpPresets"></div>
+          <div class="dp-right">
+            <div class="dp-nav">
+              <button type="button" id="dpPrev" aria-label="prev">&#8249;</button>
+              <div class="mtitle"><span id="dpM1"></span><span id="dpM2"></span></div>
+              <button type="button" id="dpNext" aria-label="next">&#8250;</button>
+            </div>
+            <div class="dp-months"><div class="dp-m" id="dpG1"></div><div class="dp-m" id="dpG2"></div></div>
+            <div class="dp-foot">
+              <div class="dp-selinfo"><div class="d1" id="dpSelD"></div><div class="d2" id="dpSelInfo"></div></div>
+              <div class="dp-actions">
+                <button type="button" id="dpCancel" class="t" data-vi="Hủy" data-en="Cancel"></button>
+                <button type="button" id="dpApply" class="go t" data-vi="Cập nhật" data-en="Update"></button>
+              </div>
+            </div>
+            <div class="dp-legend"><span class="dotlg"></span><span class="t" data-vi="Dấu chấm = ngày đã có dữ liệu lưu. Ngày làm mờ = chưa quét: dùng được làm đầu/cuối khoảng, nhưng không mở được báo cáo riêng." data-en="Dot = a day with stored data. Faded day = not crawled: usable as a range endpoint, but it has no report of its own to open."></span></div>
+          </div>
+        </div>
+      </div>
+      <span class="pk-now" id="dpNow"></span>
+    </div>
+    <div class="pk-quick" id="dpQuick"></div>
+    <div class="pk-trend" id="dpTrend"></div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="kpis">
+    <div class="kpi">
+      <div class="lbl t" data-vi="Health Score" data-en="Health Score"></div>
+      <div class="score-ring">
+        <div class="val" style="color:var(--accent-dk)">88<span style="font-size:15px;color:var(--muted)">/100</span></div>
+      </div>
+      <div class="note"><span class="tag amber t" data-vi="Giảm 1 điểm — toàn bộ mức giảm đến từ tốc độ, không từ lỗi mới nào" data-en="Down one point — the entire drop comes from speed, not from any new defect"></span></div>
+      <div class="delta down t" data-vi="&#9660; 89 &#8594; <b>88</b> so 11/08 · điểm thô 88,8 &#8594; <b>88,2</b>. Chỉ <b>hai</b> điểm thành phần thay đổi và chúng đi ngược chiều nhau: Performance 96 &#8594; <b>93</b> (TTFB tăng ở gần như mọi nhóm trang), Content 80 &#8594; <b>81</b> (bài mới thứ ba + footer được mở rộng nội dung toàn site). Crawlability (<b>96</b>), Structured Data (<b>87</b>) và On-page (<b>76</b>) <b>đứng yên tuyệt đối sang ngày thứ năm</b> — hai lỗi tồn đọng lớn nhất vẫn chưa được chạm tới" data-en="&#9660; 89 &#8594; <b>88</b> vs 11 Aug · raw score 88.8 &#8594; <b>88.2</b>. Exactly <b>two</b> sub-scores moved, and they moved in opposite directions: Performance 96 &#8594; <b>93</b> (TTFB rose across nearly every page group) and Content 80 &#8594; <b>81</b> (a third new article plus a site-wide footer content expansion). Crawlability (<b>96</b>), Structured Data (<b>87</b>) and On-page (<b>76</b>) are <b>completely static for a fifth day</b> — the two largest outstanding defects remain untouched"></div>
+    </div>
+    <div class="kpi">
+      <div class="lbl t" data-vi="Trang crawl được" data-en="Pages crawled"></div>
+      <div class="val" style="color:var(--green)">79</div>
+      <div class="note t" data-vi="17 gốc + 56 bài + 6 dự án · 79/79 trả 200" data-en="17 core + 56 articles + 6 projects · 79 of 79 return 200"></div>
+      <div class="delta up t" data-vi="&#9650; +1 so 11/08 (78) · bài mới <code>/articles/timber-flooring-composite-decking</code> · sitemap 77 &#8594; <b>78 URL</b> · 0 timeout và 0 lỗi 4xx/5xx sang <b>ngày thứ tám liên tiếp</b> · <b>ba ngày liền có bài mới</b>, nhịp xuất bản một bài/ngày đã ổn định" data-en="&#9650; +1 vs 11 Aug (78) · the new <code>/articles/timber-flooring-composite-decking</code> · sitemap 77 &#8594; <b>78 URLs</b> · 0 timeouts and 0 4xx/5xx errors for an <b>eighth consecutive day</b> · <b>three new articles on three consecutive days</b>, so the one-per-day publishing cadence is now established"></div>
+    </div>
+    <div class="kpi">
+      <div class="lbl t" data-vi="TTFB TB — trang gốc" data-en="Avg TTFB — core"></div>
+      <div class="val" style="color:var(--accent-dk)">0,73<span style="font-size:15px">s</span></div>
+      <div class="note t" data-vi="15/17 trang gốc &lt;1s · <code>/</code> 1,44s · <code>/studio</code> 1,20s" data-en="15 of 17 core pages &lt;1s · <code>/</code> 1.44s · <code>/studio</code> 1.20s"></div>
+      <div class="delta down t" data-vi="&#9660; +0,10s so 11/08 (0,63s) · số trang gốc dưới 1s giữ nguyên <b>15/17</b>, nhưng <b>trang chủ xấu đi rõ rệt: 1,03s &#8594; 1,44s</b> (+0,40s) và <code>/studio</code> đảo chiều lần thứ hai trong ba ngày, <b>0,97s &#8594; 1,20s</b>. Bù lại <code>/articles</code> vẫn giữ dưới 1s (0,89s &#8594; 1,01s) dù HTML của trang này <b>phình lên 963 KB</b>" data-en="&#9660; +0.10s vs 11 Aug (0.63s) · the count of core pages under 1s holds at <b>15 of 17</b>, but the <b>homepage regressed clearly: 1.03s &#8594; 1.44s</b> (+0.40s) and <code>/studio</code> reversed for the second time in three days, <b>0.97s &#8594; 1.20s</b>. Against that, <code>/articles</code> stayed close to 1s (0.89s &#8594; 1.01s) even though its HTML has <b>ballooned to 963 KB</b>"></div>
+    </div>
+    <div class="kpi">
+      <div class="lbl t" data-vi="TTFB TB — bài viết" data-en="Avg TTFB — articles"></div>
+      <div class="val" style="color:var(--accent-dk)">0,70<span style="font-size:15px">s</span></div>
+      <div class="note t" data-vi="Toàn bộ 56 bài · 0,54–1,12s · <b>53/56 bài &lt;1s</b>" data-en="All 56 articles · 0.54–1.12s · <b>53 of 56 under 1s</b>"></div>
+      <div class="delta down t" data-vi="&#9660; +0,11s so 11/08 (0,59s) · <b>mốc &quot;toàn bộ bài dưới 1s&quot; đạt được hôm qua đã mất</b>: nay 3 bài trên 1s (<code>timber-flooring-composite-decking</code> 1,12s, <code>custom-built-homes-melbourne-checklist</code> 1,00s và bài chậm thứ ba sát ngưỡng). Không bài nào vượt 1,2s, nên đây là trôi dạt đều chứ không phải sự cố cục bộ" data-en="&#9660; +0.11s vs 11 Aug (0.59s) · <b>yesterday&#39;s &quot;every article under 1s&quot; milestone has been lost</b>: three now sit above 1s (<code>timber-flooring-composite-decking</code> at 1.12s, <code>custom-built-homes-melbourne-checklist</code> at 1.00s and a third on the threshold). None exceeds 1.2s, so this is even drift rather than a localised fault"></div>
+    </div>
+    <div class="kpi">
+      <div class="lbl t" data-vi="Schema (JSON-LD)" data-en="Schema (JSON-LD)"></div>
+      <div class="val" style="color:var(--green)">77/79</div>
+      <div class="note t" data-vi="Trang chủ 24 (2 thật) · <code>/articles</code> 22 (1 thật) · Dự án 14 (1 thật) · Bài 31–32 (4 thật)" data-en="Home 24 (2 real) · <code>/articles</code> 22 (1 real) · Projects 14 (1 real) · Articles 31–32 (4 real)"></div>
+      <div class="delta t" data-vi="&#61; độ phủ nhích lên <b>97,5%</b> · bài mới cũng ra đời với đủ 32 khối kèm <code>FAQPage</code>, đưa <code>FAQPage</code> lên <b>43/56 bài</b> · nhưng lỗi nhân bản <b>sang ngày thứ 10</b> chưa sửa: toàn site phát <b>2.094 khối</b> cho chỉ <b>233 payload thật</b> (hệ số <b>9,0&#215;</b>)" data-en="&#61; coverage edges up to <b>97.5%</b> · the new article also shipped with its full 32 blocks including <code>FAQPage</code>, lifting <code>FAQPage</code> to <b>43 of 56 articles</b> · but the duplication defect enters <b>a tenth day</b> unfixed: the site emits <b>2,094 blocks</b> for only <b>233 real payloads</b> (a factor of <b>9.0&#215;</b>)"></div>
+    </div>
+  </div>
+
+  <!-- Charts -->
+  <h2 class="sec t" data-vi="Điểm sức khỏe theo hạng mục &amp; phân bố tốc độ" data-en="Health sub-scores &amp; speed distribution"></h2>
+  <div class="grid2">
+    <div class="card">
+      <h3 class="t" data-vi="5 điểm thành phần (/100)" data-en="5 sub-scores (/100)"></h3>
+      <div class="bar-row"><span class="name t" data-vi="Crawlability" data-en="Crawlability"></span><div class="bar-track"><div class="bar-fill" style="width:96%;background:var(--green)">96</div></div></div>
+      <div class="bar-row"><span class="name t" data-vi="Performance / TTFB" data-en="Performance / TTFB"></span><div class="bar-track"><div class="bar-fill" style="width:93%;background:var(--green)">93</div></div></div>
+      <div class="bar-row"><span class="name t" data-vi="Structured Data / AEO" data-en="Structured Data / AEO"></span><div class="bar-track"><div class="bar-fill" style="width:87%;background:var(--green)">87</div></div></div>
+      <div class="bar-row"><span class="name t" data-vi="On-page / Meta" data-en="On-page / Meta"></span><div class="bar-track"><div class="bar-fill" style="width:76%;background:var(--blue)">76</div></div></div>
+      <div class="bar-row"><span class="name t" data-vi="Content" data-en="Content"></span><div class="bar-track"><div class="bar-fill" style="width:81%;background:var(--blue)">81</div></div></div>
+      <div class="foot t" data-vi="Health tổng <b>88/100</b> (&#9660; từ 89 hôm 11/08; điểm thô 88,8 &#8594; <b>88,2</b>) — <b>kết thúc chuỗi ba ngày tăng liên tiếp</b>. Chi tiết: Crawlability <b>96</b> (không đổi — 79/79 trang trả 200, sitemap 78 URL khớp hoàn toàn, listing <code>/articles</code> server-render <b>đủ 56 link bài</b> và lại tự động hấp thụ bài mới thứ ba), Performance <b>93</b> (&#9660; từ 96 — <b>75/79 trang &lt;1s = 94,9%</b> so 97,4% hôm 11/08; TTFB trung bình toàn site 592 &#8594; <b>697 ms</b>; trang chậm nhất 1,44s so 1,13s; nhưng vẫn <b>không trang nào &gt;3s</b> sang ngày thứ mười hai), Structured Data <b>87</b> (không đổi — 77/79 trang có schema = <b>97,5%</b>; lỗi nhân bản sang <b>ngày thứ 10</b> và một mình nó giữ điểm này dưới 95), On-page <b>76</b> (không đổi — trang chủ vẫn 7/11 ảnh thiếu alt và 0 lazy-load, trang dự án vẫn 15/19, heading vẫn nhảy bậc ở 77/79 trang), Content <b>81</b> (&#9650; từ 80 — 56 bài, TB <b>2.214 từ</b> so 2.096; footer được mở rộng nội dung trên <b>toàn bộ</b> trang, thêm khoảng 55–130 từ mỗi trang kèm NAP đầy đủ; nhưng 13 bài vẫn thiếu <code>FAQPage</code> và 11 trang vẫn dưới 300 từ). <b>Cách đọc thẳng thắn:</b> hôm nay site <b>không hỏng thêm chỗ nào</b> — không có lỗi mới, không có trang chết, không có schema mất đi. Điểm giảm 1 hoàn toàn vì tầng phục vụ chậm lại sau ba ngày nhanh dần, và mức nhanh của hôm qua vì thế nên được xem là <b>đỉnh chứ chưa phải mặt bằng mới</b>. Trọng số: Crawl 25% · Perf 25% · Schema 20% · On-page 15% · Content 15%." data-en="Overall health <b>88/100</b> (&#9660; from 89 on 11 Aug; raw score 88.8 &#8594; <b>88.2</b>) — <b>ending a three-day run of gains</b>. Detail: Crawlability <b>96</b> (unchanged — 79 of 79 pages return 200, the 78-URL sitemap matches exactly, and the <code>/articles</code> listing server-renders <b>all 56 article links</b>, again absorbing a third new article automatically), Performance <b>93</b> (&#9660; from 96 — <b>75 of 79 pages under 1s = 94.9%</b> against 97.4% on 11 Aug; site-wide average TTFB 592 &#8594; <b>697 ms</b>; the slowest page 1.44s versus 1.13s; but still <b>nothing above 3s</b> for a twelfth day), Structured Data <b>87</b> (unchanged — 77 of 79 pages carry schema = <b>97.5%</b>; the duplication defect reaches <b>day 10</b> and on its own keeps this score below 95), On-page <b>76</b> (unchanged — the homepage still shows 7 of 11 images without alt and zero lazy-loading, project pages still 15 of 19, and headings still skip levels on 77 of 79 pages), Content <b>81</b> (&#9650; from 80 — 56 articles averaging <b>2,214 words</b> against 2,096; the footer gained substantive content across <b>every</b> page, adding roughly 55–130 words each along with a full NAP block; but 13 still lack <code>FAQPage</code> and 11 pages remain under 300 words). <b>How to read this plainly:</b> nothing broke today — no new defect, no dead page, no schema lost. The single point lost is entirely the serving layer slowing after three days of gains, which means yesterday&#39;s figures are better read as <b>a peak than as a new baseline</b>. Weights: Crawl 25% · Perf 25% · Schema 20% · On-page 15% · Content 15%."></div>
+    </div>
+    <div class="card">
+      <h3 class="t" data-vi="Phân bố tốc độ (79 trang đo trực tiếp)" data-en="Speed distribution (79 pages measured)"></h3>
+      <div class="donut-wrap">
+        <svg width="150" height="150" viewBox="0 0 42 42">
+          <circle cx="21" cy="21" r="15.9155" fill="none" stroke="var(--cream2)" stroke-width="6"></circle>
+          <circle cx="21" cy="21" r="15.9155" fill="none" stroke="var(--green)" stroke-width="6"
+            stroke-dasharray="94.9 5.1" stroke-dashoffset="25"></circle>
+          <circle cx="21" cy="21" r="15.9155" fill="none" stroke="var(--amber)" stroke-width="6"
+            stroke-dasharray="5.1 94.9" stroke-dashoffset="-69.9"></circle>
+          <text x="21" y="20" text-anchor="middle" font-size="7" font-weight="700" fill="#2c2620">79</text>
+          <text x="21" y="26.5" text-anchor="middle" font-size="3.2" fill="#6f665a" class="tsvg" data-vi="trang" data-en="pages">trang</text>
+        </svg>
+        <div class="legend">
+          <div><span class="dot" style="background:var(--green)"></span> <span class="t" data-vi="Nhanh &lt;1s: <b>75</b> · 94,9%" data-en="Fast &lt;1s: <b>75</b> · 94.9%"></span></div>
+          <div><span class="dot" style="background:var(--amber)"></span> <span class="t" data-vi="1–3s: <b>4</b> · 5,1%" data-en="1–3s: <b>4</b> · 5.1%"></span></div>
+          <div><span class="dot" style="background:var(--red)"></span> <span class="t" data-vi="Chậm &gt;3s: <b>0</b> · 0%" data-en="Slow &gt;3s: <b>0</b> · 0%"></span></div>
+          <div class="foot t" style="margin-top:10px" data-vi="Nhóm &lt;1s co lại lần đầu sau ba ngày nới rộng: <b>76 &#8594; 75 trang</b> (97,4% &#8594; <b>94,9%</b>) dù tổng số trang tăng thêm một; nhóm 1–3s nở từ 2 lên <b>4</b>. <b>Không trang nào &gt;3s</b> — ngày thứ mười hai liên tiếp, và đây vẫn là chỉ số quan trọng nhất của nhóm này. Bốn trang trên 1s: <code>/</code> <b>1,44s</b>, <code>/studio</code> <b>1,20s</b>, <code>/articles/timber-flooring-composite-decking</code> <b>1,12s</b> và <code>/articles</code> <b>1,01s</b>. Đáng chú ý là <b>trang chủ nay là trang chậm nhất site</b> (1,03s &#8594; 1,44s) — đây là trang nhận nhiều lưu lượng nhất nên cần theo dõi trước tiên. <b>Cách đọc con số này:</b> TTFB lấy <b>giá trị tốt nhất của hai lần quét tuần tự</b> cho mọi URL — cùng phương pháp với các ngày trước, nên mức tăng ~105 ms trung bình toàn site <b>không phải do đổi cách đo</b>. Tuy vậy hãy đọc xu hướng nhóm thay vì chênh lệch vài chục mili-giây ở từng trang: chỉ một ngày chậm lại chưa đủ kết luận cache/CDN đã bị gỡ, nhưng nếu 13/08 tiếp tục chậm thì cần kiểm tra cấu hình ngay." data-en="The under-1s band contracted for the first time after three days of widening: <b>76 &#8594; 75 pages</b> (97.4% &#8594; <b>94.9%</b>) even though the total rose by one; the 1–3s band grew from 2 to <b>4</b>. <b>Nothing exceeds 3s</b> — a twelfth consecutive day, and still the most important figure in this panel. The four pages above 1s are <code>/</code> at <b>1.44s</b>, <code>/studio</code> at <b>1.20s</b>, <code>/articles/timber-flooring-composite-decking</code> at <b>1.12s</b> and <code>/articles</code> at <b>1.01s</b>. Worth flagging: <b>the homepage is now the slowest page on the site</b> (1.03s &#8594; 1.44s) — it takes the most traffic, so it is the one to watch first. <b>How to read this:</b> TTFB takes the <b>better of two sequential passes</b> for every URL, the same method as previous days, so the ~105 ms site-wide rise <b>is not a measurement change</b>. Even so, read the band trend rather than tens of milliseconds on any single page: one slower day is not enough to conclude a cache or CDN change was reverted, but if 13 Aug is slow again the configuration should be checked immediately."></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Insights -->
+  <h2 class="sec t" data-vi="Hướng đi &amp; Insight ưu tiên" data-en="Direction &amp; Priority insights"></h2>
+
+  <div class="ins win">
+    <div class="prio t" data-vi="✓ ĐIỂM SÁNG HÔM NAY · footer được mở rộng nội dung toàn site + bài mới thứ ba" data-en="✓ TODAY&#39;S BRIGHT SPOT · a site-wide footer content expansion and a third new article"></div>
+    <h4 class="t" data-vi="Footer nay mang nội dung thật và đầy đủ NAP trên cả 79 trang — thay đổi on-page rộng nhất trong hai tuần" data-en="The footer now carries real content and a full NAP block on all 79 pages — the broadest on-page change in a fortnight"></h4>
+    <p class="t" data-vi="<b>Thứ nhất — footer được mở rộng nội dung, và nó chạm vào mọi trang.</b> Số từ tăng trên <b>gần như toàn bộ 79 trang</b> mà không có trang nào bị đụng riêng lẻ: <code>/about</code> 392 &#8594; <b>449</b>, <code>/studio</code> 523 &#8594; <b>654</b>, <code>/faq</code> 1.315 &#8594; <b>1.405</b>, <code>/contact</code> 187 &#8594; <b>252</b>, <code>/modules</code> 192 &#8594; <b>248</b>, <code>/projects</code> 173 &#8594; <b>261</b>, và cả 6 trang dự án nhảy từ dải 161–178 lên <b>225–241</b>. Mức tăng đều đặn 55–130 từ trên mọi nhóm trang là dấu hiệu rõ ràng của một <b>component dùng chung</b>, và kiểm tra trực tiếp xác nhận: footer nay chứa dòng định vị (&quot;We help Australia&#39;s most discerning residential developers and architects…&quot;), bốn cụm điều hướng có tiêu đề (Links · Our Modules · Stay In Touch · Contact) và — quan trọng nhất về SEO — <b>một khối NAP đầy đủ</b>: <code>1800 333 539</code>, <code>contact@dxliving.com</code>, <code>44 Lakeview Drive, Scoresby VIC 3179, Australia</code>. NAP nhất quán trên mọi trang là tín hiệu local-SEO có giá trị thật và nó khớp với <code>LocalBusiness</code> đang khai báo ở trang chủ. <b>Đã xác minh đây không phải lỗi đo:</b> chạy lại bộ đếm từ với ba cách xử lý HTML entity khác nhau chỉ chênh 1–5 từ mỗi trang, tức mức tăng 55–130 từ là <b>nội dung thật</b>. <b>Thứ hai — bài mới thứ ba trong ba ngày.</b> <code>/articles/timber-flooring-composite-decking</code> ra đời đúng chuẩn: <b>2.837 từ</b>, đủ <code>Article</code> + <code>BreadcrumbList</code> + <code>BlogPosting</code> + <code>FAQPage</code>, 21 internal link, có trong sitemap và <b>đã tự động xuất hiện trong HTML thô của listing</b> (56/56 link)." data-en="<b>First, the footer gained substantive content, and it touches every page.</b> Word counts rose on <b>nearly all 79 pages</b> with no page edited individually: <code>/about</code> 392 &#8594; <b>449</b>, <code>/studio</code> 523 &#8594; <b>654</b>, <code>/faq</code> 1,315 &#8594; <b>1,405</b>, <code>/contact</code> 187 &#8594; <b>252</b>, <code>/modules</code> 192 &#8594; <b>248</b>, <code>/projects</code> 173 &#8594; <b>261</b>, and all 6 project pages jumped from the 161–178 band to <b>225–241</b>. A uniform 55–130 word gain across every page group points unmistakably at a <b>shared component</b>, and direct inspection confirms it: the footer now carries a positioning line (&quot;We help Australia&#39;s most discerning residential developers and architects…&quot;), four titled navigation clusters (Links · Our Modules · Stay In Touch · Contact) and, most valuable for SEO, <b>a complete NAP block</b>: <code>1800 333 539</code>, <code>contact@dxliving.com</code>, <code>44 Lakeview Drive, Scoresby VIC 3179, Australia</code>. A consistent NAP on every page is a genuine local-SEO signal and it matches the <code>LocalBusiness</code> markup already declared on the homepage. <b>Verified as not a measurement artefact:</b> re-running the word counter with three different HTML-entity handling rules shifts each page by only 1–5 words, so the 55–130 word gain is <b>real content</b>. <b>Second, a third new article in three days.</b> <code>/articles/timber-flooring-composite-decking</code> shipped to standard: <b>2,837 words</b>, a full <code>Article</code> + <code>BreadcrumbList</code> + <code>BlogPosting</code> + <code>FAQPage</code> set, 21 internal links, present in the sitemap and <b>already visible in the raw HTML of the listing</b> (56 of 56 links)."></p>
+    <p class="fix t" data-vi="<b>Việc cần làm tiếp:</b> footer mới đã sửa được một phần vấn đề &quot;trang mỏng&quot; ở 6 trang dự án (nay 225–241 từ) nhưng <b>chưa đủ</b> — chúng vẫn dưới ngưỡng 300 từ và nội dung thêm vào là nội dung dùng chung, không phải nội dung riêng của từng dự án, nên giá trị SEO thấp hơn nhiều. Hãy tận dụng đúng lúc component footer đang mở: <b>bọc logo header thành <code>&lt;a href=&quot;/&quot;&gt;</code></b> (xem P2 bên dưới) trong cùng lần deploy tiếp theo." data-en="<b>Do next:</b> the new footer has partly relieved the thin-page problem on the 6 project pages (now 225–241 words) but <b>not solved it</b> — they remain under the 300-word threshold and the added text is shared boilerplate rather than project-specific content, so its SEO value is much lower. While the footer component is open, take the opportunity: <b>wrap the header logo in <code>&lt;a href=&quot;/&quot;&gt;</code></b> (see P2 below) in the same next deploy."></p>
+  </div>
+
+  <div class="ins p1">
+    <div class="prio t" data-vi="P1 · Còn tồn · sang ngày thứ 10 chưa sửa" data-en="P1 · Persisting · tenth day unfixed"></div>
+    <h4 class="t" data-vi="Mỗi trang vẫn phát ra 14–32 khối JSON-LD y hệt nhau — 2.094 khối cho chỉ 233 payload thật" data-en="Every page still emits 14–32 byte-identical JSON-LD blocks — 2,094 blocks for only 233 real payloads"></h4>
+    <p class="t" data-vi="Kiểm chứng lại bằng cách so <i>nội dung</i> khối chứ không chỉ đếm (<code>new Set(blocks).size</code>): <b>y nguyên sang ngày thứ 10</b>. Trang gốc <b>14 khối / 1 payload</b>; trang chủ <b>24 / 2</b>; <code>/articles</code> <b>22 / 1</b>; 6 trang dự án <b>14 / 1</b>; bài viết <b>32 / 4</b> (hoặc <b>31 / 3</b> ở 13 bài chưa có <code>FAQPage</code>). Cộng toàn site: <b>2.094 khối script</b> để biểu đạt <b>233 payload thật</b> — hệ số nhân bản <b>9,0&#215;</b>, không đổi so 11/08. Hôm nay có thêm bằng chứng chính xác về <i>hình dạng</i> lỗi: phân tích rendered-DOM của <code>/articles/bathroom-remodel-cost-australia</code> cho thấy <b><code>Article</code> in ra 15 lần và <code>BreadcrumbList</code> in ra 15 lần</b>, trong khi <code>BlogPosting</code> và <code>FAQPage</code> chỉ <b>1 lần mỗi loại</b>. Nói cách khác lỗi <b>không phải toàn bộ đầu ra bị lặp</b>, mà là <b>đúng hai kiểu schema bị render 15 lần</b> — nhiều khả năng chúng nằm trong một component được gọi lại theo mỗi section/heading của trang thay vì một lần ở cấp layout. Đây là manh mối cụ thể hơn hẳn chín ngày trước và <b>đủ để khoanh vùng đúng file</b>. <b>Thứ ba — bài mới thứ ba liên tiếp cũng kế thừa lỗi ngay khi ra đời</b> (32 khối / 4 payload), nên chi phí tiếp tục cộng dồn theo nhịp một bài/ngày. Schema thật vẫn đúng chuẩn — chỉ đơn giản bị in ra nhiều lần." data-en="Re-verified by comparing block <i>content</i> rather than counting (<code>new Set(blocks).size</code>): <b>unchanged into a tenth day</b>. Core pages <b>14 blocks / 1 payload</b>; the homepage <b>24 / 2</b>; <code>/articles</code> <b>22 / 1</b>; the 6 project pages <b>14 / 1</b>; articles <b>32 / 4</b> (or <b>31 / 3</b> on the 13 without <code>FAQPage</code>). Site-wide that totals <b>2,094 script blocks</b> expressing <b>233 real payloads</b> — a duplication factor of <b>9.0&#215;</b>, unchanged from 11 Aug. Today adds precise evidence about the <i>shape</i> of the fault: parsing the rendered DOM of <code>/articles/bathroom-remodel-cost-australia</code> shows <b><code>Article</code> printed 15 times and <code>BreadcrumbList</code> printed 15 times</b>, while <code>BlogPosting</code> and <code>FAQPage</code> appear <b>exactly once each</b>. In other words the defect is <b>not the whole output repeating</b> — it is <b>precisely two schema types rendering 15 times</b>, which most likely means they sit inside a component invoked once per page section or heading rather than once at layout level. That is a far more specific lead than the previous nine days offered and <b>should be enough to isolate the right file</b>. <b>Third, the third consecutive new article again inherited the defect on arrival</b> (32 blocks / 4 payloads), so the cost keeps accruing at the one-article-per-day cadence. The genuine schema remains correct — merely printed repeatedly."></p>
+    <p class="fix t" data-vi="<b>Cách sửa (nay đã có manh mối cụ thể):</b> tìm component render <code>&lt;script type=&quot;application/ld+json&quot;&gt;</code> cho <code>Article</code> và <code>BreadcrumbList</code> — <b>bắt đầu từ component section/block dùng lại theo từng phần nội dung</b>, vì hai kiểu này lặp đúng 15 lần trong khi <code>BlogPosting</code>/<code>FAQPage</code> ở cấp trang chỉ chạy một lần. Hoist chúng lên root layout hoặc dedupe theo key. Sau khi sửa, mong đợi: trang gốc còn 1–2 khối, bài viết còn 4, trang dự án còn 1, HTML giảm 15–25 KB/trang. <b>Đây vẫn là việc P1 duy nhất</b> và là thứ duy nhất đang giữ Structured Data ở 87 thay vì 95+." data-en="<b>Fix (now with a concrete lead):</b> find the component rendering <code>&lt;script type=&quot;application/ld+json&quot;&gt;</code> for <code>Article</code> and <code>BreadcrumbList</code> — <b>start with whichever section or block component is reused per content chunk</b>, since those two repeat exactly 15 times while the page-level <code>BlogPosting</code> and <code>FAQPage</code> run once. Hoist them to the root layout or dedupe by key. After the fix expect 1–2 blocks on core pages, 4 on articles, 1 on project pages, and 15–25 KB less HTML per page. <b>This remains the only P1</b> and the only thing holding Structured Data at 87 rather than 95+."></p>
+  </div>
+
+  <div class="ins p2">
+    <div class="prio t" data-vi="P2 · Còn tồn · sang ngày thứ 13 chưa sửa" data-en="P2 · Persisting · thirteenth day unfixed"></div>
+    <h4 class="t" data-vi="Trang chủ vẫn 7/11 ảnh thiếu alt, trang dự án 15/19, và cả hai vẫn 0 ảnh lazy-load" data-en="Homepage still 7 of 11 images without alt, project pages 15 of 19, and neither uses lazy-loading"></h4>
+    <p class="t" data-vi="Rendered-DOM hôm nay lại cho kết quả <b>giống hệt từng con số</b> so 11/08, 10/08 và 07/08: trang chủ <b>11 ảnh, 7 thiếu <code>alt</code>, 0 ảnh <code>loading=&quot;lazy&quot;</code></b>; <code>/projects/251-station-st</code> <b>19 ảnh, 15 thiếu <code>alt</code>, 0 lazy-load</b>. Đây là khuyến nghị từ báo cáo 30/07 và nay <b>đã 13 ngày chưa deploy</b>. Toàn site (HTML thô): <b>80/616 ảnh thiếu alt</b> và <b>219/616 ảnh</b> dùng lazy-load — gần như toàn bộ phần lazy-load nằm ở template bài viết, còn trang chủ và 6 trang dự án vẫn ở mức <b>0 tuyệt đối</b>. Điều đáng nói nhất hôm nay: <b>đội ngũ vừa deploy một thay đổi vào chính component dùng chung</b> (footer mới, chạm vào cả 79 trang) — tức cửa deploy không những có mà còn <b>vừa mở đúng vào lớp code chứa việc này</b>. Việc alt/lazy-load bị bỏ lại <b>không phải vì thiếu cửa deploy</b> mà vì chưa được đưa vào hàng đợi. Với On-page đứng yên ở 76 suốt năm ngày, đây là điểm thành phần duy nhất chưa từng nhúc nhích." data-en="Today&#39;s rendered DOM again returns <b>identical figures</b> to 11 Aug, 10 Aug and 07 Aug: the homepage carries <b>11 images, 7 without <code>alt</code>, 0 using <code>loading=&quot;lazy&quot;</code></b>; <code>/projects/251-station-st</code> carries <b>19 images, 15 without <code>alt</code>, 0 lazy-loaded</b>. This was recommended in the 30 Jul report and has now gone <b>thirteen days without a deploy</b>. Site-wide (raw HTML): <b>80 of 616 images lack alt</b> and <b>219 of 616</b> use lazy-loading — almost all of that from the article template, while the homepage and the 6 project pages remain at <b>absolute zero</b>. The most telling point today: <b>the team has just deployed a change into a shared component</b> (the new footer, touching all 79 pages) — so a deploy window not only exists, it <b>has just opened on exactly the layer this work lives in</b>. The alt and lazy-load work is outstanding <b>not for lack of a deploy window</b> but because it has not been queued. With On-page frozen at 76 for five days, it is the only sub-score that has not moved at all."></p>
+    <p class="fix t" data-vi="<b>Cách sửa:</b> một deploy nhỏ gộp cả ba việc: 7 <code>alt</code> trang chủ + 15 <code>alt</code> trang dự án + <code>loading=&quot;lazy&quot;</code> cho ảnh dưới màn hình đầu — copy đúng cách template bài viết đang làm. Ước tính ~30 phút, đưa On-page từ 76 lên khoảng <b>85</b> và Health lên khoảng <b>89,6</b>. <b>Đây vẫn là cách rẻ nhất còn lại để tăng điểm.</b>" data-en="<b>Fix:</b> one small deploy covering all three: 7 homepage <code>alt</code>s + 15 project-page <code>alt</code>s + <code>loading=&quot;lazy&quot;</code> below the fold — copy exactly what the article template already does. Roughly 30 minutes of work, lifting On-page from 76 to about <b>85</b> and Health to roughly <b>89.6</b>. <b>This is still the cheapest remaining point gain.</b>"></p>
+  </div>
+
+  <div class="ins p2">
+    <div class="prio t" data-vi="P2 · Xác nhận lại · sang ngày thứ hai, cần trả lời từ đội phát triển" data-en="P2 · Re-confirmed · second day, still awaiting an answer from the development team"></div>
+    <h4 class="t" data-vi="Vẫn không một trang gốc hay trang dự án nào trỏ internal link về trang chủ" data-en="No core or project page still carries an internal link back to the homepage"></h4>
+    <p class="t" data-vi="Kiểm tra lại HTML thô hôm nay trên sáu trang đại diện: <code>/about</code>, <code>/faq</code>, <code>/contact</code> và <code>/projects/251-station-st</code> đều có <b>0</b> lần xuất hiện <code>href=&quot;/&quot;</code> <b>và 0</b> link tuyệt đối về <code>https://dxliving.com/</code>. Các trang bài viết vẫn có <b>đúng một</b> link tuyệt đối về trang chủ (nằm trong breadcrumb). Kết luận không đổi so 11/08: <b>56 bài viết trỏ về trang chủ, còn 17 trang gốc và 6 trang dự án thì không</b>. <b>Diễn biến mới hôm nay:</b> footer vừa được viết lại và mở rộng trên toàn site — nhưng <b>vẫn không thêm link về <code>/</code></b>; footer mới có Modules, Projects, Suppliers, About, Articles, FAQ, Contact, bốn module, Privacy Policy và Terms of Service, nhưng <b>không có mục Home</b>. Đây là bằng chứng khá mạnh cho thấy việc thiếu link về trang chủ là <b>lựa chọn thiết kế đang được duy trì</b> chứ không phải hồi quy bị bỏ quên. Một ngoại lệ nhỏ đáng ghi nhận: <code>/login</code> nay <b>đã có</b> liên kết &quot;&#8592; Back to Homepage&quot;, tức pattern này tồn tại trong hệ thống và chỉ cần áp rộng ra. Vì chưa có số liệu ngày trước theo cùng cách đếm, mục này <b>vẫn chưa bị trừ điểm On-page</b>." data-en="Re-checked in today&#39;s raw HTML across six representative pages: <code>/about</code>, <code>/faq</code>, <code>/contact</code> and <code>/projects/251-station-st</code> each contain <b>zero</b> occurrences of <code>href=&quot;/&quot;</code> <b>and zero</b> absolute links to <code>https://dxliving.com/</code>. Article pages still carry <b>exactly one</b> absolute link home, inside the breadcrumb. The conclusion is unchanged from 11 Aug: <b>the 56 articles point home, the 17 core pages and 6 project pages do not</b>. <b>What is new today:</b> the footer has just been rewritten and expanded site-wide — and it <b>still adds no link to <code>/</code></b>; the new footer lists Modules, Projects, Suppliers, About, Articles, FAQ, Contact, the four modules, Privacy Policy and Terms of Service, but <b>no Home entry</b>. That is reasonably strong evidence the missing homepage link is <b>a design choice being maintained</b> rather than a forgotten regression. One small exception worth recording: <code>/login</code> <b>now does</b> carry a &quot;&#8592; Back to Homepage&quot; link, so the pattern exists in the codebase and only needs applying more widely. With no prior-day figure on the same counting basis, <b>no On-page deduction has been taken</b> for this yet."></p>
+    <p class="fix t" data-vi="<b>Cách sửa:</b> bọc logo header trong <code>&lt;a href=&quot;/&quot; aria-label=&quot;DX Living — trang chủ&quot;&gt;</code> và thêm mục <b>Home</b> vào cụm &quot;Links&quot; của footer mới. Cả hai đều nằm trong component vừa được sửa hôm nay, nên chi phí gần như bằng không nếu gộp vào deploy tiếp theo. <b>Cần trả lời trước:</b> đây là ngày thứ hai đặt câu hỏi — hãy xác nhận với đội phát triển rằng logo <b>cố ý</b> không trỏ link; nếu đúng là cố ý thì mục này sẽ được đóng lại và ghi nhận là quyết định thiết kế." data-en="<b>Fix:</b> wrap the header logo in <code>&lt;a href=&quot;/&quot; aria-label=&quot;DX Living — home&quot;&gt;</code> and add a <b>Home</b> entry to the &quot;Links&quot; cluster in the new footer. Both live in the component that was edited today, so the cost is near zero if bundled into the next deploy. <b>Needs an answer first:</b> this is the second day of asking — confirm with the development team that the logo is <b>deliberately</b> unlinked; if it is deliberate this item will be closed and recorded as a design decision."></p>
+  </div>
+
+  <div class="ins win">
+    <div class="prio t" data-vi="✓ ĐIỂM SÁNG · giữ vững" data-en="✓ HOLDING STRONG"></div>
+    <h4 class="t" data-vi="79/79 trang đủ title/meta/canonical và đúng 1 H1, 0 trang &gt;3s, 77/79 trang có schema" data-en="79 of 79 pages have title/meta/canonical and exactly one H1, nothing exceeds 3s, 77 of 79 carry schema"></h4>
+    <p class="t" data-vi="<b>Không một trang nào</b> trong 79 trang thiếu title, meta description hay canonical, và <b>không một trang nào</b> sai số H1 — cả hai chỉ số sạch tuyệt đối sang <b>ngày thứ tám liên tiếp</b>, và bài mới hôm nay cũng đạt chuẩn ngay. <b>0 trang &gt;3s</b> sang ngày thứ mười hai; sự cố <code>/articles/*</code> chậm 6,5–10,8s hồi tháng 7 vẫn hết hẳn, và dù hôm nay TTFB nhích lên thì trang chậm nhất site vẫn chỉ <b>1,44s</b>. Độ phủ schema nhích lên <b>97,5%</b>, chỉ <code>/login</code> và <code>/start-interactive</code> còn trống. <code>FAQPage</code> lên <b>43/56 bài (76,8%)</b> nhờ bài mới. Listing <code>/articles</code> giữ <b>đủ 56 link bài trong HTML thô</b> — khớp chính xác sitemap, tức bản sửa 07/08 vẫn đứng vững qua ba lần thêm bài liên tiếp. <code>robots.txt</code> sạch (<code>Disallow:</code> rỗng) và trỏ đúng sitemap; sitemap 78 URL khớp 79 trang crawl trừ đúng <code>/login</code>. <code>/faq</code>: 1.405 từ + <code>FAQPage</code>, TTFB 0,61s — vẫn là tài sản AEO mạnh nhất site. Số từ trung bình mỗi bài lên <b>2.214</b>, dải 1.117–3.472 từ." data-en="<b>Not one</b> of the 79 pages is missing a title, meta description or canonical, and <b>not one</b> has a wrong H1 count — both perfectly clean for an <b>eighth consecutive day</b>, and today&#39;s new article met the standard immediately. <b>Zero pages above 3s</b> for a twelfth day; July&#39;s 6.5–10.8s <code>/articles/*</code> slowdown remains fully resolved, and even with TTFB rising today the slowest page on the site is still only <b>1.44s</b>. Schema coverage edges up to <b>97.5%</b>, leaving only <code>/login</code> and <code>/start-interactive</code> empty. <code>FAQPage</code> rises to <b>43 of 56 articles (76.8%)</b> thanks to the new piece. The <code>/articles</code> listing still carries <b>all 56 article links in raw HTML</b> — matching the sitemap exactly, so the 07 Aug fix has held across three consecutive additions. <code>robots.txt</code> is clean (empty <code>Disallow:</code>) and points at the right sitemap; the 78-URL sitemap matches the 79 crawled pages minus <code>/login</code> exactly. <code>/faq</code>: 1,405 words + <code>FAQPage</code> at 0.61s TTFB — still the site&#39;s strongest AEO asset. Average words per article rises to <b>2,214</b>, spanning 1,117–3,472."></p>
+    <p class="fix t" data-vi="<b>Giữ nguyên:</b> khi sửa lỗi nhân bản schema ở P1, <b>đừng gỡ nhầm schema thật</b> — mục tiêu là còn 4 khối/bài, 1 khối <code>@graph</code>/trang dự án và 1–2 khối/trang gốc, không phải 0. Xác minh lại bằng Rich Results Test sau deploy." data-en="<b>Maintain:</b> when fixing the P1 duplication, <b>do not strip the genuine schema</b> — the target is 4 blocks per article, one <code>@graph</code> per project page and 1–2 per core page, not zero. Re-verify with the Rich Results Test after deploying."></p>
+  </div>
+
+  <div class="ins p3">
+    <div class="prio t" data-vi="P3 · Thông tin · gần như không đổi" data-en="P3 · Info · almost unchanged"></div>
+    <h4 class="t" data-vi="Heading nhảy bậc ở 77/79 trang; 13 bài vẫn chưa có FAQPage; 11 trang vẫn dưới 300 từ" data-en="Heading skips on 77 of 79 pages; 13 articles still lack FAQPage; 11 pages remain under 300 words"></h4>
+    <p class="t" data-vi="Mọi trang đều đúng <b>1 H1</b>, nhưng chuỗi heading vẫn <b>nhảy bậc ở 77/79 trang</b>: <b>2&#8594;4</b> ở <b>75 trang</b> (trang chủ, toàn bộ bài viết và phần lớn trang gốc), <b>1&#8594;3</b> ở <b>8 trang</b> và <b>1&#8594;4</b> ở <b>2 trang</b> — nhóm 1&#8594;3/1&#8594;4 gồm cả 6 trang dự án, <code>/projects</code>, <code>/modules</code>, <code>/faq</code> và <code>/start-interactive</code>. Chỉ <code>/login</code> và <code>/privacy-policy</code> sạch, y như 11/08. <b>13/56 bài vẫn chưa có <code>FAQPage</code></b> — <b>đúng 13 bài của hôm 11/08 và 10/08, không bài nào được bổ sung</b>: <code>how-3d-coordination-reduces-design-conflicts…</code>, <code>the-best-home-builders-adelaide</code>, <code>brisbane-custom-home-builders-checklist…</code>, <code>bim-3d-4d-5d-explained</code>, <code>custom-built-homes-melbourne-checklist</code>, <code>how-to-choose-custom-home-builders-in-south-australia</code>, <code>best-practices-for-project-and-quality-management-in-2026</code>, <code>construction-program-management-software</code>, <code>program-for-construction-estimates-explained</code>, <code>what-is-bim-3d-modeling</code>, <code>project-management-and-cost-control</code>, <code>bim-3d-from-design-to-site-in-2026</code>, <code>duplex-house-design-in-australia</code> — nhận diện được ngay vì chúng phát 31 khối JSON-LD thay vì 32. Tỷ lệ phủ 76,4% &#8594; <b>76,8%</b>, nhưng chỉ vì bài mới, không vì bài cũ được sửa. <b>11 trang dưới 300 từ</b> — <b>vẫn đúng 11 trang</b>, dù footer mới đã đẩy tất cả lên đáng kể: <code>/login</code> (32), <code>/start-interactive</code> (62), 6 trang dự án (<b>225–241</b>, trước là 161–178), <code>/modules</code> (248), <code>/contact</code> (252), <code>/projects</code> (261). Không trang nào vượt được ngưỡng 300 vì phần tăng đến từ boilerplate dùng chung. <code>/login</code> đã đúng nằm ngoài sitemap nhưng <code>/start-interactive</code> vẫn còn trong, và cả hai vẫn là hai trang duy nhất không có schema. Site chưa dùng <code>hreflang</code> — hợp lý vì chỉ nhắm thị trường AU." data-en="Every page has exactly <b>1 H1</b>, but heading sequences still <b>skip levels on 77 of 79 pages</b>: <b>2&#8594;4</b> on <b>75 pages</b> (the homepage, every article and most core pages), <b>1&#8594;3</b> on <b>8</b> and <b>1&#8594;4</b> on <b>2</b> — that 1&#8594;3 / 1&#8594;4 group covering all 6 project pages, <code>/projects</code>, <code>/modules</code>, <code>/faq</code> and <code>/start-interactive</code>. Only <code>/login</code> and <code>/privacy-policy</code> are clean, exactly as on 11 Aug. <b>13 of 56 articles still lack <code>FAQPage</code></b> — <b>exactly the thirteen from 11 Aug and 10 Aug, none retrofitted</b>: <code>how-3d-coordination-reduces-design-conflicts…</code>, <code>the-best-home-builders-adelaide</code>, <code>brisbane-custom-home-builders-checklist…</code>, <code>bim-3d-4d-5d-explained</code>, <code>custom-built-homes-melbourne-checklist</code>, <code>how-to-choose-custom-home-builders-in-south-australia</code>, <code>best-practices-for-project-and-quality-management-in-2026</code>, <code>construction-program-management-software</code>, <code>program-for-construction-estimates-explained</code>, <code>what-is-bim-3d-modeling</code>, <code>project-management-and-cost-control</code>, <code>bim-3d-from-design-to-site-in-2026</code>, <code>duplex-house-design-in-australia</code> — identifiable at a glance because they emit 31 JSON-LD blocks rather than 32. Coverage moves 76.4% &#8594; <b>76.8%</b>, but only because of the new article, not because any older one was fixed. <b>11 pages sit under 300 words</b> — <b>still exactly 11</b>, even though the new footer lifted them all appreciably: <code>/login</code> (32), <code>/start-interactive</code> (62), the 6 project pages (<b>225–241</b>, previously 161–178), <code>/modules</code> (248), <code>/contact</code> (252) and <code>/projects</code> (261). None crossed 300 because the gain came from shared boilerplate. <code>/login</code> is correctly outside the sitemap but <code>/start-interactive</code> is still in it, and those two remain the only pages without schema. No <code>hreflang</code> in use — reasonable for an AU-only market."></p>
+    <p class="fix t" data-vi="<b>Cách sửa:</b> chuẩn hóa H1&#8594;H2&#8594;H3 tuần tự; thêm khối FAQ 3–5 câu + <code>FAQPage</code> cho 13 bài — quy trình đã có sẵn ở 43 bài còn lại và vừa được dùng thành công ba ngày liền cho ba bài mới, chỉ cần áp ngược lại; <b>noindex</b> <code>/login</code> và <code>/start-interactive</code>, đồng thời gỡ <code>/start-interactive</code> khỏi sitemap; viết <b>nội dung riêng</b> 150–200 từ cho mỗi trang dự án (bối cảnh, phạm vi công việc, vật liệu chính) — footer mới đã lo phần boilerplate, phần còn thiếu là nội dung không trùng nhau." data-en="<b>Fix:</b> normalise headings to a sequential H1&#8594;H2&#8594;H3; add a 3–5 question FAQ block + <code>FAQPage</code> to the 13 articles — the process exists on the other 43 and has just been used successfully on three consecutive days, it only needs applying backwards; <b>noindex</b> <code>/login</code> and <code>/start-interactive</code> and drop <code>/start-interactive</code> from the sitemap; write <b>150–200 words of page-specific copy</b> for each project page (context, scope of work, principal materials) — the new footer has covered the boilerplate, what is missing is non-duplicate content."></p>
+  </div>
+
+  <div class="ins p2">
+    <div class="prio t" data-vi="Roadmap · Next steps ưu tiên" data-en="Roadmap · Prioritised next steps"></div>
+    <h4 class="t" data-vi="Thứ tự việc cần làm sau crawl 12/08" data-en="Action order after the 12 Aug crawl"></h4>
+    <p class="t" data-vi="<b>Thay đổi so 11/08:</b> thứ tự #1 và #2 giữ nguyên; #3 (link về trang chủ) chuyển từ &quot;phát hiện mới&quot; sang &quot;chờ xác nhận, nhiều khả năng là chủ đích&quot;; và có thêm một hạng mục theo dõi mới ở #9 về tốc độ. <b>1.</b> Deploy 7 <code>alt</code> trang chủ + 15 <code>alt</code> trang dự án + bật <code>loading=&quot;lazy&quot;</code> — <b>đã trễ 13 ngày</b>, ~30 phút, đưa On-page 76 &#8594; ~85 và Health lên ~89,6. Đội ngũ vừa deploy vào đúng lớp component dùng chung hôm nay, nên <b>không còn lý do kỹ thuật để hoãn</b>. <b>2.</b> Sửa lỗi nhân bản JSON-LD — <b>việc P1 duy nhất</b>, sang ngày thứ 10; nay đã có manh mối cụ thể: <code>Article</code> và <code>BreadcrumbList</code> lặp đúng <b>15 lần</b> trong khi <code>BlogPosting</code>/<code>FAQPage</code> chỉ 1 lần, nên hãy soi component cấp section chứ không phải layout gốc. Sửa xong dự kiến đưa Structured Data 87 &#8594; 95+ và giảm 15–25 KB HTML mỗi trang. <b>3.</b> Bọc logo header thành <code>&lt;a href=&quot;/&quot;&gt;</code> và thêm mục <b>Home</b> vào footer mới — hoặc xác nhận đây là quyết định thiết kế để đóng mục này lại. <b>4.</b> Thêm <code>FAQPage</code> cho 13 bài còn thiếu — nhận diện nhanh bằng cột JSON-LD = 31 trong bảng dưới. <b>5.</b> Viết nội dung riêng 150–200 từ cho 6 trang dự án và thêm <code>ImageObject</code> cho ảnh gallery — footer mới đã nâng chúng lên 225–241 từ nhưng phần thêm là boilerplate trùng nhau. <b>6.</b> Chuẩn hóa heading tuần tự (bỏ nhảy 2&#8594;4 ở 75 trang và 1&#8594;3 ở 8 trang). <b>7.</b> Phân trang <code>/articles</code> 12–16 bài/trang — hiện đã <b>56 bài</b>, HTML thô của listing đã lên <b>963 KB</b> và tăng một bài mỗi ngày suốt ba ngày, nên đây bắt đầu là vấn đề thật chứ không còn là dự phòng. <b>8.</b> noindex <code>/login</code> &amp; <code>/start-interactive</code>, gỡ <code>/start-interactive</code> khỏi sitemap. <b>9. Theo dõi (mới):</b> TTFB toàn site tăng từ 592 lên <b>697 ms</b> và trang chủ xấu đi 1,03 &#8594; <b>1,44s</b> — nếu 13/08 vẫn chậm thì kiểm tra ngay xem cấu hình cache/CDN đã tạo ra ba ngày cải thiện trước đó có bị đổi hoặc bị gỡ không." data-en="<b>Change vs 11 Aug:</b> the #1 and #2 order stands; #3 (the link home) moves from &quot;newly observed&quot; to &quot;awaiting confirmation, probably deliberate&quot;; and a new watch item enters at #9 on speed. <b>1.</b> Ship 7 homepage <code>alt</code>s + 15 project-page <code>alt</code>s + <code>loading=&quot;lazy&quot;</code> — <b>thirteen days late</b>, ~30 minutes, taking On-page 76 &#8594; ~85 and Health to ~89.6. The team deployed into exactly this shared-component layer today, so <b>there is no longer a technical reason to defer it</b>. <b>2.</b> Fix the JSON-LD duplication — <b>the only P1</b>, now on day ten, and there is finally a concrete lead: <code>Article</code> and <code>BreadcrumbList</code> repeat exactly <b>15 times</b> while <code>BlogPosting</code> and <code>FAQPage</code> appear once, so inspect the section-level component rather than the root layout. Fixing it should take Structured Data 87 &#8594; 95+ and cut 15–25 KB of HTML per page. <b>3.</b> Wrap the header logo in <code>&lt;a href=&quot;/&quot;&gt;</code> and add a <b>Home</b> entry to the new footer — or confirm it is a design decision and close the item. <b>4.</b> Add <code>FAQPage</code> to the 13 articles missing it — spot them instantly via the JSON-LD = 31 column in the table below. <b>5.</b> Write 150–200 words of page-specific copy for the 6 project pages and add <code>ImageObject</code> for gallery images — the new footer lifted them to 225–241 words, but that addition is duplicate boilerplate. <b>6.</b> Normalise heading order (the 2&#8594;4 skip on 75 pages and 1&#8594;3 on 8). <b>7.</b> Paginate <code>/articles</code> at 12–16 per page — it is at <b>56</b> articles, the listing&#39;s raw HTML has reached <b>963 KB</b> and it has grown by one on each of the last three days, so this is becoming a real problem rather than a contingency. <b>8.</b> noindex <code>/login</code> &amp; <code>/start-interactive</code>, drop <code>/start-interactive</code> from the sitemap. <b>9. Watch (new):</b> site-wide TTFB rose from 592 to <b>697 ms</b> and the homepage regressed 1.03 &#8594; <b>1.44s</b> — if 13 Aug is slow again, check immediately whether the cache or CDN configuration behind the previous three days of gains has been changed or reverted."></p>
+  </div>
+
+  <!-- Response time chart -->
+  <h2 class="sec t" data-vi="TTFB đo thật — 79 trang crawl trực tiếp (ms)" data-en="Measured TTFB — 79 directly crawled pages (ms)"></h2>
+  <div class="card" id="rtChart"></div>
+
+  <!-- Detail table -->
+  <h2 class="sec"><span class="t" data-vi="Chi tiết từng trang " data-en="Per-page detail "></span><span style="font-size:12px;color:var(--muted);font-weight:400" class="t" data-vi="(bấm tiêu đề cột để sắp xếp)" data-en="(click a column header to sort)"></span></h2>
+  <div style="margin:0 0 12px">
+    <button class="filter-btn on" data-f="all"><span class="t" data-vi="Tất cả (79)" data-en="All (79)"></span></button>
+    <button class="filter-btn" data-f="core"><span class="t" data-vi="Trang gốc (17)" data-en="Core pages (17)"></span></button>
+    <button class="filter-btn" data-f="art"><span class="t" data-vi="Bài viết (56)" data-en="Articles (56)"></span></button>
+    <button class="filter-btn" data-f="proj"><span class="t" data-vi="Dự án (6)" data-en="Projects (6)"></span></button>
+  </div>
+  <div class="tbl-scroll">
+    <table id="pt">
+      <thead><tr>
+        <th data-k="url" data-t="s">URL</th>
+        <th data-k="status" data-t="n" class="num t" data-vi="Status" data-en="Status"></th>
+        <th data-k="rt" data-t="n" class="num t" data-vi="TTFB (ms)" data-en="TTFB (ms)"></th>
+        <th data-k="words" data-t="n" class="num t" data-vi="Số từ" data-en="Words"></th>
+        <th data-k="schema" data-t="n" class="num t" data-vi="JSON-LD" data-en="JSON-LD"></th>
+        <th data-k="links" data-t="n" class="num t" data-vi="Internal links" data-en="Internal links"></th>
+        <th data-k="sm" data-t="n" class="t" data-vi="Sitemap" data-en="Sitemap"></th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div class="foot t" data-vi="Crawl trực tiếp qua Chrome (fetch same-origin, <b>đo tuần tự từng URL</b>) lúc 12/08/2026. <b>Số đo thật:</b> TTFB, KB, status, số H1, schema (script JSON-LD), title/meta/canonical, số từ (đã loại script/style/noscript), internal link duy nhất. Quét <b>79 trang</b>: 17 trang gốc, toàn bộ 56 bài <code>/articles</code>, 6 trang <code>/projects/*</code>. Tất cả trả 200, 0 timeout. <b>Lưu ý cột TTFB:</b> lấy <i>giá trị tốt nhất của hai lần quét tuần tự</i> để loại nhiễu mạng — <b>cùng phương pháp với báo cáo 11/08</b>, nên mức tăng hôm nay là thay đổi thật của site chứ không phải đổi cách đo. Quét song song cho số cao gấp 6–8 lần do tranh băng thông và <b>không</b> được dùng ở đây. <b>Lưu ý cột Số từ:</b> con số hôm nay cao hơn 11/08 khoảng 55–130 từ ở <b>hầu hết mọi trang</b> vì <b>footer vừa được mở rộng nội dung trên toàn site</b> — đây là nội dung thật (đã đối chứng bằng ba cách xử lý HTML entity, chỉ chênh 1–5 từ), nhưng là <b>boilerplate dùng chung</b> nên đừng đọc nó như nội dung riêng của trang. <b>Lưu ý cột JSON-LD:</b> đây là <i>số khối script</i> trong HTML thô — các khối này vẫn bị lặp (trang gốc và trang dự án 14 khối/1 payload, trang chủ 24/2, <code>/articles</code> 22/1, bài viết 32/4), nên số schema thật chỉ bằng khoảng 1/9 giá trị hiển thị (xem P1). <b>Mẹo đọc bảng:</b> bài viết hiển thị <b>31</b> thay vì 32 chính là 13 bài chưa có <code>FAQPage</code>. Cột Internal links loại các href tài sản (4 icon <code>.svg</code> + 2 file <code>/_next/*</code>), cùng quy tắc với 11/08 nên so sánh trực tiếp được. Cột Sitemap: chỉ <code>/login</code> nằm ngoài sitemap (đúng)." data-en="Live Chrome crawl (same-origin fetch, <b>each URL measured sequentially</b>) on 12 Aug 2026. <b>Real measurements:</b> TTFB, KB, status, H1 count, schema (JSON-LD scripts), title/meta/canonical, word count (scripts, styles and noscript stripped), unique internal links. This run covered <b>79 pages</b>: 17 core pages, all 56 <code>/articles</code> and 6 <code>/projects/*</code> pages. All returned 200 with 0 timeouts. <b>Note on the TTFB column:</b> it takes the <i>better of two sequential passes</i> to suppress network jitter — <b>the same method as the 11 Aug report</b>, so today&#39;s rise is a real change in the site rather than a change in measurement. A parallel pass reports figures 6–8&#215; higher through bandwidth contention and is <b>not</b> used here. <b>Note on the Words column:</b> today&#39;s figures run about 55–130 words above 11 Aug on <b>almost every page</b> because <b>the footer has just been expanded site-wide</b> — that is real content (cross-checked with three different HTML-entity handling rules, which differ by only 1–5 words), but it is <b>shared boilerplate</b>, so do not read it as page-specific substance. <b>Note on the JSON-LD column:</b> it counts <i>script blocks</i> in the raw HTML — those blocks are still duplicated (core and project pages 14 blocks / 1 payload, homepage 24 / 2, <code>/articles</code> 22 / 1, articles 32 / 4), so the true schema count is roughly one ninth of the displayed value (see P1). <b>Reading tip:</b> the articles showing <b>31</b> rather than 32 are precisely the 13 without <code>FAQPage</code>. The Internal links column excludes asset hrefs (4 <code>.svg</code> icons + 2 <code>/_next/*</code> files), the same rule as 11 Aug, so it is directly comparable. Sitemap column: only <code>/login</code> sits outside the sitemap (correct)."></div>
+</div>
+
+<script>
+const CORE = [
+["/",1435,1620,24,22,1],
+["/about",620,449,14,16,1],
+["/studio",1196,654,14,16,1],
+["/prestige",903,403,14,16,1],
+["/model",923,373,14,16,1],
+["/interiors",927,371,14,16,1],
+["/modules",765,248,14,16,1],
+["/projects",524,261,14,16,1],
+["/suppliers",445,465,14,16,1],
+["/apply",442,531,14,16,1],
+["/articles",1014,1427,22,72,1],
+["/contact",802,252,14,18,1],
+["/faq",608,1405,15,16,1],
+["/start-interactive",390,62,0,0,1],
+["/login",350,32,0,0,0],
+["/privacy-policy",540,904,15,16,1],
+["/terms-of-service",572,901,15,16,1]
+];
+const ART = [
+["timber-flooring-composite-decking",1120,2837,32,21],
+["bathroom-remodel-cost-australia",820,3472,32,22],
+["kitchen-renovation-cost-melbourne",571,2536,32,21],
+["interior-finishes",620,2938,32,22],
+["project-251-visualisation-overview",536,1653,32,21],
+["luxury-home-builders-sydney",563,1681,32,22],
+["custom-home-builders-sydney",546,1715,32,22],
+["3d-rendering-adelaide",792,2730,32,22],
+["3d-rendering-perth",802,3116,32,21],
+["3d-rendering-brisbane",845,2617,32,22],
+["3d-rendering-sydney",927,2626,32,22],
+["architectural-rendering-melbourne-pre-construction-planning",909,2085,32,23],
+["photorealistic-rendering-melbourne-developers",755,1797,32,22],
+["3d-floor-plan-melbourne-home-design-clarity",768,1929,32,22],
+["custom-home-builders-melbourne-3d-visualisation",591,2023,32,23],
+["3d-rendering-company-melbourne",651,2159,32,22],
+["3d-rendering-melbourne-pre-construction-planning",612,1925,32,23],
+["custom-home-builders-melbourne-pre-build-clarity",600,1930,32,22],
+["luxury-home-builders-melbourne-vr-bim",591,1992,32,21],
+["pre-construction-visualisation-construction-readiness",620,1972,32,21],
+["architectural-visualisation-melbourne-project-decisions",797,2064,32,23],
+["house-renovation-3d-design-melbourne",656,2341,32,19],
+["how-3d-coordination-reduces-design-conflicts-before-construction",662,2350,31,19],
+["how-quality-management-in-projects-improves-project-delivery",643,2471,32,19],
+["how-a-construction-program-reduces-delays-and-design-conflicts",712,2577,32,21],
+["project-management-construction-for-luxury-residential-projects",927,2256,32,21],
+["bim-australia-9-implementation-mistakes",929,2826,32,21],
+["choosing-the-best-home-builder",709,3006,32,19],
+["project-controls-for-luxury-residential-construction",635,2537,32,21],
+["project-cost-management-using-bim-and-digital-twins",678,2638,32,21],
+["custom-home-builders-vs-project-builders",692,2825,32,19],
+["how-to-identify-quality-home-builders",663,2294,32,19],
+["the-best-home-builders-adelaide",610,2059,31,21],
+["brisbane-custom-home-builders-checklist-for-clients",819,2275,31,21],
+["bim-3d-4d-5d-explained",634,2356,31,21],
+["custom-built-homes-melbourne-checklist",999,1785,31,21],
+["how-to-choose-custom-home-builders-in-south-australia",589,2217,31,19],
+["best-practices-for-project-and-quality-management-in-2026",655,2294,31,21],
+["construction-program-management-software",723,1997,31,21],
+["program-for-construction-estimates-explained",707,2024,31,21],
+["what-is-bim-3d-modeling",586,1528,31,21],
+["project-management-and-cost-control",756,2471,31,21],
+["bim-3d-from-design-to-site-in-2026",799,3013,31,21],
+["duplex-house-design-in-australia",773,2229,31,21],
+["3d-house-design-guide",752,2128,32,21],
+["modern-house-design-2026-10-trends-shaping-homes",738,1787,32,21],
+["contemporary-houses-a-practical-guide",635,1476,32,21],
+["how-3d-configurators-increase-buyer-commitment",582,1117,32,21],
+["the-risk-of-cheap-architectural-renders",797,1502,32,21],
+["custom-home-visualisation-timeline",633,2584,32,21],
+["vr-vs-360-in-australian-property-decisions",614,2156,32,21],
+["bim-for-architects-australia-in-custom-home-design",623,2291,32,21],
+["6-benefits-of-using-vr-technology",636,2223,32,21],
+["virtual-reality-home-walkthrough",600,1560,32,21],
+["step-inside-6-home-design-trends-shaping-australia-in-2026",594,1544,32,21],
+["virtual-reality-in-australia-home-design",581,1436,32,21]
+];
+const PROJ = [
+["/projects/251-station-st",526,227,14,16],
+["/projects/20-head-street",530,230,14,16],
+["/projects/85-commodore-drive-surfers-paradise",538,239,14,16],
+["/projects/813-clarendon-street",553,234,14,16],
+["/projects/31-mcilwain-drive",535,225,14,16],
+["/projects/nagambie-project",526,241,14,16]
+];
+const PAGES = [];
+CORE.forEach(c=>PAGES.push({url:c[0],status:200,rt:c[1],words:c[2],schema:c[3],links:c[4],sm:c[5],grp:"core"}));
+ART.forEach(a=>PAGES.push({url:"/articles/"+a[0],status:200,rt:a[1],words:a[2],schema:a[3],links:a[4],sm:1,grp:"art"}));
+PROJ.forEach(p=>PAGES.push({url:p[0],status:200,rt:p[1],words:p[2],schema:p[3],links:p[4],sm:1,grp:"proj"}));
+
+let LANG = 'vi';
+
+function applyLang(){
+  document.querySelectorAll('.t').forEach(e=>{
+    const v = e.dataset[LANG];
+    if(v!==undefined) e.innerHTML = v;
+  });
+  document.querySelectorAll('.tsvg').forEach(e=>{
+    const v = e.dataset[LANG];
+    if(v!==undefined) e.textContent = v;
+  });
+}
+
+function setLang(l){
+  LANG = l;
+  document.documentElement.lang = l;
+  document.getElementById('btnVI').classList.toggle('active', l==='vi');
+  document.getElementById('btnEN').classList.toggle('active', l==='en');
+  applyLang();
+  render();
+  if(typeof pkRender==='function' && PK_SNAPS.length) pkRender();
+}
+
+function renderRt(){
+  const loaded = [...PAGES].sort((a,b)=>b.rt-a.rt);
+  const max = 1435;
+  const col = ms => ms<1000?'var(--green)':ms<3000?'var(--accent)':ms<6000?'var(--amber)':'var(--red)';
+  const loc = LANG==='vi'?'vi-VN':'en-US';
+  let h='';
+  loaded.forEach(p=>{
+    const w=Math.max(2,(p.rt/max*100)).toFixed(1);
+    h+=`<div class="rt-row"><span class="name" title="${p.url}">${p.url}</span>
+      <div class="rt-track"><div class="rt-fill" style="width:${w}%;background:${col(p.rt)}"></div></div>
+      <span class="ms" style="color:${col(p.rt)}">${p.rt.toLocaleString(loc)}</span></div>`;
+  });
+  document.getElementById('rtChart').innerHTML=h;
+}
+
+const tbody=document.querySelector('#pt tbody');
+let sortK='rt', sortDir=1, filt='all';
+function render(){
+  renderRt();
+  const loc = LANG==='vi'?'vi-VN':'en-US';
+  let rows=[...PAGES];
+  if(filt!=='all')rows=rows.filter(p=>p.grp===filt);
+  rows.sort((a,b)=>{
+    let x=a[sortK],y=b[sortK];
+    if(typeof x==='string'){return sortDir*x.localeCompare(y);}
+    return sortDir*(x-y);
+  });
+  tbody.innerHTML=rows.map(p=>{
+    const st='<span class="badge b200">200</span>';
+    const sc=p.schema>0?`<span class="yes">${p.schema}</span>`:'<span class="no">0</span>';
+    const sm=p.sm?'<span class="yes">✓</span>':'<span class="no">✗</span>';
+    const rtc=p.rt<1000?'var(--green)':p.rt<3000?'var(--accent-dk)':p.rt<6000?'var(--amber)':'var(--red)';
+    return `<tr>
+      <td style="max-width:340px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${p.url}">${p.url}</td>
+      <td class="num">${st}</td>
+      <td class="num" style="color:${rtc};font-weight:700">${p.rt.toLocaleString(loc)}</td>
+      <td class="num">${p.words}</td>
+      <td class="num">${sc}</td>
+      <td class="num">${p.links}</td>
+      <td>${sm}</td></tr>`;
+  }).join('');
+}
+document.querySelectorAll('#pt th').forEach(th=>{
+  th.addEventListener('click',()=>{
+    const k=th.dataset.k;
+    if(sortK===k)sortDir*=-1;else{sortK=k;sortDir=1;}
+    render();
+  });
+});
+document.querySelectorAll('.filter-btn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');filt=b.dataset.f;render();
+  });
+});
+
+/* ================= date picker v2 (sample-matched) ================= */
+const PK_BASE  = '../';
+const PK_TODAY = '2026-08-12';
+let PK_SNAPS = [], PK_MAP = {}, PK_VIEW = null;
+let PK_SEL = {s:PK_TODAY, e:PK_TODAY}, PK_DRAFT = {s:PK_TODAY, e:PK_TODAY}, PK_PENDING = false, PK_PRESET = null;
+
+const PK_T = {
+  vi:{day:'Ngày',range:'Khoảng',now:d=>`Đang xem báo cáo ngày ${d} (mới nhất)`,
+      viewing:d=>`Đang xem báo cáo ngày ${d}`,
+      trend:(a,b)=>`Đang xem xu hướng ${a} → ${b}`,
+      quick:'Mở nhanh', today:'mới nhất',
+      months:['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'],
+      dow:['CN','T2','T3','T4','T5','T6','T7'],
+      saved:n=>`${n} ngày đã lưu trong khoảng này · ngày theo giờ Việt Nam (Asia/Ho_Chi_Minh), là giờ lúc quét`,
+      noRep:'Ngày này chưa quét — không có báo cáo riêng để mở.',
+      trendTitle:(a,b)=>`Xu hướng Health Score · ${a} → ${b}`,
+      open:'mở'},
+  en:{day:'Day',range:'Range',now:d=>`Viewing the report for ${d} (latest)`,
+      viewing:d=>`Viewing the report for ${d}`,
+      trend:(a,b)=>`Viewing the trend ${a} → ${b}`,
+      quick:'Quick open', today:'latest',
+      months:['January','February','March','April','May','June','July','August','September','October','November','December'],
+      dow:['Su','Mo','Tu','We','Th','Fr','Sa'],
+      saved:n=>`${n} stored day(s) in this range · dates in Vietnam time (Asia/Ho_Chi_Minh), the time of the crawl`,
+      noRep:'This day was not crawled — there is no separate report to open.',
+      trendTitle:(a,b)=>`Health Score trend · ${a} → ${b}`,
+      open:'open'}
+};
+const pkL = () => PK_T[LANG];
+
+function pkISO(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function pkD(iso){ const [y,m,d]=iso.split('-').map(Number); return new Date(y,m-1,d); }
+function pkFmt(iso){ const [y,m,d]=iso.split('-'); return LANG==='vi'?`${d}/${m}/${y}`:`${d} ${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+m-1]} ${y}`; }
+function pkAdd(iso,n){ const d=pkD(iso); d.setDate(d.getDate()+n); return pkISO(d); }
+function pkIn(iso,a,b){ return iso>=a && iso<=b; }
+function pkCount(a,b){ return PK_SNAPS.filter(s=>pkIn(s.date,a,b)).length; }
+
+function pkPresets(){
+  const T=PK_TODAY, d=pkD(T);
+  const monStart=(()=>{const x=pkD(T); const w=(x.getDay()+6)%7; x.setDate(x.getDate()-w); return pkISO(x);})();
+  const lastMonStart=pkAdd(monStart,-7), lastMonEnd=pkAdd(monStart,-1);
+  const mStart=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-01`;
+  const pm=new Date(d.getFullYear(),d.getMonth()-1,1);
+  const pmStart=pkISO(pm), pmEnd=pkISO(new Date(d.getFullYear(),d.getMonth(),0));
+  const first=PK_SNAPS.length?PK_SNAPS[0].date:T;
+  return [
+    {k:'y',   vi:'Hôm qua',   en:'Yesterday',   s:pkAdd(T,-1), e:pkAdd(T,-1)},
+    {k:'7',   vi:'7 ngày qua', en:'Last 7 days',  s:pkAdd(T,-6), e:T},
+    {k:'28',  vi:'28 ngày qua',en:'Last 28 days', s:pkAdd(T,-27),e:T},
+    {k:'90',  vi:'90 ngày qua',en:'Last 90 days', s:pkAdd(T,-89),e:T},
+    {k:'tw',  vi:'Tuần này',  en:'This week',   s:monStart, e:T},
+    {k:'tm',  vi:'Tháng này', en:'This month',  s:mStart, e:T},
+    {k:'ty',  vi:'Năm nay',   en:'This year',   s:`${d.getFullYear()}-01-01`, e:T},
+    {k:'lw',  vi:'Tuần trước',en:'Last week',   s:lastMonStart, e:lastMonEnd},
+    {k:'lm',  vi:'Tháng trước',en:'Last month', s:pmStart, e:pmEnd},
+    {k:'all', vi:'Toàn bộ dữ liệu đã lưu', en:'All stored data', s:first, e:T}
+  ];
+}
+
+function pkRenderPresets(){
+  const box=document.getElementById('dpPresets'); if(!box) return;
+  box.innerHTML = pkPresets().map(p=>{
+    const n=pkCount(p.s,p.e), off=n===0;
+    const on=PK_PRESET===p.k;
+    return `<button type="button" class="dp-preset${on?' on':''}" data-k="${p.k}" ${off?'disabled':''}>
+      <span class="rd"></span><span class="nm">${LANG==='vi'?p.vi:p.en}</span><span class="ct">${n}</span></button>`;
+  }).join('');
+  box.querySelectorAll('.dp-preset').forEach(b=>b.addEventListener('click',()=>{
+    const p=pkPresets().find(x=>x.k===b.dataset.k);
+    PK_PRESET=p.k; PK_DRAFT={s:p.s,e:p.e}; PK_PENDING=false;
+    PK_VIEW=pkD(p.e); PK_VIEW.setDate(1); PK_VIEW.setMonth(PK_VIEW.getMonth()-1);
+    pkRenderCal(); pkRenderPresets();
+  }));
+}
+
+function pkMonth(base,off){
+  const d=new Date(base.getFullYear(), base.getMonth()+off, 1);
+  const y=d.getFullYear(), m=d.getMonth();
+  const start=new Date(y,m,1).getDay(); // 0=Sun
+  const days=new Date(y,m+1,0).getDate();
+  let cells=pkL().dow.map(x=>`<div class="dp-dow">${x}</div>`).join('');
+  for(let i=0;i<start;i++) cells+='<button class="dp-d blank" disabled></button>';
+  for(let dd=1;dd<=days;dd++){
+    const iso=`${y}-${String(m+1).padStart(2,'0')}-${String(dd).padStart(2,'0')}`;
+    const has=!!PK_MAP[iso];
+    const sel=iso===PK_DRAFT.s||iso===PK_DRAFT.e;
+    const inr=pkIn(iso,PK_DRAFT.s,PK_DRAFT.e)&&!sel;
+    const edge=iso===PK_DRAFT.s&&PK_DRAFT.s!==PK_DRAFT.e?' edge-l':(iso===PK_DRAFT.e&&PK_DRAFT.s!==PK_DRAFT.e?' edge-r':'');
+    cells+=`<button type="button" class="dp-d${has?' has':''}${inr?' inrange':''}${sel?' sel'+edge:''}" data-iso="${iso}">${dd}${has?'<span class="dot"></span>':''}</button>`;
+  }
+  return {title:`${pkL().months[m]} ${y}`, html:`<div class="dp-grid">${cells}</div>`};
+}
+
+function pkRenderCal(){
+  if(!PK_VIEW){ PK_VIEW=pkD(PK_SEL.e); PK_VIEW.setDate(1); PK_VIEW.setMonth(PK_VIEW.getMonth()-1); }
+  const a=pkMonth(PK_VIEW,0), b=pkMonth(PK_VIEW,1);
+  document.getElementById('dpM1').textContent=a.title;
+  document.getElementById('dpM2').textContent=b.title;
+  document.getElementById('dpG1').innerHTML=a.html;
+  document.getElementById('dpG2').innerHTML=b.html;
+  document.querySelectorAll('#dpG1 .dp-d,#dpG2 .dp-d').forEach(el=>{
+    if(el.classList.contains('blank')) return;
+    el.addEventListener('click',()=>{
+      const iso=el.dataset.iso;
+      if(!PK_PENDING){ PK_DRAFT={s:iso,e:iso}; PK_PENDING=true; }
+      else { PK_DRAFT = iso<PK_DRAFT.s ? {s:iso,e:PK_DRAFT.s} : {s:PK_DRAFT.s,e:iso}; PK_PENDING=false; }
+      PK_PRESET=null; pkRenderCal(); pkRenderPresets();
+    });
+  });
+  const single=PK_DRAFT.s===PK_DRAFT.e;
+  document.getElementById('dpSelD').textContent = single?pkFmt(PK_DRAFT.s):`${pkFmt(PK_DRAFT.s)} → ${pkFmt(PK_DRAFT.e)}`;
+  const n=pkCount(PK_DRAFT.s,PK_DRAFT.e);
+  document.getElementById('dpSelInfo').textContent = n===0 ? pkL().noRep : pkL().saved(n);
+}
+
+function pkRenderQuick(){
+  const box=document.getElementById('dpQuick'); if(!box) return;
+  const chips=PK_SNAPS.slice().reverse().map(s=>{
+    const cur=s.date===PK_SEL.s&&PK_SEL.s===PK_SEL.e;
+    const lb=LANG==='vi'?(s.label_vi||''):(s.label_en||'');
+    return `<button type="button" class="qchip${cur?' cur':''}" data-iso="${s.date}">
+      <span class="qd">${pkFmt(s.date)}</span><span class="ql">${lb}</span></button>`;
+  }).join('');
+  box.innerHTML=`<span class="pk-quick-lbl">${pkL().quick}</span>`+chips;
+  box.querySelectorAll('.qchip').forEach(b=>b.addEventListener('click',()=>{
+    if(b.classList.contains('cur')) return;
+    pkGo(b.dataset.iso,b.dataset.iso);
+  }));
+}
+
+function pkRenderNow(){
+  const el=document.getElementById('dpNow'); if(!el) return;
+  const single=PK_SEL.s===PK_SEL.e;
+  el.textContent = !single ? pkL().trend(pkFmt(PK_SEL.s),pkFmt(PK_SEL.e))
+    : (PK_SEL.s===PK_TODAY ? pkL().now(pkFmt(PK_SEL.s)) : pkL().viewing(pkFmt(PK_SEL.s)));
+  document.getElementById('dpLabel').textContent = single
+    ? `${pkL().day} ${pkFmt(PK_SEL.s)}` : `${pkL().range} ${pkFmt(PK_SEL.s)} → ${pkFmt(PK_SEL.e)}`;
+}
+
+function pkGo(s,e){
+  if(s===e){
+    const snap=PK_MAP[s];
+    if(snap && s!==PK_TODAY){ location.href=PK_BASE+snap.report; return; }
+    PK_SEL={s,e}; PK_DRAFT={s,e}; PK_PRESET=null;
+    document.getElementById('dpTrend').classList.remove('on');
+    pkRenderNow(); pkRenderQuick(); pkRenderCal();
+    return;
+  }
+  PK_SEL={s,e}; pkRenderNow(); pkRenderQuick(); pkTrend(s,e);
+}
+
+function pkTrend(s,e){
+  const box=document.getElementById('dpTrend');
+  const days=PK_SNAPS.filter(x=>pkIn(x.date,s,e));
+  if(!days.length){ box.classList.remove('on'); box.innerHTML=''; return; }
+  Promise.all(days.map(d=>fetch(PK_BASE+d.data,{cache:'no-store'}).then(r=>r.json()).catch(()=>null)))
+   .then(js=>{
+     const rows=js.map((j,i)=>({date:days[i].date, rep:days[i].report, hs:j&&j.health_score, pg:j&&j.pages_measured}))
+                  .filter(r=>r.hs!=null);
+     box.innerHTML=`<h4>${pkL().trendTitle(pkFmt(s),pkFmt(e))}</h4>`+rows.map(r=>`
+       <div class="trd"><span class="tdate">${pkFmt(r.date)}</span>
+         <span class="ttrack"><span class="tfill" style="width:${r.hs}%"></span></span>
+         <span class="tval">${r.hs}</span>
+         <span class="tlink" data-h="${r.rep}">${pkL().open} &#8594;</span></div>`).join('');
+     box.classList.add('on');
+     box.querySelectorAll('.tlink').forEach(a=>a.addEventListener('click',()=>{
+       const h=a.dataset.h; if(h && h!=='index.html') location.href=PK_BASE+h;
+     }));
+   });
+}
+
+function pkRender(){ pkRenderPresets(); pkRenderCal(); pkRenderQuick(); pkRenderNow(); }
+
+(function pkInit(){
+  const btn=document.getElementById('dpBtn'), pane=document.getElementById('dpPane');
+  if(!btn) return;
+  btn.addEventListener('click',e=>{
+    e.stopPropagation();
+    const open=pane.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    if(open){ PK_DRAFT={...PK_SEL}; PK_PENDING=false; pkRenderCal(); pkRenderPresets(); }
+  });
+  document.addEventListener('click',e=>{
+    if(!pane.contains(e.target)&&e.target!==btn&&!btn.contains(e.target)){
+      pane.classList.remove('open'); btn.setAttribute('aria-expanded','false');
+    }
+  });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') pane.classList.remove('open'); });
+  document.getElementById('dpPrev').addEventListener('click',()=>{ PK_VIEW.setMonth(PK_VIEW.getMonth()-1); pkRenderCal(); });
+  document.getElementById('dpNext').addEventListener('click',()=>{ PK_VIEW.setMonth(PK_VIEW.getMonth()+1); pkRenderCal(); });
+  document.getElementById('dpCancel').addEventListener('click',()=>{
+    PK_DRAFT={...PK_SEL}; PK_PENDING=false; PK_PRESET=null;
+    pane.classList.remove('open'); btn.setAttribute('aria-expanded','false'); pkRenderCal();
+  });
+  document.getElementById('dpApply').addEventListener('click',()=>{
+    pane.classList.remove('open'); btn.setAttribute('aria-expanded','false');
+    pkGo(PK_DRAFT.s,PK_DRAFT.e);
+  });
+  fetch(PK_BASE+'data/index.json',{cache:'no-store'}).then(r=>r.json()).then(j=>{
+    PK_SNAPS=(j.snapshots||[]).slice().sort((a,b)=>a.date.localeCompare(b.date));
+    PK_SNAPS.forEach(s=>PK_MAP[s.date]=s);
+    pkRender();
+  }).catch(()=>{
+    PK_SNAPS=[{date:PK_TODAY,report:'index.html',data:'data/'+PK_TODAY+'.json',label_vi:'Bản hiện tại',label_en:'Current report'}];
+    PK_SNAPS.forEach(s=>PK_MAP[s.date]=s); pkRender();
+  });
+})();
+
+setLang('vi');
+</script>
+</body>
+</html>
