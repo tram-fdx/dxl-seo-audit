@@ -1,6 +1,6 @@
 {
   "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
-  "latest": "2026-08-11",
+  "latest": "2026-08-12",
   "report": "technical-seo-audit",
   "site": "dxliving.com",
   "snapshots": [
@@ -80,6 +80,13 @@
       "label_en": "Health 89 · all 55 articles under 1s, second new article, P1 day 9 and P2 day 12 unfixed",
       "label_vi": "Health 89 · toàn bộ 55 bài <1s, bài mới thứ hai, P1 ngày 9 và P2 ngày 12 chưa sửa",
       "report": "archive/2026-08-11.html"
+    },
+    {
+      "data": "data/2026-08-12.json",
+      "date": "2026-08-12",
+      "label_en": "Health 89→88 · TTFB rose site-wide, footer expanded on all pages, third new article",
+      "label_vi": "Health 89→88 · TTFB tăng toàn site, footer mở rộng nội dung mọi trang, bài mới thứ ba",
+      "report": "archive/2026-08-12.html"
     }
   ]
 }
