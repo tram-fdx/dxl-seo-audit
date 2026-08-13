@@ -103,6 +103,32 @@
   @media(max-width:860px){.kpis{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.rt-row .name{width:150px}}
 
   /* ---------- date picker v2 (sample-matched) ---------- */
+  /* collapsible date picker */
+  .pk-toggle{margin-top:24px;width:100%;display:flex;align-items:center;justify-content:space-between;
+    gap:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:16px 20px;cursor:pointer;font-family:inherit;font-size:15px;color:var(--ink);
+    text-align:left;transition:border-color .15s,box-shadow .15s}
+  .pk-toggle:hover{border-color:var(--accent);box-shadow:0 2px 10px rgba(184,147,90,.13)}
+  .pk-toggle .lft{display:flex;align-items:center;gap:11px;min-width:0}
+  .pk-toggle .bar{display:inline-block;width:3px;height:17px;background:var(--accent);border-radius:2px;flex:none}
+  .pk-toggle .cap{font-weight:600}
+  .pk-toggle .sel{font-size:12.5px;color:var(--muted);font-weight:400;white-space:nowrap}
+  .pk-toggle .chev{flex:none;transition:transform .2s;color:var(--muted);font-size:12px}
+  .pk-toggle[aria-expanded="true"] .chev{transform:rotate(180deg)}
+  .pk-wrap[hidden]{display:none}
+  .pk-wrap .pk-card{margin-top:10px}
+
+  /* trend charts */
+  .tr-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:900px){.tr-grid{grid-template-columns:1fr}}
+  .tr-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px 14px}
+  .tr-card h3{margin:0 0 2px;font-size:14.5px;font-weight:700;color:var(--ink)}
+  .tr-card .sub{font-size:12px;color:var(--muted);margin:0 0 12px}
+  .tr-lg{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:11.5px;color:var(--muted)}
+  .tr-lg i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+  .tr-svg{width:100%;height:auto;display:block;overflow:visible}
+  .tr-dot{transition:r .12s}
+  .tr-card:hover .tr-dot{r:3.2}
   .pk-card{margin-top:24px;background:var(--card);border:1px solid var(--line);border-radius:14px;
     padding:18px 20px 16px;box-shadow:0 1px 3px rgba(70,55,30,.05)}
   .pk-title{display:flex;align-items:center;gap:10px;font-size:12.5px;font-weight:800;
@@ -227,7 +253,14 @@
 <div class="wrap">
 
 
-  <!-- date picker v2 -->
+  <!-- date picker v2 (collapsible) -->
+  <button class="pk-toggle" id="pkToggle" type="button" aria-expanded="false" aria-controls="pkWrap" onclick="pkFold()">
+    <span class="lft"><span class="bar"></span>
+      <span class="cap t" data-vi="Chọn ngày để xem báo cáo" data-en="Choose a day to view its report"></span>
+      <span class="sel" id="pkToggleSel"></span></span>
+    <span class="chev">&#9660;</span>
+  </button>
+  <div class="pk-wrap" id="pkWrap" hidden>
   <div class="pk-card">
     <div class="pk-title"><span class="bar"></span><span class="t" data-vi="Chọn ngày để xem báo cáo" data-en="Choose a day to view its report"></span></div>
     <p class="pk-sub t" data-vi="Chọn <b>một ngày</b> rồi bấm <b>Cập nhật</b> để mở đúng bản báo cáo đã lưu của ngày đó. Chọn <b>một khoảng ngày</b> để xem xu hướng trong khoảng. Ngày <b>có dấu chấm</b> là ngày đã quét và có báo cáo lưu; ngày làm mờ vẫn chọn được làm đầu/cuối khoảng, nhưng không có báo cáo riêng để mở." data-en="Pick <b>a single day</b> and press <b>Update</b> to open that day's saved report. Pick <b>a date range</b> to see the trend across it. Days <b>with a dot</b> were crawled and have a stored report; faded days can still anchor a range but have no report of their own."></p>
@@ -260,6 +293,8 @@
     </div>
     <div class="pk-quick" id="dpQuick"></div>
     <div class="pk-trend" id="dpTrend"></div>
+  </div>
+
   </div>
 
   <!-- KPIs -->
@@ -331,6 +366,32 @@
       </div>
     </div>
   </div>
+
+  <!-- Trend charts -->
+  <h2 class="sec"><span class="t" data-vi="Biểu đồ thay đổi theo ngày " data-en="Metric trends by day "></span><span style="font-size:12px;color:var(--muted);font-weight:400" class="t" data-vi="(13 lần quét, 27/07 &#8594; 13/08/2026 · di chuột lên điểm để xem số)" data-en="(13 crawls, 27 Jul &#8594; 13 Aug 2026 · hover a point for its value)"></span></h2>
+  <div class="tr-grid">
+    <div class="tr-card">
+      <h3 class="t" data-vi="Health Score tổng" data-en="Overall Health Score"></h3>
+      <p class="sub t" data-vi="Thang 0–100 · trục dọc cắt từ 70 để thấy rõ biến động" data-en="0–100 scale · axis starts at 70 to make the movement visible"></p>
+      <div id="trHealth"></div>
+    </div>
+    <div class="tr-card">
+      <h3 class="t" data-vi="5 điểm thành phần" data-en="The 5 sub-scores"></h3>
+      <p class="sub t" data-vi="Cho thấy điểm nào đang kéo tổng điểm lên hoặc xuống" data-en="Shows which sub-score is pulling the total up or down"></p>
+      <div id="trSub"></div>
+    </div>
+    <div class="tr-card">
+      <h3 class="t" data-vi="TTFB trung bình theo nhóm trang (ms)" data-en="Average TTFB by page group (ms)"></h3>
+      <p class="sub t" data-vi="Từ 31/07 — ngày đầu tiên đo TTFB theo cùng phương pháp" data-en="From 31 Jul, the first day TTFB was measured with the current method"></p>
+      <div id="trTtfb"></div>
+    </div>
+    <div class="tr-card">
+      <h3 class="t" data-vi="Quy mô site &amp; nội dung" data-en="Site size &amp; content"></h3>
+      <p class="sub t" data-vi="Số trang crawl được và số từ trung bình mỗi bài viết" data-en="Pages crawled and average words per article"></p>
+      <div id="trSize"></div>
+    </div>
+  </div>
+  <div class="foot t" data-vi="<b>Cách đọc:</b> mỗi điểm là một lần quét đầy đủ; các ngày không quét (01–02/08, 06/08, 08–09/08) <b>không</b> được nội suy mà chỉ nối thẳng giữa hai lần quét gần nhau, nên đoạn dốc dài không có nghĩa là thay đổi diễn ra đột ngột. <b>Ba mốc đáng chú ý:</b> (1) <b>07/08</b> Crawlability nhảy 88 &#8594; <b>96</b> khi listing <code>/articles</code> bắt đầu server-render đủ link bài và 6 trang dự án có schema — đây là bước nhảy lớn nhất trong toàn bộ chuỗi; (2) <b>On-page đứng yên ở 76 suốt từ 31/07 tới nay</b>, đường thẳng tuyệt đối này chính là hai lỗi alt/lazy-load chưa từng được deploy; (3) <b>Content 81 &#8594; 79 hôm nay</b> do footer bị gỡ, kéo số từ trung bình mỗi bài từ 2.214 xuống 2.139. TTFB nhóm nào cũng dao động 500–870 ms và <b>không có xu hướng xấu đi dài hạn</b> — nên đọc theo dải chứ đừng phản ứng với chênh lệch một ngày." data-en="<b>How to read this:</b> each point is one full crawl; days without a crawl (1–2, 6, 8–9 Aug) are <b>not</b> interpolated, the line simply joins the two nearest crawls, so a long slope does not mean the change happened abruptly. <b>Three things worth noting:</b> (1) on <b>07 Aug</b> Crawlability jumped 88 &#8594; <b>96</b> when the <code>/articles</code> listing began server-rendering every article link and the 6 project pages gained schema — the largest single step in the whole series; (2) <b>On-page has been flat at 76 since 31 Jul</b>, and that perfectly straight line is precisely the alt-text and lazy-load work that has never been deployed; (3) <b>Content fell 81 &#8594; 79 today</b> as the footer was removed, taking average words per article from 2,214 to 2,139. Every TTFB group oscillates between roughly 500 and 870 ms with <b>no long-term deterioration</b>, so read the band rather than reacting to a single day."></div>
 
   <!-- Insights -->
   <h2 class="sec t" data-vi="Hướng đi &amp; Insight ưu tiên" data-en="Direction &amp; Priority insights"></h2>
@@ -504,6 +565,117 @@ CORE.forEach(c=>PAGES.push({url:c[0],status:200,rt:c[1],words:c[2],schema:c[3],l
 ART.forEach(a=>PAGES.push({url:"/articles/"+a[0],status:200,rt:a[1],words:a[2],schema:a[3],links:a[4],sm:1,grp:"art"}));
 PROJ.forEach(p=>PAGES.push({url:p[0],status:200,rt:p[1],words:p[2],schema:p[3],links:p[4],sm:1,grp:"proj"}));
 
+/* ---------- trend data: one row per completed crawl ---------- */
+/* [date, health, crawl, perf, schema, onpage, content, pages, ttfbCore, ttfbArt, ttfbProj, artWords] */
+const TREND = [
+["2026-07-27",82,88,88,72,78,78,36,0,0,0,0],
+["2026-07-28",84,90,92,74,78,80,61,0,0,0,0],
+["2026-07-29",84,90,92,74,78,80,61,0,0,0,0],
+["2026-07-30",87,90,93,88,79,80,61,0,0,0,0],
+["2026-07-31",84,89,91,82,76,77,68,745,784,544,2047],
+["2026-08-03",84,89,90,80,76,77,68,813,866,967,2023],
+["2026-08-04",84,89,93,80,76,77,68,702,724,495,2023],
+["2026-08-05",83,88,87,81,76,79,76,807,769,690,2164],
+["2026-08-07",88,96,92,87,76,79,76,864,775,669,2061],
+["2026-08-10",88,96,94,87,76,80,77,714,678,573,2070],
+["2026-08-11",89,96,96,87,76,80,78,630,590,503,2096],
+["2026-08-12",88,96,93,87,76,81,79,733,703,535,2214],
+["2026-08-13",88,96,94,87,76,79,80,713,673,573,2139]
+];
+
+function trFmt(d){const p=d.split('-');return LANG==='vi'?p[2]+'/'+p[1]:p[2]+' '+['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+p[1]-1];}
+
+/* generic multi-series line chart -> inline SVG string */
+function trChart(rows, series, opts){
+  opts = opts || {};
+  const W=520, H=opts.h||210, L=42, R=12, TP=14, BT=30;
+  const iw=W-L-R, ih=H-TP-BT;
+  let vals=[]; series.forEach(s=>rows.forEach(r=>{const v=r[s.i]; if(v!==null&&v!==0||s.zero)vals.push(v);}));
+  let lo = opts.min!==undefined?opts.min:Math.min.apply(null,vals);
+  let hi = opts.max!==undefined?opts.max:Math.max.apply(null,vals);
+  if(hi===lo){hi=lo+1;}
+  const pad=(hi-lo)*0.12; lo=Math.floor(lo-pad); hi=Math.ceil(hi+pad);
+  const X=i=>L+(rows.length<2?iw/2:i*iw/(rows.length-1));
+  const Y=v=>TP+ih-(v-lo)/(hi-lo)*ih;
+  const loc = LANG==='vi'?'vi-VN':'en-US';
+  let g='';
+  /* gridlines + y labels */
+  const TICKS=4;
+  for(let t=0;t<=TICKS;t++){
+    const v=lo+(hi-lo)*t/TICKS, y=Y(v);
+    g+=`<line x1="${L}" y1="${y.toFixed(1)}" x2="${W-R}" y2="${y.toFixed(1)}" stroke="var(--line)" stroke-width="1" ${t?'stroke-dasharray="3 4"':''}/>`;
+    g+=`<text x="${L-7}" y="${(y+3.5).toFixed(1)}" text-anchor="end" font-size="9.5" fill="var(--muted)">${Math.round(v).toLocaleString(loc)}</text>`;
+  }
+  /* x labels: first, last and every other */
+  rows.forEach((r,i)=>{
+    if(i!==0 && i!==rows.length-1 && i%2) return;
+    g+=`<text x="${X(i).toFixed(1)}" y="${H-11}" text-anchor="middle" font-size="9" fill="var(--muted)">${trFmt(r[0])}</text>`;
+  });
+  /* series */
+  series.forEach(s=>{
+    const pts=[];
+    rows.forEach((r,i)=>{const v=r[s.i]; if(v===null||(v===0&&!s.zero))return; pts.push([X(i),Y(v),v,r[0]]);});
+    if(!pts.length)return;
+    const d=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');
+    if(s.area){
+      g+=`<path d="${d} L ${pts[pts.length-1][0].toFixed(1)} ${TP+ih} L ${pts[0][0].toFixed(1)} ${TP+ih} Z" fill="${s.c}" opacity=".10"/>`;
+    }
+    g+=`<path d="${d}" fill="none" stroke="${s.c}" stroke-width="${s.w||2}" stroke-linejoin="round" stroke-linecap="round"/>`;
+    pts.forEach(p=>{
+      g+=`<circle class="tr-dot" cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="${s.w>2?3:2.4}" fill="var(--card)" stroke="${s.c}" stroke-width="1.8"><title>${s.n} · ${trFmt(p[3])}: ${p[2].toLocaleString(loc)}${opts.unit||''}</title></circle>`;
+    });
+    /* value label on the last point */
+    if(s.last!==false){
+      const lp=pts[pts.length-1];
+      g+=`<text x="${(lp[0]+6).toFixed(1)}" y="${(lp[1]-6).toFixed(1)}" font-size="10.5" font-weight="700" fill="${s.c}">${lp[2].toLocaleString(loc)}</text>`;
+    }
+  });
+  const lg=series.map(s=>`<span><i style="background:${s.c}"></i>${s.n}</span>`).join('');
+  return `<svg class="tr-svg" viewBox="0 0 ${W} ${H}" role="img">${g}</svg><div class="tr-lg">${lg}</div>`;
+}
+
+function renderTrend(){
+  const vi = LANG==='vi';
+  const A=document.getElementById('trHealth'); if(!A) return;
+  A.innerHTML = trChart(TREND,[{i:1,n:vi?'Health Score':'Health Score',c:'var(--accent-dk)',w:2.6,area:true}],{min:70,max:92,h:200});
+
+  document.getElementById('trSub').innerHTML = trChart(TREND,[
+    {i:2,n:'Crawlability',c:'#4a8f5b'},
+    {i:3,n:vi?'Performance':'Performance',c:'#b8935a'},
+    {i:4,n:vi?'Structured Data':'Structured Data',c:'#5b7fa6'},
+    {i:5,n:vi?'On-page':'On-page',c:'#c07a4a'},
+    {i:6,n:'Content',c:'#8a6fa8'}],{min:70,max:100,h:230});
+
+  const T2=TREND.filter(r=>r[8]>0);
+  document.getElementById('trTtfb').innerHTML = trChart(T2,[
+    {i:8,n:vi?'Trang gốc':'Core pages',c:'#b8935a'},
+    {i:9,n:vi?'Bài viết':'Articles',c:'#5b7fa6'},
+    {i:10,n:vi?'Trang dự án':'Project pages',c:'#4a8f5b'}],{h:230,unit:' ms'});
+
+  document.getElementById('trSize').innerHTML = trChart(TREND,[
+    {i:7,n:vi?'Trang crawl được':'Pages crawled',c:'#b8935a',w:2.6,area:true}],{h:200});
+  const T3=TREND.filter(r=>r[11]>0);
+  document.getElementById('trSize').innerHTML += trChart(T3,[
+    {i:11,n:vi?'Số từ TB mỗi bài':'Avg words per article',c:'#8a6fa8',w:2.6,area:true}],{h:170});
+}
+
+/* ---------- collapsible date picker ---------- */
+function pkFold(force){
+  const b=document.getElementById('pkToggle'), w=document.getElementById('pkWrap');
+  const open = force!==undefined ? force : b.getAttribute('aria-expanded')!=='true';
+  b.setAttribute('aria-expanded', open?'true':'false');
+  w.hidden = !open;
+  if(!open){ const p=document.getElementById('dpPane'); if(p) p.classList.remove('open'); }
+}
+function pkToggleLabel(){
+  const el=document.getElementById('pkToggleSel'); if(!el) return;
+  const one = PK_SEL.s===PK_SEL.e;
+  const cur = PK_SEL.s===PK_TODAY;
+  el.textContent = LANG==='vi'
+    ? (one ? (cur?'· đang xem bản hôm nay ('+pkFmt(PK_SEL.s)+')':'· đang xem '+pkFmt(PK_SEL.s)) : '· khoảng '+pkFmt(PK_SEL.s)+' – '+pkFmt(PK_SEL.e))
+    : (one ? (cur?'· viewing today ('+pkFmt(PK_SEL.s)+')':'· viewing '+pkFmt(PK_SEL.s)) : '· range '+pkFmt(PK_SEL.s)+' – '+pkFmt(PK_SEL.e));
+}
+
 let LANG = 'vi';
 
 function applyLang(){
@@ -546,6 +718,8 @@ const tbody=document.querySelector('#pt tbody');
 let sortK='rt', sortDir=1, filt='all';
 function render(){
   renderRt();
+  renderTrend();
+  pkToggleLabel();
   const loc = LANG==='vi'?'vi-VN':'en-US';
   let rows=[...PAGES];
   if(filt!=='all')rows=rows.filter(p=>p.grp===filt);
@@ -754,7 +928,7 @@ function pkTrend(s,e){
    });
 }
 
-function pkRender(){ pkRenderPresets(); pkRenderCal(); pkRenderQuick(); pkRenderNow(); }
+function pkRender(){ pkRenderPresets(); pkRenderCal(); pkRenderQuick(); pkRenderNow(); pkToggleLabel(); }
 
 (function pkInit(){
   const btn=document.getElementById('dpBtn'), pane=document.getElementById('dpPane');
