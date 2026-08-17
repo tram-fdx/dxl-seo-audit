@@ -96,13 +96,6 @@
    "label_en": "Health 88 (flat) · the 12 Aug footer was removed again, -7,627 words site-wide"
   },
   {
-   "data": "data/2026-08-14.json",
-   "date": "2026-08-14",
-   "label_en": "Health 89 (best of the series) · the footer is back, +9,987 words, fastest TTFB yet",
-   "label_vi": "Health 89 (cao nhất chuỗi) · footer đã quay lại, +9.987 từ, TTFB nhanh nhất từ trước tới nay",
-   "report": "archive/2026-08-14.html"
-  },
-  {
    "data": "data/2026-08-17.json",
    "date": "2026-08-17",
    "label_en": "Health 89→88 · the footer was removed a second time, -4,290 words; 58th article live",
