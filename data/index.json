@@ -1,6 +1,6 @@
 {
  "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
- "latest": "2026-08-17",
+ "latest": "2026-08-18",
  "report": "technical-seo-audit",
  "site": "dxliving.com",
  "snapshots": [
@@ -89,11 +89,11 @@
    "report": "archive/2026-08-12.html"
   },
   {
-   "data": "data/2026-08-13.json",
    "date": "2026-08-13",
-   "label_en": "Health 88 (flat) · the 12 Aug footer was removed again, -7,627 words site-wide",
+   "report": "archive/2026-08-13.html",
+   "data": "data/2026-08-13.json",
    "label_vi": "Health 88 (đứng yên) · footer thêm hôm 12/08 đã bị gỡ, toàn site -7.627 từ",
-   "report": "archive/2026-08-13.html"
+   "label_en": "Health 88 (flat) · the 12 Aug footer was removed again, -7,627 words site-wide"
   },
   {
    "data": "data/2026-08-14.json",
@@ -108,6 +108,13 @@
    "label_en": "Health 89→88 · the footer was removed a second time, -4,290 words; 58th article live",
    "label_vi": "Health 89→88 · footer bị gỡ lần thứ hai, -4.290 từ; bài thứ 58 lên sóng",
    "report": "archive/2026-08-17.html"
+  },
+  {
+   "data": "data/2026-08-18.json",
+   "date": "2026-08-18",
+   "label_en": "Health 88 held · TTFB 671→761 ms (2nd fall in a row); 59th article live",
+   "label_vi": "Health 88 giữ nguyên · TTFB 671→761 ms (giảm 2 lần liên tiếp); bài thứ 59 lên sóng",
+   "report": "archive/2026-08-18.html"
   }
  ]
 }
