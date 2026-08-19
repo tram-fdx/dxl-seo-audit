@@ -1,6 +1,6 @@
 {
  "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
- "latest": "2026-08-18",
+ "latest": "2026-08-19",
  "report": "technical-seo-audit",
  "site": "dxliving.com",
  "snapshots": [
@@ -115,6 +115,13 @@
    "label_en": "Health 88 held · TTFB 671→761 ms (2nd fall in a row); 59th article live",
    "label_vi": "Health 88 giữ nguyên · TTFB 671→761 ms (giảm 2 lần liên tiếp); bài thứ 59 lên sóng",
    "report": "archive/2026-08-18.html"
+  },
+  {
+   "data": "data/2026-08-19.json",
+   "date": "2026-08-19",
+   "label_en": "Health 88->92 series high · JSON-LD duplication, missing alt and the link home all fixed",
+   "label_vi": "Health 88->92 cao nhất chuỗi · sửa xong nhân bản JSON-LD, thiếu alt và link về trang chủ",
+   "report": "archive/2026-08-19.html"
   }
  ]
 }
