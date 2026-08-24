@@ -1,6 +1,6 @@
 {
  "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
- "latest": "2026-08-21",
+ "latest": "2026-08-24",
  "report": "technical-seo-audit",
  "site": "dxliving.com",
  "snapshots": [
@@ -136,6 +136,13 @@
    "label_vi": "Health 84→86 · tốc độ tốt nhất chuỗi (79/82 trang <1s), sitemap vẫn 16 URL",
    "label_en": "Health 84->86 · fastest of the series (79/82 pages <1s), sitemap still 16 URLs",
    "report": "archive/2026-08-21.html"
+  },
+  {
+   "data": "data/2026-08-24.json",
+   "date": "2026-08-24",
+   "label_vi": "Health 86→93 · cao nhất chuỗi · sitemap sửa xong (16→85 URL)",
+   "label_en": "Health 86->93 · series high · sitemap fixed (16->85 URLs)",
+   "report": "archive/2026-08-24.html"
   }
  ]
 }
