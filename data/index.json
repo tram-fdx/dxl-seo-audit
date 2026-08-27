@@ -1,6 +1,6 @@
 {
  "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
- "latest": "2026-08-26",
+ "latest": "2026-08-27",
  "report": "technical-seo-audit",
  "site": "dxliving.com",
  "snapshots": [
@@ -157,6 +157,13 @@
    "label_en": "Health 94 - series high; both P2s closed, TTFB eased",
    "label_vi": "Health 94 cao nhất chuỗi · đóng cả hai P2, TTFB chậm nhẹ",
    "report": "archive/2026-08-26.html"
+  },
+  {
+   "data": "data/2026-08-27.json",
+   "date": "2026-08-27",
+   "label_en": "Health 94→92 · TTFB escalated to P2, 3 new articles published",
+   "label_vi": "Health 94→92 · TTFB nâng lên P2, thêm 3 bài mới",
+   "report": "archive/2026-08-27.html"
   }
  ]
 }
