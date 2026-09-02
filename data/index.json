@@ -1,6 +1,6 @@
 {
  "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
- "latest": "2026-08-28",
+ "latest": "2026-09-03",
  "report": "technical-seo-audit",
  "site": "dxliving.com",
  "snapshots": [
@@ -171,6 +171,13 @@
    "label_en": "Health 92 holds · TTFB recovers 888→862 ms, no sub-score fell",
    "label_vi": "Health giữ 92 · TTFB hồi 888→862 ms, không hạng mục nào giảm",
    "report": "archive/2026-08-28.html"
+  },
+  {
+   "data": "data/2026-09-03.json",
+   "date": "2026-09-03",
+   "label_en": "Health 92→80 · site migrated: sitemap 92→48 URLs, 68→24 articles, 53 old URLs now 404 with no 301",
+   "label_vi": "Health 92→80 · site bị thay: sitemap 92→48 URL, 68→24 bài, 53 URL cũ trả 404 không redirect",
+   "report": "archive/2026-09-03.html"
   }
  ]
 }
