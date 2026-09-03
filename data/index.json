@@ -175,8 +175,8 @@
   {
    "data": "data/2026-09-03.json",
    "date": "2026-09-03",
-   "label_en": "Health 92→80 · site migrated: sitemap 92→48 URLs, 68→24 articles, 53 old URLs now 404 with no 301",
-   "label_vi": "Health 92→80 · site bị thay: sitemap 92→48 URL, 68→24 bài, 53 URL cũ trả 404 không redirect",
+   "label_en": "Health 92→88 · re-crawl at 07:05 replaces the 06:10 deploy-window snapshot; 97 pages, 202,315 words, both series highs; /articles lists only 7 of 74",
+   "label_vi": "Health 92→88 · quét lại lúc 07:05 thay bản 06:10 dính cửa sổ deploy; 97 trang, 202.315 từ, đều cao nhất chuỗi; /articles chỉ lộ 7/74 bài",
    "report": "archive/2026-09-03.html"
   }
  ]
