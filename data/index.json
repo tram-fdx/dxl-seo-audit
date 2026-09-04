@@ -182,8 +182,8 @@
   {
    "data": "data/2026-09-04.json",
    "date": "2026-09-04",
-   "label_en": "Health 88 flat · all 5 sub-scores unchanged because no roadmap item was actioned; 98 pages (new high), slowest page 1,650→1,324 ms, /articles still lists only 7 of 75",
-   "label_vi": "Health 88 đứng yên · cả 5 hạng mục không đổi vì không việc nào trong roadmap được làm; 98 trang (cao mới), trang chậm nhất 1.650→1.324 ms, /articles vẫn chỉ lộ 7/75 bài",
+   "label_en": "Health 88→87 · afternoon re-crawl replaces the morning pass; the /articles listing is proven to orphan one older article per publication (landscape-design-melbourne); 99 pages, 76 articles",
+   "label_vi": "Health 88→87 · quét lại buổi chiều thay bản sáng; đã chứng minh listing /articles đẩy một bài cũ thành mồ côi mỗi lần đăng bài (landscape-design-melbourne); 99 trang, 76 bài",
    "report": "archive/2026-09-04.html"
   }
  ]
