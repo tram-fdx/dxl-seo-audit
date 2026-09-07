@@ -1,6 +1,6 @@
 {
   "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
-  "latest": "2026-09-07",
+  "latest": "2026-09-08",
   "report": "technical-seo-audit",
   "site": "dxliving.com",
   "snapshots": [
@@ -192,6 +192,13 @@
       "label_en": "Health 87→88 · Performance 85→90 as site-wide TTFB falls 932→785 ms across all three groups; Crawlability 78→77 as the predicted orphan appears (glass-pool-fence-compliance); 101 pages, 78 articles, 17 orphans",
       "label_vi": "Health 87→88 · Performance 85→90 do TTFB toàn site 932→785 ms, cả ba nhóm cùng giảm; Crawlability 78→77 vì bài mồ côi đã dự báo đã xuất hiện (glass-pool-fence-compliance); 101 trang, 78 bài, 17 mồ côi",
       "report": "archive/2026-09-07.html"
+    },
+    {
+      "data": "data/2026-09-08.json",
+      "date": "2026-09-08",
+      "label_en": "Health 88→87 · second crawl the same day: Performance 90→87 (785→877 ms, the 785 was the fast end of the swing) and Structured Data 96→95 as a second consecutive new article ships without FAQPage; 102 pages, 79 articles, orphans hold at 17",
+      "label_vi": "Health 88→87 · quét lần hai trong ngày: Performance 90→87 (785→877 ms, mức 785 là đỉnh trên dao động) và Structured Data 96→95 vì bài mới thứ hai liên tiếp thiếu FAQPage; 102 trang, 79 bài, mồ côi giữ nguyên 17",
+      "report": "archive/2026-09-08.html"
     }
   ]
 }
