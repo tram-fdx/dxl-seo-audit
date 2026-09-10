@@ -1,211 +1,218 @@
 {
-  "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
-  "latest": "2026-09-09",
-  "report": "technical-seo-audit",
-  "site": "dxliving.com",
-  "snapshots": [
-    {
-      "data": "data/2026-07-27.json",
-      "date": "2026-07-27",
-      "label_en": "Health 82 · partial 36-page crawl",
-      "label_vi": "Health 82 · crawl một phần 36 trang",
-      "report": "archive/2026-07-27.html"
-    },
-    {
-      "data": "data/2026-07-28.json",
-      "date": "2026-07-28",
-      "label_en": "Health 84 · full 61-page crawl",
-      "label_vi": "Health 84 · quét đủ 61 trang",
-      "report": "archive/2026-07-28.html"
-    },
-    {
-      "data": "data/2026-07-29.json",
-      "date": "2026-07-29",
-      "label_en": "Health 84 · stable",
-      "label_vi": "Health 84 · ổn định",
-      "report": "archive/2026-07-29.html"
-    },
-    {
-      "data": "data/2026-07-30.json",
-      "date": "2026-07-30",
-      "label_en": "Health 84→87 · schema on 12 core pages",
-      "label_vi": "Health 84→87 · schema 12 trang gốc",
-      "report": "archive/2026-07-30.html"
-    },
-    {
-      "data": "data/2026-07-31.json",
-      "date": "2026-07-31",
-      "label_en": "Health 87→84 · 6 /projects pages entered sitemap, 0 schema",
-      "label_vi": "Health 87→84 · 6 trang /projects vào sitemap, 0 schema",
-      "report": "archive/2026-07-31.html"
-    },
-    {
-      "data": "data/2026-08-03.json",
-      "date": "2026-08-03",
-      "label_en": "Health 85→84 · JSON-LD duplicated 14× per page",
-      "label_vi": "Health 85→84 · JSON-LD bị lặp 14× mỗi trang",
-      "report": "archive/2026-08-03.html"
-    },
-    {
-      "data": "data/2026-08-04.json",
-      "date": "2026-08-04",
-      "label_en": "Health 84 · fastest scan yet, 61/68 pages under 1s",
-      "label_vi": "Health 84 · lần quét nhanh nhất, 61/68 trang <1s",
-      "report": "archive/2026-08-04.html"
-    },
-    {
-      "data": "data/2026-08-05.json",
-      "date": "2026-08-05",
-      "label_en": "Health 84→83 · 8 new articles live (45→53), /articles listing slowed to 2.16s",
-      "label_vi": "Health 84→83 · 8 bài mới lên sóng (45→53), listing /articles chậm 2,16s",
-      "report": "archive/2026-08-05.html"
-    },
-    {
-      "data": "data/2026-08-07.json",
-      "date": "2026-08-07",
-      "label_en": "Health 83→88 · /articles now renders all 53 links, project pages gained schema",
-      "label_vi": "Health 83→88 · /articles render đủ 53 link, trang dự án đã có schema",
-      "report": "archive/2026-08-07.html"
-    },
-    {
-      "data": "data/2026-08-10.json",
-      "date": "2026-08-10",
-      "label_en": "Health 88 · first new article (53→54), speed improved, P1 and P2 still unfixed",
-      "label_vi": "Health 88 · bài mới đầu tiên (53→54), tốc độ tốt lên, 2 lỗi P1/P2 chưa sửa",
-      "report": "archive/2026-08-10.html"
-    },
-    {
-      "data": "data/2026-08-11.json",
-      "date": "2026-08-11",
-      "label_en": "Health 89 · all 55 articles under 1s, second new article, P1 day 9 and P2 day 12 unfixed",
-      "label_vi": "Health 89 · toàn bộ 55 bài <1s, bài mới thứ hai, P1 ngày 9 và P2 ngày 12 chưa sửa",
-      "report": "archive/2026-08-11.html"
-    },
-    {
-      "data": "data/2026-08-12.json",
-      "date": "2026-08-12",
-      "label_en": "Health 89→88 · TTFB rose site-wide, footer expanded on all pages, third new article",
-      "label_vi": "Health 89→88 · TTFB tăng toàn site, footer mở rộng nội dung mọi trang, bài mới thứ ba",
-      "report": "archive/2026-08-12.html"
-    },
-    {
-      "data": "data/2026-08-13.json",
-      "date": "2026-08-13",
-      "label_en": "Health 88 (flat) · the 12 Aug footer was removed again, -7,627 words site-wide",
-      "label_vi": "Health 88 (đứng yên) · footer thêm hôm 12/08 đã bị gỡ, toàn site -7.627 từ",
-      "report": "archive/2026-08-13.html"
-    },
-    {
-      "data": "data/2026-08-14.json",
-      "date": "2026-08-14",
-      "label_en": "Health 88→89 · highest of the series; footer restored (+9,987 words), every article and project page under 1s",
-      "label_vi": "Health 88→89 · cao nhất chuỗi; footer được khôi phục (+9.987 từ), mọi bài viết và trang dự án <1s",
-      "report": "archive/2026-08-14.html"
-    },
-    {
-      "data": "data/2026-08-17.json",
-      "date": "2026-08-17",
-      "label_en": "Health 89→88 · the footer was removed a second time, -4,290 words; 58th article live",
-      "label_vi": "Health 89→88 · footer bị gỡ lần thứ hai, -4.290 từ; bài thứ 58 lên sóng",
-      "report": "archive/2026-08-17.html"
-    },
-    {
-      "data": "data/2026-08-18.json",
-      "date": "2026-08-18",
-      "label_en": "Health 88 held · TTFB 671→761 ms (2nd fall in a row); 59th article live",
-      "label_vi": "Health 88 giữ nguyên · TTFB 671→761 ms (giảm 2 lần liên tiếp); bài thứ 59 lên sóng",
-      "report": "archive/2026-08-18.html"
-    },
-    {
-      "data": "data/2026-08-19.json",
-      "date": "2026-08-19",
-      "label_en": "Health 88->92 series high · JSON-LD duplication, missing alt and the link home all fixed",
-      "label_vi": "Health 88->92 cao nhất chuỗi · sửa xong nhân bản JSON-LD, thiếu alt và link về trang chủ",
-      "report": "archive/2026-08-19.html"
-    },
-    {
-      "data": "data/2026-08-20.json",
-      "date": "2026-08-20",
-      "label_en": "Health 92->84 · sitemap collapsed 81->16 URLs, 5 project pages orphaned",
-      "label_vi": "Health 92→84 · sitemap tụt 81→16 URL, 5 trang dự án mồ côi",
-      "report": "archive/2026-08-20.html"
-    },
-    {
-      "data": "data/2026-08-21.json",
-      "date": "2026-08-21",
-      "label_en": "Health 84->86 · fastest of the series (79/82 pages <1s), sitemap still 16 URLs",
-      "label_vi": "Health 84→86 · tốc độ tốt nhất chuỗi (79/82 trang <1s), sitemap vẫn 16 URL",
-      "report": "archive/2026-08-21.html"
-    },
-    {
-      "data": "data/2026-08-24.json",
-      "date": "2026-08-24",
-      "label_en": "Health 86->93 · series high · sitemap fixed (16->85 URLs)",
-      "label_vi": "Health 86→93 · cao nhất chuỗi · sitemap sửa xong (16→85 URL)",
-      "report": "archive/2026-08-24.html"
-    },
-    {
-      "data": "data/2026-08-25.json",
-      "date": "2026-08-25",
-      "label_en": "Health 93 holds the series high · orphaned project pages fixed, a duplicate URL appeared",
-      "label_vi": "Health 93 giữ mức cao nhất chuỗi · sửa xong mồ côi trang dự án, phát sinh URL trùng",
-      "report": "archive/2026-08-25.html"
-    },
-    {
-      "data": "data/2026-08-26.json",
-      "date": "2026-08-26",
-      "label_en": "Health 94 - series high; both P2s closed, TTFB eased",
-      "label_vi": "Health 94 cao nhất chuỗi · đóng cả hai P2, TTFB chậm nhẹ",
-      "report": "archive/2026-08-26.html"
-    },
-    {
-      "data": "data/2026-08-27.json",
-      "date": "2026-08-27",
-      "label_en": "Health 94→92 · TTFB escalated to P2, 3 new articles published",
-      "label_vi": "Health 94→92 · TTFB nâng lên P2, thêm 3 bài mới",
-      "report": "archive/2026-08-27.html"
-    },
-    {
-      "data": "data/2026-08-28.json",
-      "date": "2026-08-28",
-      "label_en": "Health 92 holds · TTFB recovers 888→862 ms, no sub-score fell",
-      "label_vi": "Health giữ 92 · TTFB hồi 888→862 ms, không hạng mục nào giảm",
-      "report": "archive/2026-08-28.html"
-    },
-    {
-      "data": "data/2026-09-03.json",
-      "date": "2026-09-03",
-      "label_en": "Health 92→88 · re-crawl at 07:05 replaces the 06:10 deploy-window snapshot; 97 pages, 202,315 words, both series highs; /articles lists only 7 of 74",
-      "label_vi": "Health 92→88 · quét lại lúc 07:05 thay bản 06:10 dính cửa sổ deploy; 97 trang, 202.315 từ, đều cao nhất chuỗi; /articles chỉ lộ 7/74 bài",
-      "report": "archive/2026-09-03.html"
-    },
-    {
-      "data": "data/2026-09-04.json",
-      "date": "2026-09-04",
-      "label_en": "Health 88→87 · afternoon re-crawl replaces the morning pass; the /articles listing is proven to orphan one older article per publication (landscape-design-melbourne); 99 pages, 76 articles",
-      "label_vi": "Health 88→87 · quét lại buổi chiều thay bản sáng; đã chứng minh listing /articles đẩy một bài cũ thành mồ côi mỗi lần đăng bài (landscape-design-melbourne); 99 trang, 76 bài",
-      "report": "archive/2026-09-04.html"
-    },
-    {
-      "data": "data/2026-09-07.json",
-      "date": "2026-09-07",
-      "label_en": "Health 87→88 · Performance 85→90 as site-wide TTFB falls 932→785 ms across all three groups; Crawlability 78→77 as the predicted orphan appears (glass-pool-fence-compliance); 101 pages, 78 articles, 17 orphans",
-      "label_vi": "Health 87→88 · Performance 85→90 do TTFB toàn site 932→785 ms, cả ba nhóm cùng giảm; Crawlability 78→77 vì bài mồ côi đã dự báo đã xuất hiện (glass-pool-fence-compliance); 101 trang, 78 bài, 17 mồ côi",
-      "report": "archive/2026-09-07.html"
-    },
-    {
-      "data": "data/2026-09-08.json",
-      "date": "2026-09-08",
-      "label_en": "Health 88→87 · second crawl the same day: Performance 90→87 (785→877 ms, the 785 was the fast end of the swing) and Structured Data 96→95 as a second consecutive new article ships without FAQPage; 102 pages, 79 articles, orphans hold at 17",
-      "label_vi": "Health 88→87 · quét lần hai trong ngày: Performance 90→87 (785→877 ms, mức 785 là đỉnh trên dao động) và Structured Data 96→95 vì bài mới thứ hai liên tiếp thiếu FAQPage; 102 trang, 79 bài, mồ côi giữ nguyên 17",
-      "report": "archive/2026-09-08.html"
-    },
-    {
-      "data": "data/2026-09-09.json",
-      "date": "2026-09-09",
-      "label_en": "Health 87→91 · /articles hub fixed: all 80 article links in source HTML, orphans 17→0, Crawlability 77→93; new finds: 10 legacy duplicate URLs (200, self-canonical) + 1 broken link, homepage ~2 s over four readings, third new article without FAQPage; 103 pages, 80 articles",
-      "label_vi": "Health 87→91 · hub /articles đã sửa: 80/80 link bài trong HTML gốc, mồ côi 17→0, Crawlability 77→93; phát hiện mới: 10 URL slug dài trùng lặp (200, tự canonical) + 1 link gãy, trang chủ ~2s qua bốn lần đo, bài mới thứ ba thiếu FAQPage; 103 trang, 80 bài",
-      "report": "archive/2026-09-09.html"
-    }
-  ]
+ "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
+ "latest": "2026-09-10",
+ "report": "technical-seo-audit",
+ "site": "dxliving.com",
+ "snapshots": [
+  {
+   "data": "data/2026-07-27.json",
+   "date": "2026-07-27",
+   "label_en": "Health 82 · partial 36-page crawl",
+   "label_vi": "Health 82 · crawl một phần 36 trang",
+   "report": "archive/2026-07-27.html"
+  },
+  {
+   "data": "data/2026-07-28.json",
+   "date": "2026-07-28",
+   "label_en": "Health 84 · full 61-page crawl",
+   "label_vi": "Health 84 · quét đủ 61 trang",
+   "report": "archive/2026-07-28.html"
+  },
+  {
+   "data": "data/2026-07-29.json",
+   "date": "2026-07-29",
+   "label_en": "Health 84 · stable",
+   "label_vi": "Health 84 · ổn định",
+   "report": "archive/2026-07-29.html"
+  },
+  {
+   "data": "data/2026-07-30.json",
+   "date": "2026-07-30",
+   "label_en": "Health 84→87 · schema on 12 core pages",
+   "label_vi": "Health 84→87 · schema 12 trang gốc",
+   "report": "archive/2026-07-30.html"
+  },
+  {
+   "data": "data/2026-07-31.json",
+   "date": "2026-07-31",
+   "label_en": "Health 87→84 · 6 /projects pages entered sitemap, 0 schema",
+   "label_vi": "Health 87→84 · 6 trang /projects vào sitemap, 0 schema",
+   "report": "archive/2026-07-31.html"
+  },
+  {
+   "data": "data/2026-08-03.json",
+   "date": "2026-08-03",
+   "label_en": "Health 85→84 · JSON-LD duplicated 14× per page",
+   "label_vi": "Health 85→84 · JSON-LD bị lặp 14× mỗi trang",
+   "report": "archive/2026-08-03.html"
+  },
+  {
+   "data": "data/2026-08-04.json",
+   "date": "2026-08-04",
+   "label_en": "Health 84 · fastest scan yet, 61/68 pages under 1s",
+   "label_vi": "Health 84 · lần quét nhanh nhất, 61/68 trang <1s",
+   "report": "archive/2026-08-04.html"
+  },
+  {
+   "data": "data/2026-08-05.json",
+   "date": "2026-08-05",
+   "label_en": "Health 84→83 · 8 new articles live (45→53), /articles listing slowed to 2.16s",
+   "label_vi": "Health 84→83 · 8 bài mới lên sóng (45→53), listing /articles chậm 2,16s",
+   "report": "archive/2026-08-05.html"
+  },
+  {
+   "data": "data/2026-08-07.json",
+   "date": "2026-08-07",
+   "label_en": "Health 83→88 · /articles now renders all 53 links, project pages gained schema",
+   "label_vi": "Health 83→88 · /articles render đủ 53 link, trang dự án đã có schema",
+   "report": "archive/2026-08-07.html"
+  },
+  {
+   "data": "data/2026-08-10.json",
+   "date": "2026-08-10",
+   "label_en": "Health 88 · first new article (53→54), speed improved, P1 and P2 still unfixed",
+   "label_vi": "Health 88 · bài mới đầu tiên (53→54), tốc độ tốt lên, 2 lỗi P1/P2 chưa sửa",
+   "report": "archive/2026-08-10.html"
+  },
+  {
+   "data": "data/2026-08-11.json",
+   "date": "2026-08-11",
+   "label_en": "Health 89 · all 55 articles under 1s, second new article, P1 day 9 and P2 day 12 unfixed",
+   "label_vi": "Health 89 · toàn bộ 55 bài <1s, bài mới thứ hai, P1 ngày 9 và P2 ngày 12 chưa sửa",
+   "report": "archive/2026-08-11.html"
+  },
+  {
+   "data": "data/2026-08-12.json",
+   "date": "2026-08-12",
+   "label_en": "Health 89→88 · TTFB rose site-wide, footer expanded on all pages, third new article",
+   "label_vi": "Health 89→88 · TTFB tăng toàn site, footer mở rộng nội dung mọi trang, bài mới thứ ba",
+   "report": "archive/2026-08-12.html"
+  },
+  {
+   "data": "data/2026-08-13.json",
+   "date": "2026-08-13",
+   "label_en": "Health 88 (flat) · the 12 Aug footer was removed again, -7,627 words site-wide",
+   "label_vi": "Health 88 (đứng yên) · footer thêm hôm 12/08 đã bị gỡ, toàn site -7.627 từ",
+   "report": "archive/2026-08-13.html"
+  },
+  {
+   "data": "data/2026-08-14.json",
+   "date": "2026-08-14",
+   "label_en": "Health 88→89 · highest of the series; footer restored (+9,987 words), every article and project page under 1s",
+   "label_vi": "Health 88→89 · cao nhất chuỗi; footer được khôi phục (+9.987 từ), mọi bài viết và trang dự án <1s",
+   "report": "archive/2026-08-14.html"
+  },
+  {
+   "data": "data/2026-08-17.json",
+   "date": "2026-08-17",
+   "label_en": "Health 89→88 · the footer was removed a second time, -4,290 words; 58th article live",
+   "label_vi": "Health 89→88 · footer bị gỡ lần thứ hai, -4.290 từ; bài thứ 58 lên sóng",
+   "report": "archive/2026-08-17.html"
+  },
+  {
+   "data": "data/2026-08-18.json",
+   "date": "2026-08-18",
+   "label_en": "Health 88 held · TTFB 671→761 ms (2nd fall in a row); 59th article live",
+   "label_vi": "Health 88 giữ nguyên · TTFB 671→761 ms (giảm 2 lần liên tiếp); bài thứ 59 lên sóng",
+   "report": "archive/2026-08-18.html"
+  },
+  {
+   "data": "data/2026-08-19.json",
+   "date": "2026-08-19",
+   "label_en": "Health 88->92 series high · JSON-LD duplication, missing alt and the link home all fixed",
+   "label_vi": "Health 88->92 cao nhất chuỗi · sửa xong nhân bản JSON-LD, thiếu alt và link về trang chủ",
+   "report": "archive/2026-08-19.html"
+  },
+  {
+   "data": "data/2026-08-20.json",
+   "date": "2026-08-20",
+   "label_en": "Health 92->84 · sitemap collapsed 81->16 URLs, 5 project pages orphaned",
+   "label_vi": "Health 92→84 · sitemap tụt 81→16 URL, 5 trang dự án mồ côi",
+   "report": "archive/2026-08-20.html"
+  },
+  {
+   "data": "data/2026-08-21.json",
+   "date": "2026-08-21",
+   "label_en": "Health 84->86 · fastest of the series (79/82 pages <1s), sitemap still 16 URLs",
+   "label_vi": "Health 84→86 · tốc độ tốt nhất chuỗi (79/82 trang <1s), sitemap vẫn 16 URL",
+   "report": "archive/2026-08-21.html"
+  },
+  {
+   "data": "data/2026-08-24.json",
+   "date": "2026-08-24",
+   "label_en": "Health 86->93 · series high · sitemap fixed (16->85 URLs)",
+   "label_vi": "Health 86→93 · cao nhất chuỗi · sitemap sửa xong (16→85 URL)",
+   "report": "archive/2026-08-24.html"
+  },
+  {
+   "data": "data/2026-08-25.json",
+   "date": "2026-08-25",
+   "label_en": "Health 93 holds the series high · orphaned project pages fixed, a duplicate URL appeared",
+   "label_vi": "Health 93 giữ mức cao nhất chuỗi · sửa xong mồ côi trang dự án, phát sinh URL trùng",
+   "report": "archive/2026-08-25.html"
+  },
+  {
+   "data": "data/2026-08-26.json",
+   "date": "2026-08-26",
+   "label_en": "Health 94 - series high; both P2s closed, TTFB eased",
+   "label_vi": "Health 94 cao nhất chuỗi · đóng cả hai P2, TTFB chậm nhẹ",
+   "report": "archive/2026-08-26.html"
+  },
+  {
+   "data": "data/2026-08-27.json",
+   "date": "2026-08-27",
+   "label_en": "Health 94→92 · TTFB escalated to P2, 3 new articles published",
+   "label_vi": "Health 94→92 · TTFB nâng lên P2, thêm 3 bài mới",
+   "report": "archive/2026-08-27.html"
+  },
+  {
+   "data": "data/2026-08-28.json",
+   "date": "2026-08-28",
+   "label_en": "Health 92 holds · TTFB recovers 888→862 ms, no sub-score fell",
+   "label_vi": "Health giữ 92 · TTFB hồi 888→862 ms, không hạng mục nào giảm",
+   "report": "archive/2026-08-28.html"
+  },
+  {
+   "data": "data/2026-09-03.json",
+   "date": "2026-09-03",
+   "label_en": "Health 92→88 · re-crawl at 07:05 replaces the 06:10 deploy-window snapshot; 97 pages, 202,315 words, both series highs; /articles lists only 7 of 74",
+   "label_vi": "Health 92→88 · quét lại lúc 07:05 thay bản 06:10 dính cửa sổ deploy; 97 trang, 202.315 từ, đều cao nhất chuỗi; /articles chỉ lộ 7/74 bài",
+   "report": "archive/2026-09-03.html"
+  },
+  {
+   "data": "data/2026-09-04.json",
+   "date": "2026-09-04",
+   "label_en": "Health 88→87 · afternoon re-crawl replaces the morning pass; the /articles listing is proven to orphan one older article per publication (landscape-design-melbourne); 99 pages, 76 articles",
+   "label_vi": "Health 88→87 · quét lại buổi chiều thay bản sáng; đã chứng minh listing /articles đẩy một bài cũ thành mồ côi mỗi lần đăng bài (landscape-design-melbourne); 99 trang, 76 bài",
+   "report": "archive/2026-09-04.html"
+  },
+  {
+   "data": "data/2026-09-07.json",
+   "date": "2026-09-07",
+   "label_en": "Health 87→88 · Performance 85→90 as site-wide TTFB falls 932→785 ms across all three groups; Crawlability 78→77 as the predicted orphan appears (glass-pool-fence-compliance); 101 pages, 78 articles, 17 orphans",
+   "label_vi": "Health 87→88 · Performance 85→90 do TTFB toàn site 932→785 ms, cả ba nhóm cùng giảm; Crawlability 78→77 vì bài mồ côi đã dự báo đã xuất hiện (glass-pool-fence-compliance); 101 trang, 78 bài, 17 mồ côi",
+   "report": "archive/2026-09-07.html"
+  },
+  {
+   "data": "data/2026-09-08.json",
+   "date": "2026-09-08",
+   "label_en": "Health 88→87 · second crawl the same day: Performance 90→87 (785→877 ms, the 785 was the fast end of the swing) and Structured Data 96→95 as a second consecutive new article ships without FAQPage; 102 pages, 79 articles, orphans hold at 17",
+   "label_vi": "Health 88→87 · quét lần hai trong ngày: Performance 90→87 (785→877 ms, mức 785 là đỉnh trên dao động) và Structured Data 96→95 vì bài mới thứ hai liên tiếp thiếu FAQPage; 102 trang, 79 bài, mồ côi giữ nguyên 17",
+   "report": "archive/2026-09-08.html"
+  },
+  {
+   "data": "data/2026-09-09.json",
+   "date": "2026-09-09",
+   "label_en": "Health 87→91 · /articles hub fixed: all 80 article links in source HTML, orphans 17→0, Crawlability 77→93; new finds: 10 legacy duplicate URLs (200, self-canonical) + 1 broken link, homepage ~2 s over four readings, third new article without FAQPage; 103 pages, 80 articles",
+   "label_vi": "Health 87→91 · hub /articles đã sửa: 80/80 link bài trong HTML gốc, mồ côi 17→0, Crawlability 77→93; phát hiện mới: 10 URL slug dài trùng lặp (200, tự canonical) + 1 link gãy, trang chủ ~2s qua bốn lần đo, bài mới thứ ba thiếu FAQPage; 103 trang, 80 bài",
+   "report": "archive/2026-09-09.html"
+  },
+  {
+   "data": "data/2026-09-10.json",
+   "date": "2026-09-10",
+   "label_en": "Health 91→90 · nothing on yesterday's roadmap actioned: homepage slow for a second day (8 readings across 2 days above 1.5 s, navigation timing 1,539 ms rules out the CDN theory) and a fourth consecutive article without FAQPage (65/81, 80.2%); Performance 88→86, Structured Data 94→93, On-page 92→91 after finding the 10 legacy long slugs also carry mismatched titles; Crawlability holds 93 and orphans hold 0 — the hub fix is durable; 104 pages, 81 articles",
+   "label_vi": "Health 91→90 · không việc nào trong roadmap hôm qua được làm: trang chủ chậm sang ngày thứ hai (8 lần đo trong 2 ngày đều trên 1,5 giây, navigation timing 1.539 ms loại giả thuyết CDN) và bài mới thứ tư liên tiếp thiếu FAQPage (65/81, 80,2%); Performance 88→86, Structured Data 94→93, On-page 92→91 vì phát hiện 10 slug dài còn lệch title so với nội dung; Crawlability giữ 93, bài mồ côi giữ 0 — bản sửa hub bền; 104 trang, 81 bài",
+   "report": "index.html"
+  }
+ ]
 }
