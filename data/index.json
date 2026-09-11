@@ -217,9 +217,9 @@
   {
    "data": "data/2026-09-11.json",
    "date": "2026-09-11",
-   "label_en": "Health 90→90 (raw 89.80) · Performance 86→84 on a later ~07:36 crawl: site mean 869→959 ms, under-1s 76.0%→68.6%, slowest 2,286 ms, though homepage re-reads eased to 1.1–1.5 s · a FIFTH consecutive new article without FAQPage (off-the-plan-sales-renders-for-developers), coverage 65/82 = 79.3%, Structured Data 93→92 · Crawlability holds 93 (82/82 hub links, orphans 0), long slugs and malformed href untouched · 105 pages, 82 articles, 218,627 words",
-   "label_vi": "Health 90→90 (điểm thô 89,80) · Performance 86→84 ở lần crawl muộn hơn (~07:36): TB toàn site 869→959 ms, dưới 1 giây 76,0%→68,6%, chậm nhất 2.286 ms, dù trang chủ đo lại dịu xuống 1,1–1,5 giây · bài mới thứ NĂM liên tiếp thiếu FAQPage (off-the-plan-sales-renders-for-developers), độ phủ 65/82 = 79,3%, Structured Data 93→92 · Crawlability giữ 93 (82/82 link hub, mồ côi 0), slug dài và href hỏng chưa sửa · 105 trang, 82 bài, 218.627 từ",
-   "report": "index.html"
+   "report": "index.html",
+   "label_vi": "Health 90→88 · máy chủ chậm lại trên toàn site: 83/104 trang chậm hơn hôm qua, trung vị +242 ms, số trang dưới 1 giây rơi 79→46, navigation timing trang chủ 1.539→1.608 ms — Performance 86→78 là toàn bộ mức giảm; bài mới thứ năm liên tiếp thiếu FAQPage (65/82, 79,3%) kéo Structured Data 93→92; Crawlability giữ 93, On-page giữ 91, Content giữ 90 (219.115 từ, +1,2%); 0 bài mồ côi sang ngày thứ ba, schema vẫn không nhân bản; 105 trang, 82 bài",
+   "label_en": "Health 90→88 · site-wide server slowdown: 83 of 104 pages slower than yesterday, median +242 ms, pages under one second fell 79→46, homepage navigation timing 1,539→1,608 ms — Performance 86→78 accounts for the whole drop; a fifth consecutive article without FAQPage (65/82, 79.3%) takes Structured Data 93→92; Crawlability holds 93, On-page 91 and Content 90 (219,115 words, +1.2%); orphans hold at 0 for a third day and schema is still not duplicated; 105 pages, 82 articles"
   }
  ]
 }
