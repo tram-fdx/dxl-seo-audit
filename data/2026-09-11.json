@@ -1,0 +1,1477 @@
+{
+ "date": "2026-09-11",
+ "crawl": "Live Chrome crawl, same-origin fetch, cache: no-store, each URL measured sequentially, AbortController 15s. Crawled 07:36-07:38 Vietnam time (later than the usual 06:00 slot).",
+ "site": "https://dxliving.com",
+ "method": "Raw HTML parsed with DOMParser for TTFB (time to response headers), status, H1, JSON-LD blocks (compared by content), title/meta/canonical, word count (script/style/noscript/template and HTML tags stripped), unique internal paths, images, lazy-loading, heading sequence. Re-measurement of /, /studio and /articles with cache-buster; navigation timing on / and /articles; rendered-DOM image check on /.",
+ "health": 90,
+ "raw_score": 89.8,
+ "sub_scores": {
+  "crawlability": 93,
+  "performance": 84,
+  "structured_data": 92,
+  "onpage": 91,
+  "content": 90
+ },
+ "weights": {
+  "crawlability": 0.25,
+  "performance": 0.25,
+  "structured_data": 0.2,
+  "onpage": 0.15,
+  "content": 0.15
+ },
+ "previous": {
+  "date": "2026-09-10",
+  "health": 90,
+  "sub_scores": {
+   "crawlability": 93,
+   "performance": 86,
+   "structured_data": 93,
+   "onpage": 91,
+   "content": 90
+  }
+ },
+ "score_rationale": {
+  "crawlability": "93 -> 93. 105/105 return 200 (104 sitemap pages + /login), 0 timeouts, the /articles hub exposes 82/82 article links in source HTML, orphans 0, sitemap complete for its 106 declared URLs. Held below 97 by the same two untouched defects: 10 legacy long-slug URLs returning 200 with self-referencing canonicals, and 1 malformed internal href on /articles/6-benefits-of-using-vr-technology.",
+  "performance": "86 -> 84. Site-wide mean 869 -> 959 ms, median 787 -> 895, under-1s 79/104 (76.0%) -> 72/105 (68.6%), articles 863 -> 982, projects 761 -> 889; core 938 -> 870 as the homepage read lower. 0 pages over 3 s for an eleventh crawl, but the slowest page reached 2,286 ms. Homepage first read 1,571 ms, cache-busted re-reads 1,142-1,488 ms, navigation timing 1,442 ms. Crawl ran at ~07:36 rather than 06:00, so part of the rise may be time of day.",
+  "structured_data": "93 -> 92. 103/105 pages carry schema (98.1%), duplication factor exactly 1.0x. FAQPage coverage 80.2% -> 79.3% (65/82) as a FIFTH consecutive new article (off-the-plan-sales-renders-for-developers) ships without it. The two Organization nodes in the homepage @graph remain.",
+  "onpage": "91 -> 91. 105/105 exactly one h1, title, meta description and canonical. Heading skips remain 1 article (bim-3d-4d-5d-explained, 4 points). The 10 legacy long-slug URLs still carry titles that do not match their bodies.",
+  "content": "90 -> 90. Site-wide words 216,434 -> 218,627 (+2,193) with one article added (2,193 words). Article average 2,529, core 577, projects 238. Thin pages hold at 11."
+ },
+ "pages": {
+  "crawled": 105,
+  "core": 17,
+  "articles": 82,
+  "projects": 6,
+  "status_200": 105,
+  "timeouts": 0,
+  "errors": 0
+ },
+ "sitemap": {
+  "declared_urls": 106,
+  "page_urls": 104,
+  "txt_urls": 2,
+  "pages_outside_sitemap": [
+   "/login"
+  ],
+  "linked_urls_absent_from_sitemap": 11,
+  "legacy_long_slug_urls_200_self_canonical": [
+   "project-management-and-cost-control-from-plan-to-profit",
+   "bim-for-architects-australia-key-strategies-for-seamless-custom-home-design",
+   "step-inside-the-future-6-home-design-trends-shaping-australia-in-2026",
+   "custom-home-visualisation-timeline-from-concept-to-completion",
+   "how-to-use-3d-configurators-to-increase-buyer-commitment",
+   "3d-house-design-guide-from-sketch-to-walkthrough",
+   "contemporary-houses-a-practical-guide-to-design-costs-and-planning",
+   "duplex-house-design-in-australia-visual-clarity-acoustic-calm-4d-delivery",
+   "how-virtual-reality-is-shaping-the-future-of-home-design-in-australian",
+   "6-benefits-of-using-vr-to-see-projects-in-your-mind"
+  ],
+  "broken_internal_link": {
+   "source": "/articles/6-benefits-of-using-vr-technology",
+   "problem": "single href concatenating three URLs separated by spaces (still present 11 Sep)",
+   "status": 404
+  },
+  "legacy_long_slug_urls_200_self_canonical_note": "Re-fetched 11 Sep: all 10 return 200 with a self-referencing canonical."
+ },
+ "robots": {
+  "sitemap_declared": true,
+  "disallow": [
+   "/register",
+   "/pages/"
+  ],
+  "ai_crawlers_allowed": [
+   "GPTBot",
+   "OAI-SearchBot",
+   "ChatGPT-User",
+   "PerplexityBot",
+   "ClaudeBot",
+   "Google-Extended"
+  ],
+  "llms_txt": true,
+  "llms_full_txt": true,
+  "robots_bytes": 430,
+  "llms_txt_bytes": 12678,
+  "llms_full_txt_bytes": 21934
+ },
+ "ttfb_ms": {
+  "all": 959,
+  "median": 895,
+  "core": 870,
+  "articles": 982,
+  "projects": 889,
+  "core_excluding_homepage": 826,
+  "min": 407,
+  "max": 2286,
+  "under_1s": 72,
+  "1s_to_3s": 33,
+  "over_3s": 0,
+  "slowest": [
+   {
+    "url": "/articles/construction-program-management-software",
+    "ms": 2286
+   },
+   {
+    "url": "/articles/the-risk-of-cheap-architectural-renders",
+    "ms": 1883
+   },
+   {
+    "url": "/articles/custom-home-visualisation-timeline",
+    "ms": 1761
+   },
+   {
+    "url": "/articles",
+    "ms": 1705
+   },
+   {
+    "url": "/articles/program-for-construction-estimates-explained",
+    "ms": 1682
+   },
+   {
+    "url": "/articles/bim-for-architects-australia-in-custom-home-design",
+    "ms": 1608
+   },
+   {
+    "url": "/articles/kitchen-renovation-cost-melbourne",
+    "ms": 1588
+   }
+  ],
+  "remeasured_forced_cache_miss": {
+   "/": [
+    1488,
+    1142,
+    1167,
+    1403
+   ],
+   "/studio": [
+    983,
+    1077,
+    1683,
+    1955
+   ],
+   "/articles": [
+    1177,
+    1097,
+    1267,
+    1125
+   ]
+  },
+  "navigation_timing": {
+   "/": 1442,
+   "/articles": 1528
+  },
+  "homepage_verdict": "First read 1,571 ms; four cache-busted re-reads 1,142-1,488 ms; navigation timing 1,442 ms. Still above 1 s on every reading, but the re-reads are lower than the 1,511-2,199 ms range of 9-10 Sep."
+ },
+ "content": {
+  "words_total": 218627,
+  "previous_words_total": 216434,
+  "avg_words_article": 2529,
+  "avg_words_core": 577,
+  "avg_words_project": 238,
+  "articles_hub_words": 1059,
+  "thin_pages_under_300w": 11,
+  "thin_pages": [
+   "/modules",
+   "/projects",
+   "/contact",
+   "/start-interactive",
+   "/projects/251-station-st",
+   "/projects/20-head-street",
+   "/projects/85-commodore-drive",
+   "/projects/813-clarendon-street",
+   "/projects/31-mcilwain-drive",
+   "/projects/nagambie-project",
+   "/login"
+  ]
+ },
+ "schema": {
+  "pages_with_schema": 103,
+  "pages_without": [
+   "/start-interactive",
+   "/login"
+  ],
+  "duplication_factor": 1,
+  "core_graph_types": [
+   "Organization+LocalBusiness",
+   "Organization",
+   "WebSite",
+   "WebPage"
+  ],
+  "project_graph_types": [
+   "Organization",
+   "WebSite",
+   "WebPage",
+   "CreativeWork",
+   "BreadcrumbList"
+  ],
+  "article_types": [
+   "Article",
+   "BreadcrumbList",
+   "BlogPosting",
+   "FAQPage"
+  ],
+  "faqpage_articles": 65,
+  "faqpage_total": 82,
+  "faqpage_pct": 79.3,
+  "faqpage_pct_trend": [
+   84.2,
+   83.3,
+   82.3,
+   81.3,
+   80.2,
+   79.3
+  ],
+  "articles_missing_faqpage": [
+   "off-the-plan-sales-renders-for-developers",
+   "residential-bim-modelling-services-australia",
+   "vr-walkthrough-services-australia",
+   "development-application-3d-render",
+   "4d-construction-sequencing-australia",
+   "how-3d-coordination-reduces-design-conflicts-before-construction",
+   "brisbane-custom-home-builders-checklist-for-clients",
+   "bim-3d-4d-5d-explained",
+   "custom-built-homes-melbourne-checklist",
+   "how-to-choose-custom-home-builders-in-south-australia",
+   "best-practices-for-project-and-quality-management-in-2026",
+   "construction-program-management-software",
+   "program-for-construction-estimates-explained",
+   "what-is-bim-3d-modeling",
+   "project-management-and-cost-control",
+   "bim-3d-from-design-to-site-in-2026",
+   "duplex-house-design-in-australia"
+  ],
+  "consecutive_new_articles_without_faqpage": 5,
+  "new_finding": null,
+  "open_finding": "Homepage @graph still declares two Organization nodes (Organization+LocalBusiness and a separate Organization)."
+ },
+ "onpage": {
+  "exactly_one_h1": 105,
+  "title": 105,
+  "meta_description": 105,
+  "canonical": 105,
+  "heading_skips": {
+   "rule": "a heading more than one level deeper than the previous heading (H1->H3, H2->H4)",
+   "pages": 1,
+   "points": 4,
+   "article_pages": [
+    "bim-3d-4d-5d-explained"
+   ],
+   "core_pages": [],
+   "project_pages": [],
+   "rendered_dom_confirmed": true
+  },
+  "heading_before_h1": {
+   "articles": 82,
+   "pattern": "<h2>ARTICLES</h2> label precedes the h1 on every article"
+  },
+  "images": {
+   "total": 1205,
+   "without_alt_attribute_raw_html": 0,
+   "empty_alt_template_image_note": "Sampled /articles/bim-3d-4d-5d-explained: 14 images, 1 with an empty alt (the shared template image). A full per-page empty-alt count was not taken this crawl, so missing_alt_raw_html is null rather than assumed.",
+   "missing_alt_raw_html": null,
+   "lazy_loaded": 641,
+   "lazy_pct": 53.2,
+   "rendered": {
+    "/": {
+     "images": 22,
+     "missing_alt": 0,
+     "lazy": 17
+    }
+   }
+  },
+  "new_finding": null,
+  "meta_len_min": 83,
+  "meta_len_max": 189
+ },
+ "crawlability": {
+  "articles_hub_exposes": 82,
+  "articles_total": 82,
+  "articles_hub_kb": 247,
+  "articles_hub_bytes": 247250,
+  "articles_hub_internal_links": 99,
+  "articles_hub_internal_links_note": "99 unique internal paths (trailing slash folded); the 10 Sep method folding #hash/?query read 98.",
+  "orphan_articles_count": 0,
+  "previous_orphan_count": 0,
+  "articles_linked_only_from_hub": 20,
+  "previous_linked_only_from_hub": 20,
+  "all_pages_link_home": 105
+ },
+ "new_articles": [
+  {
+   "url": "/articles/off-the-plan-sales-renders-for-developers",
+   "words": 2193,
+   "schema_blocks": 3,
+   "faqpage": false,
+   "internal_links": 23,
+   "h1": 1,
+   "ttfb_ms": 871,
+   "published": "2026-09-10"
+  }
+ ],
+ "roadmap": [
+  {
+   "priority": "P1",
+   "item": "Build a FAQPage gate into the publishing template/process, then clear the 17-article backlog.",
+   "why": "Five consecutive new articles (7-10 Sep plus off-the-plan-sales-renders-for-developers) shipped without FAQPage; coverage 84.2 -> 79.3% in six crawls."
+  },
+  {
+   "priority": "P2",
+   "item": "Investigate the slower crawl: articles 863 -> 982 ms, projects 761 -> 889 ms, under-1s 76.0% -> 68.6%; slowest page 2,286 ms.",
+   "why": "Crawl ran ~07:36 instead of 06:00, so re-check at 06:00 tomorrow before treating it as a regression. Homepage re-reads improved to 1,142-1,488 ms."
+  },
+  {
+   "priority": "P2",
+   "item": "301 the 10 legacy long-slug URLs to their short slugs (or canonical them there), fix the malformed href, update internal links pointing at long slugs.",
+   "why": "Unchanged since 9 Sep; titles still mismatch bodies. Fixing both returns Crawlability to the 97 level."
+  },
+  {
+   "priority": "P2",
+   "item": "Lift the six project pages from ~238 to 600-800 words.",
+   "why": "Unchanged; every other technical measure on that group is clean."
+  },
+  {
+   "priority": "P3",
+   "item": "Merge the two Organization nodes in the homepage @graph; add alt to the shared template image; change the <h2>ARTICLES</h2> label before the H1 to a non-heading tag; add contextual links for the 20 articles linked only from the hub.",
+   "why": "Raw-HTML hygiene for AI crawlers and a single unambiguous business entity."
+  },
+  {
+   "priority": "closed",
+   "item": "/articles hub crawlability.",
+   "why": "Confirmed on a third day: 82/82 article links in source HTML, orphans 0."
+  }
+ ],
+ "process_note": "Base document taken from the live repo index.html (10 Sep build); only data, dates and narrative replaced: header crawl lines, KPI/sub-score/donut/insight/roadmap blocks, CORE/ART/PROJ/TREND arrays, renderRt max (1750 -> 2400) and PK_TODAY. Date picker, CSS, filter buttons and chart code untouched. Archive copy differs only in PK_BASE ('../').",
+ "pages_detail": [
+  {
+   "url": "/",
+   "group": "core",
+   "status": 200,
+   "ttfb_ms": 1571,
+   "words": 1620,
+   "schema_blocks": 1,
+   "internal_links": 23,
+   "in_sitemap": true
+  },
+  {
+   "url": "/about",
+   "group": "core",
+   "status": 200,
+   "ttfb_ms": 489,
+   "words": 436,
+   "schema_blocks": 1,
+   "internal_links": 17,
+   "in_sitemap": true
+  },
+  {
+   "url": "/modules",
+   "group": "core",
+   "status": 200,
+   "ttfb_ms": 857,
+   "words": 235,
+   "schema_blocks": 1,
+   "internal_links": 17,
+   "in_sitemap": true
+  },
+  {
+   "url": "/projects",
+   "group": "core",
+   "status": 200,
+   "ttfb_ms": 688,
+   "words": 266,
+   "schema_blocks": 1,
+   "internal_links": 23,
+   "in_sitemap": true
+  },
+  {
+   "url": "/suppliers",
+   "group": "core",
+   "status": 200,
+   "ttfb_ms": 510,
+   "words": 450,
+   "schema_blocks": 1,
+   "internal_links": 17,
+   "in_sitemap": true
+  },
+  {
+   "url": "/apply",
+   "group": "core",
+   "status": 200,
+   "ttfb_ms": 694,
+   "words": 518,
+   "schema_blocks": 1,
+   "internal_links": 17,
+   "in_sitemap": true
+  },
+  {
+   "url": "/articles",
+   "group": "core",
+   "status": 200,
+   "ttfb_ms": 1705,
+   "words": 1059,
+   "schema_blocks": 1,
+   "internal_links": 99,
+   "in_sitemap": true
+  },
+  {
+   "url": "/contact",
+   "group": "core",
+   "status": 200,
+   "ttfb_ms": 1476,
+   "words": 240,
+   "schema_blocks": 1,
+   "internal_links": 17,
+   "in_sitemap": true
+  },
+  {
+   "url": "/studio",
+   "group": "core",
+   "status": 200,
+   "ttfb_ms": 1120,
+   "words": 630,
+   "schema_blocks": 1,
+   "internal_links": 17,
+   "in_sitemap": true
+  },
+  {
+   "url": "/interiors",
+   "group": "core",
+   "status": 200,
+   "ttfb_ms": 1224,
+   "words": 356,
+   "schema_blocks": 1,
+   "internal_links": 17,
+   "in_sitemap": true
+  },
+  {
+   "url": "/model",
+   "group": "core",
+   "status": 200,
+   "ttfb_ms": 984,
+   "words": 362,
+   "schema_blocks": 1,
+   "internal_links": 17,
+   "in_sitemap": true
+  },
+  {
+   "url": "/prestige",
+   "group": "core",
+   "status": 200,
+   "ttfb_ms": 968,
+   "words": 388,
+   "schema_blocks": 1,
+   "internal_links": 17,
+   "in_sitemap": true
+  },
+  {
+   "url": "/faq",
+   "group": "core",
+   "status": 200,
+   "ttfb_ms": 596,
+   "words": 1394,
+   "schema_blocks": 1,
+   "internal_links": 17,
+   "in_sitemap": true
+  },
+  {
+   "url": "/privacy-policy",
+   "group": "core",
+   "status": 200,
+   "ttfb_ms": 524,
+   "words": 895,
+   "schema_blocks": 1,
+   "internal_links": 17,
+   "in_sitemap": true
+  },
+  {
+   "url": "/terms-of-service",
+   "group": "core",
+   "status": 200,
+   "ttfb_ms": 518,
+   "words": 891,
+   "schema_blocks": 1,
+   "internal_links": 17,
+   "in_sitemap": true
+  },
+  {
+   "url": "/start-interactive",
+   "group": "core",
+   "status": 200,
+   "ttfb_ms": 464,
+   "words": 51,
+   "schema_blocks": 0,
+   "internal_links": 1,
+   "in_sitemap": true
+  },
+  {
+   "url": "/articles/off-the-plan-sales-renders-for-developers",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 871,
+   "words": 2193,
+   "schema_blocks": 3,
+   "internal_links": 23,
+   "in_sitemap": true,
+   "faqpage": false
+  },
+  {
+   "url": "/articles/residential-bim-modelling-services-australia",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1073,
+   "words": 2119,
+   "schema_blocks": 3,
+   "internal_links": 23,
+   "in_sitemap": true,
+   "faqpage": false
+  },
+  {
+   "url": "/articles/vr-walkthrough-services-australia",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 965,
+   "words": 2285,
+   "schema_blocks": 3,
+   "internal_links": 23,
+   "in_sitemap": true,
+   "faqpage": false
+  },
+  {
+   "url": "/articles/development-application-3d-render",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 950,
+   "words": 2364,
+   "schema_blocks": 3,
+   "internal_links": 23,
+   "in_sitemap": true,
+   "faqpage": false
+  },
+  {
+   "url": "/articles/4d-construction-sequencing-australia",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 895,
+   "words": 2271,
+   "schema_blocks": 3,
+   "internal_links": 23,
+   "in_sitemap": true,
+   "faqpage": false
+  },
+  {
+   "url": "/articles/3d-rendering-cost-australia",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 900,
+   "words": 2637,
+   "schema_blocks": 4,
+   "internal_links": 24,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/3d-virtual-tour-off-the-plan-apartments",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 729,
+   "words": 2979,
+   "schema_blocks": 4,
+   "internal_links": 24,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/how-to-choose-a-3d-rendering-company-australia",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 878,
+   "words": 2666,
+   "schema_blocks": 5,
+   "internal_links": 24,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/3d-renders-for-property-developers-sydney",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 965,
+   "words": 3127,
+   "schema_blocks": 5,
+   "internal_links": 24,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/architectural-visualisation-australia",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 926,
+   "words": 2686,
+   "schema_blocks": 4,
+   "internal_links": 32,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/3d-rendering-services-melbourne",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 648,
+   "words": 1828,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/3d-renders-for-real-estate-melbourne",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 782,
+   "words": 2992,
+   "schema_blocks": 5,
+   "internal_links": 24,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/virtual-reality-interior-design",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 865,
+   "words": 2200,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/home-lift-design",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 668,
+   "words": 2502,
+   "schema_blocks": 4,
+   "internal_links": 23,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/3d-renders-for-builders-melbourne",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 997,
+   "words": 2484,
+   "schema_blocks": 4,
+   "internal_links": 24,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/custom-staircase-oak-brass-glass",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1453,
+   "words": 2486,
+   "schema_blocks": 4,
+   "internal_links": 23,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/sustainable-home-energy-comfort",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1023,
+   "words": 2545,
+   "schema_blocks": 4,
+   "internal_links": 23,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/3d-renders-for-property-developers-melbourne",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 921,
+   "words": 3087,
+   "schema_blocks": 5,
+   "internal_links": 24,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/smart-home-security",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 647,
+   "words": 2387,
+   "schema_blocks": 4,
+   "internal_links": 23,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/project-251-case-study",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 665,
+   "words": 2891,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/glass-pool-fence-compliance",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 674,
+   "words": 2464,
+   "schema_blocks": 4,
+   "internal_links": 23,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/landscape-design-melbourne",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 867,
+   "words": 2442,
+   "schema_blocks": 4,
+   "internal_links": 23,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/outdoor-living-alfresco-design",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 742,
+   "words": 2388,
+   "schema_blocks": 4,
+   "internal_links": 23,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/luxury-home-cinema-design",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 736,
+   "words": 4342,
+   "schema_blocks": 4,
+   "internal_links": 23,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/timber-flooring-composite-decking",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 764,
+   "words": 3329,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/bathroom-remodel-cost-australia",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 751,
+   "words": 4092,
+   "schema_blocks": 4,
+   "internal_links": 23,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/3d-rendering-company-adelaide",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1187,
+   "words": 2638,
+   "schema_blocks": 5,
+   "internal_links": 24,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/kitchen-renovation-cost-melbourne",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1588,
+   "words": 4842,
+   "schema_blocks": 4,
+   "internal_links": 25,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/architectural-visualisation-adelaide",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1014,
+   "words": 2535,
+   "schema_blocks": 5,
+   "internal_links": 24,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/interior-finishes",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1411,
+   "words": 5272,
+   "schema_blocks": 4,
+   "internal_links": 26,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/project-251-visualisation-overview",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 782,
+   "words": 1975,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/luxury-home-builders-sydney",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 638,
+   "words": 1665,
+   "schema_blocks": 4,
+   "internal_links": 23,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/custom-home-builders-sydney",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 793,
+   "words": 1700,
+   "schema_blocks": 4,
+   "internal_links": 23,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/3d-rendering-adelaide",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 885,
+   "words": 3096,
+   "schema_blocks": 4,
+   "internal_links": 26,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/3d-rendering-perth",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1276,
+   "words": 3096,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/3d-rendering-brisbane",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 745,
+   "words": 2602,
+   "schema_blocks": 4,
+   "internal_links": 23,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/3d-rendering-sydney",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 645,
+   "words": 2609,
+   "schema_blocks": 4,
+   "internal_links": 23,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/architectural-rendering-melbourne-pre-construction-planning",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 858,
+   "words": 2074,
+   "schema_blocks": 4,
+   "internal_links": 24,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/photorealistic-rendering-melbourne-developers",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1101,
+   "words": 4016,
+   "schema_blocks": 4,
+   "internal_links": 27,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/3d-floor-plan-melbourne-home-design-clarity",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 977,
+   "words": 1917,
+   "schema_blocks": 4,
+   "internal_links": 23,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/custom-home-builders-melbourne-3d-visualisation",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 993,
+   "words": 2011,
+   "schema_blocks": 4,
+   "internal_links": 24,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/3d-rendering-company-melbourne",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 723,
+   "words": 3573,
+   "schema_blocks": 4,
+   "internal_links": 29,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/3d-rendering-melbourne-pre-construction-planning",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 918,
+   "words": 1913,
+   "schema_blocks": 4,
+   "internal_links": 24,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/custom-home-builders-melbourne-pre-build-clarity",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 624,
+   "words": 1918,
+   "schema_blocks": 4,
+   "internal_links": 23,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/luxury-home-builders-melbourne-vr-bim",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 646,
+   "words": 1980,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/pre-construction-visualisation-construction-readiness",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 657,
+   "words": 1962,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/architectural-visualisation-melbourne-project-decisions",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 921,
+   "words": 3643,
+   "schema_blocks": 4,
+   "internal_links": 27,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/house-renovation-3d-design-melbourne",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 954,
+   "words": 2345,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/how-3d-coordination-reduces-design-conflicts-before-construction",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 931,
+   "words": 2338,
+   "schema_blocks": 3,
+   "internal_links": 20,
+   "in_sitemap": true,
+   "faqpage": false
+  },
+  {
+   "url": "/articles/how-quality-management-in-projects-improves-project-delivery",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 777,
+   "words": 2474,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/how-a-construction-program-reduces-delays-and-design-conflicts",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 735,
+   "words": 2564,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/project-management-construction-for-luxury-residential-projects",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 784,
+   "words": 2248,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/bim-australia-9-implementation-mistakes",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1042,
+   "words": 2813,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/choosing-the-best-home-builder",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1079,
+   "words": 2992,
+   "schema_blocks": 4,
+   "internal_links": 20,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/project-controls-for-luxury-residential-construction",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 678,
+   "words": 2530,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/project-cost-management-using-bim-and-digital-twins",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 769,
+   "words": 2626,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/custom-home-builders-vs-project-builders",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1014,
+   "words": 4203,
+   "schema_blocks": 4,
+   "internal_links": 24,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/how-to-identify-quality-home-builders",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 743,
+   "words": 2285,
+   "schema_blocks": 4,
+   "internal_links": 20,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/the-best-home-builders-adelaide",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 692,
+   "words": 2557,
+   "schema_blocks": 4,
+   "internal_links": 24,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/brisbane-custom-home-builders-checklist-for-clients",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 733,
+   "words": 2264,
+   "schema_blocks": 3,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": false
+  },
+  {
+   "url": "/articles/bim-3d-4d-5d-explained",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 715,
+   "words": 2337,
+   "schema_blocks": 3,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": false
+  },
+  {
+   "url": "/articles/custom-built-homes-melbourne-checklist",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1179,
+   "words": 1766,
+   "schema_blocks": 3,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": false
+  },
+  {
+   "url": "/articles/how-to-choose-custom-home-builders-in-south-australia",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1137,
+   "words": 2199,
+   "schema_blocks": 3,
+   "internal_links": 20,
+   "in_sitemap": true,
+   "faqpage": false
+  },
+  {
+   "url": "/articles/best-practices-for-project-and-quality-management-in-2026",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1211,
+   "words": 2273,
+   "schema_blocks": 3,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": false
+  },
+  {
+   "url": "/articles/construction-program-management-software",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 2286,
+   "words": 1986,
+   "schema_blocks": 3,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": false
+  },
+  {
+   "url": "/articles/program-for-construction-estimates-explained",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1682,
+   "words": 2010,
+   "schema_blocks": 3,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": false
+  },
+  {
+   "url": "/articles/what-is-bim-3d-modeling",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 676,
+   "words": 1506,
+   "schema_blocks": 3,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": false
+  },
+  {
+   "url": "/articles/project-management-and-cost-control",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1480,
+   "words": 2459,
+   "schema_blocks": 3,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": false
+  },
+  {
+   "url": "/articles/bim-3d-from-design-to-site-in-2026",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1588,
+   "words": 2982,
+   "schema_blocks": 3,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": false
+  },
+  {
+   "url": "/articles/duplex-house-design-in-australia",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1544,
+   "words": 2214,
+   "schema_blocks": 3,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": false
+  },
+  {
+   "url": "/articles/3d-house-design-guide",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 789,
+   "words": 2111,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/modern-house-design-2026-10-trends-shaping-homes",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 763,
+   "words": 3195,
+   "schema_blocks": 4,
+   "internal_links": 25,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/contemporary-houses-a-practical-guide",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 726,
+   "words": 1458,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/how-3d-configurators-increase-buyer-commitment",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1409,
+   "words": 1105,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/the-risk-of-cheap-architectural-renders",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1883,
+   "words": 1490,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/custom-home-visualisation-timeline",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1761,
+   "words": 2570,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/vr-vs-360-in-australian-property-decisions",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1324,
+   "words": 2145,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/bim-for-architects-australia-in-custom-home-design",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1608,
+   "words": 2268,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/6-benefits-of-using-vr-technology",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 951,
+   "words": 2203,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/virtual-reality-home-walkthrough",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1016,
+   "words": 3095,
+   "schema_blocks": 4,
+   "internal_links": 26,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/step-inside-6-home-design-trends-shaping-australia-in-2026",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 634,
+   "words": 1527,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/articles/virtual-reality-in-australia-home-design",
+   "group": "article",
+   "status": 200,
+   "ttfb_ms": 1499,
+   "words": 1425,
+   "schema_blocks": 4,
+   "internal_links": 22,
+   "in_sitemap": true,
+   "faqpage": true
+  },
+  {
+   "url": "/projects/251-station-st",
+   "group": "project",
+   "status": 200,
+   "ttfb_ms": 944,
+   "words": 233,
+   "schema_blocks": 1,
+   "internal_links": 22,
+   "in_sitemap": true
+  },
+  {
+   "url": "/projects/20-head-street",
+   "group": "project",
+   "status": 200,
+   "ttfb_ms": 940,
+   "words": 235,
+   "schema_blocks": 1,
+   "internal_links": 22,
+   "in_sitemap": true
+  },
+  {
+   "url": "/projects/85-commodore-drive",
+   "group": "project",
+   "status": 200,
+   "ttfb_ms": 934,
+   "words": 243,
+   "schema_blocks": 1,
+   "internal_links": 22,
+   "in_sitemap": true
+  },
+  {
+   "url": "/projects/813-clarendon-street",
+   "group": "project",
+   "status": 200,
+   "ttfb_ms": 1126,
+   "words": 239,
+   "schema_blocks": 1,
+   "internal_links": 22,
+   "in_sitemap": true
+  },
+  {
+   "url": "/projects/31-mcilwain-drive",
+   "group": "project",
+   "status": 200,
+   "ttfb_ms": 566,
+   "words": 230,
+   "schema_blocks": 1,
+   "internal_links": 22,
+   "in_sitemap": true
+  },
+  {
+   "url": "/projects/nagambie-project",
+   "group": "project",
+   "status": 200,
+   "ttfb_ms": 823,
+   "words": 248,
+   "schema_blocks": 1,
+   "internal_links": 22,
+   "in_sitemap": true
+  },
+  {
+   "url": "/login",
+   "group": "core",
+   "status": 200,
+   "ttfb_ms": 407,
+   "words": 22,
+   "schema_blocks": 0,
+   "internal_links": 1,
+   "in_sitemap": false
+  }
+ ]
+}
