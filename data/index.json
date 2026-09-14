@@ -1,6 +1,6 @@
 {
  "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
- "latest": "2026-09-11",
+ "latest": "2026-09-14",
  "report": "technical-seo-audit",
  "site": "dxliving.com",
  "snapshots": [
@@ -217,9 +217,16 @@
   {
    "data": "data/2026-09-11.json",
    "date": "2026-09-11",
-   "report": "index.html",
+   "label_en": "Health 90→88 · site-wide server slowdown: 83 of 104 pages slower than yesterday, median +242 ms, pages under one second fell 79→46, homepage navigation timing 1,539→1,608 ms — Performance 86→78 accounts for the whole drop; a fifth consecutive article without FAQPage (65/82, 79.3%) takes Structured Data 93→92; Crawlability holds 93, On-page 91 and Content 90 (219,115 words, +1.2%); orphans hold at 0 for a third day and schema is still not duplicated; 105 pages, 82 articles",
    "label_vi": "Health 90→88 · máy chủ chậm lại trên toàn site: 83/104 trang chậm hơn hôm qua, trung vị +242 ms, số trang dưới 1 giây rơi 79→46, navigation timing trang chủ 1.539→1.608 ms — Performance 86→78 là toàn bộ mức giảm; bài mới thứ năm liên tiếp thiếu FAQPage (65/82, 79,3%) kéo Structured Data 93→92; Crawlability giữ 93, On-page giữ 91, Content giữ 90 (219.115 từ, +1,2%); 0 bài mồ côi sang ngày thứ ba, schema vẫn không nhân bản; 105 trang, 82 bài",
-   "label_en": "Health 90→88 · site-wide server slowdown: 83 of 104 pages slower than yesterday, median +242 ms, pages under one second fell 79→46, homepage navigation timing 1,539→1,608 ms — Performance 86→78 accounts for the whole drop; a fifth consecutive article without FAQPage (65/82, 79.3%) takes Structured Data 93→92; Crawlability holds 93, On-page 91 and Content 90 (219,115 words, +1.2%); orphans hold at 0 for a third day and schema is still not duplicated; 105 pages, 82 articles"
+   "report": "archive/2026-09-11.html"
+  },
+  {
+   "data": "data/2026-09-14.json",
+   "date": "2026-09-14",
+   "label_en": "Health 88→92 · SITE-WIDE SPEED RECOVERY: all 108 of 108 pages under one second (previous best 79 of 104), mean TTFB 1,091→571 ms, median 1,034→533 ms, slowest page 1,976→843 ms, 104 of 105 carried-over pages faster (median −478 ms) — Performance 78→97 accounts for the whole gain; but ALL THREE new articles ship without FAQPage (65/85, 76.5%), taking Structured Data 92→89, the steepest drop yet; Crawlability holds 93, On-page 91 and Content 90 (224,048 words); orphans hold at 0 for a fourth crawl; a three-day step because the 12 and 13 Sep runs did not happen; 108 pages, 85 articles",
+   "label_vi": "Health 88→92 · TỐC ĐỘ HỒI PHỤC TOÀN SITE: cả 108/108 trang dưới 1 giây (kỷ lục cũ 79/104), TTFB trung bình 1.091→571 ms, trung vị 1.034→533 ms, trang chậm nhất 1.976→843 ms, 104/105 trang mang sang đều nhanh hơn (trung vị −478 ms) — Performance 78→97 là toàn bộ mức tăng; nhưng cả BA bài mới đều thiếu FAQPage (65/85, 76,5%) kéo Structured Data 92→89, mức rơi mạnh nhất từ trước tới nay; Crawlability giữ 93, On-page giữ 91, Content giữ 90 (224.048 từ); 0 bài mồ côi sang lần quét thứ tư; bước ba ngày vì 12/09 và 13/09 không chạy; 108 trang, 85 bài",
+   "report": "index.html"
   }
  ]
 }
