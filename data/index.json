@@ -1,6 +1,6 @@
 {
  "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
- "latest": "2026-09-14",
+ "latest": "2026-09-15",
  "report": "technical-seo-audit",
  "site": "dxliving.com",
  "snapshots": [
@@ -226,6 +226,13 @@
    "date": "2026-09-14",
    "label_en": "Health 88→92 · SITE-WIDE SPEED RECOVERY: all 108 of 108 pages under one second (previous best 79 of 104), mean TTFB 1,091→571 ms, median 1,034→533 ms, slowest page 1,976→843 ms, 104 of 105 carried-over pages faster (median −478 ms) — Performance 78→97 accounts for the whole gain; but ALL THREE new articles ship without FAQPage (65/85, 76.5%), taking Structured Data 92→89, the steepest drop yet; Crawlability holds 93, On-page 91 and Content 90 (224,048 words); orphans hold at 0 for a fourth crawl; a three-day step because the 12 and 13 Sep runs did not happen; 108 pages, 85 articles",
    "label_vi": "Health 88→92 · TỐC ĐỘ HỒI PHỤC TOÀN SITE: cả 108/108 trang dưới 1 giây (kỷ lục cũ 79/104), TTFB trung bình 1.091→571 ms, trung vị 1.034→533 ms, trang chậm nhất 1.976→843 ms, 104/105 trang mang sang đều nhanh hơn (trung vị −478 ms) — Performance 78→97 là toàn bộ mức tăng; nhưng cả BA bài mới đều thiếu FAQPage (65/85, 76,5%) kéo Structured Data 92→89, mức rơi mạnh nhất từ trước tới nay; Crawlability giữ 93, On-page giữ 91, Content giữ 90 (224.048 từ); 0 bài mồ côi sang lần quét thứ tư; bước ba ngày vì 12/09 và 13/09 không chạy; 108 trang, 85 bài",
+   "report": "archive/2026-09-14.html"
+  },
+  {
+   "data": "data/2026-09-15.json",
+   "date": "2026-09-15",
+   "label_en": "Health 92→92 · faster again: mean TTFB 571→350 ms, median 533→287 ms, 96 of 108 carried-over pages faster and only 12 slower, all 109 pages under one second for a second day — Performance 97→98, the highest yet; but a FOURTH consecutive article without FAQPage (65/86, 75.6%) takes Structured Data 89→88, and measured word volume fell 224,048→218,216 uniformly across all three page groups (a template change, not lost content) taking Content 90→89; Crawlability holds 93 and On-page 91; orphans hold at 0 for a fifth crawl; 109 pages, 86 articles",
+   "label_vi": "Health 92→92 · nhanh thêm lần nữa: TTFB trung bình 571→350 ms, trung vị 533→287 ms, 96/108 trang mang sang nhanh hơn và chỉ 12 chậm hơn, cả 109 trang dưới 1 giây ngày thứ hai — Performance 97→98, cao nhất từ trước tới nay; nhưng bài mới thứ TƯ liên tiếp thiếu FAQPage (65/86, 75,6%) kéo Structured Data 89→88, và tổng số từ đo được giảm 224.048→218.216 đồng đều trên cả ba nhóm trang (thay đổi template, không phải mất nội dung) kéo Content 90→89; Crawlability giữ 93, On-page giữ 91; 0 bài mồ côi sang lần quét thứ năm; 109 trang, 86 bài",
    "report": "index.html"
   }
  ]
