@@ -1,6 +1,6 @@
 {
  "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
- "latest": "2026-09-15",
+ "latest": "2026-09-16",
  "report": "technical-seo-audit",
  "site": "dxliving.com",
  "snapshots": [
@@ -233,6 +233,13 @@
    "date": "2026-09-15",
    "label_en": "Health 92→92 · faster again: mean TTFB 571→350 ms, median 533→287 ms, 96 of 108 carried-over pages faster and only 12 slower, all 109 pages under one second for a second day — Performance 97→98, the highest yet; but a FOURTH consecutive article without FAQPage (65/86, 75.6%) takes Structured Data 89→88, and measured word volume fell 224,048→218,216 uniformly across all three page groups (a template change, not lost content) taking Content 90→89; Crawlability holds 93 and On-page 91; orphans hold at 0 for a fifth crawl; 109 pages, 86 articles",
    "label_vi": "Health 92→92 · nhanh thêm lần nữa: TTFB trung bình 571→350 ms, trung vị 533→287 ms, 96/108 trang mang sang nhanh hơn và chỉ 12 chậm hơn, cả 109 trang dưới 1 giây ngày thứ hai — Performance 97→98, cao nhất từ trước tới nay; nhưng bài mới thứ TƯ liên tiếp thiếu FAQPage (65/86, 75,6%) kéo Structured Data 89→88, và tổng số từ đo được giảm 224.048→218.216 đồng đều trên cả ba nhóm trang (thay đổi template, không phải mất nội dung) kéo Content 90→89; Crawlability giữ 93, On-page giữ 91; 0 bài mồ côi sang lần quét thứ năm; 109 trang, 86 bài",
+   "report": "archive/2026-09-15.html"
+  },
+  {
+   "data": "data/2026-09-16.json",
+   "date": "2026-09-16",
+   "label_en": "Health 92→93 · Content 89→90 is the whole gain: word volume recovered 218,216→222,873 with two new articles, the article average held at 2,421 and thin pages at 13, confirming yesterday's drop was a template change; Performance holds 98 (mean TTFB 350→344 ms, median 287→283 ms, 56 of 109 carried-over pages faster and 52 slower) but the top end improved sharply — the /articles hub 920→558 ms and the core-page mean 464→376 ms, all 111 pages under one second for a third day, with /suppliers the new 706 ms outlier; Structured Data holds 88 as FAQPage eased 75.6%→75.0% (66 of 88) — though one of the two new articles DOES carry it, ending a four-article run; Crawlability holds 93 and On-page 91; orphans hold at 0 for a sixth crawl but hub-only articles rose 21→23 and the /articles overlay is on day 20; 111 pages, 88 articles",
+   "label_vi": "Health 92→93 · Content 89→90 là toàn bộ mức tăng: tổng số từ hồi lại 218.216→222.873 với hai bài mới, trung bình mỗi bài giữ 2.421 và số trang mỏng giữ 13, xác nhận cú giảm hôm qua là do đổi template; Performance giữ 98 (TTFB trung bình 350→344 ms, trung vị 287→283 ms, 56/109 trang mang sang nhanh hơn và 52 chậm hơn) nhưng đỉnh trên cải thiện mạnh — hub /articles 920→558 ms và trung bình nhóm gốc 464→376 ms, cả 111 trang dưới 1 giây ngày thứ ba, với /suppliers là điểm lệch mới ở 706 ms; Structured Data giữ 88 khi FAQPage rơi nhẹ 75,6%→75,0% (66/88) — dù một trong hai bài mới CÓ FAQPage, chấm dứt chuỗi bốn bài thiếu; Crawlability giữ 93, On-page giữ 91; 0 bài mồ côi sang lần quét thứ sáu nhưng số bài chỉ có hub tăng 21→23 và lớp phủ /articles sang ngày 20; 111 trang, 88 bài",
    "report": "index.html"
   }
  ]
