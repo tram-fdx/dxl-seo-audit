@@ -1,6 +1,6 @@
 {
  "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
- "latest": "2026-09-17",
+ "latest": "2026-09-18",
  "report": "technical-seo-audit",
  "site": "dxliving.com",
  "snapshots": [
@@ -247,6 +247,13 @@
    "date": "2026-09-17",
    "label_en": "Health 93→93 · Performance 98→99 is the only move: mean TTFB 344→315 ms, median 283→265 ms and the slowest page in the crawl 706→584 ms — the first day with NO page above 600 ms and a fourth consecutive day with all 111 under one second; the /articles hub fell 558→414 ms and the article group 338→307 ms, while the homepage read slower at 322→502 ms (live-measurement swing, not a regression); NOTHING WAS PUBLISHED — the first zero-publishing day in this series, so word volume is flat at 222,873, FAQPage holds at 66 of 88 (75.0%) and every structural field on all 111 pages is identical to 16 Sep; Crawlability holds 93, Structured Data 88, On-page 91, Content 90; orphans hold at 0 for a seventh crawl, hub-only articles hold at 23 and the /articles overlay is on day 21; 111 pages, 88 articles",
    "label_vi": "Health 93→93 · Performance 98→99 là thay đổi duy nhất: TTFB trung bình 344→315 ms, trung vị 283→265 ms và trang chậm nhất cả lần crawl 706→584 ms — lần đầu KHÔNG trang nào vượt 600 ms và ngày thứ tư liên tiếp cả 111 trang dưới 1 giây; hub /articles tụt 558→414 ms và nhóm bài viết 338→307 ms, trong khi trang chủ đọc chậm hơn 322→502 ms (dao động của phép đo trực tiếp, không phải hồi quy); HÔM NAY KHÔNG XUẤT BẢN GÌ — ngày đầu tiên không xuất bản trong chuỗi này, nên tổng số từ đứng yên ở 222.873, FAQPage giữ 66/88 (75,0%) và mọi trường cấu trúc của cả 111 trang giống hệt 16/09; Crawlability giữ 93, Structured Data 88, On-page 91, Content 90; 0 bài mồ côi sang lần quét thứ bảy, số bài chỉ có hub giữ 23 và lớp phủ /articles sang ngày 21; 111 trang, 88 bài",
+   "report": "archive/2026-09-17.html"
+  },
+  {
+   "data": "data/2026-09-18.json",
+   "date": "2026-09-18",
+   "label_en": "Health 93→93 · Content 90→91 is the only move: PUBLISHING RESUMED after one flat day, with /articles/residential-property-developers-adelaide adding 1,974 words to take volume 222,873→224,773, the article count 88→89 and the page count 111→112; the new article ships with four JSON-LD blocks including FAQPage, nudging coverage 75.0%→75.3% (67 of 89); Performance holds 99 on a further gain — mean TTFB 315→309 ms, median 265→252 ms and the slowest page in the whole crawl 584→500 ms, the lowest ceiling this series has recorded, with all 112 pages under one second for a fifth day; the core group led the improvement 368→323 ms and the /articles hub 414→300 ms; Crawlability holds 93, Structured Data 88, On-page 91; orphans hold at 0 for an eighth crawl, hub-only articles hold at 23 and the /articles overlay is on day 22; a measured correction: LocalBusiness JSON-LD is on only 2 of 111 sitemap pages, not sitewide as earlier days recorded; 112 pages, 89 articles",
+   "label_vi": "Health 93→93 · Content 90→91 là thay đổi duy nhất: XUẤT BẢN ĐÃ NỐI LẠI sau một ngày đứng yên, bài /articles/residential-property-developers-adelaide thêm 1.974 từ đưa tổng 222.873→224.773, số bài 88→89 và số trang 111→112; bài mới mang sẵn bốn khối JSON-LD gồm FAQPage, đẩy tỷ lệ 75,0%→75,3% (67/89); Performance giữ 99 dù vẫn nhanh thêm — TTFB trung bình 315→309 ms, trung vị 265→252 ms và trang chậm nhất cả lần crawl 584→500 ms, mức trần thấp nhất chuỗi từng ghi nhận, cả 112 trang dưới 1 giây ngày thứ năm; nhóm gốc dẫn đầu mức cải thiện 368→323 ms và hub /articles 414→300 ms; Crawlability giữ 93, Structured Data 88, On-page 91; 0 bài mồ côi sang lần quét thứ tám, số bài chỉ có hub giữ 23 và lớp phủ /articles sang ngày 22; đính chính có đo: LocalBusiness JSON-LD chỉ có trên 2/111 trang sitemap, không phải toàn site như các ngày trước ghi nhận; 112 trang, 89 bài",
    "report": "index.html"
   }
  ]
