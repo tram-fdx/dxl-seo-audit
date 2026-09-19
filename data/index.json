@@ -1,6 +1,6 @@
 {
  "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
- "latest": "2026-09-18",
+ "latest": "2026-09-19",
  "report": "technical-seo-audit",
  "site": "dxliving.com",
  "snapshots": [
@@ -254,6 +254,13 @@
    "date": "2026-09-18",
    "label_en": "Health 93→93 · Content 90→91 is the only move: PUBLISHING RESUMED after one flat day, with /articles/residential-property-developers-adelaide adding 1,974 words to take volume 222,873→224,773, the article count 88→89 and the page count 111→112; the new article ships with four JSON-LD blocks including FAQPage, nudging coverage 75.0%→75.3% (67 of 89); Performance holds 99 on a further gain — mean TTFB 315→309 ms, median 265→252 ms and the slowest page in the whole crawl 584→500 ms, the lowest ceiling this series has recorded, with all 112 pages under one second for a fifth day; the core group led the improvement 368→323 ms and the /articles hub 414→300 ms; Crawlability holds 93, Structured Data 88, On-page 91; orphans hold at 0 for an eighth crawl, hub-only articles hold at 23 and the /articles overlay is on day 22; a measured correction: LocalBusiness JSON-LD is on only 2 of 111 sitemap pages, not sitewide as earlier days recorded; 112 pages, 89 articles",
    "label_vi": "Health 93→93 · Content 90→91 là thay đổi duy nhất: XUẤT BẢN ĐÃ NỐI LẠI sau một ngày đứng yên, bài /articles/residential-property-developers-adelaide thêm 1.974 từ đưa tổng 222.873→224.773, số bài 88→89 và số trang 111→112; bài mới mang sẵn bốn khối JSON-LD gồm FAQPage, đẩy tỷ lệ 75,0%→75,3% (67/89); Performance giữ 99 dù vẫn nhanh thêm — TTFB trung bình 315→309 ms, trung vị 265→252 ms và trang chậm nhất cả lần crawl 584→500 ms, mức trần thấp nhất chuỗi từng ghi nhận, cả 112 trang dưới 1 giây ngày thứ năm; nhóm gốc dẫn đầu mức cải thiện 368→323 ms và hub /articles 414→300 ms; Crawlability giữ 93, Structured Data 88, On-page 91; 0 bài mồ côi sang lần quét thứ tám, số bài chỉ có hub giữ 23 và lớp phủ /articles sang ngày 22; đính chính có đo: LocalBusiness JSON-LD chỉ có trên 2/111 trang sitemap, không phải toàn site như các ngày trước ghi nhận; 112 trang, 89 bài",
+   "report": "archive/2026-09-18.html"
+  },
+  {
+   "data": "data/2026-09-19.json",
+   "date": "2026-09-19",
+   "label_en": "Health 93→93 · for the first time two sub-scores move in opposite directions: Content 91→92 on TWO new articles in one day (/articles/3d-rendering-for-home-renovation-australia at 2,004 words and /articles/house-renovation-3d-design-adelaide at 2,148, both shipping with FAQPage), taking word volume 224,773→229,319 and the article count 89→91; Performance 99→97 because the /articles hub took 2,006 ms on a cold first fetch — the first page over one second since 13 Sep, though four cache-busted re-reads returned 338/378/287/315 ms, so a cold cache rather than a regression; site mean 309→346 ms, median 252→279 ms, 113 of 114 pages under one second; article pages unaffected (mean 306→314 ms, slowest still 500 ms); Crawlability holds 93, Structured Data 88 with FAQPage 75.3→75.8% (69 of 91), On-page 91; orphans hold at 0 for a ninth crawl, hub-only articles 23→25 and the /articles overlay is on day 23; 114 pages, 91 articles",
+   "label_vi": "Health 93→93 · lần đầu hai hạng mục đi ngược chiều: Content 91→92 nhờ HAI bài mới trong một ngày (/articles/3d-rendering-for-home-renovation-australia 2.004 từ và /articles/house-renovation-3d-design-adelaide 2.148 từ, cả hai có sẵn FAQPage), đưa tổng từ 224.773→229.319 và số bài 89→91; Performance 99→97 vì hub /articles mất 2.006 ms ở lần fetch nguội — trang đầu tiên vượt 1 giây kể từ 13/09, nhưng bốn lần đọc lại có cache-buster cho 338/378/287/315 ms nên là cache nguội chứ không phải suy giảm; TB toàn site 309→346 ms, trung vị 252→279 ms, 113/114 trang dưới 1 giây; bài viết không bị ảnh hưởng (TB 306→314 ms, chậm nhất vẫn 500 ms); Crawlability giữ 93, Structured Data 88 với FAQPage 75,3→75,8% (69/91), On-page 91; bài mồ côi giữ 0 lần thứ chín, bài chỉ-từ-hub 23→25 và lớp phủ /articles sang ngày 23; 114 trang, 91 bài",
    "report": "index.html"
   }
  ]
