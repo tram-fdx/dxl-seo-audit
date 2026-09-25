@@ -1,6 +1,6 @@
 {
  "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
- "latest": "2026-09-24",
+ "latest": "2026-09-25",
  "report": "technical-seo-audit",
  "site": "dxliving.com",
  "snapshots": [
@@ -289,6 +289,13 @@
    "date": "2026-09-24",
    "label_en": "Health 93→93 (raw 93.20→92.95) · a one-day step · the only sub-score to move is Crawlability 93→92: hub-only articles reversed 24→25 and average internal links fell 23.7→22.7 while the /articles overlay reached day 28, even though orphans held at zero for a thirteenth crawl and the hub links all 95 articles. Performance holds 99 and is near its ceiling — site mean 331→328 ms, median 271→267 ms, but the slowest page fell 698→545 ms (/studio) and all 118 pages are under one second with nothing in the 1–3 s band for a third day. One new article, before-you-sign-with-a-builder-checklist at 2,161 words, takes 117→118 crawled pages, articles 94→95, words 236,840→239,199 and the sitemap 118→119 URLs; it ships with FAQPage so coverage edges 76.6→76.8 pct. Structured Data holds 88 (LocalBusiness still on 2 pages), On-page holds 92 (0 heading-level skips for a second day, 118 of 1,387 images without alt).",
    "label_vi": "Health 93→93 (điểm thô 93,20→92,95) · bước một ngày · hạng mục duy nhất dịch là Crawlability 93→92: bài chỉ có đường vào từ hub đảo chiều 24→25 và liên kết nội bộ trung bình giảm 23,7→22,7 trong khi lớp phủ /articles sang ngày thứ 28, dù bài mồ côi vẫn 0 lần thứ mười ba và hub liên kết đủ 95 bài. Performance giữ 99 và đã gần trần — TB site 331→328 ms, trung vị 271→267 ms, nhưng trang chậm nhất rơi 698→545 ms (/studio) và cả 118 trang dưới một giây, không trang nào trong dải 1–3 giây, ngày thứ ba. Một bài mới, before-you-sign-with-a-builder-checklist 2.161 từ, đưa 117→118 trang crawl, bài 94→95, từ 236.840→239.199 và sitemap 118→119 URL; bài có sẵn FAQPage nên độ phủ nhích 76,6→76,8%. Structured Data giữ 88 (LocalBusiness vẫn 2 trang), On-page giữ 92 (0 lỗi nhảy cấp heading ngày thứ hai, 118/1.387 ảnh thiếu alt).",
+   "report": "archive/2026-09-24.html"
+  },
+  {
+   "data": "data/2026-09-25.json",
+   "date": "2026-09-25",
+   "label_en": "Health 93→93 (raw 92.95→92.95) · a one-day step · two sub-scores moved and cancelled exactly. Crawlability 92→93: hub-only articles improved 25→23, average internal links held at 22.7, orphans stayed zero for a fourteenth crawl, and the two legacy long-slug URLs are no longer linked internally so linked-but-absent-from-sitemap fell 2→0. Performance 99→98: all 118 pages are still under one second for a fourth day and nothing sits in the 1–3 s band, but the ceiling jumped 545→782 ms on /articles/plan-vs-actual-reporting-construction, site mean 328→336 ms and median 267→274 ms (core 365→383, articles 324→333, projects 292→251). No article was published, so pages hold at 118, the sitemap at 119 URLs and 95 articles, words 239,199→239,208 (+9), and FAQPage freezes at 73 of 95 (76.8 pct) after an eight-article run. Structured Data holds 88, On-page holds 92 on 118/118 clean signals and the same 118 images without alt, Content holds 92. The /articles overlay is on day 29 and remains the hard cap on Crawlability.",
+   "label_vi": "Health 93→93 (điểm thô 92,95→92,95) · bước một ngày · hai hạng mục dịch và triệt tiêu nhau. Crawlability 92→93: bài chỉ có đường vào từ hub giảm 25→23, liên kết nội bộ trung bình giữ 22,7, bài mồ côi bằng 0 sang lần crawl thứ mười bốn, và hai URL slug dài cũ không còn được liên kết nội bộ nên liên kết ngoài sitemap về 2→0. Performance 99→98: cả 118 trang vẫn dưới 1 giây sang ngày thứ tư và không trang nào trong dải 1–3 giây, nhưng trần tốc độ vọt 545→782 ms ở /articles/plan-vs-actual-reporting-construction, trung bình toàn site 328→336 ms và trung vị 267→274 ms (gốc 365→383, bài 324→333, dự án 292→251). Không có bài nào được đăng, nên số trang giữ 118, sitemap giữ 119 URL và 95 bài, tổng từ 239.199→239.208 (+9), và FAQPage đứng yên ở 73/95 (76,8%) sau chuỗi tám bài. Structured Data giữ 88, On-page giữ 92 với 118/118 tín hiệu sạch và vẫn đúng 118 ảnh thiếu alt, Content giữ 92. Lớp phủ /articles sang ngày thứ 29 và vẫn là trần cứng của Crawlability.",
    "report": "index.html"
   }
  ]
