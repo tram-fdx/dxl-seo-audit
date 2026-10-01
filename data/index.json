@@ -1,6 +1,6 @@
 {
  "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
- "latest": "2026-09-30",
+ "latest": "2026-10-01",
  "report": "index.html",
  "site": "dxliving.com",
  "snapshots": [
@@ -324,6 +324,13 @@
    "date": "2026-09-30",
    "label_en": "Health 95→95 (raw 95.40→95.15) · exactly ONE sub-score moved. Performance 99→98: the TTFB ceiling rose 581→650 ms and the site mean 323→342 ms, with every group drifting the same way — core 336→381 ms, articles 325→340 ms, projects 255→264 ms, median 270→276 ms — and the slowest page is an article again, /articles/3d-renders-for-builders-melbourne at 650 ms. This is drift inside a healthy band rather than a regression: all 118 pages still answered under one second for a seventh crawl, with nothing in the 1–3 s band and nothing over 3 s; but 650 ms is above the 617 ms ceiling that scored 98 two days ago, so the point earned on 29 Sep is given back. Crawlability holds 98: the /articles overlay was re-checked and is still gone (zero elements at z-index ≥ 9999, zero fixed elements covering 95 pct or more of the viewport, elementFromPoint at the viewport centre resolving to ordinary content, 109 article links clickable, hub HTML byte-identical at 279,515 bytes) — a second consecutive confirmation. It stays short of 100 for the same single reason: the site-wide promoted link the template dropped on 28 Sep has NOT returned, with total distinct internal links at 2,711 for a second crawl against 2,802 before the regression. Content holds 93 — the corpus is byte-identical at 241,329 words, not one word changed, and there has been no new article since 24 Sep, six days. Structured Data holds 92 (FAQPage frozen at 82 of 95, 86.3 pct, the same 13 missing, for a FOURTH crawl; 394 JSON-LD blocks) and On-page holds 92 (118/118 clean signals, 0 heading skips, the same 118 images without alt — confirmed again to be exactly one per page, so one template fix closes all of them). Orphans zero for a nineteenth crawl and zero hub-only articles, with every page carrying at least two inbound links; the ten legacy long-slug URLs re-fetched 10 of 10 at 200 and self-canonical, a fourteenth clean recheck.",
    "label_vi": "Health 95→95 (điểm thô 95,40→95,15) · đúng MỘT hạng mục dịch chuyển. Performance 99→98: trần TTFB tăng 581→650 ms và trung bình toàn site 323→342 ms, mọi nhóm đều trôi cùng hướng — gốc 336→381 ms, bài viết 325→340 ms, dự án 255→264 ms, trung vị 270→276 ms — và trang chậm nhất lại là một bài viết, /articles/3d-renders-for-builders-melbourne ở 650 ms. Đây là dao động trong vùng lành mạnh chứ không phải suy giảm: cả 118 trang vẫn dưới một giây ở lần quét thứ bảy, không trang nào trong dải 1–3 giây và không trang nào trên 3 giây; nhưng 650 ms cao hơn trần 617 ms từng được chấm 98 hai ngày trước, nên điểm giành được ngày 29/9 được trả lại. Crawlability giữ 98: lớp phủ /articles được kiểm lại và vẫn đã biến mất (không phần tử nào z-index ≥ 9999, không phần tử fixed nào phủ từ 95% viewport, elementFromPoint ở tâm viewport chạm nội dung bình thường, 109 link bài viết bấm được, HTML hub giống hệt từng byte ở 279.515 byte) — lần xác nhận thứ hai liên tiếp. Vẫn chưa đạt 100 vì đúng một lý do cũ: link quảng bá toàn site mà template bỏ ngày 28/9 VẪN CHƯA quay lại, tổng link nội bộ riêng biệt đứng ở 2.711 lần quét thứ hai so với 2.802 trước khi có lỗi. Content giữ 93 — kho nội dung giống y nguyên ở 241.329 từ, không đổi một chữ, và chưa có bài mới từ 24/9, sáu ngày. Structured Data giữ 92 (FAQPage đứng yên 82/95, 86,3%, vẫn đúng 13 bài thiếu, lần quét thứ TƯ; 394 khối JSON-LD) và On-page giữ 92 (118/118 tín hiệu sạch, 0 lỗi nhảy cấp heading, vẫn đúng 118 ảnh thiếu alt — xác nhận lại là đúng một ảnh mỗi trang, nên một lần sửa template đóng hết). Bài mồ côi bằng 0 ở lần quét thứ mười chín và không bài nào chỉ vào được qua hub, mọi trang đều có ít nhất hai link trỏ tới; mười URL slug dài cũ nạp lại 10/10 trả 200 và tự canonical, lần kiểm sạch thứ mười bốn.",
+   "report": "archive/2026-09-30.html"
+  },
+  {
+   "data": "data/2026-10-01.json",
+   "date": "2026-10-01",
+   "label_en": "1 Oct 2026 — Health 95, no sub-score moved",
+   "label_vi": "1/10/2026 — Health 95, không điểm thành phần nào đổi",
    "report": "index.html"
   }
  ]
