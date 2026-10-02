@@ -316,10 +316,10 @@
     <div class="kpi">
       <div class="lbl t" data-vi="Health Score" data-en="Health Score"></div>
       <div class="score-ring">
-        <div class="val" style="color:var(--green)">95<span style="font-size:15px;color:var(--muted)">/100</span></div>
+        <div class="val" style="color:var(--green)">96<span style="font-size:15px;color:var(--muted)">/100</span></div>
       </div>
-      <div class="note"><span class="tag t" style="background:#e6f5ed;color:#0b6b49" data-vi="Giữ vững — hai hạng mục lớn dịch ngược chiều nhau" data-en="Holding — two big sub-scores moved in opposite directions"></span></div>
-      <div class="delta t" data-vi="▬ <b>Health giữ 95/100</b> (điểm thô <b>95,15 &#8594; 94,90</b>) — nhưng <b>lần đầu tiên hai hạng mục lớn nhất dịch NGƯỢC CHIỀU nhau</b> và gần như triệt tiêu. <b>Crawlability 98 &#8594; 99</b>: link quảng bá toàn site mà template bỏ ngày 28/09 <b>đã quay lại</b> — đúng 94/95 bài mỗi bài thêm đúng +1 link nội bộ, tổng <b>2.711 &#8594; 2.805</b> sau ba kỳ đứng yên. <b>Performance 98 &#8594; 96</b>: TTFB tăng đồng loạt, trung bình cả site <b>331 &#8594; 531 ms</b>, trung vị <b>268 &#8594; 493 ms</b>, trần <b>654 &#8594; 914 ms</b> — nhưng cả <b>118/118 trang vẫn dưới 1 giây</b>. Schema 92, On-page 92, Content 93 giống y nguyên ngày 01/10." data-en="▬ <b>Health holds at 95/100</b> (raw <b>95.15 &#8594; 94.90</b>) — but <b>for the first time the two biggest sub-scores moved in OPPOSITE directions</b> and all but cancelled. <b>Crawlability 98 &#8594; 99</b>: the site-wide promoted link the template dropped on 28 Sep <b>is back</b> — exactly 94 of 95 articles each gained exactly +1 internal link, total <b>2,711 &#8594; 2,805</b> after three flat crawls. <b>Performance 98 &#8594; 96</b>: TTFB rose across the board, site mean <b>331 &#8594; 531 ms</b>, median <b>268 &#8594; 493 ms</b>, ceiling <b>654 &#8594; 914 ms</b> — yet all <b>118 of 118 pages still answer under 1 second</b>. Schema 92, On-page 92 and Content 93 are byte-identical to 1 Oct."></div>
+      <div class="note"><span class="tag t" style="background:#e6f5ed;color:#0b6b49" data-vi="Tăng 95 → 96 sau khi sửa schema và đính chính lỗi alt" data-en="Up 95 → 96 after schema fixes and the alt-text correction"></span></div>
+      <div class="delta t" data-vi="▲ <b>Health 95 → 96/100</b> (điểm thô <b>94,90 → 96,40</b>) — quét lại cùng ngày sau khi sửa WordPress. <b>Structured Data 92 → 98</b>: FAQPage nay có ở <b>95/95 bài</b> (trước 82/95), 407 khối JSON-LD. <b>On-page 92 → 94</b>: phần lớn là <b>đính chính phương pháp</b> — 118 ảnh 'thiếu alt' thực ra là pixel Facebook trong &lt;noscript&gt;, không phải lỗi thật. Crawl 99, Performance 96, Content 93 giữ nguyên. <i>Điểm Schema và On-page là phán đoán ngoại suy, không phải hằng số đo được.</i>" data-en="▲ <b>Health 95 → 96/100</b> (raw <b>94.90 → 96.40</b>) — same-day re-run after the WordPress edits. <b>Structured Data 92 → 98</b>: FAQPage is now on <b>95 of 95 articles</b> (was 82), 407 JSON-LD blocks. <b>On-page 92 → 94</b>: mostly a <b>method correction</b> — the 118 'missing alt' were the Facebook pixel inside &lt;noscript&gt;, not a real defect. Crawl 99, Performance 96 and Content 93 hold. <i>The Schema and On-page scores are extrapolated judgement, not measured constants.</i>"></div>
     </div>
     <div class="kpi">
       <div class="lbl t" data-vi="Trang crawl được" data-en="Pages crawled"></div>
@@ -329,21 +329,21 @@
     </div>
     <div class="kpi">
       <div class="lbl t" data-vi="TTFB TB — trang gốc" data-en="Avg TTFB — core"></div>
-      <div class="val" style="color:var(--amber)">0,50<span style="font-size:15px">s</span></div>
-      <div class="note t" data-vi="17 trang gốc · 0,24–0,91s · <b>17/17 trang &lt;1s</b> · trang chủ 0,87s" data-en="17 core pages · 0.24–0.91s · <b>17 of 17 under 1s</b> · homepage 0.87s"></div>
-      <div class="delta t" data-vi="&#9660; <b>0,350s &#8594; 0,499s</b> so 01/10 — <b>chậm hơn 43%</b>. Trang chủ <b>528 &#8594; 868 ms</b> trong lần đo của crawl, bốn lần đo lặp có cache-buster cho 518–805 ms. Trang gốc trừ trang chủ cũng tăng <b>339 &#8594; 476 ms</b>. Trang chậm nhất toàn site nay là hub <code>/articles</code> ở <b>914 ms</b>, trang chủ thứ hai ở 868 ms — vẫn <b>17/17 trang gốc dưới 1 giây</b>." data-en="&#9660; <b>0.350s &#8594; 0.499s</b> against 1 Oct — <b>43% slower</b>. The homepage read <b>528 &#8594; 868 ms</b> inside the crawl, with four cache-busted repeats at 518–805 ms. Core excluding the homepage also rose <b>339 &#8594; 476 ms</b>. The slowest page on the site is now the <code>/articles</code> hub at <b>914 ms</b> with the homepage second at 868 ms — still <b>17 of 17 core pages under 1 second</b>."></div>
+      <div class="val" style="color:var(--amber)">0,58<span style="font-size:15px">s</span></div>
+      <div class="note t" data-vi="17 trang gốc · 0,46–0,95s · <b>17/17 trang &lt;1s</b> · trang chủ 0,73s" data-en="17 core pages · 0.46–0.95s · <b>17 of 17 under 1s</b> · homepage 0.73s"></div>
+      <div class="delta t" data-vi="&#9660; <b>0,499s &#8594; 0,583s</b> so với lần crawl sáng cùng ngày. Trang chủ đo lần này <b>725 ms</b>; trang gốc trừ trang chủ <b>574 ms</b>. Hub <code>/articles</code> chậm nhất toàn site ở <b>952 ms</b> — vẫn <b>17/17 trang gốc dưới 1 giây</b>." data-en="&#9660; <b>0.499s &#8594; 0.583s</b> against the morning crawl the same day. Homepage read <b>725 ms</b>; core excluding the homepage <b>574 ms</b>. The <code>/articles</code> hub is the slowest page on the site at <b>952 ms</b> — still <b>17 of 17 core pages under 1 second</b>."></div>
     </div>
     <div class="kpi">
       <div class="lbl t" data-vi="TTFB TB — bài viết" data-en="Avg TTFB — articles"></div>
-      <div class="val" style="color:var(--amber)">0,54<span style="font-size:15px">s</span></div>
-      <div class="note t" data-vi="Toàn bộ 95 bài · 0,26–0,82s · <b>95/95 bài &lt;1s</b> · 0 bài &gt;3s" data-en="All 95 articles · 0.26–0.82s · <b>95 of 95 under 1s</b> · 0 above 3s"></div>
-      <div class="delta t" data-vi="&#9660; <b>0,328s &#8594; 0,541s</b> so 01/10; nhóm dự án cũng chậm lại 0,328s &#8594; <b>0,453s</b> và nhóm gốc 0,350s &#8594; <b>0,499s</b> — <b>cả ba nhóm trôi cùng một chiều</b>. Trung bình cả site <b>331 &#8594; 531 ms</b>, trung vị <b>268 &#8594; 493 ms</b>. Dù vậy cả <b>118/118 trang vẫn dưới 1 giây</b>, không trang nào rơi vào dải 1–3s và không trang nào vượt 3s — kỳ thứ tám liên tiếp." data-en="&#9660; <b>0.328s &#8594; 0.541s</b> against 1 Oct; projects also slowed 0.328s &#8594; <b>0.453s</b> and core 0.350s &#8594; <b>0.499s</b> — <b>all three groups drifted the same way</b>. Site mean <b>331 &#8594; 531 ms</b>, median <b>268 &#8594; 493 ms</b>. Even so all <b>118 of 118 pages are still under 1 second</b>, none landed in the 1–3s band and none exceeded 3s — an eighth consecutive crawl."></div>
+      <div class="val" style="color:var(--amber)">0,56<span style="font-size:15px">s</span></div>
+      <div class="note t" data-vi="Toàn bộ 95 bài · 0,46–0,80s · <b>95/95 bài &lt;1s</b> · 0 bài &gt;3s" data-en="All 95 articles · 0.46–0.80s · <b>95 of 95 under 1s</b> · 0 above 3s"></div>
+      <div class="delta t" data-vi="&#9660; <b>0,541s &#8594; 0,558s</b> so với lần crawl sáng; nhóm dự án <b>0,453s &#8594; 0,609s</b>, nhóm gốc <b>0,499s &#8594; 0,583s</b>. Trung bình cả site <b>531 &#8594; 564 ms</b>, trung vị <b>505 ms</b>, trần <b>952 ms</b>. Vẫn 118/118 trang dưới 1 giây. Phép đo lặp có cache-buster không chạy lại trong lần quét này." data-en="&#9660; <b>0.541s &#8594; 0.558s</b> against the morning crawl; projects <b>0.453s &#8594; 0.609s</b>, core <b>0.499s &#8594; 0.583s</b>. Site mean <b>531 &#8594; 564 ms</b>, median <b>505 ms</b>, ceiling <b>952 ms</b>. Still 118 of 118 pages under 1 second. Cache-busted repeats were not re-run in this pass."></div>
     </div>
     <div class="kpi">
       <div class="lbl t" data-vi="Schema (JSON-LD)" data-en="Schema (JSON-LD)"></div>
       <div class="val" style="color:var(--green)">116/118</div>
       <div class="note t" data-vi="Không nhân bản (1 payload/trang) · chỉ /start-interactive và /login trống" data-en="No duplication (1 payload/page) · only /start-interactive and /login are empty"></div>
-      <div class="delta t" data-vi="▬ <b>116/118 trang có schema</b>, phủ <b>98,3%</b>. <b>FAQPage giữ 86,3%</b> (82/95 bài) kỳ thứ SÁU liên tiếp; tổng <b>394 khối JSON-LD</b> không đổi. Đúng 13 bài vẫn thiếu FAQPage và vẫn là cùng 13 bài đó; chỉ /start-interactive và /login là không có khối nào." data-en="▬ <b>116/118 pages carry schema</b>, coverage <b>98.3%</b>. <b>FAQPage holds at 86.3%</b> (82 of 95 articles) for a SIXTH consecutive crawl; the total of <b>394 JSON-LD blocks</b> is unchanged. Exactly 13 articles are still missing FAQPage and they are the same 13; only /start-interactive and /login carry no block at all."></div>
+      <div class="delta t" data-vi="▲ <b>FAQPage 86,3% → 100%</b> (<b>95/95 bài</b>) sau khi thêm 13 bài còn thiếu trên WordPress và kiểm tra lại trên site thật; tổng khối JSON-LD <b>394 → 407</b>. 116/118 trang có schema (phủ <b>98,3%</b>); chỉ /start-interactive và /login còn trống." data-en="▲ <b>FAQPage 86.3% → 100%</b> (<b>95 of 95 articles</b>) after the 13 missing articles were fixed in WordPress and re-verified live; JSON-LD blocks <b>394 → 407</b>. 116 of 118 pages carry schema (<b>98.3%</b>); only /start-interactive and /login are empty."></div>
     </div>
   </div>
   <!-- Charts -->
@@ -353,10 +353,10 @@
       <h3 class="t" data-vi="5 điểm thành phần (/100)" data-en="5 sub-scores (/100)"></h3>
       <div class="bar-row"><span class="name t" data-vi="Crawlability" data-en="Crawlability"></span><div class="bar-track"><div class="bar-fill" style="width:99%;background:var(--green)">99</div></div></div>
       <div class="bar-row"><span class="name t" data-vi="Performance / TTFB" data-en="Performance / TTFB"></span><div class="bar-track"><div class="bar-fill" style="width:96%;background:var(--green)">96</div></div></div>
-      <div class="bar-row"><span class="name t" data-vi="Structured Data / AEO" data-en="Structured Data / AEO"></span><div class="bar-track"><div class="bar-fill" style="width:92%;background:var(--green)">92</div></div></div>
-      <div class="bar-row"><span class="name t" data-vi="On-page / Meta" data-en="On-page / Meta"></span><div class="bar-track"><div class="bar-fill" style="width:92%;background:var(--green)">92</div></div></div>
+      <div class="bar-row"><span class="name t" data-vi="Structured Data / AEO" data-en="Structured Data / AEO"></span><div class="bar-track"><div class="bar-fill" style="width:98%;background:var(--green)">98</div></div></div>
+      <div class="bar-row"><span class="name t" data-vi="On-page / Meta" data-en="On-page / Meta"></span><div class="bar-track"><div class="bar-fill" style="width:94%;background:var(--green)">94</div></div></div>
       <div class="bar-row"><span class="name t" data-vi="Content" data-en="Content"></span><div class="bar-track"><div class="bar-fill" style="width:93%;background:var(--green)">93</div></div></div>
-        <div class="foot t" data-vi="Health tổng <b>95/100</b> (điểm thô <b>94,90</b>) theo trọng số <i>Crawl 25% · Perf 25% · Schema 20% · On-page 15% · Content 15%</i>. Lần đầu tiên <b>hai hạng mục lớn nhất dịch ngược chiều</b>. Crawlability 98 &#8594; 99: link quảng bá toàn site đã quay lại, tổng link nội bộ riêng biệt 2.711 &#8594; <b>2.805</b> và trung bình 23,0 &#8594; 23,8 link/trang; chưa chấm 100 vì <b>mục tiêu cụ thể của link là suy luận, không phải số đo</b> — đồ thị link theo từng đích không được lưu theo ngày. Performance 98 &#8594; 96: trung bình 331 &#8594; 531 ms, trung vị 268 &#8594; 493 ms, trần 654 &#8594; 914 ms, cả ba nhóm cùng chiều — nhưng 118/118 trang vẫn dưới một giây. Schema, On-page và Content giống y nguyên 01/10." data-en="Total health <b>95/100</b> (raw <b>94.90</b>) on weights <i>Crawl 25% · Perf 25% · Schema 20% · On-page 15% · Content 15%</i>. For the first time <b>the two biggest sub-scores moved in opposite directions</b>. Crawlability 98 &#8594; 99: the site-wide promoted link is back, total distinct internal links 2,711 &#8594; <b>2,805</b> and the average 23.0 &#8594; 23.8 per page; it stops short of 100 because <b>the specific link target is inferred, not measured</b> — the per-target link graph is not stored per day. Performance 98 &#8594; 96: mean 331 &#8594; 531 ms, median 268 &#8594; 493 ms, ceiling 654 &#8594; 914 ms, all three groups moving the same way — yet 118 of 118 pages are still under a second. Schema, On-page and Content are byte-identical to 1 Oct."></div>
+        <div class="foot t" data-vi="Health tổng <b>96/100</b> (điểm thô <b>96,40</b>) theo trọng số <i>Crawl 25% · Perf 25% · Schema 20% · On-page 15% · Content 15%</i>. Quét lại cùng ngày: <b>Schema 92 → 98</b> (FAQPage 95/95) và <b>On-page 92 → 94</b> (đính chính phương pháp alt: pixel Facebook trong noscript không còn bị đếm). Hai điểm này là <b>ngoại suy theo phán đoán</b> từ bước nhảy 88 → 92 trước đó, không phải số đo." data-en="Overall Health <b>96/100</b> (raw <b>96.40</b>) using weights <i>Crawl 25% · Perf 25% · Schema 20% · On-page 15% · Content 15%</i>. Same-day re-run: <b>Schema 92 → 98</b> (FAQPage 95/95) and <b>On-page 92 → 94</b> (alt method corrected: the Facebook pixel in noscript is no longer counted). Both are <b>extrapolated judgement</b> from the earlier 88 → 92 step, not measurements."></div>
     </div>
     <div class="card">
       <h3 class="t" data-vi="Phân bố tốc độ (118 trang đo trực tiếp)" data-en="Speed distribution (118 pages measured live)"></h3>
@@ -374,7 +374,7 @@
           <div><span class="dot" style="background:var(--green)"></span> <span class="t" data-vi="Nhanh &lt;1s: <b>118</b> · 100%" data-en="Fast &lt;1s: <b>118</b> · 100%"></span></div>
           <div><span class="dot" style="background:var(--amber)"></span> <span class="t" data-vi="1&#8211;3s: <b>0</b> · 0%" data-en="1&#8211;3s: <b>0</b> · 0%"></span></div>
           <div><span class="dot" style="background:var(--red)"></span> <span class="t" data-vi="Chậm &gt;3s: <b>0</b> · 0%" data-en="Slow &gt;3s: <b>0</b> · 0%"></span></div>
-          <div class="foot t" style="margin-top:10px" data-vi="Chuỗi <b>toàn bộ dưới một giây</b> vẫn tiếp tục: 118/118 trang, không trang nào trong dải 1–3s, không trang nào trên 3s — kỳ thứ tám liên tiếp. Nhưng phân bố đã dịch rõ về phía chậm: trần 654 &#8594; <b>914 ms</b>, trung bình 331 &#8594; <b>531 ms</b> và trung vị 268 &#8594; <b>493 ms</b>. Sàn gần như đứng yên, 241 &#8594; 235 ms." data-en="The <b>all-under-one-second</b> run still holds: 118 of 118 pages, none in the 1–3s band, none above 3s — an eighth consecutive crawl. But the distribution shifted clearly toward the slow end: ceiling 654 &#8594; <b>914 ms</b>, mean 331 &#8594; <b>531 ms</b> and median 268 &#8594; <b>493 ms</b>. The floor barely moved, 241 &#8594; 235 ms."></div>
+          <div class="foot t" style="margin-top:10px" data-vi="Chuỗi <b>toàn bộ dưới một giây</b> vẫn tiếp tục: 118/118 trang, không trang nào trong dải 1–3s hay trên 3s. Trung bình 564 ms, trung vị 505 ms, trần 952 ms." data-en="The <b>all-under-one-second</b> run continues: 118 of 118 pages, none in the 1–3s band or above 3s. Mean 564 ms, median 505 ms, ceiling 952 ms."></div>
         </div>
       </div>
     </div>
@@ -417,20 +417,20 @@
       <p class="t" data-vi="Tổng số link nội bộ riêng biệt <b>2.711 &#8594; 2.805</b> sau BA kỳ đứng yên ở 2.711, trung bình mỗi trang <b>23,0 &#8594; 23,8</b>. Đúng <b>94 trên 95 bài</b> mỗi bài thêm <b>đúng +1</b> link nội bộ riêng biệt. Bài duy nhất không dịch, <code>/articles/bim-3d-from-design-to-site-in-2026</code>, đã có link tới đích đó ngay trong thân bài, nên ở trang đó link từ template là trùng và cách đếm theo đường dẫn riêng biệt không ghi thêm. <b>GIỚI HẠN TRUNG THỰC:</b> không thể tách ra <b>chính xác đích</b> của link từ dữ liệu một ngày crawl — đồ thị link theo từng đích không được lưu theo ngày, và hiện có <b>20 đích toàn site</b> xuất hiện trên cả 95 bài. Hình dạng thay đổi trùng khớp với việc đảo ngược lỗi template ngày 28/09, nhưng đích cụ thể là <b>suy luận, không phải số đo</b> — báo cáo này không nêu một URL cụ thể nào như sự thật. Đó cũng là lý do Crawlability ở 99 chứ chưa 100." data-en="Total distinct internal links moved <b>2,711 &#8594; 2,805</b> after THREE crawls flat at 2,711, and the average per page <b>23.0 &#8594; 23.8</b>. Exactly <b>94 of the 95 articles</b> each gained <b>exactly +1</b> distinct internal link. The one article that did not move, <code>/articles/bim-3d-from-design-to-site-in-2026</code>, already linked that target from its body copy, so there the template link is a duplicate and distinct-path counting records no increase. <b>HONESTY LIMIT:</b> the exact link <b>target</b> cannot be isolated from a single day's crawl — the per-target link graph is not stored per day, and <b>20 site-wide targets</b> are now present on all 95 articles. The shape of the change matches the 28 Sep template regression being reversed, but the specific target is <b>inferred, not measured</b>, and no restored URL is stated here as fact. That is also why Crawlability reads 99 rather than 100."></p>
   </div>
     <div class="ins p2">
-      <div class="prio t" data-vi="P2 · Performance 98 &#8594; 96 · TTFB tăng đồng loạt, trần 654 &#8594; 914 ms — 118/118 trang vẫn dưới 1 giây" data-en="P2 · Performance 98 &#8594; 96 · TTFB rose across the board, ceiling 654 &#8594; 914 ms — all 118 pages still under 1 second"></div>
-      <p class="t" data-vi="Cùng phương pháp (fetch tuần tự, <code>cache: no-store</code>, abort 15s): trung bình cả site <b>331 &#8594; 531 ms</b> và trung vị <b>268 &#8594; 493 ms</b>. <b>Cả ba nhóm trôi cùng một chiều</b> — gốc <b>350 &#8594; 499 ms</b>, bài viết <b>328 &#8594; 541 ms</b>, dự án <b>328 &#8594; 453 ms</b>, gốc trừ trang chủ <b>339 &#8594; 476 ms</b> — nên đây là dịch chuyển của cả phân bố, không phải một trang xấu. Trần <b>654 &#8594; 914 ms</b> và trang chậm nhất nay là <code>/articles</code>, trang chủ thứ hai ở 868 ms: <b>hai trang nặng nhất site, không phải một bài viết</b> — khác với ngày 01/10. Dù vậy <b>118/118 trang vẫn trả lời dưới một giây</b>, 0 trang trong dải 1–3s, 0 trang trên 3s. Bốn lần đo lặp có cache-buster trên trang chủ cho 518–805 ms, nên biên độ giữa các lần đo vẫn rộng — hãy chờ xác nhận sang ngày thứ hai trước khi can thiệp." data-en="Same method (sequential fetch, <code>cache: no-store</code>, 15s abort): site mean <b>331 &#8594; 531 ms</b> and median <b>268 &#8594; 493 ms</b>. <b>All three groups drifted the same way</b> — core <b>350 &#8594; 499 ms</b>, articles <b>328 &#8594; 541 ms</b>, projects <b>328 &#8594; 453 ms</b>, core excluding the homepage <b>339 &#8594; 476 ms</b> — so this is a shift of the whole distribution rather than one bad page. The ceiling moved <b>654 &#8594; 914 ms</b> and the slowest page is now <code>/articles</code> with the homepage second at 868 ms: <b>the two heaviest pages on the site, not an article</b> — a change from 1 Oct. Even so <b>118 of 118 pages still answered in under a second</b>, 0 in the 1–3s band and 0 above 3s. Four cache-busted repeats of the homepage returned 518–805 ms, so run-to-run spread is still wide — wait for a second day of confirmation before acting."></p>
+      <div class="prio t" data-vi="P2 · Performance giữ 96 · TTFB trung bình 531 → 564 ms, trần 952 ms — 118/118 trang vẫn dưới 1 giây" data-en="P2 · Performance holds 96 · TTFB mean 531 → 564 ms, ceiling 952 ms — all 118 pages still under 1 second"></div>
+      <p class="t" data-vi="Cùng phương pháp (fetch tuần tự, <code>cache: no-store</code>, abort 15s): trung bình <b>564 ms</b>, trung vị <b>505 ms</b>; nhóm gốc 583, bài viết 558, dự án 609 ms. Trung bình đã tăng từ 331 ms (01/10) lên 531 rồi 564 ms trong cùng một ngày — hướng đi đáng theo dõi nhưng chưa vượt giải 1 giây. Chưa nên sửa gì; xem lại ngày mai." data-en="Same method (sequential fetch, <code>cache: no-store</code>, 15 s abort): mean <b>564 ms</b>, median <b>505 ms</b>; core 583, articles 558, projects 609 ms. The mean has gone 331 ms (1 Oct) → 531 → 564 ms within a day — worth watching but still inside one second. Nothing to fix yet; recheck tomorrow."></p>
   </div>
     <div class="ins p3">
-      <div class="prio t" data-vi="▬ Content giữ 93 · không có bài mới ngày thứ tám, kho nội dung giống y nguyên từng từ" data-en="▬ Content holds 93 · no new article for an eighth day, the corpus is byte-identical"></div>
-      <p class="t" data-vi="Tổng số từ <b>241.211 &#8594; 241.211</b> — <b>không đổi một chữ</b>, kể cả hub <code>/articles</code> vẫn 1.067 từ. <b>Không có bài nào được thêm hay gỡ</b> ngày thứ tám liên tiếp; bài mới gần nhất là 24/09. Trung bình mỗi bài <b>2.435 từ</b>, trang gốc 521 từ, trang dự án 178 từ. 13 trang dưới 300 từ vẫn là đúng 13 trang cũ — 6 trang dự án, /login, /start-interactive, /projects, /contact, /modules, /interiors, /model." data-en="Total words <b>241,211 &#8594; 241,211</b> — <b>not one word changed</b>, including the <code>/articles</code> hub still at 1,067 words. <b>No article was added or removed</b> for an eighth consecutive day; the last new article was 24 Sep. The average article runs <b>2,435 words</b>, core pages 521 and project pages 178. The 13 pages under 300 words are exactly the same 13 — the 6 project pages, /login, /start-interactive, /projects, /contact, /modules, /interiors and /model."></p>
+      <div class="prio t" data-vi="▬ Content giữ 93 · thêm 9 khối trả lời ngắn nhưng chưa có bài mới (ngày thứ chín)" data-en="▬ Content holds 93 · 9 short answer blocks added but still no new article (ninth day)"></div>
+      <p class="t" data-vi="Tổng số từ <b>241.211 &#8594; 241.675</b> (+464) nhờ 9 khối trả lời 40–60 từ thêm vào bài viết; hub <code>/articles</code> vẫn 1.067 từ. Không có bài mới nên không có tín hiệu tươi mới — xuất bản bài mới vẫn là đòn bẩy lớn nhất còn lại." data-en="Total words <b>241,211 &#8594; 241,675</b> (+464) from the 9 answer blocks of 40–60 words added to articles; the <code>/articles</code> hub is still 1,067 words. No new article means no freshness signal — publishing one remains the biggest lever left."></p>
   </div>
-    <div class="ins p2">
-      <div class="prio t" data-vi="P1 · FAQPage đứng yên ở 82/95 bài (86,3%) kỳ thứ SÁU liên tiếp" data-en="P1 · FAQPage frozen at 82 of 95 articles (86.3%) for a SIXTH consecutive crawl"></div>
-      <p class="t" data-vi="116/118 trang có schema và tổng <b>394 khối JSON-LD</b> không đổi. <b>13 bài vẫn thiếu khối FAQPage</b> và vẫn đúng 13 bài đó: 3d-rendering-brief-checklist-australia, digital-twin-construction-australia, plan-vs-actual-reporting-construction, 3d-rendering-for-architects-australia, construction-programme-visualisation, off-the-plan-sales-renders-for-developers, residential-bim-modelling-services-australia, vr-walkthrough-services-australia, development-application-3d-render, 4d-construction-sequencing-australia, how-3d-coordination-reduces-design-conflicts-before-construction, project-management-and-cost-control, bim-3d-from-design-to-site-in-2026. Phương pháp đã chạy được trên 82 bài kia, nên đây là việc gắn hàng loạt chứ không phải bài toán mới." data-en="116 of 118 pages carry schema and the total of <b>394 JSON-LD blocks</b> is unchanged. <b>13 articles still have no FAQPage block</b> and they are exactly the same 13: 3d-rendering-brief-checklist-australia, digital-twin-construction-australia, plan-vs-actual-reporting-construction, 3d-rendering-for-architects-australia, construction-programme-visualisation, off-the-plan-sales-renders-for-developers, residential-bim-modelling-services-australia, vr-walkthrough-services-australia, development-application-3d-render, 4d-construction-sequencing-australia, how-3d-coordination-reduces-design-conflicts-before-construction, project-management-and-cost-control and bim-3d-from-design-to-site-in-2026. The method already works on the other 82, so this is a batch job rather than a new problem."></p>
+    <div class="ins win">
+      <div class="prio t" data-vi="✓ ĐÃ XONG · FAQPage 86,3% → 100% (95/95 bài)" data-en="✓ DONE · FAQPage 86.3% → 100% (95 of 95 articles)"></div>
+      <p class="t" data-vi="13 bài còn thiếu đã được thêm khối FAQPage JSON-LD trên WordPress và xác nhận trên site thật; tổng khối JSON-LD <b>394 → 407</b>. Chỉ /start-interactive và /login chưa có schema. Nên kiểm tra lại bằng Rich Results Test để chắc Google đọc được." data-en="The 13 missing articles received FAQPage JSON-LD in WordPress and were confirmed on the live site; JSON-LD blocks <b>394 → 407</b>. Only /start-interactive and /login still lack schema. Worth a Rich Results Test pass to confirm Google parses them."></p>
   </div>
-  <div class="ins p2">
-      <div class="prio t" data-vi="P1 · 1 ảnh template thiếu alt trên mọi trang — lỗi on-page đo được duy nhất" data-en="P1 · 1 template image missing alt on every page — the only measurable on-page defect"></div>
-      <p class="t" data-vi="Đúng 1 ảnh mỗi trang thiếu alt trong HTML nguồn — <b>118 ảnh</b> trên 1.387, tức <b>91,5%</b> có alt, giống hệt ngày 01/10. Mọi chỉ số on-page khác vẫn hoàn hảo: <b>118/118</b> trang có đúng một h1, có title, có meta description, có canonical và canonical tự trỏ; <b>0 bước nhảy cấp tiêu đề</b>; meta description dài 83–189 ký tự, đều nằm trong dải hữu ích. 773 ảnh dùng lazy-load. Vì đúng một ảnh lặp trên mọi trang, một lần sửa template là đóng toàn bộ khoảng trống này." data-en="Exactly 1 image per page has no alt in the source HTML — <b>118 images</b> out of 1,387, so <b>91.5%</b> carry one, identical to 1 Oct. Every other on-page signal is perfect: <b>118 of 118</b> pages have exactly one h1, a title, a meta description, a canonical and a self-referencing canonical; <b>zero heading-level skips</b>; meta descriptions run 83–189 characters, all inside the useful range. 773 images are lazy-loaded. Because it is exactly one repeated template image, a single template fix closes the whole gap."></p>
+  <div class="ins win">
+      <div class="prio t" data-vi="✓ ĐÍNH CHÍNH · báo động '1 ảnh thiếu alt trên mọi trang' là SAI — đó là pixel Facebook trong noscript" data-en="✓ CORRECTED · the '1 image missing alt on every page' alarm was FALSE — it was the Facebook pixel inside noscript"></div>
+      <p class="t" data-vi="Quy tắc đếm đã đổi: chỉ tính <img> hiển thị, bỏ <img> trong <code>&lt;noscript&gt;</code> và pixel theo dõi. Kết quả: <b>1.269 ảnh, 1.269 có alt, 0 thiếu</b>; 118 pixel bị loại trừ được báo riêng. Đây là <b>thay đổi phương pháp</b>, không phải site vừa được sửa. Hạng mục on-page còn lại: 96 trang render heading trước h1; mọi trang đều có đúng một h1, title, meta description và canonical." data-en="Counting rule changed: only visible <img>, excluding <img> inside <code>&lt;noscript&gt;</code> and tracking pixels. Result: <b>1,269 images, 1,269 with alt, 0 missing</b>; the 118 excluded pixels are reported separately. This is a <b>method change</b>, not a site fix. Remaining on-page item: 96 pages render a heading before the h1; every page has exactly one h1, a title, a meta description and a canonical."></p>
   </div>
   <div class="ins win">
       <div class="prio t" data-vi="✓ WIN · 118/118 trả 200, 0 trang mồ côi ngày thứ HAI MƯƠI MỐT, 10/10 URL legacy vẫn sống, lớp phủ /articles đã gỡ ngày thứ TƯ" data-en="✓ WIN · 118/118 returned 200, zero orphans for a TWENTY-FIRST day, 10/10 legacy URLs alive, /articles overlay gone for a FOURTH day"></div>
@@ -438,7 +438,7 @@
   </div>
   <div class="ins p2">
     <div class="prio t" data-vi="Roadmap · Next steps ưu tiên" data-en="Roadmap · Prioritised next steps"></div>
-      <p class="t" data-vi="<b>Thay đổi thứ tự so 01/10:</b> P0 cũ đã xong — link quảng bá toàn site đã quay lại, nên <b>xuất bản bài mới lên P0</b>. <b>P0 — xuất bản bài mới</b>: đã tám ngày không có bài nào, Content bị ghim ở 93 và Google không có tín hiệu tươi; với lỗi liên kết nội bộ đã được đảo ngược, đây là đòn bẩy lớn nhất còn lại. <b>P1 — gắn khối FAQPage cho 13 bài còn thiếu</b>: phủ đã đóng băng ở 82/95 (86,3%) suốt SÁU kỳ và phương pháp đã chạy tốt trên 82 bài kia. <b>P1 — thêm alt cho một ảnh template lặp trên mọi trang</b>: một lần sửa đóng toàn bộ 118 ảnh thiếu alt và là lỗi on-page đo được duy nhất còn lại. <b>P2 — theo dõi TTFB thêm một ngày trước khi can thiệp</b>: trung bình 331 &#8594; 531 ms, trung vị 268 &#8594; 493 ms, trần 654 &#8594; 914 ms, đều khắp ba nhóm — dấu hiệu của thay đổi phía host hoặc phía mạng chứ không phải lỗi trang; 118/118 trang vẫn dưới một giây nên hãy xác nhận lặp lại trước. <b>P3 — xác nhận template đã khôi phục link nào</b>: mức +1 trên 94/95 bài là số đo, nhưng đích là suy luận; một lần chụp đồ thị link theo từng đích sẽ chốt được và đó là thứ đưa Crawlability từ 99 lên 100." data-en="<b>Reordering against 1 Oct:</b> the old P0 is done — the site-wide promoted link is back, so <b>publishing a new article moves to P0</b>. <b>P0 — publish a new article</b>: eight days without one, Content is pinned at 93 and Google has no freshness signal; with the internal-link regression reversed this is the largest remaining lever. <b>P1 — batch a FAQPage block into the 13 articles still missing one</b>: coverage has been frozen at 82 of 95 (86.3%) for SIX crawls and the method already works on the other 82. <b>P1 — add alt text to the single template image repeated on every page</b>: one fix closes all 118 missing-alt images and it is the last measurable on-page defect. <b>P2 — watch TTFB for a second day before acting</b>: mean 331 &#8594; 531 ms, median 268 &#8594; 493 ms, ceiling 654 &#8594; 914 ms, uniformly across all three groups — the signature of a host-side or network-side change rather than a page problem; all 118 pages are still under a second, so confirm the shift repeats first. <b>P3 — confirm which link the template restored</b>: the +1 on 94 of 95 articles is measured but the target is inferred; a one-off per-target link-graph capture would settle it, and that is what takes Crawlability from 99 to 100."></p>
+      <p class="t" data-vi="<b>P0 — xuất bản bài mới</b>: đã chín ngày không có bài, Content kẹt ở 93. <b>P1 — /studio và khối trả lời trang dịch vụ</b>: đã soạn tiêu đề/H1/meta cho '3d rendering services melbourne' và khối 40–60 từ cho 8 trang dịch vụ, chờ quyết định áp dụng (9 khối trên bài viết đã lên). <b>P1 — Ahrefs Site Audit</b>: nâng 'Max internal pages' từ 10 lên ~200 để Health của Ahrefs phản ánh cả site. <b>P2 — theo dõi TTFB</b>: trung bình 331 → 531 → 564 ms, mọi trang vẫn dưới 1 giây. <b>P3 — xác nhận link template được khôi phục</b> (hiện chỉ suy luận)." data-en="<b>P0 — publish a new article</b>: nine days without one keeps Content at 93. <b>P1 — /studio and service-page answer blocks</b>: title/H1/meta for '3d rendering services melbourne' and 40–60 word blocks for 8 service pages are drafted, awaiting a decision to apply (the 9 article blocks are live). <b>P1 — Ahrefs Site Audit</b>: raise 'Max internal pages' from 10 to about 200 so Ahrefs Health reflects the whole site. <b>P2 — watch TTFB</b>: mean 331 → 531 → 564 ms, every page still under 1 s. <b>P3 — confirm which template link was restored</b> (inferred only)."></p>
   </div>
 
 <button class="pk-toggle" id="rtToggle" type="button" aria-expanded="false" aria-controls="rtWrap" onclick="foldSec('rtToggle','rtWrap')">
@@ -700,128 +700,128 @@ window.__DXR_CFG={rollup:"data/rollup.json",lang:function(){try{return (typeof L
 
 <script>
 const CORE = [
-["/",868,1488,1,23,0],
-["/about",583,390,1,17,0],
-["/modules",598,190,1,17,0],
-["/projects",670,182,1,23,0],
-["/suppliers",277,380,1,17,0],
-["/apply",321,439,1,17,0],
-["/articles",914,1067,1,112,0],
-["/contact",501,185,1,17,0],
-["/studio",341,521,1,17,0],
-["/interiors",504,298,1,17,0],
-["/model",268,299,1,17,0],
-["/prestige",498,327,1,17,0],
-["/faq",344,1313,1,17,1],
-["/privacy-policy",583,862,1,17,0],
-["/terms-of-service",730,859,1,17,0],
-["/start-interactive",245,43,0,1,0],
-["/login",235,15,0,1,0]
+["/",725,1488,1,23,0],
+["/about",610,390,1,17,0],
+["/modules",668,190,1,17,0],
+["/projects",547,182,1,23,0],
+["/suppliers",577,380,1,17,0],
+["/apply",493,439,1,17,0],
+["/articles",952,1067,1,112,0],
+["/contact",514,185,1,17,0],
+["/studio",704,521,1,17,0],
+["/interiors",500,298,1,17,0],
+["/model",476,299,1,17,0],
+["/prestige",467,327,1,17,0],
+["/faq",464,1313,1,17,1],
+["/privacy-policy",571,862,1,17,0],
+["/terms-of-service",684,859,1,17,0],
+["/start-interactive",475,43,0,1,0],
+["/login",486,15,0,1,0]
 ];
 const ART = [
-["before-you-sign-with-a-builder-checklist",522,2161,4,24,1],
-["home-cinema-cost-australia",745,2164,4,24,1],
-["living-room-trends-australia",560,2100,4,24,1],
-["knockdown-rebuild-vs-renovate-melbourne",498,2126,4,24,1],
-["3d-rendering-for-home-renovation-australia",691,2030,4,25,1],
-["house-renovation-3d-design-adelaide",511,2162,4,24,1],
-["residential-property-developers-adelaide",322,1990,4,23,1],
-["quality-home-builders-adelaide",730,2528,4,24,1],
-["3d-rendering-brief-checklist-australia",481,2047,3,23,0],
-["digital-twin-construction-australia",696,2115,3,24,0],
-["plan-vs-actual-reporting-construction",494,2055,3,24,0],
-["3d-rendering-for-architects-australia",286,2162,3,24,0],
-["construction-programme-visualisation",720,2062,3,24,0],
-["off-the-plan-sales-renders-for-developers",817,2142,3,24,0],
-["residential-bim-modelling-services-australia",513,2061,3,24,0],
-["vr-walkthrough-services-australia",500,2222,3,24,0],
-["development-application-3d-render",701,2295,3,24,0],
-["4d-construction-sequencing-australia",473,2217,3,24,0],
-["3d-rendering-cost-australia",491,2596,4,26,1],
-["3d-virtual-tour-off-the-plan-apartments",651,2928,4,25,1],
-["how-to-choose-a-3d-rendering-company-australia",459,2575,5,25,1],
-["3d-renders-for-property-developers-sydney",650,3086,5,25,1],
-["architectural-visualisation-australia",455,2632,4,33,1],
-["3d-rendering-services-melbourne",523,1763,4,23,1],
-["3d-renders-for-real-estate-melbourne",487,2907,5,25,1],
-["virtual-reality-interior-design",554,2137,4,23,1],
-["home-lift-design",459,2449,4,25,1],
-["3d-renders-for-builders-melbourne",461,2404,4,25,1],
-["custom-staircase-oak-brass-glass",681,2433,4,25,1],
-["sustainable-home-energy-comfort",685,2470,4,24,1],
-["3d-renders-for-property-developers-melbourne",454,2940,5,27,1],
-["smart-home-security",446,2328,4,25,1],
-["project-251-case-study",459,2827,4,24,1],
-["glass-pool-fence-compliance",466,2409,4,25,1],
-["landscape-design-melbourne",667,2378,4,24,1],
-["outdoor-living-alfresco-design",676,2337,4,25,1],
-["luxury-home-cinema-design",467,4266,4,24,1],
-["timber-flooring-composite-decking",675,3247,4,23,1],
-["bathroom-remodel-cost-australia",463,4009,4,24,1],
-["3d-rendering-company-adelaide",448,2560,5,25,1],
-["kitchen-renovation-cost-melbourne",460,4794,4,26,1],
-["architectural-visualisation-adelaide",467,2467,5,25,1],
-["interior-finishes",464,5162,4,27,1],
-["project-251-visualisation-overview",283,1910,4,24,1],
-["luxury-home-builders-sydney",646,1594,4,24,1],
-["custom-home-builders-sydney",500,1642,4,26,1],
-["3d-rendering-adelaide",446,3020,4,28,1],
-["3d-rendering-perth",695,2994,4,23,1],
-["3d-rendering-brisbane",499,2509,4,24,1],
-["3d-rendering-sydney",467,2528,4,25,1],
-["architectural-rendering-melbourne-pre-construction-planning",492,2002,4,25,1],
-["photorealistic-rendering-melbourne-developers",695,3927,4,28,1],
-["3d-floor-plan-melbourne-home-design-clarity",465,1857,4,24,1],
-["custom-home-builders-melbourne-3d-visualisation",489,1949,4,25,1],
-["3d-rendering-company-melbourne",475,3484,4,31,1],
-["3d-rendering-melbourne-pre-construction-planning",442,1845,4,25,1],
-["custom-home-builders-melbourne-pre-build-clarity",626,1854,4,24,1],
-["luxury-home-builders-melbourne-vr-bim",475,1918,4,23,1],
-["pre-construction-visualisation-construction-readiness",467,1898,4,23,1],
-["architectural-visualisation-melbourne-project-decisions",689,3538,4,28,1],
-["house-renovation-3d-design-melbourne",703,2293,4,24,1],
-["how-3d-coordination-reduces-design-conflicts-before-construction",654,2603,3,21,0],
-["how-quality-management-in-projects-improves-project-delivery",478,2405,4,23,1],
-["how-a-construction-program-reduces-delays-and-design-conflicts",645,2498,4,23,1],
-["project-management-construction-for-luxury-residential-projects",501,2198,4,23,1],
-["bim-australia-9-implementation-mistakes",478,2753,4,23,1],
-["choosing-the-best-home-builder",497,2932,4,21,1],
-["project-controls-for-luxury-residential-construction",482,2477,4,24,1],
-["project-cost-management-using-bim-and-digital-twins",481,2550,4,24,1],
-["custom-home-builders-vs-project-builders",486,4139,4,25,1],
-["how-to-identify-quality-home-builders",470,2235,4,22,1],
-["the-best-home-builders-adelaide",588,2495,4,25,1],
-["brisbane-custom-home-builders-checklist-for-clients",469,2206,4,23,1],
-["bim-3d-4d-5d-explained",493,2266,4,23,1],
-["custom-built-homes-melbourne-checklist",645,1713,4,23,1],
-["how-to-choose-custom-home-builders-in-south-australia",693,2141,4,21,1],
-["best-practices-for-project-and-quality-management-in-2026",471,2239,4,24,1],
-["construction-program-management-software",501,1929,4,24,1],
-["program-for-construction-estimates-explained",469,1928,4,23,1],
-["what-is-bim-3d-modeling",458,1368,4,24,1],
-["project-management-and-cost-control",450,2387,3,24,0],
-["bim-3d-from-design-to-site-in-2026",759,2852,3,22,0],
-["duplex-house-design-in-australia",681,2127,4,23,1],
-["3d-house-design-guide",687,2015,4,23,1],
-["modern-house-design-2026-10-trends-shaping-homes",678,3114,4,26,1],
-["contemporary-houses-a-practical-guide",467,1920,4,24,1],
-["how-3d-configurators-increase-buyer-commitment",397,1504,4,24,1],
-["the-risk-of-cheap-architectural-renders",700,1435,4,23,1],
-["custom-home-visualisation-timeline",656,2521,4,23,1],
-["vr-vs-360-in-australian-property-decisions",659,2118,4,24,1],
-["bim-for-architects-australia-in-custom-home-design",470,2212,4,23,1],
-["6-benefits-of-using-vr-technology",479,2159,4,23,1],
-["virtual-reality-home-walkthrough",260,3019,4,27,1],
-["step-inside-6-home-design-trends-shaping-australia-in-2026",477,1484,4,23,1],
-["virtual-reality-in-australia-home-design",677,1838,4,25,1]
+["before-you-sign-with-a-builder-checklist",490,2161,4,24,1],
+["home-cinema-cost-australia",489,2164,4,24,1],
+["living-room-trends-australia",532,2100,4,24,1],
+["knockdown-rebuild-vs-renovate-melbourne",693,2126,4,24,1],
+["3d-rendering-for-home-renovation-australia",678,2030,4,25,1],
+["house-renovation-3d-design-adelaide",710,2162,4,24,1],
+["residential-property-developers-adelaide",468,1990,4,23,1],
+["quality-home-builders-adelaide",664,2528,4,24,1],
+["3d-rendering-brief-checklist-australia",479,2097,4,23,1],
+["digital-twin-construction-australia",482,2169,4,24,1],
+["plan-vs-actual-reporting-construction",691,2055,4,24,1],
+["3d-rendering-for-architects-australia",498,2212,4,24,1],
+["construction-programme-visualisation",478,2062,4,24,1],
+["off-the-plan-sales-renders-for-developers",675,2195,4,24,1],
+["residential-bim-modelling-services-australia",490,2115,4,24,1],
+["vr-walkthrough-services-australia",476,2275,4,24,1],
+["development-application-3d-render",486,2342,4,24,1],
+["4d-construction-sequencing-australia",699,2272,4,24,1],
+["3d-rendering-cost-australia",525,2596,4,26,1],
+["3d-virtual-tour-off-the-plan-apartments",734,2928,4,25,1],
+["how-to-choose-a-3d-rendering-company-australia",503,2575,5,25,1],
+["3d-renders-for-property-developers-sydney",496,3086,5,25,1],
+["architectural-visualisation-australia",497,2632,4,33,1],
+["3d-rendering-services-melbourne",565,1763,4,23,1],
+["3d-renders-for-real-estate-melbourne",751,2907,5,25,1],
+["virtual-reality-interior-design",496,2137,4,23,1],
+["home-lift-design",465,2449,4,25,1],
+["3d-renders-for-builders-melbourne",487,2404,4,25,1],
+["custom-staircase-oak-brass-glass",672,2433,4,25,1],
+["sustainable-home-energy-comfort",474,2470,4,24,1],
+["3d-renders-for-property-developers-melbourne",499,2940,5,27,1],
+["smart-home-security",491,2328,4,25,1],
+["project-251-case-study",575,2827,4,24,1],
+["glass-pool-fence-compliance",462,2409,4,25,1],
+["landscape-design-melbourne",500,2378,4,24,1],
+["outdoor-living-alfresco-design",672,2337,4,25,1],
+["luxury-home-cinema-design",469,4266,4,24,1],
+["timber-flooring-composite-decking",680,3247,4,23,1],
+["bathroom-remodel-cost-australia",474,4009,4,24,1],
+["3d-rendering-company-adelaide",491,2560,5,25,1],
+["kitchen-renovation-cost-melbourne",517,4794,4,26,1],
+["architectural-visualisation-adelaide",511,2467,5,25,1],
+["interior-finishes",728,5162,4,27,1],
+["project-251-visualisation-overview",730,1910,4,24,1],
+["luxury-home-builders-sydney",481,1594,4,24,1],
+["custom-home-builders-sydney",478,1642,4,26,1],
+["3d-rendering-adelaide",547,3020,4,28,1],
+["3d-rendering-perth",524,2994,4,23,1],
+["3d-rendering-brisbane",601,2509,4,24,1],
+["3d-rendering-sydney",595,2528,4,25,1],
+["architectural-rendering-melbourne-pre-construction-planning",764,2002,4,25,1],
+["photorealistic-rendering-melbourne-developers",647,3927,4,28,1],
+["3d-floor-plan-melbourne-home-design-clarity",762,1857,4,24,1],
+["custom-home-builders-melbourne-3d-visualisation",463,1949,4,25,1],
+["3d-rendering-company-melbourne",678,3484,4,31,1],
+["3d-rendering-melbourne-pre-construction-planning",674,1845,4,25,1],
+["custom-home-builders-melbourne-pre-build-clarity",475,1854,4,24,1],
+["luxury-home-builders-melbourne-vr-bim",485,1918,4,23,1],
+["pre-construction-visualisation-construction-readiness",670,1898,4,23,1],
+["architectural-visualisation-melbourne-project-decisions",501,3538,4,28,1],
+["house-renovation-3d-design-melbourne",467,2293,4,24,1],
+["how-3d-coordination-reduces-design-conflicts-before-construction",479,2651,4,21,1],
+["how-quality-management-in-projects-improves-project-delivery",489,2405,4,23,1],
+["how-a-construction-program-reduces-delays-and-design-conflicts",475,2498,4,23,1],
+["project-management-construction-for-luxury-residential-projects",471,2198,4,23,1],
+["bim-australia-9-implementation-mistakes",457,2753,4,23,1],
+["choosing-the-best-home-builder",687,2932,4,21,1],
+["project-controls-for-luxury-residential-construction",497,2477,4,24,1],
+["project-cost-management-using-bim-and-digital-twins",675,2550,4,24,1],
+["custom-home-builders-vs-project-builders",467,4139,4,25,1],
+["how-to-identify-quality-home-builders",504,2235,4,22,1],
+["the-best-home-builders-adelaide",492,2495,4,25,1],
+["brisbane-custom-home-builders-checklist-for-clients",494,2206,4,23,1],
+["bim-3d-4d-5d-explained",733,2266,4,23,1],
+["custom-built-homes-melbourne-checklist",496,1713,4,23,1],
+["how-to-choose-custom-home-builders-in-south-australia",474,2141,4,21,1],
+["best-practices-for-project-and-quality-management-in-2026",517,2239,4,24,1],
+["construction-program-management-software",493,1929,4,24,1],
+["program-for-construction-estimates-explained",470,1928,4,23,1],
+["what-is-bim-3d-modeling",512,1368,4,24,1],
+["project-management-and-cost-control",728,2387,4,24,1],
+["bim-3d-from-design-to-site-in-2026",506,2852,4,22,1],
+["duplex-house-design-in-australia",466,2127,4,23,1],
+["3d-house-design-guide",474,2015,4,23,1],
+["modern-house-design-2026-10-trends-shaping-homes",559,3114,4,26,1],
+["contemporary-houses-a-practical-guide",670,1920,4,24,1],
+["how-3d-configurators-increase-buyer-commitment",673,1504,4,24,1],
+["the-risk-of-cheap-architectural-renders",486,1435,4,23,1],
+["custom-home-visualisation-timeline",534,2521,4,23,1],
+["vr-vs-360-in-australian-property-decisions",470,2118,4,24,1],
+["bim-for-architects-australia-in-custom-home-design",800,2212,4,23,1],
+["6-benefits-of-using-vr-technology",621,2159,4,23,1],
+["virtual-reality-home-walkthrough",721,3019,4,27,1],
+["step-inside-6-home-design-trends-shaping-australia-in-2026",499,1484,4,23,1],
+["virtual-reality-in-australia-home-design",489,1838,4,25,1]
 ];
 const PROJ = [
-["251-station-st",442,173,1,22,0],
-["20-head-street",635,175,1,22,0],
-["85-commodore-drive",478,183,1,22,0],
-["813-clarendon-street",441,179,1,22,0],
-["31-mcilwain-drive",458,170,1,22,0],
-["nagambie-project",261,188,1,22,0]
+["251-station-st",505,173,1,22,0],
+["20-head-street",744,175,1,22,0],
+["85-commodore-drive",305,183,1,22,0],
+["813-clarendon-street",709,179,1,22,0],
+["31-mcilwain-drive",718,170,1,22,0],
+["nagambie-project",671,188,1,22,0]
 ];
 const PAGES = [];
 CORE.forEach(c=>PAGES.push({url:c[0],status:200,rt:c[1],words:c[2],schema:c[3],links:c[4],sm:c[5],grp:"core"}));
@@ -878,7 +878,7 @@ const TREND = [
 ["2026-09-29",95,98,99,92,92,93,118,336,325,255,2436],
 ["2026-09-30",95,98,98,92,92,93,118,381,340,264,2436],
 ["2026-10-01",95,98,98,92,92,93,118,350,328,328,2435],
-["2026-10-02",95,99,96,92,92,93,118,499,541,453,2435]
+["2026-10-02",96,99,96,98,94,93,118,583,558,609,2440]
 ];
 
 function trFmt(d){const p=d.split('-');return LANG==='vi'?p[2]+'/'+p[1]:p[2]+' '+['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+p[1]-1];}
