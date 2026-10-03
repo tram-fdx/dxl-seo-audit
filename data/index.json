@@ -1,6 +1,6 @@
 {
  "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
- "latest": "2026-10-02",
+ "latest": "2026-10-03",
  "report": "index.html",
  "site": "dxliving.com",
  "snapshots": [
@@ -338,6 +338,13 @@
    "date": "2026-10-02",
    "label_en": "Health 95→96 (raw 94.90→96.40) · same-day re-run after WordPress edits. FAQPage 86.3→100 pct (95 of 95 articles), JSON-LD blocks 394→407 → Structured Data 92→98. The 118 'missing alt' were the Facebook pixel inside noscript, not a real defect: method corrected → 1,269 images, 0 missing → On-page 92→94 (a method correction plus judgement, not a measured constant). Words 241,211→241,675 (+464, nine answer blocks); no new article for a ninth day, Content holds 93. Crawlability holds 99 (internal links unchanged at 2,805). TTFB mean 531→564 ms, ceiling 952 ms, all 118 pages under 1 s, Performance holds 96.",
    "label_vi": "Health 95→96 (điểm thô 94,90→96,40) · quét lại cùng ngày sau khi sửa WordPress. FAQPage 86,3→100% (95/95 bài), khối JSON-LD 394→407 → Structured Data 92→98. 118 'thiếu alt' thực ra là pixel Facebook trong noscript, không phải lỗi thật: đã đính chính phương pháp → 1.269 ảnh, 0 thiếu → On-page 92→94 (đính chính phương pháp cộng phán đoán, không phải hằng số đo được). Số từ 241.211→241.675 (+464, chín khối trả lời); chưa có bài mới ngày thứ chín, Content giữ 93. Crawlability giữ 99 (link nội bộ không đổi 2.805). TTFB trung bình 531→564 ms, trần 952 ms, 118/118 trang dưới 1 giây, Performance giữ 96.",
+   "report": "archive/2026-10-02.html"
+  },
+  {
+   "data": "data/2026-10-03.json",
+   "date": "2026-10-03",
+   "label_en": "Health 96→97 (raw 96.40→96.65) · Performance 96→98 (TTFB mean 564→327 ms, ceiling 714 ms, all 118 pages under 1 s). Crawlability 99→98: site-wide template link gone again (internal links 2,805→2,711; 94 of 95 articles lost 1). Structured Data holds 98 (FAQPage 95/95), On-page 94 (0 missing alt), Content 93 (no new article for ten days, words 241,675 unchanged).",
+   "label_vi": "Health 96→97 (điểm thô 96,40→96,65) · Performance 96→98 (TTFB trung bình 564→327 ms, trần 714 ms, 118/118 trang dưới 1 giây). Crawlability 99→98: link template toàn site lại biến mất (link nội bộ 2.805→2.711; 94/95 bài mất 1). Structured Data giữ 98 (FAQPage 95/95), On-page 94 (0 thiếu alt), Content 93 (chưa có bài mới ngày thứ mười, 241.675 từ không đổi).",
    "report": "index.html"
   }
  ]
