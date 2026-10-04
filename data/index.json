@@ -1,6 +1,6 @@
 {
  "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
- "latest": "2026-10-03",
+ "latest": "2026-10-05",
  "report": "index.html",
  "site": "dxliving.com",
  "snapshots": [
@@ -345,6 +345,13 @@
    "date": "2026-10-03",
    "label_en": "Health 96→97 (raw 96.40→96.65) · Performance 96→98 (TTFB mean 564→327 ms, ceiling 714 ms, all 118 pages under 1 s). Crawlability 99→98: site-wide template link gone again (internal links 2,805→2,711; 94 of 95 articles lost 1). Structured Data holds 98 (FAQPage 95/95), On-page 94 (0 missing alt), Content 93 (no new article for ten days, words 241,675 unchanged).",
    "label_vi": "Health 96→97 (điểm thô 96,40→96,65) · Performance 96→98 (TTFB trung bình 564→327 ms, trần 714 ms, 118/118 trang dưới 1 giây). Crawlability 99→98: link template toàn site lại biến mất (link nội bộ 2.805→2.711; 94/95 bài mất 1). Structured Data giữ 98 (FAQPage 95/95), On-page 94 (0 thiếu alt), Content 93 (chưa có bài mới ngày thứ mười, 241.675 từ không đổi).",
+   "report": "archive/2026-10-03.html"
+  },
+  {
+   "data": "data/2026-10-05.json",
+   "date": "2026-10-05",
+   "label_en": "Health 97→97 (raw 96.65 unchanged; two-day step, no 4 Oct crawl) · no sub-score moved: Crawlability 98, Performance 98 (TTFB mean 326 ms, ceiling 818 ms, all 118 pages under 1 s), Structured Data 98, On-page 94, Content 93 (no new article for 11 days). Template link still missing (2,711 internal links). NEW: Ahrefs Site Audit errors merged in — Health 98%, 232 internal URLs, 16 with errors, 1 404, 25 3XX.",
+   "label_vi": "Health 97→97 (điểm thô 96,65 không đổi; bước hai ngày, không có bản quét 04/10) · không điểm thành phần nào đổi: Crawlability 98, Performance 98 (TTFB trung bình 326 ms, trần 818 ms, 118/118 trang dưới 1 giây), Structured Data 98, On-page 94, Content 93 (chưa có bài mới 11 ngày). Link template vẫn thiếu (2.711 link nội bộ). MỚI: gộp lỗi Ahrefs Site Audit — Health 98%, 232 URL nội bộ, 16 URL có lỗi, 1 trang 404, 25 chuyển hướng 3XX.",
    "report": "index.html"
   }
  ]
