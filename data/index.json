@@ -1,6 +1,6 @@
 {
  "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
- "latest": "2026-10-06",
+ "latest": "2026-10-07",
  "report": "index.html",
  "site": "dxliving.com",
  "snapshots": [
@@ -359,6 +359,13 @@
    "date": "2026-10-06",
    "label_en": "Health 97→97 (raw 96.65→96.9; one-day step) · Crawlability 98→99: site-wide template link back (internal links 2,711→2,805; inferred). Performance holds 98 (TTFB mean 333 ms, ceiling 677 ms, all 118 pages under 1 s), Structured Data 98, On-page 94, Content 93 (no new article for 12 days). Ahrefs Site Audit: Health 98%, 16 URLs with errors, 919 issues; NEW warning \"Slow server response for AI crawlers\" on 2 pages.",
    "label_vi": "Health 97→97 (điểm thô 96,65→96,9; bước một ngày) · Crawlability 98→99: link template toàn site đã trở lại (link nội bộ 2.711→2.805; suy luận). Performance giữ 98 (TTFB trung bình 333 ms, trần 677 ms, 118/118 trang dưới 1 giây), Structured Data 98, On-page 94, Content 93 (chưa có bài mới 12 ngày). Ahrefs Site Audit: Health 98%, 16 URL có lỗi, 919 vấn đề; cảnh báo MỚI \"Slow server response for AI crawlers\" trên 2 trang.",
+   "report": "archive/2026-10-06.html"
+  },
+  {
+   "data": "data/2026-10-07.json",
+   "date": "2026-10-07",
+   "label_en": "Health 97→97 (raw 96.9→96.65; one-day step) · Crawlability 99→98: site-wide template link missing again (internal links 2,805→2,711; inferred). Performance holds 98 (TTFB mean 338 ms, ceiling 713 ms, 118/118 pages under 1 s), Structured Data 98, On-page 94, Content 93 (no new article for 13 days). Ahrefs Site Audit: Health 99%, 5 URLs with errors, 931 issues (6 errors); new: 34 changed pages not submitted to IndexNow, 20 title tags and 16 meta descriptions changed.",
+   "label_vi": "Health 97→97 (điểm thô 96,9→96,65; bước một ngày) · Crawlability 99→98: link template toàn site lại thiếu (link nội bộ 2.805→2.711; suy luận). Performance giữ 98 (TTFB trung bình 338 ms, trần 713 ms, 118/118 trang dưới 1 giây), Structured Data 98, On-page 94, Content 93 (chưa có bài mới 13 ngày). Ahrefs Site Audit: Health 99%, 5 URL có lỗi, 931 vấn đề (6 lỗi); mới: 34 trang đã đổi chưa gửi IndexNow, 20 title và 16 meta description đã đổi.",
    "report": "index.html"
   }
  ]
