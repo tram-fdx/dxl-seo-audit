@@ -1,6 +1,6 @@
 {
  "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
- "latest": "2026-10-08",
+ "latest": "2026-10-09",
  "report": "index.html",
  "site": "dxliving.com",
  "snapshots": [
@@ -373,6 +373,13 @@
    "date": "2026-10-08",
    "label_en": "Health 97→97 (raw 96.65→96.9; one-day step) · Crawlability 98→99: site-wide template link back (internal links 2,711→2,805; inferred). Performance holds 98 (TTFB mean 308 ms, ceiling 648 ms, all 118 pages under 1 s), Structured Data 98, On-page 94, Content 93 (no new article for 14 days). Ahrefs Site Audit: Health 99%, 5 URLs with errors, 869 issues (6 errors); new: 'Slow server response for AI crawlers' on 2 URLs; only the top two issues were read.",
    "label_vi": "Health 97→97 (điểm thô 96,65→96,9; bước một ngày) · Crawlability 98→99: link template toàn site đã trở lại (link nội bộ 2.711→2.805; suy luận). Performance giữ 98 (TTFB trung bình 308 ms, trần 648 ms, 118/118 trang dưới 1 giây), Structured Data 98, On-page 94, Content 93 (chưa có bài mới 14 ngày). Ahrefs Site Audit: Health 99%, 5 URL có lỗi, 869 vấn đề (6 lỗi); mới: 'Slow server response for AI crawlers' trên 2 URL; chỉ đọc hai vấn đề đầu danh sách.",
+   "report": "archive/2026-10-08.html"
+  },
+  {
+   "data": "data/2026-10-09.json",
+   "date": "2026-10-09",
+   "label_en": "Health 97→97 (raw 96.9→96.65; one-day step) · Crawlability 99→98: site-wide template link gone again in the main crawl (internal links 2,805→2,711; inferred; an end-of-day re-read gave 2,805). Performance holds 98 (TTFB mean 327 ms, ceiling 580 ms, all 118 pages under 1 s), Structured Data 98, On-page 94, Content 93 (no new article for 15 days). Ahrefs Site Audit: Health 99%, 5 URLs with errors, 851 issues (6 errors); per-issue detail not read.",
+   "label_vi": "Health 97→97 (điểm thô 96,9→96,65; bước một ngày) · Crawlability 99→98: link template toàn site lại biến mất ở lần crawl chính (link nội bộ 2.805→2.711; suy luận; đọc lại cuối ngày là 2.805). Performance giữ 98 (TTFB trung bình 327 ms, trần 580 ms, 118/118 trang dưới 1 giây), Structured Data 98, On-page 94, Content 93 (chưa có bài mới 15 ngày). Ahrefs Site Audit: Health 99%, 5 URL có lỗi, 851 vấn đề (6 lỗi); chưa đọc chi tiết từng loại.",
    "report": "index.html"
   }
  ]
