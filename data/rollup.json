@@ -1,13 +1,13 @@
 {
  "derived": true,
- "generated_at": "2026-10-11",
+ "generated_at": "2026-10-12",
  "grain_legend": {
   "day": "Số đo của đúng ngày đó. CỘNG DỒN ĐƯỢC trong khoảng.",
   "state": "Chỉ số trạng thái tại thời điểm quét. Lấy trung bình hoặc giá trị cuối kỳ, không cộng.",
   "window28": "Ảnh chụp cửa sổ 28 ngày trượt. KHÔNG cộng được (các ngày chồng nhau) — chỉ so đầu kỳ với cuối kỳ và vẽ xu hướng."
  },
  "kind": "rollup",
- "scanned_count": 55,
+ "scanned_count": 56,
  "scanned_days": [
   "2026-07-27",
   "2026-07-28",
@@ -63,14 +63,15 @@
   "2026-10-07",
   "2026-10-08",
   "2026-10-09",
-  "2026-10-12"
+  "2026-10-12",
+  "2026-10-13"
  ],
  "series": {
   "content": {
    "grain": "state",
    "label": "Content",
-   "measured": 55,
-   "of_days": 55,
+   "measured": 56,
+   "of_days": 56,
    "points": [
     {
      "d": "2026-07-27",
@@ -290,6 +291,10 @@
     },
     {
      "d": "2026-10-12",
+     "v": 93
+    },
+    {
+     "d": "2026-10-13",
      "v": 93
     }
    ]
@@ -297,8 +302,8 @@
   "crawlability": {
    "grain": "state",
    "label": "Crawlability",
-   "measured": 55,
-   "of_days": 55,
+   "measured": 56,
+   "of_days": 56,
    "points": [
     {
      "d": "2026-07-27",
@@ -519,14 +524,18 @@
     {
      "d": "2026-10-12",
      "v": 99
+    },
+    {
+     "d": "2026-10-13",
+     "v": 98
     }
    ]
   },
   "health": {
    "grain": "state",
    "label": "Health score",
-   "measured": 55,
-   "of_days": 55,
+   "measured": 56,
+   "of_days": 56,
    "points": [
     {
      "d": "2026-07-27",
@@ -747,14 +756,18 @@
     {
      "d": "2026-10-12",
      "v": 97
+    },
+    {
+     "d": "2026-10-13",
+     "v": 97
     }
    ]
   },
   "onpage": {
    "grain": "state",
    "label": "On-page / Meta",
-   "measured": 55,
-   "of_days": 55,
+   "measured": 56,
+   "of_days": 56,
    "points": [
     {
      "d": "2026-07-27",
@@ -975,14 +988,18 @@
     {
      "d": "2026-10-12",
      "v": 94
+    },
+    {
+     "d": "2026-10-13",
+     "v": 94
     }
    ]
   },
   "pages_crawled": {
    "grain": "state",
    "label": "Số trang crawl",
-   "measured": 54,
-   "of_days": 55,
+   "measured": 55,
+   "of_days": 56,
    "points": [
     {
      "d": "2026-07-27",
@@ -1199,14 +1216,18 @@
     {
      "d": "2026-10-12",
      "v": 118
+    },
+    {
+     "d": "2026-10-13",
+     "v": 118
     }
    ]
   },
   "performance": {
    "grain": "state",
    "label": "Performance / TTFB",
-   "measured": 55,
-   "of_days": 55,
+   "measured": 56,
+   "of_days": 56,
    "points": [
     {
      "d": "2026-07-27",
@@ -1427,14 +1448,18 @@
     {
      "d": "2026-10-12",
      "v": 98
+    },
+    {
+     "d": "2026-10-13",
+     "v": 98
     }
    ]
   },
   "sitemap_urls": {
    "grain": "state",
    "label": "Sitemap — số URL",
-   "measured": 51,
-   "of_days": 55,
+   "measured": 52,
+   "of_days": 56,
    "points": [
     {
      "d": "2026-07-27",
@@ -1639,14 +1664,18 @@
     {
      "d": "2026-10-12",
      "v": 119
+    },
+    {
+     "d": "2026-10-13",
+     "v": 119
     }
    ]
   },
   "structured_data": {
    "grain": "state",
    "label": "Structured data",
-   "measured": 55,
-   "of_days": 55,
+   "measured": 56,
+   "of_days": 56,
    "points": [
     {
      "d": "2026-07-27",
@@ -1867,14 +1896,18 @@
     {
      "d": "2026-10-12",
      "v": 98
+    },
+    {
+     "d": "2026-10-13",
+     "v": 98
     }
    ]
   },
   "ttfb_mean_ms": {
    "grain": "state",
    "label": "TTFB trung bình (ms)",
-   "measured": 44,
-   "of_days": 55,
+   "measured": 45,
+   "of_days": 56,
    "points": [
     {
      "d": "2026-08-12",
@@ -2051,14 +2084,18 @@
     {
      "d": "2026-10-12",
      "v": 313.2
+    },
+    {
+     "d": "2026-10-13",
+     "v": 315.9
     }
    ]
   },
   "ttfb_median_ms": {
    "grain": "state",
    "label": "TTFB trung vị (ms)",
-   "measured": 27,
-   "of_days": 55,
+   "measured": 28,
+   "of_days": 56,
    "points": [
     {
      "d": "2026-09-09",
@@ -2167,14 +2204,18 @@
     {
      "d": "2026-10-12",
      "v": 269.5
+    },
+    {
+     "d": "2026-10-13",
+     "v": 261.0
     }
    ]
   },
   "words_total": {
    "grain": "state",
    "label": "Tổng số từ",
-   "measured": 30,
-   "of_days": 55,
+   "measured": 31,
+   "of_days": 56,
    "points": [
     {
      "d": "2026-09-04",
@@ -2295,6 +2336,10 @@
     {
      "d": "2026-10-12",
      "v": 241675
+    },
+    {
+     "d": "2026-10-13",
+     "v": 242620
     }
    ]
   }
