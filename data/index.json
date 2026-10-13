@@ -1,6 +1,6 @@
 {
  "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
- "latest": "2026-10-13",
+ "latest": "2026-10-14",
  "report": "index.html",
  "site": "dxliving.com",
  "snapshots": [
@@ -394,6 +394,13 @@
    "date": "2026-10-13",
    "label_en": "Health 97→97 (raw 96.9→96.65; one-day step) · Crawlability 99→98: site-wide template link missing again (internal links 2,805→2,711; inferred), 1 hub-only article. Performance holds 98 (TTFB mean 316 ms, ceiling 639 ms, all 118 pages under 1 s), Structured Data 98, On-page 94, Content 93 (no new article for 19 days; 3 pages edited, words 241,675→242,620). Ahrefs Site Audit: Health 99%, 4 URLs with errors, 871 issues (4 errors); new: 4 changed pages not submitted to IndexNow, 3 H1, 3 meta description and 3 title changes.",
    "label_vi": "Health 97→97 (điểm thô 96,9→96,65; bước một ngày) · Crawlability 99→98: link template toàn site lại thiếu (link nội bộ 2.805→2.711; suy luận), 1 bài chỉ phụ thuộc hub. Performance giữ 98 (TTFB trung bình 316 ms, trần 639 ms, 118/118 trang dưới 1 giây), Structured Data 98, On-page 94, Content 93 (chưa có bài mới 19 ngày; 3 trang được sửa, số từ 241.675→242.620). Ahrefs Site Audit: Health 99%, 4 URL có lỗi, 871 vấn đề (4 lỗi); mới: 4 trang đã đổi chưa gửi IndexNow, 3 H1, 3 meta description và 3 title đã đổi.",
+   "report": "archive/2026-10-13.html"
+  },
+  {
+   "data": "data/2026-10-14.json",
+   "date": "2026-10-14",
+   "label_en": "Health 97→97 (raw 96.65→96.5; one-day step) · On-page 94→93: /articles/3d-rendering-company-melbourne now cross-canonicals to /articles/3d-rendering-melbourne-pre-construction-planning (self canonical 117/118; body 3,484→2,792 words, identical to the target; still in the sitemap). Crawlability holds 98: template link back (internal links 2,711→2,800), 0 orphans, 2 hub-only articles. Performance holds 98 (TTFB mean 317 ms, ceiling 876 ms, all 118 pages under 1 s), Structured Data 98, Content 93 (no new article for 20 days; words 242,620→241,898). Ahrefs Site Audit: Health 99%, 5 URLs with errors; detail not read.",
+   "label_vi": "Health 97→97 (điểm thô 96,65→96,5; bước một ngày) · On-page 94→93: /articles/3d-rendering-company-melbourne nay có canonical chéo sang /articles/3d-rendering-melbourne-pre-construction-planning (canonical tự trỏ 117/118; nội dung 3.484→2.792 từ, trùng trang đích; vẫn trong sitemap). Crawlability giữ 98: link template quay lại (link nội bộ 2.711→2.800), 0 trang mồ côi, 2 bài chỉ phụ thuộc hub. Performance giữ 98 (TTFB trung bình 317 ms, trần 876 ms, 118/118 trang dưới 1 giây), Structured Data 98, Content 93 (chưa có bài mới 20 ngày; số từ 242.620→241.898). Ahrefs Site Audit: Health 99%, 5 URL có lỗi; chưa đọc chi tiết.",
    "report": "index.html"
   }
  ]
