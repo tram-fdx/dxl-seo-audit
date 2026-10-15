@@ -1,6 +1,6 @@
 {
  "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
- "latest": "2026-10-15",
+ "latest": "2026-10-16",
  "report": "index.html",
  "site": "dxliving.com",
  "snapshots": [
@@ -408,6 +408,13 @@
    "date": "2026-10-15",
    "label_en": "Health 97→96 (raw 96.5→96.25; one-day step) · Performance 98→97: /articles/3d-rendering-adelaide took 1,028 ms, the first page over 1 s (117 of 118 under 1 s; TTFB mean 317→325 ms). Crawlability holds 98 on judgement but the site-wide template link dropped again (internal links 2,800→2,690, -1 on 110 pages), 0 orphans, 2 hub-only articles. On-page 93 (cross-canonical on /articles/3d-rendering-company-melbourne persists), Structured Data 98, Content 93 (no new article for 21 days; words 241,898→242,263). Ahrefs Site Audit: Health 99%, 5 URLs with errors; detail not read.",
    "label_vi": "Health 97→96 (điểm thô 96,5→96,25; bước một ngày) · Performance 98→97: /articles/3d-rendering-adelaide đo 1.028 ms, trang đầu tiên vượt 1 giây (117/118 trang dưới 1 giây; TTFB trung bình 317→325 ms). Crawlability giữ 98 theo phán đoán nhưng link template toàn site rụng lại (link nội bộ 2.800→2.690, -1 trên 110 trang), 0 trang mồ côi, 2 bài chỉ phụ thuộc hub. On-page 93 (canonical chéo ở /articles/3d-rendering-company-melbourne vẫn còn), Structured Data 98, Content 93 (chưa có bài mới 21 ngày; số từ 241.898→242.263). Ahrefs Site Audit: Health 99%, 5 URL có lỗi; chưa đọc chi tiết.",
+   "report": "archive/2026-10-15.html"
+  },
+  {
+   "data": "data/2026-10-16.json",
+   "date": "2026-10-16",
+   "label_en": "Health 96 · all 118 pages under 1 s",
+   "label_vi": "Health 96 · 118 trang đều dưới 1 giây",
    "report": "index.html"
   }
  ]
