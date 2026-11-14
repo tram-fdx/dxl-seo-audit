@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DX Living — Technical SEO Audit Dashboard</title>
 <style>
 :root{--cream:#f4f1ea;--card:#fffdf8;--ink:#2c2620;--muted:#6f665a;--accent:#b8935a;--line:#e3dccd;--green:#5a8f5a;--amber:#c99a3f;--red:#c05a4a;--blue:#5a7a9f}
@@ -23,7 +23,7 @@ body.en .vi,body:not(.en) .en{display:none}a{color:#96733f}
 
 <header class="top"><div class="wrap"><div><h1>DX Living — Technical SEO Audit</h1>
 <div class="sub">dxliving.com · <span class="vi">Cập nhật tự động mỗi ngày</span><span class="en">Updated automatically every day</span></div></div>
-<div style="text-align:right"><div class="lt"><button data-l="vi" class="on">VI</button><button data-l="en">EN</button></div><br>
+<div style="text-align:right"><div class="lt"><button data-l="en" class="on">EN</button><button data-l="vi">VI</button></div><br>
 <span class="pill">2026-11-15</span> <a href="history.html" style="color:#e5dcc7;font-size:12px"><span class="vi">Lịch sử</span><span class="en">History</span></a></div></div></header>
 <div class="wrap">
 <section class="card"><div style="display:flex;gap:26px;align-items:center;flex-wrap:wrap">
@@ -269,8 +269,8 @@ window.__DXR_CFG={rollup:"data/rollup.json",lang:function(){try{return (typeof L
 <p class="sub" style="color:var(--muted)">Sequential urllib fetch of every sitemap URL, 15 s timeout. TTFB = time to response headers. Sub-scores use fixed formulas (see pipeline README), not manual judgement.</p>
 </div>
 <script>
-var LANG=localStorage.getItem('dxl-lang')||'vi';
-function setL(l){LANG=l;localStorage.setItem('dxl-lang',l);document.body.classList.toggle('en',l==='en');
+var LANG=localStorage.getItem('dxl-lang-v2')||'en';
+function setL(l){LANG=l;localStorage.setItem('dxl-lang-v2',l);document.body.classList.toggle('en',l==='en');
 document.querySelectorAll('.lt button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l)});}
 document.querySelectorAll('.lt button').forEach(function(b){b.onclick=function(){setL(b.dataset.l)}});setL(LANG);
 </script>
