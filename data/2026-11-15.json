@@ -4116,7 +4116,20 @@
  "commentary": {
   "vi": "Điểm sức khoẻ kỹ thuật tăng từ 97 lên 98; on-page tăng mạnh từ 93 lên 99, TTFB trung bình giảm từ 241 xuống 227 ms. Đã quét 127 trang. Việc nên làm: sửa liên kết nội bộ tới /articles/3d-rendering-company-melbourne (đang chuyển hướng 308), thêm schema cho /start-interactive và bổ sung nội dung cho 10 trang mỏng.",
   "en": "Technical health rose from 97 to 98; on-page jumped from 93 to 99 and mean TTFB fell from 241 to 227 ms across 127 crawled pages. Next: update internal links to /articles/3d-rendering-company-melbourne (308 redirect), add schema to /start-interactive and expand the 10 thin pages.",
-  "by": "Claude (Mac)"
+  "by": "Claude (Mac)",
+  "rating": "good",
+  "verdict_vi": "Website khoẻ về kỹ thuật (98/100) và đang cải thiện.",
+  "verdict_en": "The site is technically healthy (98/100) and improving.",
+  "actions_vi": [
+   "Đổi link nội bộ trỏ tới /articles/3d-rendering-company-melbourne sang URL đích (đang chuyển hướng 308).",
+   "Thêm schema cho trang /start-interactive.",
+   "Viết thêm nội dung cho 10 trang mỏng, ưu tiên trang có lượt hiển thị trên GSC."
+  ],
+  "actions_en": [
+   "Point internal links to /articles/3d-rendering-company-melbourne at the final URL (currently a 308 redirect).",
+   "Add schema to /start-interactive.",
+   "Expand the 10 thin pages, starting with those that get GSC impressions."
+  ]
  },
  "commentary_input": {
   "report": "Website technical SEO audit",
