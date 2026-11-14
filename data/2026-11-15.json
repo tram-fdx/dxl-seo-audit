@@ -4114,9 +4114,9 @@
   }
  ],
  "commentary": {
-  "vi": "health 97 → 98; ttfb_mean 240.6 → 226.6; pages_crawled 121 → 127; words_total 255267 → 280108; orphans 0; thin_pages 10; images_without_alt 0.",
-  "en": "health 97 → 98; ttfb_mean 240.6 → 226.6; pages_crawled 121 → 127; words_total 255267 → 280108; orphans 0; thin_pages 10; images_without_alt 0.",
-  "by": "template"
+  "vi": "Điểm sức khoẻ kỹ thuật tăng từ 97 lên 98; on-page tăng mạnh từ 93 lên 99, TTFB trung bình giảm từ 241 xuống 227 ms. Đã quét 127 trang. Việc nên làm: sửa liên kết nội bộ tới /articles/3d-rendering-company-melbourne (đang chuyển hướng 308), thêm schema cho /start-interactive và bổ sung nội dung cho 10 trang mỏng.",
+  "en": "Technical health rose from 97 to 98; on-page jumped from 93 to 99 and mean TTFB fell from 241 to 227 ms across 127 crawled pages. Next: update internal links to /articles/3d-rendering-company-melbourne (308 redirect), add schema to /start-interactive and expand the 10 thin pages.",
+  "by": "Claude (Mac)"
  },
  "commentary_input": {
   "report": "Website technical SEO audit",
@@ -4166,5 +4166,5 @@
    }
   }
  },
- "score_rationale": "health 97 → 98; ttfb_mean 240.6 → 226.6; pages_crawled 121 → 127; words_total 255267 → 280108; orphans 0; thin_pages 10; images_without_alt 0."
+ "score_rationale": "Technical health rose from 97 to 98; on-page jumped from 93 to 99 and mean TTFB fell from 241 to 227 ms across 127 crawled pages. Next: update internal links to /articles/3d-rendering-company-melbourne (308 redirect), add schema to /start-interactive and expand the 10 thin pages."
 }
