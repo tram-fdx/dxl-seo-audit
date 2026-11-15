@@ -526,8 +526,8 @@
    "date": "2026-11-15",
    "data": "data/2026-11-15.json",
    "report": "archive/2026-11-15.html",
-   "label_vi": "Health 98, on-page tăng mạnh, còn 10 trang mỏng",
-   "label_en": "Health 98, on-page up sharply, 10 thin pages left"
+   "label_vi": "Health 98 · 128 trang · TTFB TB 212 ms",
+   "label_en": "Health 98 · 128 pages · mean TTFB 212 ms"
   }
  ]
 }
