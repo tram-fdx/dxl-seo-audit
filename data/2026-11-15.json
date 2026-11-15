@@ -4146,9 +4146,22 @@
   }
  ],
  "commentary": {
-  "vi": "health 97 → 98; ttfb_mean 240.6 → 220.0; pages_crawled 121 → 128; words_total 255267 → 282598; orphans 0; thin_pages 10; images_without_alt 0.",
-  "en": "health 97 → 98; ttfb_mean 240.6 → 220.0; pages_crawled 121 → 128; words_total 255267 → 282598; orphans 0; thin_pages 10; images_without_alt 0.",
-  "by": "template"
+  "vi": "Điểm sức khoẻ tăng từ 97 lên 98; on-page lên 99 (từ 93) và content lên 96 (từ 94). Số trang crawl tăng lên 128, TTFB trung bình giảm còn 220 ms. Còn 10 trang mỏng, 1 URL trả về 308 (/articles/3d-rendering-company-melbourne) và /start-interactive chưa có schema.",
+  "en": "Health rose from 97 to 98; on-page climbed to 99 (from 93) and content to 96 (from 94). Pages crawled grew to 128 and mean TTFB fell to 220 ms. Ten thin pages remain, one URL returns a 308 (/articles/3d-rendering-company-melbourne) and /start-interactive has no schema.",
+  "by": "Claude (Mac)",
+  "rating": "good",
+  "verdict_vi": "Kỹ thuật website ổn định và tiếp tục cải thiện, chỉ còn vài lỗi nhỏ.",
+  "verdict_en": "Technical health is solid and still improving, with only minor issues left.",
+  "actions_vi": [
+   "Mở rộng hoặc gộp 10 trang mỏng để nâng điểm content trên 96",
+   "Sửa link nội bộ trỏ tới /articles/3d-rendering-company-melbourne sang URL đích để bỏ redirect 308",
+   "Thêm schema cho /start-interactive"
+  ],
+  "actions_en": [
+   "Expand or merge the 10 thin pages to lift content above 96",
+   "Point internal links at the final URL of /articles/3d-rendering-company-melbourne to drop the 308",
+   "Add schema to /start-interactive"
+  ]
  },
  "commentary_input": {
   "report": "Website technical SEO audit",
@@ -4198,5 +4211,5 @@
    }
   }
  },
- "score_rationale": "health 97 → 98; ttfb_mean 240.6 → 220.0; pages_crawled 121 → 128; words_total 255267 → 282598; orphans 0; thin_pages 10; images_without_alt 0."
+ "score_rationale": "Health rose from 97 to 98; on-page climbed to 99 (from 93) and content to 96 (from 94). Pages crawled grew to 128 and mean TTFB fell to 220 ms. Ten thin pages remain, one URL returns a 308 (/articles/3d-rendering-company-melbourne) and /start-interactive has no schema."
 }
