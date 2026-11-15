@@ -3,11 +3,11 @@
  "site": "dxliving.com",
  "crawl": "Automated crawl (GitHub Actions, pipeline v1) on 2026-11-15 UTC",
  "method": "Sequential urllib fetch of every sitemap URL, 15 s timeout. TTFB = time to response headers. Sub-scores use fixed formulas (see pipeline README), not manual judgement.",
- "health": 98,
- "raw_score": 98.0,
+ "health": 97,
+ "raw_score": 97.3,
  "sub_scores": {
   "crawlability": 97,
-  "performance": 99,
+  "performance": 96,
   "structured_data": 99,
   "onpage": 99,
   "content": 96
@@ -55,36 +55,36 @@
   "bytes": 430
  },
  "ttfb_ms": {
-  "all": 220.0,
-  "median": 205,
-  "core": 271.9,
-  "articles": 213.0,
-  "projects": 204.8,
-  "min": 184,
-  "max": 370,
+  "all": 282.5,
+  "median": 269,
+  "core": 321.9,
+  "articles": 275.8,
+  "projects": 295.0,
+  "min": 243,
+  "max": 509,
   "under_1s": 127,
   "1s_to_3s": 0,
   "over_3s": 0,
   "slowest": [
    {
-    "url": "/",
-    "ms": 370
+    "url": "/about",
+    "ms": 509
    },
    {
-    "url": "/about",
-    "ms": 361
+    "url": "/projects/31-mcilwain-drive",
+    "ms": 461
+   },
+   {
+    "url": "/articles/construction-program-management-software",
+    "ms": 450
    },
    {
     "url": "/apply",
-    "ms": 342
+    "ms": 413
    },
    {
-    "url": "/articles",
-    "ms": 336
-   },
-   {
-    "url": "/privacy-policy",
-    "ms": 324
+    "url": "/articles/3d-rendering-adelaide",
+    "ms": 398
    }
   ]
  },
@@ -149,7 +149,7 @@
    "url": "/",
    "group": "core",
    "status": 200,
-   "ttfb_ms": 370,
+   "ttfb_ms": 377,
    "words": 1596,
    "schema_blocks": 1,
    "schema_types": [
@@ -181,7 +181,7 @@
    "url": "/about",
    "group": "core",
    "status": 200,
-   "ttfb_ms": 361,
+   "ttfb_ms": 509,
    "words": 437,
    "schema_blocks": 1,
    "schema_types": [
@@ -206,7 +206,7 @@
    "url": "/apply",
    "group": "core",
    "status": 200,
-   "ttfb_ms": 342,
+   "ttfb_ms": 413,
    "words": 518,
    "schema_blocks": 1,
    "schema_types": [
@@ -235,7 +235,7 @@
    "url": "/articles",
    "group": "core",
    "status": 200,
-   "ttfb_ms": 336,
+   "ttfb_ms": 349,
    "words": 1226,
    "schema_blocks": 1,
    "schema_types": [
@@ -262,7 +262,7 @@
    "url": "/articles/3d-floor-plan-melbourne-home-design-clarity",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 273,
+   "ttfb_ms": 308,
    "words": 1910,
    "schema_blocks": 4,
    "schema_types": [
@@ -294,7 +294,7 @@
    "url": "/articles/3d-house-design-guide",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 258,
+   "ttfb_ms": 302,
    "words": 2122,
    "schema_blocks": 4,
    "schema_types": [
@@ -326,7 +326,7 @@
    "url": "/articles/3d-rendering-adelaide",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 318,
+   "ttfb_ms": 398,
    "words": 3733,
    "schema_blocks": 4,
    "schema_types": [
@@ -358,7 +358,7 @@
    "url": "/articles/3d-rendering-brief-checklist-australia",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 219,
+   "ttfb_ms": 365,
    "words": 2172,
    "schema_blocks": 4,
    "schema_types": [
@@ -390,7 +390,7 @@
    "url": "/articles/3d-rendering-brisbane",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 323,
+   "ttfb_ms": 290,
    "words": 3308,
    "schema_blocks": 4,
    "schema_types": [
@@ -422,7 +422,7 @@
    "url": "/articles/3d-rendering-company-adelaide",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 214,
+   "ttfb_ms": 343,
    "words": 2633,
    "schema_blocks": 4,
    "schema_types": [
@@ -454,7 +454,7 @@
    "url": "/articles/3d-rendering-company-melbourne",
    "group": "articles",
    "status": 308,
-   "ttfb_ms": 243,
+   "ttfb_ms": 226,
    "words": 0,
    "schema_blocks": 0,
    "schema_types": [],
@@ -475,7 +475,7 @@
    "url": "/articles/3d-rendering-cost-australia",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 235,
+   "ttfb_ms": 313,
    "words": 3438,
    "schema_blocks": 5,
    "schema_types": [
@@ -507,7 +507,7 @@
    "url": "/articles/3d-rendering-for-architects-australia",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 204,
+   "ttfb_ms": 359,
    "words": 2273,
    "schema_blocks": 4,
    "schema_types": [
@@ -539,7 +539,7 @@
    "url": "/articles/3d-rendering-for-home-renovation-australia",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 194,
+   "ttfb_ms": 288,
    "words": 2091,
    "schema_blocks": 4,
    "schema_types": [
@@ -571,7 +571,7 @@
    "url": "/articles/3d-rendering-melbourne-pre-construction-planning",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 197,
+   "ttfb_ms": 296,
    "words": 4397,
    "schema_blocks": 4,
    "schema_types": [
@@ -603,7 +603,7 @@
    "url": "/articles/3d-rendering-perth",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 205,
+   "ttfb_ms": 290,
    "words": 3086,
    "schema_blocks": 4,
    "schema_types": [
@@ -635,7 +635,7 @@
    "url": "/articles/3d-rendering-services-melbourne",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 200,
+   "ttfb_ms": 295,
    "words": 1818,
    "schema_blocks": 4,
    "schema_types": [
@@ -667,7 +667,7 @@
    "url": "/articles/3d-rendering-sydney",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 245,
+   "ttfb_ms": 291,
    "words": 3142,
    "schema_blocks": 4,
    "schema_types": [
@@ -699,7 +699,7 @@
    "url": "/articles/3d-rendering-vs-vr-walkthrough",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 192,
+   "ttfb_ms": 317,
    "words": 2492,
    "schema_blocks": 4,
    "schema_types": [
@@ -731,7 +731,7 @@
    "url": "/articles/3d-renders-for-builders-melbourne",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 200,
+   "ttfb_ms": 267,
    "words": 2472,
    "schema_blocks": 4,
    "schema_types": [
@@ -763,7 +763,7 @@
    "url": "/articles/3d-renders-for-property-developers-melbourne",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 210,
+   "ttfb_ms": 247,
    "words": 3020,
    "schema_blocks": 4,
    "schema_types": [
@@ -795,7 +795,7 @@
    "url": "/articles/3d-renders-for-property-developers-sydney",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 229,
+   "ttfb_ms": 268,
    "words": 3199,
    "schema_blocks": 4,
    "schema_types": [
@@ -827,7 +827,7 @@
    "url": "/articles/3d-renders-for-real-estate-melbourne",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 254,
+   "ttfb_ms": 301,
    "words": 2980,
    "schema_blocks": 4,
    "schema_types": [
@@ -859,7 +859,7 @@
    "url": "/articles/3d-virtual-tour-off-the-plan-apartments",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 216,
+   "ttfb_ms": 273,
    "words": 3022,
    "schema_blocks": 4,
    "schema_types": [
@@ -891,7 +891,7 @@
    "url": "/articles/3d-vs-2d-floor-plan-off-the-plan",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 202,
+   "ttfb_ms": 250,
    "words": 2506,
    "schema_blocks": 4,
    "schema_types": [
@@ -923,7 +923,7 @@
    "url": "/articles/4d-construction-sequencing-australia",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 244,
+   "ttfb_ms": 256,
    "words": 2330,
    "schema_blocks": 4,
    "schema_types": [
@@ -955,7 +955,7 @@
    "url": "/articles/6-benefits-of-using-vr-technology",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 281,
+   "ttfb_ms": 266,
    "words": 2196,
    "schema_blocks": 4,
    "schema_types": [
@@ -987,7 +987,7 @@
    "url": "/articles/apartment-rendering-community-developments",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 216,
+   "ttfb_ms": 254,
    "words": 3008,
    "schema_blocks": 4,
    "schema_types": [
@@ -1019,7 +1019,7 @@
    "url": "/articles/architectural-rendering-melbourne-pre-construction-planning",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 274,
+   "ttfb_ms": 264,
    "words": 2067,
    "schema_blocks": 4,
    "schema_types": [
@@ -1051,7 +1051,7 @@
    "url": "/articles/architectural-visualisation-adelaide",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 215,
+   "ttfb_ms": 261,
    "words": 2530,
    "schema_blocks": 4,
    "schema_types": [
@@ -1083,7 +1083,7 @@
    "url": "/articles/architectural-visualisation-australia",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 207,
+   "ttfb_ms": 254,
    "words": 2710,
    "schema_blocks": 4,
    "schema_types": [
@@ -1115,7 +1115,7 @@
    "url": "/articles/architectural-visualisation-melbourne-project-decisions",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 283,
+   "ttfb_ms": 265,
    "words": 3635,
    "schema_blocks": 4,
    "schema_types": [
@@ -1147,7 +1147,7 @@
    "url": "/articles/bathroom-remodel-cost-australia",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 214,
+   "ttfb_ms": 257,
    "words": 4091,
    "schema_blocks": 4,
    "schema_types": [
@@ -1179,7 +1179,7 @@
    "url": "/articles/before-you-sign-with-a-builder-checklist",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 232,
+   "ttfb_ms": 270,
    "words": 2236,
    "schema_blocks": 4,
    "schema_types": [
@@ -1211,7 +1211,7 @@
    "url": "/articles/best-practices-for-project-and-quality-management-in-2026",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 273,
+   "ttfb_ms": 255,
    "words": 2278,
    "schema_blocks": 4,
    "schema_types": [
@@ -1243,7 +1243,7 @@
    "url": "/articles/bim-3d-4d-5d-explained",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 243,
+   "ttfb_ms": 268,
    "words": 2361,
    "schema_blocks": 4,
    "schema_types": [
@@ -1275,7 +1275,7 @@
    "url": "/articles/bim-3d-from-design-to-site-in-2026",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 266,
+   "ttfb_ms": 254,
    "words": 2978,
    "schema_blocks": 4,
    "schema_types": [
@@ -1307,7 +1307,7 @@
    "url": "/articles/bim-australia-9-implementation-mistakes",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 216,
+   "ttfb_ms": 262,
    "words": 2806,
    "schema_blocks": 4,
    "schema_types": [
@@ -1339,7 +1339,7 @@
    "url": "/articles/bim-for-architects-australia-in-custom-home-design",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 216,
+   "ttfb_ms": 269,
    "words": 2262,
    "schema_blocks": 4,
    "schema_types": [
@@ -1371,7 +1371,7 @@
    "url": "/articles/bim-vs-3d-rendering",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 190,
+   "ttfb_ms": 281,
    "words": 2592,
    "schema_blocks": 4,
    "schema_types": [
@@ -1403,7 +1403,7 @@
    "url": "/articles/boundary-fence-height-requirements",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 196,
+   "ttfb_ms": 267,
    "words": 2571,
    "schema_blocks": 4,
    "schema_types": [
@@ -1435,7 +1435,7 @@
    "url": "/articles/brisbane-custom-home-builders-checklist-for-clients",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 188,
+   "ttfb_ms": 298,
    "words": 2264,
    "schema_blocks": 4,
    "schema_types": [
@@ -1467,7 +1467,7 @@
    "url": "/articles/choosing-the-best-home-builder",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 190,
+   "ttfb_ms": 256,
    "words": 3028,
    "schema_blocks": 4,
    "schema_types": [
@@ -1499,7 +1499,7 @@
    "url": "/articles/construction-program-management-software",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 193,
+   "ttfb_ms": 450,
    "words": 1988,
    "schema_blocks": 4,
    "schema_types": [
@@ -1531,7 +1531,7 @@
    "url": "/articles/construction-programme-visualisation",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 192,
+   "ttfb_ms": 283,
    "words": 2128,
    "schema_blocks": 4,
    "schema_types": [
@@ -1563,7 +1563,7 @@
    "url": "/articles/contemporary-houses-a-practical-guide",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 206,
+   "ttfb_ms": 254,
    "words": 2010,
    "schema_blocks": 4,
    "schema_types": [
@@ -1595,7 +1595,7 @@
    "url": "/articles/custom-built-homes-melbourne-checklist",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 193,
+   "ttfb_ms": 308,
    "words": 1772,
    "schema_blocks": 4,
    "schema_types": [
@@ -1627,7 +1627,7 @@
    "url": "/articles/custom-home-builders-melbourne-3d-visualisation",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 193,
+   "ttfb_ms": 275,
    "words": 2011,
    "schema_blocks": 4,
    "schema_types": [
@@ -1659,7 +1659,7 @@
    "url": "/articles/custom-home-builders-melbourne-pre-build-clarity",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 201,
+   "ttfb_ms": 275,
    "words": 1917,
    "schema_blocks": 4,
    "schema_types": [
@@ -1691,7 +1691,7 @@
    "url": "/articles/custom-home-builders-sydney",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 188,
+   "ttfb_ms": 271,
    "words": 1720,
    "schema_blocks": 4,
    "schema_types": [
@@ -1723,7 +1723,7 @@
    "url": "/articles/custom-home-builders-vs-project-builders",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 192,
+   "ttfb_ms": 269,
    "words": 4681,
    "schema_blocks": 4,
    "schema_types": [
@@ -1755,7 +1755,7 @@
    "url": "/articles/custom-home-visualisation-timeline",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 237,
+   "ttfb_ms": 249,
    "words": 2569,
    "schema_blocks": 4,
    "schema_types": [
@@ -1787,7 +1787,7 @@
    "url": "/articles/custom-living-spaces-melbourne",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 208,
+   "ttfb_ms": 286,
    "words": 2467,
    "schema_blocks": 4,
    "schema_types": [
@@ -1819,7 +1819,7 @@
    "url": "/articles/custom-staircase-oak-brass-glass",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 252,
+   "ttfb_ms": 286,
    "words": 2492,
    "schema_blocks": 4,
    "schema_types": [
@@ -1851,7 +1851,7 @@
    "url": "/articles/development-application-3d-render",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 236,
+   "ttfb_ms": 267,
    "words": 2424,
    "schema_blocks": 4,
    "schema_types": [
@@ -1883,7 +1883,7 @@
    "url": "/articles/digital-twin-construction-australia",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 188,
+   "ttfb_ms": 365,
    "words": 2229,
    "schema_blocks": 4,
    "schema_types": [
@@ -1915,7 +1915,7 @@
    "url": "/articles/duplex-house-design-in-australia",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 190,
+   "ttfb_ms": 271,
    "words": 2209,
    "schema_blocks": 4,
    "schema_types": [
@@ -1947,7 +1947,7 @@
    "url": "/articles/garden-boundary-gate-fence-design",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 193,
+   "ttfb_ms": 273,
    "words": 2499,
    "schema_blocks": 4,
    "schema_types": [
@@ -1979,7 +1979,7 @@
    "url": "/articles/glass-pool-fence-compliance",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 197,
+   "ttfb_ms": 269,
    "words": 2467,
    "schema_blocks": 4,
    "schema_types": [
@@ -2011,7 +2011,7 @@
    "url": "/articles/home-cinema-cost-australia",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 201,
+   "ttfb_ms": 271,
    "words": 2539,
    "schema_blocks": 4,
    "schema_types": [
@@ -2043,7 +2043,7 @@
    "url": "/articles/home-lift-design",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 186,
+   "ttfb_ms": 317,
    "words": 2507,
    "schema_blocks": 4,
    "schema_types": [
@@ -2075,7 +2075,7 @@
    "url": "/articles/house-renovation-3d-design-adelaide",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 194,
+   "ttfb_ms": 262,
    "words": 2268,
    "schema_blocks": 4,
    "schema_types": [
@@ -2107,7 +2107,7 @@
    "url": "/articles/house-renovation-3d-design-melbourne",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 191,
+   "ttfb_ms": 274,
    "words": 2368,
    "schema_blocks": 4,
    "schema_types": [
@@ -2139,7 +2139,7 @@
    "url": "/articles/how-3d-configurators-increase-buyer-commitment",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 197,
+   "ttfb_ms": 262,
    "words": 1554,
    "schema_blocks": 4,
    "schema_types": [
@@ -2171,7 +2171,7 @@
    "url": "/articles/how-3d-coordination-reduces-design-conflicts-before-construction",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 193,
+   "ttfb_ms": 249,
    "words": 2703,
    "schema_blocks": 4,
    "schema_types": [
@@ -2203,7 +2203,7 @@
    "url": "/articles/how-a-construction-program-reduces-delays-and-design-conflicts",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 192,
+   "ttfb_ms": 266,
    "words": 2556,
    "schema_blocks": 4,
    "schema_types": [
@@ -2235,7 +2235,7 @@
    "url": "/articles/how-quality-management-in-projects-improves-project-delivery",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 203,
+   "ttfb_ms": 247,
    "words": 2465,
    "schema_blocks": 4,
    "schema_types": [
@@ -2267,7 +2267,7 @@
    "url": "/articles/how-to-choose-a-3d-rendering-company-australia",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 191,
+   "ttfb_ms": 270,
    "words": 2665,
    "schema_blocks": 4,
    "schema_types": [
@@ -2299,7 +2299,7 @@
    "url": "/articles/how-to-choose-custom-home-builders-in-south-australia",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 189,
+   "ttfb_ms": 257,
    "words": 2196,
    "schema_blocks": 4,
    "schema_types": [
@@ -2331,7 +2331,7 @@
    "url": "/articles/how-to-identify-quality-home-builders",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 199,
+   "ttfb_ms": 283,
    "words": 2294,
    "schema_blocks": 4,
    "schema_types": [
@@ -2363,7 +2363,7 @@
    "url": "/articles/interior-design-for-property-developers",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 191,
+   "ttfb_ms": 259,
    "words": 2914,
    "schema_blocks": 4,
    "schema_types": [
@@ -2395,7 +2395,7 @@
    "url": "/articles/interior-finishes",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 191,
+   "ttfb_ms": 263,
    "words": 5550,
    "schema_blocks": 4,
    "schema_types": [
@@ -2427,7 +2427,7 @@
    "url": "/articles/kitchen-renovation-cost-melbourne",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 194,
+   "ttfb_ms": 252,
    "words": 4552,
    "schema_blocks": 4,
    "schema_types": [
@@ -2459,7 +2459,7 @@
    "url": "/articles/knockdown-rebuild-vs-renovate-melbourne",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 191,
+   "ttfb_ms": 254,
    "words": 2199,
    "schema_blocks": 4,
    "schema_types": [
@@ -2491,7 +2491,7 @@
    "url": "/articles/landscape-design-melbourne",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 187,
+   "ttfb_ms": 281,
    "words": 2434,
    "schema_blocks": 4,
    "schema_types": [
@@ -2523,7 +2523,7 @@
    "url": "/articles/living-room-trends-australia",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 187,
+   "ttfb_ms": 255,
    "words": 2489,
    "schema_blocks": 5,
    "schema_types": [
@@ -2555,7 +2555,7 @@
    "url": "/articles/luxury-home-builders-melbourne-vr-bim",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 189,
+   "ttfb_ms": 270,
    "words": 1972,
    "schema_blocks": 4,
    "schema_types": [
@@ -2587,7 +2587,7 @@
    "url": "/articles/luxury-home-builders-sydney",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 197,
+   "ttfb_ms": 256,
    "words": 1668,
    "schema_blocks": 4,
    "schema_types": [
@@ -2619,7 +2619,7 @@
    "url": "/articles/luxury-home-cinema-design",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 203,
+   "ttfb_ms": 257,
    "words": 4345,
    "schema_blocks": 4,
    "schema_types": [
@@ -2651,7 +2651,7 @@
    "url": "/articles/modern-house-design-2026-10-trends-shaping-homes",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 194,
+   "ttfb_ms": 253,
    "words": 3203,
    "schema_blocks": 4,
    "schema_types": [
@@ -2683,7 +2683,7 @@
    "url": "/articles/off-the-plan-sales-renders-for-developers",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 198,
+   "ttfb_ms": 279,
    "words": 2275,
    "schema_blocks": 4,
    "schema_types": [
@@ -2715,7 +2715,7 @@
    "url": "/articles/outdoor-fire-pit-table-australia",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 191,
+   "ttfb_ms": 248,
    "words": 2463,
    "schema_blocks": 4,
    "schema_types": [
@@ -2747,7 +2747,7 @@
    "url": "/articles/outdoor-living-alfresco-design",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 199,
+   "ttfb_ms": 248,
    "words": 2391,
    "schema_blocks": 4,
    "schema_types": [
@@ -2779,7 +2779,7 @@
    "url": "/articles/photorealistic-rendering-melbourne-developers",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 202,
+   "ttfb_ms": 256,
    "words": 4014,
    "schema_blocks": 4,
    "schema_types": [
@@ -2811,7 +2811,7 @@
    "url": "/articles/photorealistic-vs-concept-render",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 213,
+   "ttfb_ms": 258,
    "words": 2553,
    "schema_blocks": 4,
    "schema_types": [
@@ -2843,7 +2843,7 @@
    "url": "/articles/plan-vs-actual-reporting-construction",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 198,
+   "ttfb_ms": 256,
    "words": 2118,
    "schema_blocks": 4,
    "schema_types": [
@@ -2875,7 +2875,7 @@
    "url": "/articles/pre-construction-visualisation-construction-readiness",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 201,
+   "ttfb_ms": 243,
    "words": 1955,
    "schema_blocks": 4,
    "schema_types": [
@@ -2907,7 +2907,7 @@
    "url": "/articles/program-for-construction-estimates-explained",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 208,
+   "ttfb_ms": 268,
    "words": 2006,
    "schema_blocks": 4,
    "schema_types": [
@@ -2939,7 +2939,7 @@
    "url": "/articles/project-251-case-study",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 213,
+   "ttfb_ms": 256,
    "words": 2893,
    "schema_blocks": 4,
    "schema_types": [
@@ -2971,7 +2971,7 @@
    "url": "/articles/project-251-visualisation-overview",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 242,
+   "ttfb_ms": 243,
    "words": 1980,
    "schema_blocks": 4,
    "schema_types": [
@@ -3003,7 +3003,7 @@
    "url": "/articles/project-controls-for-luxury-residential-construction",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 230,
+   "ttfb_ms": 260,
    "words": 2533,
    "schema_blocks": 4,
    "schema_types": [
@@ -3035,7 +3035,7 @@
    "url": "/articles/project-cost-management-using-bim-and-digital-twins",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 225,
+   "ttfb_ms": 275,
    "words": 2630,
    "schema_blocks": 4,
    "schema_types": [
@@ -3067,7 +3067,7 @@
    "url": "/articles/project-management-and-cost-control",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 230,
+   "ttfb_ms": 252,
    "words": 2471,
    "schema_blocks": 4,
    "schema_types": [
@@ -3099,7 +3099,7 @@
    "url": "/articles/project-management-construction-for-luxury-residential-projects",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 203,
+   "ttfb_ms": 254,
    "words": 2240,
    "schema_blocks": 4,
    "schema_types": [
@@ -3131,7 +3131,7 @@
    "url": "/articles/quality-home-builders-adelaide",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 207,
+   "ttfb_ms": 261,
    "words": 2606,
    "schema_blocks": 4,
    "schema_types": [
@@ -3163,7 +3163,7 @@
    "url": "/articles/residential-bim-modelling-services-australia",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 225,
+   "ttfb_ms": 261,
    "words": 2178,
    "schema_blocks": 4,
    "schema_types": [
@@ -3195,7 +3195,7 @@
    "url": "/articles/residential-property-developers-adelaide",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 203,
+   "ttfb_ms": 292,
    "words": 2259,
    "schema_blocks": 5,
    "schema_types": [
@@ -3227,7 +3227,7 @@
    "url": "/articles/sculpted-decorative-concrete-wall",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 229,
+   "ttfb_ms": 273,
    "words": 2470,
    "schema_blocks": 4,
    "schema_types": [
@@ -3259,7 +3259,7 @@
    "url": "/articles/smart-home-security",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 234,
+   "ttfb_ms": 255,
    "words": 2387,
    "schema_blocks": 4,
    "schema_types": [
@@ -3291,7 +3291,7 @@
    "url": "/articles/step-inside-6-home-design-trends-shaping-australia-in-2026",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 210,
+   "ttfb_ms": 266,
    "words": 1521,
    "schema_blocks": 4,
    "schema_types": [
@@ -3323,7 +3323,7 @@
    "url": "/articles/sustainable-home-energy-comfort",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 217,
+   "ttfb_ms": 261,
    "words": 2537,
    "schema_blocks": 4,
    "schema_types": [
@@ -3355,7 +3355,7 @@
    "url": "/articles/the-best-home-builders-adelaide",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 236,
+   "ttfb_ms": 259,
    "words": 3955,
    "schema_blocks": 4,
    "schema_types": [
@@ -3387,7 +3387,7 @@
    "url": "/articles/the-risk-of-cheap-architectural-renders",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 228,
+   "ttfb_ms": 312,
    "words": 1483,
    "schema_blocks": 4,
    "schema_types": [
@@ -3419,7 +3419,7 @@
    "url": "/articles/timber-flooring-composite-decking",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 188,
+   "ttfb_ms": 246,
    "words": 3321,
    "schema_blocks": 4,
    "schema_types": [
@@ -3451,7 +3451,7 @@
    "url": "/articles/virtual-reality-home-walkthrough",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 202,
+   "ttfb_ms": 281,
    "words": 3091,
    "schema_blocks": 4,
    "schema_types": [
@@ -3483,7 +3483,7 @@
    "url": "/articles/virtual-reality-in-australia-home-design",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 189,
+   "ttfb_ms": 288,
    "words": 1884,
    "schema_blocks": 4,
    "schema_types": [
@@ -3515,7 +3515,7 @@
    "url": "/articles/virtual-reality-interior-design",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 184,
+   "ttfb_ms": 271,
    "words": 2191,
    "schema_blocks": 4,
    "schema_types": [
@@ -3547,7 +3547,7 @@
    "url": "/articles/vr-vs-360-in-australian-property-decisions",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 216,
+   "ttfb_ms": 264,
    "words": 2157,
    "schema_blocks": 4,
    "schema_types": [
@@ -3579,7 +3579,7 @@
    "url": "/articles/vr-walkthrough-services-australia",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 204,
+   "ttfb_ms": 268,
    "words": 2341,
    "schema_blocks": 4,
    "schema_types": [
@@ -3611,7 +3611,7 @@
    "url": "/articles/what-is-bim-3d-modeling",
    "group": "articles",
    "status": 200,
-   "ttfb_ms": 190,
+   "ttfb_ms": 278,
    "words": 1513,
    "schema_blocks": 4,
    "schema_types": [
@@ -3643,7 +3643,7 @@
    "url": "/contact",
    "group": "core",
    "status": 200,
-   "ttfb_ms": 211,
+   "ttfb_ms": 265,
    "words": 243,
    "schema_blocks": 1,
    "schema_types": [
@@ -3672,7 +3672,7 @@
    "url": "/faq",
    "group": "core",
    "status": 200,
-   "ttfb_ms": 194,
+   "ttfb_ms": 280,
    "words": 1394,
    "schema_blocks": 1,
    "schema_types": [
@@ -3697,7 +3697,7 @@
    "url": "/interiors",
    "group": "core",
    "status": 200,
-   "ttfb_ms": 242,
+   "ttfb_ms": 282,
    "words": 356,
    "schema_blocks": 1,
    "schema_types": [
@@ -3723,7 +3723,7 @@
    "url": "/model",
    "group": "core",
    "status": 200,
-   "ttfb_ms": 239,
+   "ttfb_ms": 328,
    "words": 362,
    "schema_blocks": 1,
    "schema_types": [
@@ -3750,7 +3750,7 @@
    "url": "/modules",
    "group": "core",
    "status": 200,
-   "ttfb_ms": 239,
+   "ttfb_ms": 303,
    "words": 239,
    "schema_blocks": 1,
    "schema_types": [
@@ -3778,7 +3778,7 @@
    "url": "/prestige",
    "group": "core",
    "status": 200,
-   "ttfb_ms": 317,
+   "ttfb_ms": 320,
    "words": 390,
    "schema_blocks": 1,
    "schema_types": [
@@ -3805,7 +3805,7 @@
    "url": "/privacy-policy",
    "group": "core",
    "status": 200,
-   "ttfb_ms": 324,
+   "ttfb_ms": 340,
    "words": 895,
    "schema_blocks": 1,
    "schema_types": [
@@ -3830,7 +3830,7 @@
    "url": "/projects",
    "group": "core",
    "status": 200,
-   "ttfb_ms": 217,
+   "ttfb_ms": 270,
    "words": 266,
    "schema_blocks": 1,
    "schema_types": [
@@ -3859,7 +3859,7 @@
    "url": "/projects/20-head-street",
    "group": "projects",
    "status": 200,
-   "ttfb_ms": 205,
+   "ttfb_ms": 269,
    "words": 235,
    "schema_blocks": 1,
    "schema_types": [
@@ -3890,7 +3890,7 @@
    "url": "/projects/251-station-st",
    "group": "projects",
    "status": 200,
-   "ttfb_ms": 215,
+   "ttfb_ms": 266,
    "words": 233,
    "schema_blocks": 1,
    "schema_types": [
@@ -3921,7 +3921,7 @@
    "url": "/projects/31-mcilwain-drive",
    "group": "projects",
    "status": 200,
-   "ttfb_ms": 205,
+   "ttfb_ms": 461,
    "words": 230,
    "schema_blocks": 1,
    "schema_types": [
@@ -3952,7 +3952,7 @@
    "url": "/projects/813-clarendon-street",
    "group": "projects",
    "status": 200,
-   "ttfb_ms": 205,
+   "ttfb_ms": 259,
    "words": 239,
    "schema_blocks": 1,
    "schema_types": [
@@ -3983,7 +3983,7 @@
    "url": "/projects/85-commodore-drive",
    "group": "projects",
    "status": 200,
-   "ttfb_ms": 202,
+   "ttfb_ms": 260,
    "words": 243,
    "schema_blocks": 1,
    "schema_types": [
@@ -4014,7 +4014,7 @@
    "url": "/projects/nagambie-project",
    "group": "projects",
    "status": 200,
-   "ttfb_ms": 197,
+   "ttfb_ms": 255,
    "words": 248,
    "schema_blocks": 1,
    "schema_types": [
@@ -4045,7 +4045,7 @@
    "url": "/start-interactive",
    "group": "core",
    "status": 200,
-   "ttfb_ms": 187,
+   "ttfb_ms": 247,
    "words": 51,
    "schema_blocks": 0,
    "schema_types": [],
@@ -4066,7 +4066,7 @@
    "url": "/studio",
    "group": "core",
    "status": 200,
-   "ttfb_ms": 235,
+   "ttfb_ms": 275,
    "words": 651,
    "schema_blocks": 1,
    "schema_types": [
@@ -4093,7 +4093,7 @@
    "url": "/suppliers",
    "group": "core",
    "status": 200,
-   "ttfb_ms": 240,
+   "ttfb_ms": 287,
    "words": 456,
    "schema_blocks": 1,
    "schema_types": [
@@ -4123,7 +4123,7 @@
    "url": "/terms-of-service",
    "group": "core",
    "status": 200,
-   "ttfb_ms": 296,
+   "ttfb_ms": 306,
    "words": 893,
    "schema_blocks": 1,
    "schema_types": [
@@ -4146,37 +4146,24 @@
   }
  ],
  "commentary": {
-  "vi": "Điểm sức khoẻ tăng từ 97 lên 98; on-page lên 99 (từ 93) và content lên 96 (từ 94). Số trang crawl tăng lên 128, TTFB trung bình giảm còn 220 ms. Còn 10 trang mỏng, 1 URL trả về 308 (/articles/3d-rendering-company-melbourne) và /start-interactive chưa có schema.",
-  "en": "Health rose from 97 to 98; on-page climbed to 99 (from 93) and content to 96 (from 94). Pages crawled grew to 128 and mean TTFB fell to 220 ms. Ten thin pages remain, one URL returns a 308 (/articles/3d-rendering-company-melbourne) and /start-interactive has no schema.",
-  "by": "Claude (Mac)",
-  "rating": "good",
-  "verdict_vi": "Kỹ thuật website ổn định và tiếp tục cải thiện, chỉ còn vài lỗi nhỏ.",
-  "verdict_en": "Technical health is solid and still improving, with only minor issues left.",
-  "actions_vi": [
-   "Mở rộng hoặc gộp 10 trang mỏng để nâng điểm content trên 96",
-   "Sửa link nội bộ trỏ tới /articles/3d-rendering-company-melbourne sang URL đích để bỏ redirect 308",
-   "Thêm schema cho /start-interactive"
-  ],
-  "actions_en": [
-   "Expand or merge the 10 thin pages to lift content above 96",
-   "Point internal links at the final URL of /articles/3d-rendering-company-melbourne to drop the 308",
-   "Add schema to /start-interactive"
-  ]
+  "vi": "health 97 → 97; ttfb_mean 240.6 → 282.5; pages_crawled 121 → 128; words_total 255267 → 282598; orphans 0; thin_pages 10; images_without_alt 0.",
+  "en": "health 97 → 97; ttfb_mean 240.6 → 282.5; pages_crawled 121 → 128; words_total 255267 → 282598; orphans 0; thin_pages 10; images_without_alt 0.",
+  "by": "template"
  },
  "commentary_input": {
   "report": "Website technical SEO audit",
   "summary": {
    "today": {
     "date": "2026-11-15",
-    "health": 98,
+    "health": 97,
     "sub_scores": {
      "crawlability": 97,
-     "performance": 99,
+     "performance": 96,
      "structured_data": 99,
      "onpage": 99,
      "content": 96
     },
-    "ttfb_mean": 220.0,
+    "ttfb_mean": 282.5,
     "pages_crawled": 128,
     "words_total": 282598,
     "non_200": [
@@ -4211,5 +4198,5 @@
    }
   }
  },
- "score_rationale": "Health rose from 97 to 98; on-page climbed to 99 (from 93) and content to 96 (from 94). Pages crawled grew to 128 and mean TTFB fell to 220 ms. Ten thin pages remain, one URL returns a 308 (/articles/3d-rendering-company-melbourne) and /start-interactive has no schema."
+ "score_rationale": "health 97 → 97; ttfb_mean 240.6 → 282.5; pages_crawled 121 → 128; words_total 255267 → 282598; orphans 0; thin_pages 10; images_without_alt 0."
 }
