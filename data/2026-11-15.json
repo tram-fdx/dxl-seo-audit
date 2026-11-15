@@ -4229,7 +4229,7 @@
  "score_rationale": "Health rose from 97 to 98; on-page climbed to 99 (from 93) and content to 96 (from 94). Pages crawled grew to 128 and mean TTFB fell to 220 ms. Ten thin pages remain, one URL returns a 308 (/articles/3d-rendering-company-melbourne) and /start-interactive has no schema.",
  "ahrefs_site_audit": {
   "crawl": "2026-11-15 04:58 (Ahrefs, UTC+7)",
-  "source": "Ahrefs Site Audit (Chrome trên Mac)",
+  "source": "Ahrefs Site Audit (Chrome on Mac)",
   "project": 9085262,
   "health": 99,
   "ai_score": 100,
