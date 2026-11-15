@@ -24,7 +24,7 @@ body.en .vi,body:not(.en) .en{display:none}a{color:#96733f}
 <header class="top"><div class="wrap"><div><h1>DX Living — Technical SEO Audit</h1>
 <div class="sub">dxliving.com · <span class="vi">Cập nhật tự động mỗi ngày</span><span class="en">Updated automatically every day</span></div></div>
 <div style="text-align:right"><div class="lt"><button data-l="en" class="on">EN</button><button data-l="vi">VI</button></div><br>
-<span class="pill">2026-11-15</span> <a href="history.html" style="color:#e5dcc7;font-size:12px"><span class="vi">Lịch sử</span><span class="en">History</span></a></div></div></header>
+<select class="pill" id="snap" title="Pick a scan date" style="border:0;font:inherit;font-weight:700;cursor:pointer" onchange="location.href='archive/'+this.value+'.html'"><option>2026-11-15</option></select><script>fetch('data/index.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){var s=document.getElementById('snap');s.innerHTML=(j.snapshots||[]).map(function(x){return x.date}).sort().reverse().map(function(x){return '<option'+(x==='2026-11-15'?' selected':'')+'>'+x+'</option>'}).join('')}).catch(function(){})</script> <a href="history.html" style="color:#e5dcc7;font-size:12px"><span class="vi">Lịch sử</span><span class="en">History</span></a></div></div></header>
 <div class="wrap">
 <section class="card"><div style="display:flex;gap:26px;align-items:center;flex-wrap:wrap">
 <div><div class="lab">Health score</div><div class="health" style="color:var(--green)">98 <small style="color:var(--green)">(+1)</small></div>
