@@ -4146,21 +4146,21 @@
   }
  ],
  "commentary": {
-  "vi": "Điểm sức khoẻ tăng từ 97 lên 98; on-page lên 99 (từ 93) và content lên 96 (từ 94). Số trang crawl tăng lên 128, TTFB trung bình giảm còn 220 ms. Còn 10 trang mỏng, 1 URL trả về 308 (/articles/3d-rendering-company-melbourne) và /start-interactive chưa có schema.",
-  "en": "Health rose from 97 to 98; on-page climbed to 99 (from 93) and content to 96 (from 94). Pages crawled grew to 128 and mean TTFB fell to 220 ms. Ten thin pages remain, one URL returns a 308 (/articles/3d-rendering-company-melbourne) and /start-interactive has no schema.",
+  "vi": "Điểm sức khoẻ giữ ở 97, số trang quét tăng từ 121 lên 128; điểm on-page lên 99 và content lên 96, nhưng performance giảm từ 99 xuống 96 khi TTFB trung bình tăng từ 240,6 lên 282,5 ms. Ahrefs Site Audit đạt 99 điểm với 8 lỗi trên 7 URL, gồm 1 trang 404, 1 redirect hỏng và 4 ảnh quá nặng. Nên ưu tiên sửa link 308 tới /articles/3d-rendering-company-melbourne và nén các ảnh lớn.",
+  "en": "Health held at 97 while crawled pages rose from 121 to 128; on-page climbed to 99 and content to 96, but performance slipped from 99 to 96 as mean TTFB rose from 240.6 to 282.5 ms. Ahrefs Site Audit scores 99 with 8 errors on 7 URLs, including one 404, one broken redirect and four oversized images. Fix the 308 link to /articles/3d-rendering-company-melbourne and compress the large images first.",
   "by": "Claude (Mac)",
-  "rating": "good",
-  "verdict_vi": "Kỹ thuật website ổn định và tiếp tục cải thiện, chỉ còn vài lỗi nhỏ.",
-  "verdict_en": "Technical health is solid and still improving, with only minor issues left.",
+  "rating": "ok",
+  "verdict_vi": "Kỹ thuật website ổn định, chỉ còn vài lỗi nhỏ nhưng tốc độ phản hồi đang xấu đi.",
+  "verdict_en": "Technical health is stable with only a few small errors, but response time is worsening.",
   "actions_vi": [
-   "Mở rộng hoặc gộp 10 trang mỏng để nâng điểm content trên 96",
-   "Sửa link nội bộ trỏ tới /articles/3d-rendering-company-melbourne sang URL đích để bỏ redirect 308",
-   "Thêm schema cho /start-interactive"
+   "Sửa trang 404, redirect hỏng và link 308 tới /articles/3d-rendering-company-melbourne (kể cả trong sitemap).",
+   "Nén 4 ảnh quá nặng và kiểm tra nguyên nhân TTFB tăng lên 282,5 ms.",
+   "Thêm schema cho /start-interactive và bổ sung nội dung cho 10 trang mỏng."
   ],
   "actions_en": [
-   "Expand or merge the 10 thin pages to lift content above 96",
-   "Point internal links at the final URL of /articles/3d-rendering-company-melbourne to drop the 308",
-   "Add schema to /start-interactive"
+   "Fix the 404, the broken redirect and the 308 link to /articles/3d-rendering-company-melbourne (including the sitemap).",
+   "Compress the four oversized images and investigate why mean TTFB rose to 282.5 ms.",
+   "Add schema to /start-interactive and expand the 10 thin pages."
   ]
  },
  "commentary_input": {
@@ -4196,14 +4196,14 @@
     ],
     "ahrefs_site_audit": {
      "health": 99,
-     "urls_crawled": 241,
-     "urls_with_errors": 8,
-     "errors": 10,
-     "warnings": 350,
-     "notices": 419,
+     "urls_crawled": 238,
+     "urls_with_errors": 7,
+     "errors": 8,
+     "warnings": 345,
+     "notices": 421,
      "top_errors": [
-      "404 page (2)",
-      "4XX page (2)",
+      "404 page (1)",
+      "4XX page (1)",
       "Broken redirect (1)",
       "Image file size too large (4)",
       "3XX redirect in sitemap (1)"
@@ -4226,68 +4226,65 @@
    }
   }
  },
- "score_rationale": "Health rose from 97 to 98; on-page climbed to 99 (from 93) and content to 96 (from 94). Pages crawled grew to 128 and mean TTFB fell to 220 ms. Ten thin pages remain, one URL returns a 308 (/articles/3d-rendering-company-melbourne) and /start-interactive has no schema.",
+ "score_rationale": "Health held at 97 while crawled pages rose from 121 to 128; on-page climbed to 99 and content to 96, but performance slipped from 99 to 96 as mean TTFB rose from 240.6 to 282.5 ms. Ahrefs Site Audit scores 99 with 8 errors on 7 URLs, including one 404, one broken redirect and four oversized images. Fix the 308 link to /articles/3d-rendering-company-melbourne and compress the large images first.",
  "ahrefs_site_audit": {
-  "crawl": "2026-11-15 04:58 (Ahrefs, UTC+7)",
-  "source": "Ahrefs Site Audit (Chrome on Mac)",
-  "project": 9085262,
+  "crawl": "2026-11-16 (Ahrefs, UTC+7)",
   "health": 99,
   "ai_score": 100,
-  "urls_crawled": 241,
-  "urls_total": 818,
-  "urls_with_errors": 8,
-  "urls_without_errors": 813,
-  "errors": 10,
-  "warnings": 350,
-  "notices": 419,
-  "ttfb_slow": 124,
-  "ttfb_too_slow": 79,
-  "http_2xx": 785,
-  "http_3xx": 34,
-  "http_4xx": 2,
-  "note": "Ahrefs says the crawl reached the max internal pages limit; the site may not be fully crawled.",
+  "urls_crawled": 238,
+  "urls_total": 821,
+  "urls_with_errors": 7,
+  "urls_without_errors": 817,
+  "errors": 8,
+  "warnings": 345,
+  "notices": 421,
+  "ttfb_slow": 126,
+  "ttfb_too_slow": 78,
+  "http_2xx": 792,
+  "http_3xx": 31,
+  "http_4xx": 1,
   "issues": [
    {
     "group": "Internal pages",
     "issue": "404 page",
     "sev": "E",
-    "urls": 2,
-    "change": 0
+    "urls": 1,
+    "change": 1
    },
    {
     "group": "Internal pages",
     "issue": "4XX page",
     "sev": "E",
-    "urls": 2,
-    "change": 0
+    "urls": 1,
+    "change": 1
    },
    {
     "group": "Indexability",
     "issue": "Nofollow page",
     "sev": "W",
     "urls": 76,
-    "change": 3
+    "change": 0
    },
    {
     "group": "Indexability",
     "issue": "Noindex page",
     "sev": "W",
     "urls": 76,
-    "change": 3
+    "change": 0
    },
    {
     "group": "Indexability",
     "issue": "Noindex and nofollow page",
     "sev": "N",
     "urls": 76,
-    "change": 3
+    "change": 0
    },
    {
     "group": "AI Discoverability · other",
     "issue": "Changed pages not submitted to IndexNow",
     "sev": "N",
     "urls": 2,
-    "change": 27
+    "change": 0
    },
    {
     "group": "Links · indexable",
@@ -4300,43 +4297,36 @@
     "group": "Links · indexable",
     "issue": "Page has nofollow and dofollow incoming internal links",
     "sev": "N",
-    "urls": 63,
-    "change": 6
+    "urls": 64,
+    "change": 1
    },
    {
     "group": "Links · indexable",
     "issue": "Page has only one dofollow incoming internal link",
     "sev": "N",
-    "urls": 3,
+    "urls": 4,
     "change": 1
-   },
-   {
-    "group": "Links · not indexable",
-    "issue": "Page has links to broken page",
-    "sev": "W",
-    "urls": 2,
-    "change": 0
    },
    {
     "group": "Links · not indexable",
     "issue": "Page has nofollow outgoing internal links",
     "sev": "N",
     "urls": 76,
-    "change": 3
+    "change": 0
    },
    {
     "group": "Links · not indexable",
     "issue": "Page has links to redirect",
     "sev": "N",
     "urls": 74,
-    "change": 3
+    "change": 0
    },
    {
     "group": "Links · not indexable",
     "issue": "Page has nofollow incoming internal links only",
     "sev": "N",
     "urls": 63,
-    "change": 3
+    "change": 0
    },
    {
     "group": "Links · not indexable",
@@ -4370,8 +4360,8 @@
     "group": "Redirects",
     "issue": "3XX redirect",
     "sev": "W",
-    "urls": 34,
-    "change": 2
+    "urls": 31,
+    "change": 3
    },
    {
     "group": "Redirects",
@@ -4413,7 +4403,7 @@
     "issue": "Multiple H1 tags",
     "sev": "N",
     "urls": 40,
-    "change": 2
+    "change": 0
    },
    {
     "group": "Content · not indexable",
@@ -4448,21 +4438,21 @@
     "issue": "Not compressed",
     "sev": "W",
     "urls": 76,
-    "change": 3
+    "change": 0
    },
    {
     "group": "Usability and performance",
     "issue": "Slow page",
     "sev": "W",
     "urls": 74,
-    "change": 3
+    "change": 0
    },
    {
     "group": "Usability and performance",
     "issue": "HTML file size too large",
     "sev": "W",
     "urls": 2,
-    "change": 1
+    "change": 0
    },
    {
     "group": "Images",
@@ -4492,6 +4482,7 @@
     "urls": 1,
     "change": 0
    }
-  ]
+  ],
+  "source": "Ahrefs Site Audit (Chrome on Mac)"
  }
 }
