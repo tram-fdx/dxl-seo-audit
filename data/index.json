@@ -554,8 +554,8 @@
    "date": "2026-11-19",
    "data": "data/2026-11-19.json",
    "report": "archive/2026-11-19.html",
-   "label_vi": "Health 98 · 128 trang · TTFB TB 266 ms",
-   "label_en": "Health 98 · 128 pages · mean TTFB 266 ms"
+   "label_vi": "Sức khoẻ 98, TTFB nhanh hơn, còn 8 lỗi Ahrefs",
+   "label_en": "Health 98, faster TTFB, 8 Ahrefs errors left"
   }
  ]
 }
