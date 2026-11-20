@@ -4146,21 +4146,21 @@
   }
  ],
  "commentary": {
-  "vi": "Điểm sức khoẻ tăng từ 97 lên 98, nhờ hiệu năng lên 97 và TTFB trung bình giảm từ 275,9 xuống 265,7 ms. Ahrefs Site Audit cho 99 điểm với 8 lỗi trên 7 URL, gồm 4 ảnh quá nặng, 1 trang 404, 1 redirect hỏng và 1 redirect 3XX trong sitemap. Trang /articles/3d-rendering-company-melbourne vẫn trả 308 và có 10 trang mỏng.",
-  "en": "Health rose from 97 to 98, with performance up to 97 and mean TTFB down from 275.9 to 265.7 ms. Ahrefs Site Audit scores 99 with 8 errors on 7 URLs, including 4 oversized images, 1 404 page, 1 broken redirect and 1 3XX redirect in the sitemap. /articles/3d-rendering-company-melbourne still returns 308, and 10 pages are thin.",
+  "vi": "Điểm sức khoẻ kỹ thuật lên 98 (từ 97), hiệu năng lên 97 và TTFB trung bình giảm còn 265,7 ms (từ 275,9). Ahrefs Site Audit giữ 99 điểm nhưng vẫn còn 8 lỗi trên 7 URL, gồm 1 trang 404, 1 redirect hỏng, 1 redirect 3XX trong sitemap và 4 ảnh quá nặng. Nên sửa redirect 308 của /articles/3d-rendering-company-melbourne và cập nhật sitemap trước.",
+  "en": "Technical health rose to 98 (from 97), performance to 97, and mean TTFB fell to 265.7 ms (from 275.9). Ahrefs Site Audit holds at 99 but still flags 8 errors on 7 URLs: one 404, one broken redirect, one 3XX redirect in the sitemap and 4 oversized images. Fix the 308 redirect on /articles/3d-rendering-company-melbourne and update the sitemap first.",
   "by": "Claude (Mac)",
   "rating": "good",
-  "verdict_vi": "Kỹ thuật site tốt và đang cải thiện; chỉ còn vài lỗi nhỏ dễ sửa.",
-  "verdict_en": "Site technical health is good and improving; only a few small, fixable errors remain.",
+  "verdict_vi": "Kỹ thuật website ổn định và nhích lên; chỉ còn vài lỗi nhỏ dễ sửa.",
+  "verdict_en": "Site technical health is stable and edging up; only a few small, fixable errors remain.",
   "actions_vi": [
-   "Nén 4 ảnh quá nặng mà Ahrefs báo lỗi.",
-   "Bỏ URL redirect 3XX khỏi sitemap và sửa redirect hỏng, trang 404.",
-   "Bổ sung nội dung cho 10 trang mỏng."
+   "Bỏ URL redirect 308 /articles/3d-rendering-company-melbourne khỏi sitemap, thay bằng URL đích",
+   "Nén 4 ảnh bị Ahrefs báo quá nặng",
+   "Bổ sung nội dung cho 10 trang mỏng và thêm schema cho /start-interactive"
   ],
   "actions_en": [
-   "Compress the 4 oversized images Ahrefs flags as errors.",
-   "Remove the 3XX redirect URL from the sitemap and fix the broken redirect and 404 page.",
-   "Add content to the 10 thin pages."
+   "Replace the 308-redirecting /articles/3d-rendering-company-melbourne in the sitemap with its target URL",
+   "Compress the 4 images Ahrefs flags as too large",
+   "Expand the 10 thin pages and add schema to /start-interactive"
   ]
  },
  "commentary_input": {
@@ -4199,8 +4199,8 @@
      "urls_crawled": 237,
      "urls_with_errors": 7,
      "errors": 8,
-     "warnings": 342,
-     "notices": 415,
+     "warnings": 341,
+     "notices": 413,
      "top_errors": [
       "404 page (1)",
       "4XX page (1)",
@@ -4226,21 +4226,21 @@
    }
   }
  },
- "score_rationale": "Health rose from 97 to 98, with performance up to 97 and mean TTFB down from 275.9 to 265.7 ms. Ahrefs Site Audit scores 99 with 8 errors on 7 URLs, including 4 oversized images, 1 404 page, 1 broken redirect and 1 3XX redirect in the sitemap. /articles/3d-rendering-company-melbourne still returns 308, and 10 pages are thin.",
+ "score_rationale": "Technical health rose to 98 (from 97), performance to 97, and mean TTFB fell to 265.7 ms (from 275.9). Ahrefs Site Audit holds at 99 but still flags 8 errors on 7 URLs: one 404, one broken redirect, one 3XX redirect in the sitemap and 4 oversized images. Fix the 308 redirect on /articles/3d-rendering-company-melbourne and update the sitemap first.",
  "ahrefs_site_audit": {
-  "crawl": "2026-11-19 (Ahrefs, UTC+7; giờ quét không hiển thị)",
+  "crawl": "2026-11-20 (Ahrefs, UTC+7; giờ quét không hiển thị)",
   "health": 99,
   "ai_score": 100,
   "urls_crawled": 237,
-  "urls_total": 819,
+  "urls_total": 820,
   "urls_with_errors": 7,
-  "urls_without_errors": 815,
+  "urls_without_errors": 816,
   "errors": 8,
-  "warnings": 342,
-  "notices": 415,
-  "ttfb_slow": 123,
-  "ttfb_too_slow": 80,
-  "http_2xx": 790,
+  "warnings": 341,
+  "notices": 413,
+  "ttfb_slow": 127,
+  "ttfb_too_slow": 76,
+  "http_2xx": 791,
   "http_3xx": 31,
   "http_4xx": 1,
   "issues": [
@@ -4263,21 +4263,21 @@
     "issue": "Nofollow page",
     "sev": "W",
     "urls": 75,
-    "change": 3
+    "change": 0
    },
    {
     "group": "Indexability",
     "issue": "Noindex page",
     "sev": "W",
     "urls": 75,
-    "change": 3
+    "change": 0
    },
    {
     "group": "Indexability",
     "issue": "Noindex and nofollow page",
     "sev": "N",
     "urls": 75,
-    "change": 3
+    "change": 0
    },
    {
     "group": "Links · indexable",
@@ -4290,8 +4290,8 @@
     "group": "Links · indexable",
     "issue": "Page has nofollow and dofollow incoming internal links",
     "sev": "N",
-    "urls": 65,
-    "change": 2
+    "urls": 62,
+    "change": 3
    },
    {
     "group": "Links · indexable",
@@ -4305,21 +4305,21 @@
     "issue": "Page has nofollow outgoing internal links",
     "sev": "N",
     "urls": 75,
-    "change": 3
+    "change": 0
    },
    {
     "group": "Links · not indexable",
     "issue": "Page has links to redirect",
     "sev": "N",
     "urls": 73,
-    "change": 3
+    "change": 0
    },
    {
     "group": "Links · not indexable",
     "issue": "Page has nofollow incoming internal links only",
     "sev": "N",
     "urls": 62,
-    "change": 3
+    "change": 0
    },
    {
     "group": "Links · not indexable",
@@ -4385,6 +4385,13 @@
     "change": 0
    },
    {
+    "group": "Content · indexable",
+    "issue": "Page and SERP titles do not match",
+    "sev": "N",
+    "urls": 1,
+    "change": 1
+   },
+   {
     "group": "Content · not indexable",
     "issue": "Meta description tag missing or empty",
     "sev": "W",
@@ -4396,7 +4403,7 @@
     "issue": "Multiple H1 tags",
     "sev": "N",
     "urls": 39,
-    "change": 3
+    "change": 0
    },
    {
     "group": "Content · not indexable",
@@ -4431,14 +4438,14 @@
     "issue": "Not compressed",
     "sev": "W",
     "urls": 75,
-    "change": 3
+    "change": 0
    },
    {
     "group": "Usability and performance",
     "issue": "Slow page",
     "sev": "W",
-    "urls": 74,
-    "change": 2
+    "urls": 73,
+    "change": 1
    },
    {
     "group": "Usability and performance",
