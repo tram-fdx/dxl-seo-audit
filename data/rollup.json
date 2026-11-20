@@ -7,7 +7,7 @@
   "window28": "A rolling 28-day window snapshot. Cannot be summed (days overlap) — compare start vs end and draw the trend."
  },
  "kind": "rollup",
- "scanned_count": 79,
+ "scanned_count": 80,
  "scanned_days": [
   "2026-07-27",
   "2026-07-28",
@@ -87,14 +87,15 @@
   "2026-11-16",
   "2026-11-17",
   "2026-11-18",
-  "2026-11-19"
+  "2026-11-19",
+  "2026-11-20"
  ],
  "series": {
   "content": {
    "grain": "state",
    "label": "Content",
-   "measured": 79,
-   "of_days": 79,
+   "measured": 80,
+   "of_days": 80,
    "points": [
     {
      "d": "2026-07-27",
@@ -410,6 +411,10 @@
     },
     {
      "d": "2026-11-19",
+     "v": 96
+    },
+    {
+     "d": "2026-11-20",
      "v": 96
     }
    ]
@@ -417,8 +422,8 @@
   "crawlability": {
    "grain": "state",
    "label": "Crawlability",
-   "measured": 79,
-   "of_days": 79,
+   "measured": 80,
+   "of_days": 80,
    "points": [
     {
      "d": "2026-07-27",
@@ -735,14 +740,18 @@
     {
      "d": "2026-11-19",
      "v": 97
+    },
+    {
+     "d": "2026-11-20",
+     "v": 97
     }
    ]
   },
   "health": {
    "grain": "state",
    "label": "Health score",
-   "measured": 79,
-   "of_days": 79,
+   "measured": 80,
+   "of_days": 80,
    "points": [
     {
      "d": "2026-07-27",
@@ -1059,14 +1068,18 @@
     {
      "d": "2026-11-19",
      "v": 98
+    },
+    {
+     "d": "2026-11-20",
+     "v": 98
     }
    ]
   },
   "onpage": {
    "grain": "state",
    "label": "On-page / Meta",
-   "measured": 79,
-   "of_days": 79,
+   "measured": 80,
+   "of_days": 80,
    "points": [
     {
      "d": "2026-07-27",
@@ -1383,14 +1396,18 @@
     {
      "d": "2026-11-19",
      "v": 99
+    },
+    {
+     "d": "2026-11-20",
+     "v": 99
     }
    ]
   },
   "pages_crawled": {
    "grain": "state",
    "label": "Pages crawled",
-   "measured": 78,
-   "of_days": 79,
+   "measured": 79,
+   "of_days": 80,
    "points": [
     {
      "d": "2026-07-27",
@@ -1703,14 +1720,18 @@
     {
      "d": "2026-11-19",
      "v": 128
+    },
+    {
+     "d": "2026-11-20",
+     "v": 128
     }
    ]
   },
   "performance": {
    "grain": "state",
    "label": "Performance / TTFB",
-   "measured": 79,
-   "of_days": 79,
+   "measured": 80,
+   "of_days": 80,
    "points": [
     {
      "d": "2026-07-27",
@@ -2027,14 +2048,18 @@
     {
      "d": "2026-11-19",
      "v": 97
+    },
+    {
+     "d": "2026-11-20",
+     "v": 99
     }
    ]
   },
   "sitemap_urls": {
    "grain": "state",
    "label": "Sitemap — URLs",
-   "measured": 75,
-   "of_days": 79,
+   "measured": 76,
+   "of_days": 80,
    "points": [
     {
      "d": "2026-07-27",
@@ -2335,14 +2360,18 @@
     {
      "d": "2026-11-19",
      "v": 130
+    },
+    {
+     "d": "2026-11-20",
+     "v": 130
     }
    ]
   },
   "structured_data": {
    "grain": "state",
    "label": "Structured data",
-   "measured": 79,
-   "of_days": 79,
+   "measured": 80,
+   "of_days": 80,
    "points": [
     {
      "d": "2026-07-27",
@@ -2659,14 +2688,18 @@
     {
      "d": "2026-11-19",
      "v": 99
+    },
+    {
+     "d": "2026-11-20",
+     "v": 99
     }
    ]
   },
   "ttfb_mean_ms": {
    "grain": "state",
    "label": "TTFB mean (ms)",
-   "measured": 68,
-   "of_days": 79,
+   "measured": 69,
+   "of_days": 80,
    "points": [
     {
      "d": "2026-08-12",
@@ -2939,14 +2972,18 @@
     {
      "d": "2026-11-19",
      "v": 265.7
+    },
+    {
+     "d": "2026-11-20",
+     "v": 223.0
     }
    ]
   },
   "ttfb_median_ms": {
    "grain": "state",
    "label": "TTFB median (ms)",
-   "measured": 51,
-   "of_days": 79,
+   "measured": 52,
+   "of_days": 80,
    "points": [
     {
      "d": "2026-09-09",
@@ -3151,14 +3188,18 @@
     {
      "d": "2026-11-19",
      "v": 252
+    },
+    {
+     "d": "2026-11-20",
+     "v": 213
     }
    ]
   },
   "words_total": {
    "grain": "state",
    "label": "Total words",
-   "measured": 54,
-   "of_days": 79,
+   "measured": 55,
+   "of_days": 80,
    "points": [
     {
      "d": "2026-09-04",
@@ -3374,6 +3415,10 @@
     },
     {
      "d": "2026-11-19",
+     "v": 282598
+    },
+    {
+     "d": "2026-11-20",
      "v": 282598
     }
    ]

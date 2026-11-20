@@ -1,6 +1,6 @@
 {
  "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
- "latest": "2026-11-19",
+ "latest": "2026-11-20",
  "report": "index.html",
  "site": "dxliving.com",
  "snapshots": [
@@ -556,6 +556,13 @@
    "report": "archive/2026-11-19.html",
    "label_vi": "Sức khoẻ 98, TTFB nhanh hơn, còn 8 lỗi Ahrefs",
    "label_en": "Health 98, faster TTFB, 8 Ahrefs errors left"
+  },
+  {
+   "date": "2026-11-20",
+   "data": "data/2026-11-20.json",
+   "report": "archive/2026-11-20.html",
+   "label_vi": "Health 98 · 128 trang · TTFB TB 223 ms",
+   "label_en": "Health 98 · 128 pages · mean TTFB 223 ms"
   }
  ]
 }
