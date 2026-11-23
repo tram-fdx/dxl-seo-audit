@@ -4367,9 +4367,22 @@
   }
  ],
  "commentary": {
-  "vi": "health 96 → 96; ttfb_mean 337.6 → 270.5; pages_crawled 128 → 135; words_total 282598 → 307383; orphans 0; thin_pages 10; images_without_alt 0.",
-  "en": "health 96 → 96; ttfb_mean 337.6 → 270.5; pages_crawled 128 → 135; words_total 282598 → 307383; orphans 0; thin_pages 10; images_without_alt 0.",
-  "by": "template"
+  "vi": "Điểm sức khoẻ giữ 96; TTFB trung bình giảm từ 337,6 xuống 270,5 ms dù điểm hiệu năng nhích từ 93 xuống 91. Số trang quét tăng từ 128 lên 135, vẫn còn 10 trang mỏng. Ahrefs Site Audit đạt 99 điểm với 8 lỗi, gồm 4 ảnh quá nặng và 1 redirect 3XX nằm trong sitemap. Nên sửa link /articles/3d-rendering-company-melbourne (308) trong sitemap và nén 4 ảnh lớn.",
+  "en": "Health holds at 96; mean TTFB fell from 337.6 to 270.5 ms even though the performance score slipped from 93 to 91. Pages crawled rose from 128 to 135, with 10 thin pages left. Ahrefs Site Audit scores 99 with 8 errors, including 4 oversized images and 1 3XX redirect in the sitemap. Fix the /articles/3d-rendering-company-melbourne (308) sitemap entry and compress the 4 large images.",
+  "by": "Claude (Mac)",
+  "rating": "good",
+  "verdict_vi": "Kỹ thuật website ổn định và tốc độ phản hồi cải thiện rõ.",
+  "verdict_en": "Site technical health is stable and response time improved clearly.",
+  "actions_vi": [
+   "Thay URL 308 /articles/3d-rendering-company-melbourne trong sitemap bằng URL đích.",
+   "Nén 4 ảnh quá nặng mà Ahrefs báo lỗi.",
+   "Bổ sung nội dung cho 10 trang mỏng, bắt đầu từ trang có hiển thị GSC."
+  ],
+  "actions_en": [
+   "Replace the 308 URL /articles/3d-rendering-company-melbourne in the sitemap with its target.",
+   "Compress the 4 oversized images Ahrefs flags.",
+   "Expand the 10 thin pages, starting with those that get GSC impressions."
+  ]
  },
  "commentary_input": {
   "report": "Website technical SEO audit",
@@ -4401,7 +4414,22 @@
     "images_without_alt": 0,
     "linked_not_in_sitemap": [
      "/login"
-    ]
+    ],
+    "ahrefs_site_audit": {
+     "health": 99,
+     "urls_crawled": 238,
+     "urls_with_errors": 7,
+     "errors": 8,
+     "warnings": 323,
+     "notices": 394,
+     "top_errors": [
+      "404 page (1)",
+      "4XX page (1)",
+      "Broken redirect (1)",
+      "Image file size too large (4)",
+      "3XX redirect in sitemap (1)"
+     ]
+    }
    },
    "previous": {
     "date": "2026-11-21",
@@ -4419,5 +4447,270 @@
    }
   }
  },
- "score_rationale": "health 96 → 96; ttfb_mean 337.6 → 270.5; pages_crawled 128 → 135; words_total 282598 → 307383; orphans 0; thin_pages 10; images_without_alt 0."
+ "score_rationale": "Health holds at 96; mean TTFB fell from 337.6 to 270.5 ms even though the performance score slipped from 93 to 91. Pages crawled rose from 128 to 135, with 10 thin pages left. Ahrefs Site Audit scores 99 with 8 errors, including 4 oversized images and 1 3XX redirect in the sitemap. Fix the /articles/3d-rendering-company-melbourne (308) sitemap entry and compress the 4 large images.",
+ "ahrefs_site_audit": {
+  "crawl": "2026-11-22 04:44 (Ahrefs, UTC+7)",
+  "health": 99,
+  "ai_score": 100,
+  "urls_crawled": 238,
+  "urls_total": 827,
+  "urls_with_errors": 7,
+  "urls_without_errors": 823,
+  "errors": 8,
+  "warnings": 323,
+  "notices": 394,
+  "ttfb_slow": 131,
+  "ttfb_too_slow": 73,
+  "http_2xx": 798,
+  "http_3xx": 31,
+  "http_4xx": 1,
+  "issues": [
+   {
+    "group": "Internal pages",
+    "issue": "404 page",
+    "sev": "E",
+    "urls": 1,
+    "change": 0
+   },
+   {
+    "group": "Internal pages",
+    "issue": "4XX page",
+    "sev": "E",
+    "urls": 1,
+    "change": 0
+   },
+   {
+    "group": "Indexability",
+    "issue": "Nofollow page",
+    "sev": "W",
+    "urls": 70,
+    "change": 6
+   },
+   {
+    "group": "Indexability",
+    "issue": "Noindex page",
+    "sev": "W",
+    "urls": 70,
+    "change": 6
+   },
+   {
+    "group": "Indexability",
+    "issue": "Noindex and nofollow page",
+    "sev": "N",
+    "urls": 70,
+    "change": 6
+   },
+   {
+    "group": "AI Discoverability · other",
+    "issue": "Changed pages not submitted to IndexNow",
+    "sev": "N",
+    "urls": 9,
+    "change": 9
+   },
+   {
+    "group": "Links · indexable",
+    "issue": "Page has links to redirect",
+    "sev": "W",
+    "urls": 2,
+    "change": 0
+   },
+   {
+    "group": "Links · indexable",
+    "issue": "Page has nofollow and dofollow incoming internal links",
+    "sev": "N",
+    "urls": 55,
+    "change": 9
+   },
+   {
+    "group": "Links · indexable",
+    "issue": "Page has only one dofollow incoming internal link",
+    "sev": "N",
+    "urls": 8,
+    "change": 4
+   },
+   {
+    "group": "Links · not indexable",
+    "issue": "Page has nofollow outgoing internal links",
+    "sev": "N",
+    "urls": 70,
+    "change": 6
+   },
+   {
+    "group": "Links · not indexable",
+    "issue": "Page has links to redirect",
+    "sev": "N",
+    "urls": 68,
+    "change": 6
+   },
+   {
+    "group": "Links · not indexable",
+    "issue": "Page has nofollow incoming internal links only",
+    "sev": "N",
+    "urls": 57,
+    "change": 6
+   },
+   {
+    "group": "Links · not indexable",
+    "issue": "Redirected page has no incoming internal links",
+    "sev": "N",
+    "urls": 12,
+    "change": 0
+   },
+   {
+    "group": "Links · not indexable",
+    "issue": "Page has nofollow and dofollow incoming internal links",
+    "sev": "N",
+    "urls": 1,
+    "change": 0
+   },
+   {
+    "group": "Links · not indexable",
+    "issue": "Page has only one dofollow incoming internal link",
+    "sev": "N",
+    "urls": 1,
+    "change": 0
+   },
+   {
+    "group": "Redirects",
+    "issue": "Broken redirect",
+    "sev": "E",
+    "urls": 1,
+    "change": 0
+   },
+   {
+    "group": "Redirects",
+    "issue": "3XX redirect",
+    "sev": "W",
+    "urls": 31,
+    "change": 0
+   },
+   {
+    "group": "Redirects",
+    "issue": "HTTP to HTTPS redirect",
+    "sev": "N",
+    "urls": 2,
+    "change": 0
+   },
+   {
+    "group": "Content · indexable",
+    "issue": "Low word count",
+    "sev": "W",
+    "urls": 1,
+    "change": 0
+   },
+   {
+    "group": "Content · indexable",
+    "issue": "Meta description too long",
+    "sev": "W",
+    "urls": 1,
+    "change": 0
+   },
+   {
+    "group": "Content · indexable",
+    "issue": "Meta description too short",
+    "sev": "W",
+    "urls": 1,
+    "change": 0
+   },
+   {
+    "group": "Content · indexable",
+    "issue": "Page and SERP titles do not match",
+    "sev": "N",
+    "urls": 1,
+    "change": 0
+   },
+   {
+    "group": "Content · not indexable",
+    "issue": "Meta description tag missing or empty",
+    "sev": "W",
+    "urls": 3,
+    "change": 1
+   },
+   {
+    "group": "Content · not indexable",
+    "issue": "Multiple H1 tags",
+    "sev": "N",
+    "urls": 34,
+    "change": 6
+   },
+   {
+    "group": "Content · not indexable",
+    "issue": "H1 tag missing or empty",
+    "sev": "N",
+    "urls": 2,
+    "change": 0
+   },
+   {
+    "group": "Content · not indexable",
+    "issue": "Low word count",
+    "sev": "N",
+    "urls": 1,
+    "change": 0
+   },
+   {
+    "group": "Social tags",
+    "issue": "Open Graph tags missing",
+    "sev": "N",
+    "urls": 1,
+    "change": 0
+   },
+   {
+    "group": "Social tags",
+    "issue": "X (Twitter) card missing",
+    "sev": "N",
+    "urls": 1,
+    "change": 0
+   },
+   {
+    "group": "Usability and performance",
+    "issue": "Not compressed",
+    "sev": "W",
+    "urls": 70,
+    "change": 6
+   },
+   {
+    "group": "Usability and performance",
+    "issue": "Slow page",
+    "sev": "W",
+    "urls": 68,
+    "change": 6
+   },
+   {
+    "group": "Usability and performance",
+    "issue": "HTML file size too large",
+    "sev": "W",
+    "urls": 3,
+    "change": 1
+   },
+   {
+    "group": "Images",
+    "issue": "Image file size too large",
+    "sev": "E",
+    "urls": 4,
+    "change": 0
+   },
+   {
+    "group": "Images · css",
+    "issue": "CSS file size too large",
+    "sev": "W",
+    "urls": 3,
+    "change": 0
+   },
+   {
+    "group": "Sitemaps",
+    "issue": "3XX redirect in sitemap",
+    "sev": "E",
+    "urls": 1,
+    "change": 0
+   },
+   {
+    "group": "Sitemaps",
+    "issue": "Indexable page not in sitemap",
+    "sev": "N",
+    "urls": 1,
+    "change": 0
+   }
+  ],
+  "source": "Ahrefs Site Audit (Chrome on Mac)"
+ }
 }

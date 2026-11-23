@@ -575,8 +575,8 @@
    "date": "2026-11-22",
    "data": "data/2026-11-22.json",
    "report": "archive/2026-11-22.html",
-   "label_vi": "Health 96 · 135 trang · TTFB TB 270 ms",
-   "label_en": "Health 96 · 135 pages · mean TTFB 270 ms"
+   "label_vi": "Sức khoẻ 96 ổn định, TTFB nhanh hơn",
+   "label_en": "Health steady at 96, faster TTFB"
   }
  ]
 }
