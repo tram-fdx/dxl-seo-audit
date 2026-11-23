@@ -4367,21 +4367,21 @@
   }
  ],
  "commentary": {
-  "vi": "Điểm sức khoẻ giữ 96; TTFB trung bình giảm từ 337,6 xuống 270,5 ms dù điểm hiệu năng nhích từ 93 xuống 91. Số trang quét tăng từ 128 lên 135, vẫn còn 10 trang mỏng. Ahrefs Site Audit đạt 99 điểm với 8 lỗi, gồm 4 ảnh quá nặng và 1 redirect 3XX nằm trong sitemap. Nên sửa link /articles/3d-rendering-company-melbourne (308) trong sitemap và nén 4 ảnh lớn.",
-  "en": "Health holds at 96; mean TTFB fell from 337.6 to 270.5 ms even though the performance score slipped from 93 to 91. Pages crawled rose from 128 to 135, with 10 thin pages left. Ahrefs Site Audit scores 99 with 8 errors, including 4 oversized images and 1 3XX redirect in the sitemap. Fix the /articles/3d-rendering-company-melbourne (308) sitemap entry and compress the 4 large images.",
+  "vi": "Điểm sức khoẻ giữ 96; TTFB trung bình giảm từ 337,6 xuống 270,5 ms và số trang quét tăng từ 128 lên 135. Điểm performance lại giảm từ 93 xuống 91, structured data từ 99 xuống 98. Ahrefs Site Audit đạt 99 điểm với 8 lỗi trên 7 URL, gồm 1 trang 404, 1 redirect hỏng, 1 redirect 3XX trong sitemap và 4 ảnh quá nặng. Nên xử lý 4 ảnh quá nặng và gỡ URL redirect khỏi sitemap trước.",
+  "en": "Health held at 96; mean TTFB fell from 337.6 to 270.5 ms and pages crawled rose from 128 to 135. Performance slipped from 93 to 91 and structured data from 99 to 98. Ahrefs Site Audit scores 99 with 8 errors on 7 URLs, including one 404, one broken redirect, one 3XX redirect in the sitemap and 4 oversized images. Fix the 4 oversized images and drop the redirecting URL from the sitemap first.",
   "by": "Claude (Mac)",
-  "rating": "good",
-  "verdict_vi": "Kỹ thuật website ổn định và tốc độ phản hồi cải thiện rõ.",
-  "verdict_en": "Site technical health is stable and response time improved clearly.",
+  "rating": "ok",
+  "verdict_vi": "Kỹ thuật ổn định: tốc độ phản hồi cải thiện nhưng điểm performance giảm nhẹ.",
+  "verdict_en": "Technically stable: response time improved but the performance score dipped slightly.",
   "actions_vi": [
-   "Thay URL 308 /articles/3d-rendering-company-melbourne trong sitemap bằng URL đích.",
-   "Nén 4 ảnh quá nặng mà Ahrefs báo lỗi.",
-   "Bổ sung nội dung cho 10 trang mỏng, bắt đầu từ trang có hiển thị GSC."
+   "Nén 4 ảnh bị Ahrefs báo quá nặng để kéo điểm performance về lại 93",
+   "Thay /articles/3d-rendering-company-melbourne (308) trong sitemap bằng URL đích",
+   "Sửa trang 404 và redirect hỏng mà Ahrefs báo lỗi"
   ],
   "actions_en": [
-   "Replace the 308 URL /articles/3d-rendering-company-melbourne in the sitemap with its target.",
-   "Compress the 4 oversized images Ahrefs flags.",
-   "Expand the 10 thin pages, starting with those that get GSC impressions."
+   "Compress the 4 images Ahrefs flags as too large to lift performance back to 93",
+   "Replace /articles/3d-rendering-company-melbourne (308) in the sitemap with its target URL",
+   "Fix the 404 page and broken redirect Ahrefs reports"
   ]
  },
  "commentary_input": {
@@ -4417,11 +4417,11 @@
     ],
     "ahrefs_site_audit": {
      "health": 99,
-     "urls_crawled": 238,
+     "urls_crawled": 230,
      "urls_with_errors": 7,
      "errors": 8,
-     "warnings": 323,
-     "notices": 394,
+     "warnings": 300,
+     "notices": 361,
      "top_errors": [
       "404 page (1)",
       "4XX page (1)",
@@ -4447,22 +4447,22 @@
    }
   }
  },
- "score_rationale": "Health holds at 96; mean TTFB fell from 337.6 to 270.5 ms even though the performance score slipped from 93 to 91. Pages crawled rose from 128 to 135, with 10 thin pages left. Ahrefs Site Audit scores 99 with 8 errors, including 4 oversized images and 1 3XX redirect in the sitemap. Fix the /articles/3d-rendering-company-melbourne (308) sitemap entry and compress the 4 large images.",
+ "score_rationale": "Health held at 96; mean TTFB fell from 337.6 to 270.5 ms and pages crawled rose from 128 to 135. Performance slipped from 93 to 91 and structured data from 99 to 98. Ahrefs Site Audit scores 99 with 8 errors on 7 URLs, including one 404, one broken redirect, one 3XX redirect in the sitemap and 4 oversized images. Fix the 4 oversized images and drop the redirecting URL from the sitemap first.",
  "ahrefs_site_audit": {
-  "crawl": "2026-11-22 04:44 (Ahrefs, UTC+7)",
+  "crawl": "2026-11-23 (Ahrefs, UTC+7)",
   "health": 99,
   "ai_score": 100,
-  "urls_crawled": 238,
-  "urls_total": 827,
+  "urls_crawled": 230,
+  "urls_total": 818,
   "urls_with_errors": 7,
-  "urls_without_errors": 823,
+  "urls_without_errors": 814,
   "errors": 8,
-  "warnings": 323,
-  "notices": 394,
-  "ttfb_slow": 131,
-  "ttfb_too_slow": 73,
-  "http_2xx": 798,
-  "http_3xx": 31,
+  "warnings": 300,
+  "notices": 361,
+  "ttfb_slow": 132,
+  "ttfb_too_slow": 68,
+  "http_2xx": 793,
+  "http_3xx": 27,
   "http_4xx": 1,
   "issues": [
    {
@@ -4483,29 +4483,29 @@
     "group": "Indexability",
     "issue": "Nofollow page",
     "sev": "W",
-    "urls": 70,
-    "change": 6
+    "urls": 65,
+    "change": 5
    },
    {
     "group": "Indexability",
     "issue": "Noindex page",
     "sev": "W",
-    "urls": 70,
-    "change": 6
+    "urls": 65,
+    "change": 5
    },
    {
     "group": "Indexability",
     "issue": "Noindex and nofollow page",
     "sev": "N",
-    "urls": 70,
-    "change": 6
+    "urls": 65,
+    "change": 5
    },
    {
     "group": "AI Discoverability · other",
     "issue": "Changed pages not submitted to IndexNow",
     "sev": "N",
-    "urls": 9,
-    "change": 9
+    "urls": 2,
+    "change": 7
    },
    {
     "group": "Links · indexable",
@@ -4518,36 +4518,36 @@
     "group": "Links · indexable",
     "issue": "Page has nofollow and dofollow incoming internal links",
     "sev": "N",
-    "urls": 55,
-    "change": 9
+    "urls": 52,
+    "change": 3
    },
    {
     "group": "Links · indexable",
     "issue": "Page has only one dofollow incoming internal link",
     "sev": "N",
-    "urls": 8,
-    "change": 4
+    "urls": 9,
+    "change": 1
    },
    {
     "group": "Links · not indexable",
     "issue": "Page has nofollow outgoing internal links",
     "sev": "N",
-    "urls": 70,
-    "change": 6
+    "urls": 65,
+    "change": 5
    },
    {
     "group": "Links · not indexable",
     "issue": "Page has links to redirect",
     "sev": "N",
-    "urls": 68,
-    "change": 6
+    "urls": 63,
+    "change": 5
    },
    {
     "group": "Links · not indexable",
     "issue": "Page has nofollow incoming internal links only",
     "sev": "N",
-    "urls": 57,
-    "change": 6
+    "urls": 52,
+    "change": 5
    },
    {
     "group": "Links · not indexable",
@@ -4581,8 +4581,8 @@
     "group": "Redirects",
     "issue": "3XX redirect",
     "sev": "W",
-    "urls": 31,
-    "change": 0
+    "urls": 27,
+    "change": 4
    },
    {
     "group": "Redirects",
@@ -4624,14 +4624,14 @@
     "issue": "Meta description tag missing or empty",
     "sev": "W",
     "urls": 3,
-    "change": 1
+    "change": 0
    },
    {
     "group": "Content · not indexable",
     "issue": "Multiple H1 tags",
     "sev": "N",
-    "urls": 34,
-    "change": 6
+    "urls": 30,
+    "change": 4
    },
    {
     "group": "Content · not indexable",
@@ -4665,22 +4665,22 @@
     "group": "Usability and performance",
     "issue": "Not compressed",
     "sev": "W",
-    "urls": 70,
-    "change": 6
+    "urls": 65,
+    "change": 5
    },
    {
     "group": "Usability and performance",
     "issue": "Slow page",
     "sev": "W",
-    "urls": 68,
-    "change": 6
+    "urls": 64,
+    "change": 4
    },
    {
     "group": "Usability and performance",
     "issue": "HTML file size too large",
     "sev": "W",
     "urls": 3,
-    "change": 1
+    "change": 0
    },
    {
     "group": "Images",
