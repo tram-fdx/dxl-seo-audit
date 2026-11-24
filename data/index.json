@@ -1,6 +1,6 @@
 {
  "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
- "latest": "2026-11-24",
+ "latest": "2026-11-25",
  "report": "index.html",
  "site": "dxliving.com",
  "snapshots": [
@@ -523,74 +523,81 @@
    "report": "index.html"
   },
   {
-   "date": "2026-11-15",
    "data": "data/2026-11-15.json",
-   "report": "archive/2026-11-15.html",
+   "date": "2026-11-15",
+   "label_en": "Health steady at 97, server response slower",
    "label_vi": "Sức khoẻ 97 ổn định, tốc độ phản hồi chậm lại",
-   "label_en": "Health steady at 97, server response slower"
+   "report": "archive/2026-11-15.html"
   },
   {
-   "date": "2026-11-16",
    "data": "data/2026-11-16.json",
-   "report": "archive/2026-11-16.html",
+   "date": "2026-11-16",
+   "label_en": "Health 97, TTFB up to 281 ms",
    "label_vi": "Sức khoẻ 97, TTFB tăng lên 281 ms",
-   "label_en": "Health 97, TTFB up to 281 ms"
+   "report": "archive/2026-11-16.html"
   },
   {
-   "date": "2026-11-17",
    "data": "data/2026-11-17.json",
-   "report": "archive/2026-11-17.html",
+   "date": "2026-11-17",
+   "label_en": "Steady at 97, 8 Ahrefs errors to clear",
    "label_vi": "Ổn định ở 97, còn 8 lỗi Ahrefs cần dọn",
-   "label_en": "Steady at 97, 8 Ahrefs errors to clear"
+   "report": "archive/2026-11-17.html"
   },
   {
-   "date": "2026-11-18",
    "data": "data/2026-11-18.json",
-   "report": "archive/2026-11-18.html",
+   "date": "2026-11-18",
+   "label_en": "Health 97 · 128 pages · mean TTFB 276 ms",
    "label_vi": "Health 97 · 128 trang · TTFB TB 276 ms",
-   "label_en": "Health 97 · 128 pages · mean TTFB 276 ms"
+   "report": "archive/2026-11-18.html"
   },
   {
-   "date": "2026-11-19",
    "data": "data/2026-11-19.json",
-   "report": "archive/2026-11-19.html",
+   "date": "2026-11-19",
+   "label_en": "Health 98, faster TTFB, 8 Ahrefs errors left",
    "label_vi": "Sức khoẻ 98, TTFB nhanh hơn, còn 8 lỗi Ahrefs",
-   "label_en": "Health 98, faster TTFB, 8 Ahrefs errors left"
+   "report": "archive/2026-11-19.html"
   },
   {
-   "date": "2026-11-20",
    "data": "data/2026-11-20.json",
-   "report": "archive/2026-11-20.html",
+   "date": "2026-11-20",
+   "label_en": "Health 98 · 128 pages · mean TTFB 223 ms",
    "label_vi": "Health 98 · 128 trang · TTFB TB 223 ms",
-   "label_en": "Health 98 · 128 pages · mean TTFB 223 ms"
+   "report": "archive/2026-11-20.html"
   },
   {
-   "date": "2026-11-21",
    "data": "data/2026-11-21.json",
-   "report": "archive/2026-11-21.html",
+   "date": "2026-11-21",
+   "label_en": "Health 96 · 128 pages · mean TTFB 338 ms",
    "label_vi": "Health 96 · 128 trang · TTFB TB 338 ms",
-   "label_en": "Health 96 · 128 pages · mean TTFB 338 ms"
+   "report": "archive/2026-11-21.html"
   },
   {
-   "date": "2026-11-22",
    "data": "data/2026-11-22.json",
-   "report": "archive/2026-11-22.html",
+   "date": "2026-11-22",
+   "label_en": "Health steady at 96, faster TTFB",
    "label_vi": "Sức khoẻ 96 ổn định, TTFB nhanh hơn",
-   "label_en": "Health steady at 96, faster TTFB"
+   "report": "archive/2026-11-22.html"
   },
   {
-   "date": "2026-11-23",
    "data": "data/2026-11-23.json",
-   "report": "archive/2026-11-23.html",
+   "date": "2026-11-23",
+   "label_en": "Health up to 97, performance jumps to 97",
    "label_vi": "Sức khoẻ lên 97, performance tăng mạnh lên 97",
-   "label_en": "Health up to 97, performance jumps to 97"
+   "report": "archive/2026-11-23.html"
   },
   {
-   "date": "2026-11-24",
    "data": "data/2026-11-24.json",
-   "report": "archive/2026-11-24.html",
+   "date": "2026-11-24",
+   "label_en": "Health 97 · 137 pages · mean TTFB 264 ms",
    "label_vi": "Health 97 · 137 trang · TTFB TB 264 ms",
-   "label_en": "Health 97 · 137 pages · mean TTFB 264 ms"
+   "report": "archive/2026-11-24.html"
+  },
+  {
+   "data": "data/2026-11-25.json",
+   "date": "2026-11-25",
+   "label_en": "Health 97 · live Chrome crawl, 138 pages",
+   "label_vi": "Health 97 · crawl trực tiếp bằng Chrome, 138 trang",
+   "report": "index.html"
   }
  ]
 }
