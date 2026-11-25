@@ -593,11 +593,11 @@
    "report": "archive/2026-11-24.html"
   },
   {
-   "data": "data/2026-11-25.json",
    "date": "2026-11-25",
-   "label_en": "Stable at 97, thin pages up to 12",
-   "label_vi": "Ổn định ở 97, trang mỏng tăng lên 12",
-   "report": "index.html"
+   "data": "data/2026-11-25.json",
+   "report": "archive/2026-11-25.html",
+   "label_vi": "Health 98 · 138 trang · TTFB TB 235 ms",
+   "label_en": "Health 98 · 138 pages · mean TTFB 235 ms"
   }
  ]
 }
