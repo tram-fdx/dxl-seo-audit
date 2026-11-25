@@ -1,6 +1,6 @@
 {
  "description": "Lịch sử audit kỹ thuật SEO theo ngày / Daily technical SEO audit history. Mỗi ngày một data/YYYY-MM-DD.json + bản HTML đóng băng archive/YYYY-MM-DD.html.",
- "latest": "2026-11-25",
+ "latest": "2026-11-26",
  "report": "index.html",
  "site": "dxliving.com",
  "snapshots": [
@@ -593,11 +593,18 @@
    "report": "archive/2026-11-24.html"
   },
   {
-   "date": "2026-11-25",
    "data": "data/2026-11-25.json",
-   "report": "archive/2026-11-25.html",
+   "date": "2026-11-25",
+   "label_en": "Health 98 · 138 pages · mean TTFB 235 ms",
    "label_vi": "Health 98 · 138 trang · TTFB TB 235 ms",
-   "label_en": "Health 98 · 138 pages · mean TTFB 235 ms"
+   "report": "archive/2026-11-25.html"
+  },
+  {
+   "data": "data/2026-11-26.json",
+   "date": "2026-11-26",
+   "label_en": "Health 98 · 139 pages · mean TTFB 227 ms",
+   "label_vi": "Health 98 · 139 trang · TTFB TB 227 ms",
+   "report": "index.html"
   }
  ]
 }
