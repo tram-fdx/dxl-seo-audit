@@ -595,8 +595,8 @@
   {
    "data": "data/2026-11-25.json",
    "date": "2026-11-25",
-   "label_en": "Health 97 · live Chrome crawl, 138 pages",
-   "label_vi": "Health 97 · crawl trực tiếp bằng Chrome, 138 trang",
+   "label_en": "Stable at 97, thin pages up to 12",
+   "label_vi": "Ổn định ở 97, trang mỏng tăng lên 12",
    "report": "index.html"
   }
  ]
