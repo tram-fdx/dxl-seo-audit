@@ -600,11 +600,11 @@
    "report": "archive/2026-11-25.html"
   },
   {
-   "data": "data/2026-11-26.json",
    "date": "2026-11-26",
-   "label_en": "Technical health holds at 98, faster TTFB",
-   "label_vi": "Sức khoẻ kỹ thuật giữ 98, TTFB nhanh hơn",
-   "report": "index.html"
+   "data": "data/2026-11-26.json",
+   "report": "archive/2026-11-26.html",
+   "label_vi": "Health 97 · 139 trang · TTFB TB 265 ms",
+   "label_en": "Health 97 · 139 pages · mean TTFB 265 ms"
   }
  ]
 }
