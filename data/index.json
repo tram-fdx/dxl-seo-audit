@@ -602,8 +602,8 @@
   {
    "data": "data/2026-11-26.json",
    "date": "2026-11-26",
-   "label_en": "Health 98 · 139 pages · mean TTFB 227 ms",
-   "label_vi": "Health 98 · 139 trang · TTFB TB 227 ms",
+   "label_en": "Technical health holds at 98, faster TTFB",
+   "label_vi": "Sức khoẻ kỹ thuật giữ 98, TTFB nhanh hơn",
    "report": "index.html"
   }
  ]
