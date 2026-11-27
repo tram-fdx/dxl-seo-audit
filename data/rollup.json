@@ -1,13 +1,13 @@
 {
  "derived": true,
- "generated_at": "2026-11-26",
+ "generated_at": "2026-11-27",
  "grain_legend": {
   "day": "The measurement for that exact day. Can be summed over a range.",
   "state": "A state metric at scan time. Average or take the end value, never sum.",
   "window28": "A rolling 28-day window snapshot. Cannot be summed (days overlap) — compare start vs end and draw the trend."
  },
  "kind": "rollup",
- "scanned_count": 86,
+ "scanned_count": 87,
  "scanned_days": [
   "2026-07-27",
   "2026-07-28",
@@ -94,14 +94,15 @@
   "2026-11-23",
   "2026-11-24",
   "2026-11-25",
-  "2026-11-26"
+  "2026-11-26",
+  "2026-11-27"
  ],
  "series": {
   "content": {
    "grain": "state",
    "label": "Content",
-   "measured": 86,
-   "of_days": 86,
+   "measured": 87,
+   "of_days": 87,
    "points": [
     {
      "d": "2026-07-27",
@@ -445,6 +446,10 @@
     },
     {
      "d": "2026-11-26",
+     "v": 96
+    },
+    {
+     "d": "2026-11-27",
      "v": 96
     }
    ]
@@ -452,8 +457,8 @@
   "crawlability": {
    "grain": "state",
    "label": "Crawlability",
-   "measured": 86,
-   "of_days": 86,
+   "measured": 87,
+   "of_days": 87,
    "points": [
     {
      "d": "2026-07-27",
@@ -798,14 +803,18 @@
     {
      "d": "2026-11-26",
      "v": 97
+    },
+    {
+     "d": "2026-11-27",
+     "v": 97
     }
    ]
   },
   "health": {
    "grain": "state",
    "label": "Health score",
-   "measured": 86,
-   "of_days": 86,
+   "measured": 87,
+   "of_days": 87,
    "points": [
     {
      "d": "2026-07-27",
@@ -1150,14 +1159,18 @@
     {
      "d": "2026-11-26",
      "v": 97
+    },
+    {
+     "d": "2026-11-27",
+     "v": 98
     }
    ]
   },
   "onpage": {
    "grain": "state",
    "label": "On-page / Meta",
-   "measured": 86,
-   "of_days": 86,
+   "measured": 87,
+   "of_days": 87,
    "points": [
     {
      "d": "2026-07-27",
@@ -1502,14 +1515,18 @@
     {
      "d": "2026-11-26",
      "v": 99
+    },
+    {
+     "d": "2026-11-27",
+     "v": 99
     }
    ]
   },
   "pages_crawled": {
    "grain": "state",
    "label": "Pages crawled",
-   "measured": 85,
-   "of_days": 86,
+   "measured": 86,
+   "of_days": 87,
    "points": [
     {
      "d": "2026-07-27",
@@ -1850,14 +1867,18 @@
     {
      "d": "2026-11-26",
      "v": 139
+    },
+    {
+     "d": "2026-11-27",
+     "v": 140
     }
    ]
   },
   "performance": {
    "grain": "state",
    "label": "Performance / TTFB",
-   "measured": 86,
-   "of_days": 86,
+   "measured": 87,
+   "of_days": 87,
    "points": [
     {
      "d": "2026-07-27",
@@ -2202,14 +2223,18 @@
     {
      "d": "2026-11-26",
      "v": 97
+    },
+    {
+     "d": "2026-11-27",
+     "v": 98
     }
    ]
   },
   "sitemap_urls": {
    "grain": "state",
    "label": "Sitemap — URLs",
-   "measured": 82,
-   "of_days": 86,
+   "measured": 83,
+   "of_days": 87,
    "points": [
     {
      "d": "2026-07-27",
@@ -2538,14 +2563,18 @@
     {
      "d": "2026-11-26",
      "v": 141
+    },
+    {
+     "d": "2026-11-27",
+     "v": 141
     }
    ]
   },
   "structured_data": {
    "grain": "state",
    "label": "Structured data",
-   "measured": 86,
-   "of_days": 86,
+   "measured": 87,
+   "of_days": 87,
    "points": [
     {
      "d": "2026-07-27",
@@ -2890,14 +2919,18 @@
     {
      "d": "2026-11-26",
      "v": 98
+    },
+    {
+     "d": "2026-11-27",
+     "v": 98
     }
    ]
   },
   "ttfb_mean_ms": {
    "grain": "state",
    "label": "TTFB mean (ms)",
-   "measured": 75,
-   "of_days": 86,
+   "measured": 76,
+   "of_days": 87,
    "points": [
     {
      "d": "2026-08-12",
@@ -3198,14 +3231,18 @@
     {
      "d": "2026-11-26",
      "v": 265.0
+    },
+    {
+     "d": "2026-11-27",
+     "v": 242.8
     }
    ]
   },
   "ttfb_median_ms": {
    "grain": "state",
    "label": "TTFB median (ms)",
-   "measured": 58,
-   "of_days": 86,
+   "measured": 59,
+   "of_days": 87,
    "points": [
     {
      "d": "2026-09-09",
@@ -3438,14 +3475,18 @@
     {
      "d": "2026-11-26",
      "v": 248
+    },
+    {
+     "d": "2026-11-27",
+     "v": 205
     }
    ]
   },
   "words_total": {
    "grain": "state",
    "label": "Total words",
-   "measured": 61,
-   "of_days": 86,
+   "measured": 62,
+   "of_days": 87,
    "points": [
     {
      "d": "2026-09-04",
@@ -3690,6 +3731,10 @@
     {
      "d": "2026-11-26",
      "v": 316809
+    },
+    {
+     "d": "2026-11-27",
+     "v": 304308
     }
    ]
   }
