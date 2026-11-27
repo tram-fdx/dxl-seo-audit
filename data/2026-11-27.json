@@ -3491,9 +3491,22 @@
   }
  ],
  "commentary": {
-  "vi": "health 97 → 98; ttfb_mean 265.0 → 242.8 (browser fetch vs. server-side before: method change); pages_crawled 139 → 140; words_total 316809 → 304308; orphans 0; thin_pages 12; images_without_alt 0 (139 noscript pixels excluded). New: malformed link '/articles/. https://natspec.org' on /articles/3d-rendering-vs-vr-walkthrough.",
-  "en": "health 97 → 98; ttfb_mean 265.0 → 242.8 (browser fetch vs. server-side before: method change); pages_crawled 139 → 140; words_total 316809 → 304308; orphans 0; thin_pages 12; images_without_alt 0 (139 noscript pixels excluded). New: malformed link '/articles/. https://natspec.org' on /articles/3d-rendering-vs-vr-walkthrough.",
-  "by": "daily run"
+  "vi": "Điểm sức khoẻ site lên 98 (hôm qua 97), hiệu năng lên 98 và TTFB trung bình giảm từ 265 xuống 242,8 ms. Đã quét 140 trang, không có trang mồ côi, ảnh thiếu alt bằng 0. Vẫn còn 12 trang mỏng, /articles/3d-rendering-company-melbourne trả 308 và /start-interactive chưa có schema. Nên sửa link nội bộ trỏ thẳng tới URL đích thay cho URL 308.",
+  "en": "Site health rose to 98 (from 97), performance to 98, and mean TTFB fell from 265 to 242.8 ms. 140 pages crawled with 0 orphans and 0 images missing alt. 12 thin pages remain, /articles/3d-rendering-company-melbourne returns 308 and /start-interactive lacks schema. Point internal links straight at the final URL instead of the 308.",
+  "by": "Claude (Mac)",
+  "rating": "good",
+  "verdict_vi": "Kỹ thuật site rất tốt và cải thiện nhẹ so với hôm qua.",
+  "verdict_en": "Technical health is strong and improved slightly on yesterday.",
+  "actions_vi": [
+   "Đổi link nội bộ tới /articles/3d-rendering-company-melbourne sang URL đích để bỏ chuyển hướng 308.",
+   "Bổ sung nội dung cho 12 trang mỏng, ưu tiên trang có lượt hiển thị.",
+   "Thêm schema cho /start-interactive và gỡ link lỗi '/articles/. https://natspec.org'."
+  ],
+  "actions_en": [
+   "Repoint internal links to /articles/3d-rendering-company-melbourne at the final URL to remove the 308.",
+   "Expand the 12 thin pages, starting with those that get impressions.",
+   "Add schema to /start-interactive and fix the broken link '/articles/. https://natspec.org'."
+  ]
  },
  "commentary_input": {
   "report": "Website technical SEO audit",
@@ -3544,5 +3557,5 @@
    }
   }
  },
- "score_rationale": "health 97 → 98; ttfb_mean 265.0 → 242.8 (browser fetch vs. server-side before: method change); pages_crawled 139 → 140; words_total 316809 → 304308; orphans 0; thin_pages 12; images_without_alt 0 (139 noscript pixels excluded). New: malformed link '/articles/. https://natspec.org' on /articles/3d-rendering-vs-vr-walkthrough."
+ "score_rationale": "Site health rose to 98 (from 97), performance to 98, and mean TTFB fell from 265 to 242.8 ms. 140 pages crawled with 0 orphans and 0 images missing alt. 12 thin pages remain, /articles/3d-rendering-company-melbourne returns 308 and /start-interactive lacks schema. Point internal links straight at the final URL instead of the 308."
 }

@@ -609,8 +609,8 @@
   {
    "data": "data/2026-11-27.json",
    "date": "2026-11-27",
-   "label_en": "Health 98 · live Chrome crawl 140 pages",
-   "label_vi": "Health 98 · crawl trực tiếp 140 trang",
+   "label_en": "Health 98, faster TTFB, 12 thin pages remain",
+   "label_vi": "Sức khoẻ 98, TTFB nhanh hơn, còn 12 trang mỏng",
    "report": "archive/2026-11-27.html"
   }
  ]
