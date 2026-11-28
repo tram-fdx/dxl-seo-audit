@@ -4493,9 +4493,22 @@
   }
  ],
  "commentary": {
-  "vi": "health 97 → 98; ttfb_mean 265.0 → 210.0; pages_crawled 139 → 139; words_total 316809 → 316809; orphans 0; thin_pages 10; images_without_alt 0.",
-  "en": "health 97 → 98; ttfb_mean 265.0 → 210.0; pages_crawled 139 → 139; words_total 316809 → 316809; orphans 0; thin_pages 10; images_without_alt 0.",
-  "by": "template"
+  "vi": "Health tăng từ 97 lên 98 nhờ điểm performance lên 100 (từ 97) và TTFB trung bình giảm từ 265 ms xuống 210 ms. 139 trang được quét, không có trang mồ côi hay ảnh thiếu alt. Còn 10 trang mỏng, /articles/3d-rendering-company-melbourne trả về 308 và /start-interactive chưa có schema.",
+  "en": "Health rose from 97 to 98 as performance hit 100 (from 97) and mean TTFB fell from 265 ms to 210 ms. All 139 pages crawled with no orphans or missing alt text. Ten thin pages remain, /articles/3d-rendering-company-melbourne returns 308 and /start-interactive lacks schema.",
+  "by": "Claude (Mac)",
+  "rating": "good",
+  "verdict_vi": "Kỹ thuật website rất tốt và đang cải thiện thêm.",
+  "verdict_en": "Site technical health is strong and still improving.",
+  "actions_vi": [
+   "Sửa link nội bộ trỏ tới /articles/3d-rendering-company-melbourne (308) sang URL đích cuối",
+   "Bổ sung nội dung cho 10 trang mỏng",
+   "Thêm schema cho /start-interactive và gỡ /login khỏi liên kết nội bộ hoặc sitemap"
+  ],
+  "actions_en": [
+   "Point internal links at /articles/3d-rendering-company-melbourne (308) to its final URL",
+   "Expand the 10 thin pages",
+   "Add schema to /start-interactive and drop /login from internal links"
+  ]
  },
  "commentary_input": {
   "report": "Website technical SEO audit",
@@ -4545,5 +4558,5 @@
    }
   }
  },
- "score_rationale": "health 97 → 98; ttfb_mean 265.0 → 210.0; pages_crawled 139 → 139; words_total 316809 → 316809; orphans 0; thin_pages 10; images_without_alt 0."
+ "score_rationale": "Health rose from 97 to 98 as performance hit 100 (from 97) and mean TTFB fell from 265 ms to 210 ms. All 139 pages crawled with no orphans or missing alt text. Ten thin pages remain, /articles/3d-rendering-company-melbourne returns 308 and /start-interactive lacks schema."
 }

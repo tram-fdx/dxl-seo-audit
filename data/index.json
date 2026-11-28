@@ -610,8 +610,8 @@
    "date": "2026-11-27",
    "data": "data/2026-11-27.json",
    "report": "archive/2026-11-27.html",
-   "label_vi": "Health 98 · 139 trang · TTFB TB 210 ms",
-   "label_en": "Health 98 · 139 pages · mean TTFB 210 ms"
+   "label_vi": "Health 98, TTFB giảm còn 210 ms",
+   "label_en": "Health 98, TTFB down to 210 ms"
   }
  ]
 }
